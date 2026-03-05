@@ -1,0 +1,1927 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meal Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1a1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+  :root {
+    --bg: #f5f0e8;
+    --card: #fffdf8;
+    --border: #e0d8c8;
+    --text: #1a1610;
+    --muted: #7a7060;
+    --accent: #c85a2a;
+    --accent2: #3a6b4a;
+    --forno: #c85a2a;
+    --pentola: #3a6b4a;
+    --pill-bg: #f0ebe0;
+    --input-bg: #f8f4ec;
+    --green: #2d6e3a;
+    --warn: #c87820;
+    --warn-bg: #fef3e6;
+    --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding-bottom: 80px;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--text);
+    color: #f5f0e8;
+    padding: 12px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 110;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  header p {
+    font-size: 0.7rem;
+    color: #a89e8e;
+    margin-top: 1px;
+  }
+
+  /* TABS */
+  .tabs {
+    display: flex;
+    background: var(--text);
+    padding: 0 16px 12px;
+    gap: 8px;
+    position: sticky;
+    top: 64px;
+    z-index: 105;
+  }
+  .tab {
+    padding: 7px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background: #2d2820;
+    color: #a89e8e;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .tab.active {
+    background: var(--accent);
+    color: white;
+  }
+
+  /* SECTIONS */
+  .section { display: none; padding: 16px; }
+  .section.active { display: block; }
+
+  /* RECIPE CARDS */
+  .recipe-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .recipe-header {
+    padding: 14px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    user-select: none;
+  }
+
+  .recipe-num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--border);
+    min-width: 28px;
+    line-height: 1;
+  }
+
+  .recipe-title-block { flex: 1; }
+  .recipe-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+  .recipe-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+  }
+  .badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .badge-forno { background: #fdeee6; color: var(--forno); }
+  .badge-pentola { background: #e8f2eb; color: var(--pentola); }
+  .badge-proteina { background: var(--pill-bg); color: var(--muted); }
+
+  .recipe-kcal {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .chevron {
+    font-size: 0.8rem;
+    color: var(--muted);
+    transition: transform 0.2s;
+  }
+  .recipe-card.open .chevron { transform: rotate(180deg); }
+
+  /* RECIPE BODY */
+  .recipe-body {
+    display: none;
+    border-top: 1px solid var(--border);
+    padding: 16px;
+  }
+  .recipe-card.open .recipe-body { display: block; }
+
+  .section-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }
+  .section-label:first-child { margin-top: 0; }
+
+  /* INGREDIENTS TABLE */
+  .ing-table { width: 100%; border-collapse: collapse; }
+  .ing-table td {
+    padding: 5px 0;
+    font-size: 0.875rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .ing-table tr:last-child td { border-bottom: none; }
+  .ing-table td:first-child { color: var(--text); padding-right: 12px; }
+  .ing-table td:last-child { font-weight: 600; text-align: right; color: var(--accent2); }
+
+  /* PREP TEXT */
+  .prep-text {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #3a3228;
+  }
+
+  /* MACROS BAR */
+  .macros-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .macro-box {
+    background: var(--pill-bg);
+    border-radius: 10px;
+    padding: 8px 6px;
+    text-align: center;
+  }
+  .macro-val {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1;
+  }
+  .macro-val.kcal { color: var(--accent); }
+  .macro-val.prot { color: #2563a8; }
+  .macro-val.fat { color: #7a5a1e; }
+  .macro-val.carb { color: var(--accent2); }
+  .macro-lbl {
+    font-size: 0.65rem;
+    color: var(--muted);
+    margin-top: 3px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* VARIANT NOTE */
+  .variant-note {
+    background: #f0f7f2;
+    border-left: 3px solid var(--accent2);
+    border-radius: 0 8px 8px 0;
+    padding: 10px 12px;
+    margin-top: 12px;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: #2a4a34;
+  }
+  .variant-note strong { font-weight: 700; }
+
+  .warning-note {
+    background: #fef8ec;
+    border-left: 3px solid #d4a017;
+    border-radius: 0 8px 8px 0;
+    padding: 10px 12px;
+    margin-top: 12px;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: #5a4010;
+  }
+
+  /* SUMMARY TABLE */
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+  }
+  .summary-table th {
+    background: var(--text);
+    color: #f5f0e8;
+    padding: 10px 8px;
+    text-align: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .summary-table th:first-child { text-align: left; padding-left: 12px; }
+  .summary-table td {
+    padding: 9px 8px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .summary-table td:first-child { text-align: left; padding-left: 12px; font-weight: 600; font-size: 0.78rem; }
+  .summary-table tr:last-child td { border-bottom: none; }
+  .summary-table tr:nth-child(even) td { background: var(--pill-bg); }
+
+  /* SHOPPING LIST */
+  .shop-section-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    padding: 8px 0 6px;
+    border-bottom: 2px solid var(--text);
+    margin-bottom: 4px;
+    margin-top: 16px;
+  }
+  .shop-section-title:first-child { margin-top: 0; }
+
+  .shop-table { width: 100%; border-collapse: collapse; }
+  .shop-table th {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    padding: 6px 4px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .shop-table th:first-child { text-align: left; }
+  .shop-table td {
+    padding: 8px 4px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+  .shop-table tr:last-child td { border-bottom: none; }
+
+  .prod-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .prod-unit {
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 1px;
+  }
+  .need-val {
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--muted);
+  }
+  .have-input {
+    width: 64px;
+    padding: 6px 8px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    background: var(--input-bg);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text);
+    display: block;
+    margin: 0 auto;
+    -moz-appearance: textfield;
+  }
+  .have-input::-webkit-outer-spin-button,
+  .have-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+  .have-input:focus {
+    outline: none;
+    border-color: var(--accent2);
+    background: white;
+  }
+  .buy-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+    transition: color 0.2s;
+  }
+  .buy-val.zero { color: var(--border); }
+  .buy-val.need { color: var(--accent); }
+
+  .buy-unit-val {
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 1px;
+  }
+
+  /* RESET BTN */
+  .reset-btn {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: var(--pill-bg);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    text-align: center;
+  }
+  .reset-btn:active { background: var(--border); }
+
+  .info-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.5;
+    background: var(--pill-bg);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+  }
+  .info-note strong { color: var(--text); }
+
+  /* DISPENSA */
+  .dispensa-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .dispensa-card-header {
+    padding: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+  }
+  .dispensa-card-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  .dispensa-card-sub {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .dispensa-body {
+    display: none;
+    border-top: 1px solid var(--border);
+    padding: 16px;
+  }
+  .dispensa-body.open { display: block; }
+
+  .spesa-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    gap: 8px;
+  }
+  .spesa-row:last-of-type { border-bottom: none; }
+  .spesa-row-name { font-size: 0.875rem; font-weight: 600; flex:1; }
+  .spesa-row-input {
+    width: 72px;
+    padding: 6px 8px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    background: var(--input-bg);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text);
+    -moz-appearance: textfield;
+  }
+  .spesa-row-input::-webkit-outer-spin-button,
+  .spesa-row-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+  .spesa-row-input:focus { outline: none; border-color: var(--accent2); background: white; }
+  .spesa-row-unit { font-size: 0.75rem; color: var(--muted); min-width: 28px; }
+  .spesa-stepper { display: flex; align-items: center; gap: 6px; }
+  .spesa-step-btn {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    border: 1.5px solid var(--border);
+    background: var(--pill-bg);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1;
+  }
+  .spesa-step-btn:active { background: var(--border); }
+
+  /* CUSTOM PRODUCTS FORM */
+  .custom-form { display: flex; flex-direction: column; gap: 10px; }
+  .custom-form-row { display: flex; gap: 8px; }
+  .custom-field { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+  .custom-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+  .custom-input {
+    flex: 1;
+    padding: 8px 10px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    background: var(--input-bg);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: var(--text);
+    width: 100%;
+    -moz-appearance: textfield;
+  }
+  .custom-input::-webkit-outer-spin-button,
+  .custom-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+  .custom-input:focus { outline: none; border-color: var(--accent2); background: white; }
+  .delete-btn {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 4px 6px;
+    border-radius: 6px;
+  }
+  .delete-btn:active { background: var(--border); }
+
+  .confirm-btn {
+    width: 100%;
+    padding: 13px;
+    background: var(--accent2);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 14px;
+  }
+  .confirm-btn:active { opacity: 0.85; }
+  .cancel-btn {
+    width: 100%;
+    padding: 13px;
+    background: var(--pill-bg);
+    color: var(--muted);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 14px;
+  }
+
+  .recipe-btn-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .recipe-btn {
+    padding: 10px 8px;
+    background: var(--pill-bg);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    color: var(--text);
+    line-height: 1.3;
+  }
+  .recipe-btn:active { background: var(--border); }
+  .recipe-btn .rnum {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    color: var(--accent);
+    display: block;
+    font-size: 0.9rem;
+  }
+
+  .preview-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .preview-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.875rem;
+  }
+  .preview-row:last-child { border-bottom: none; }
+  .preview-row-name { color: var(--text); }
+  .preview-row-amt { font-weight: 700; color: var(--accent); }
+
+  /* HO CUCINATO */
+  .ultima-display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--pill-bg);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 4px;
+  }
+  #ultima-spesa-text {
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+  .ultima-change-btn {
+    background: none;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .ultima-change-btn:active { background: var(--border); }
+
+  .spesa-note-area {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    background: var(--input-bg);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: var(--text);
+    resize: vertical;
+    margin-top: 4px;
+  }
+  .spesa-note-area:focus { outline: none; border-color: var(--accent2); background: white; }
+
+  .buy-row-name { font-size: 0.875rem; font-weight: 600; }
+  .buy-row-sub { font-size: 0.72rem; color: var(--muted); margin-top: 1px; }
+  .buy-row-amt {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .buy-row-amt.zero { color: var(--border); }
+  .buy-row-amt.need { color: var(--accent); }
+  .buy-row-amt.suggested { color: var(--warn); }
+  .buy-row-suggested { background: var(--warn-bg); }
+  .buy-row-suggested .buy-row-name { color: var(--warn); }
+  .buy-row-suggested .buy-row-sub { color: #b06010; }
+
+  .recipe-check-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .recipe-check-btn {
+    padding: 10px 10px;
+    background: var(--pill-bg);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    color: var(--text);
+    line-height: 1.3;
+    transition: all 0.15s;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .recipe-check-btn.selected {
+    background: #e8f2eb;
+    border-color: var(--accent2);
+    color: var(--accent2);
+  }
+  .recipe-check-btn .rnum {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.9rem;
+    min-width: 16px;
+  }
+  .recipe-check-btn.selected .rnum { color: var(--accent2); }
+  .recipe-check-btn:not(.selected) .rnum { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🥦 Meal Plan</h1>
+  <p>2 porzioni · ~1100 kcal/porzione · vegan</p>
+</header>
+
+<div class="tabs">
+  <button class="tab active" onclick="showTab(event, 'ricette')">Ricette</button>
+  <button class="tab" onclick="showTab(event, 'spesa')">Lista Spesa</button>
+  <button class="tab" onclick="showTab(event, 'dispensa')">Dispensa</button>
+  <button class="tab" onclick="showTab(event, 'info')">Info</button>
+</div>
+
+<!-- ==================== RICETTE ==================== -->
+<div id="tab-ricette" class="section active">
+  <!-- R1 -->
+  <div class="recipe-card" onclick="toggleCard(this)">
+    <div class="recipe-header">
+      <div class="recipe-num">1</div>
+      <div class="recipe-title-block">
+        <div class="recipe-title">Teglia Riso Venere + Tofu</div>
+        <div class="recipe-meta">
+          <span class="badge badge-forno">🔥 Forno</span>
+          <span class="badge badge-proteina">tofu</span>
+        </div>
+      </div>
+      <div class="recipe-kcal">1099</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="recipe-body">
+      <div class="section-label">Ingredienti (2 porzioni)</div>
+      <table class="ing-table">
+        <tr><td>Riso integrale (secco)</td><td>340 g</td></tr>
+        <tr><td>Tofu (cubetti)</td><td>360 g (2 panetti)</td></tr>
+        <tr><td>Broccoli surgelati</td><td>400 g</td></tr>
+        <tr><td>Olio EVO</td><td>50 g (~3,5 cucchiai)</td></tr>
+        <tr><td>Sale, paprika, aglio in polvere</td><td>q.b.</td></tr>
+      </table>
+      <div class="section-label">Preparazione</div>
+      <p class="prep-text">Cuoci il riso integrale a parte (cuociriso o pentola, 10–15 min se parboiled). Tofu e broccoli in teglia con olio e spezie, forno 200°C × 35 min. Unisci riso cotto al tofu e verdure nel piatto, mescola.</p>
+      <div class="section-label">Macros per porzione</div>
+      <div class="macros-grid">
+        <div class="macro-box"><div class="macro-val kcal">1104</div><div class="macro-lbl">kcal</div></div>
+        <div class="macro-box"><div class="macro-val prot">41g</div><div class="macro-lbl">prot</div></div>
+        <div class="macro-box"><div class="macro-val fat">43g</div><div class="macro-lbl">grassi</div></div>
+        <div class="macro-box"><div class="macro-val carb">141g</div><div class="macro-lbl">carb</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- R2 -->
+  <div class="recipe-card" onclick="toggleCard(this)">
+    <div class="recipe-header">
+      <div class="recipe-num">2</div>
+      <div class="recipe-title-block">
+        <div class="recipe-title">Dahl Lenticchie + Couscous</div>
+        <div class="recipe-meta">
+          <span class="badge badge-pentola">🫕 Pentola</span>
+          <span class="badge badge-proteina">lenticchie</span>
+        </div>
+      </div>
+      <div class="recipe-kcal">1110</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="recipe-body">
+      <div class="section-label">Ingredienti (2 porzioni)</div>
+      <table class="ing-table">
+        <tr><td>Lenticchie secche</td><td>260 g</td></tr>
+        <tr><td>Couscous (secco)</td><td>200 g</td></tr>
+        <tr><td>Broccoli surgelati</td><td>400 g</td></tr>
+        <tr><td>Olio EVO</td><td>40 g (~3 cucchiai)</td></tr>
+        <tr><td>Latte di soia (per "panna")</td><td>150 ml</td></tr>
+        <tr><td>Sale, curcuma, cumino, pepe</td><td>q.b.</td></tr>
+      </table>
+      <div class="section-label">Preparazione</div>
+      <p class="prep-text">Cuoci lenticchie + broccoli in ~1L acqua per 30 min. Aggiungi il mix latte+olio (panna fai-da-te) e spezie, spegni. Idrata il couscous a parte: 200 ml acqua bollente salata su 200 g couscous, copri 5 min, sgrana con forchetta. Unisci nel piatto.</p>
+      <div class="section-label">Macros per porzione</div>
+      <div class="macros-grid">
+        <div class="macro-box"><div class="macro-val kcal">1110</div><div class="macro-lbl">kcal</div></div>
+        <div class="macro-box"><div class="macro-val prot">54g</div><div class="macro-lbl">prot</div></div>
+        <div class="macro-box"><div class="macro-val fat">24g</div><div class="macro-lbl">grassi</div></div>
+        <div class="macro-box"><div class="macro-val carb">171g</div><div class="macro-lbl">carb</div></div>
+      </div>
+      <div class="variant-note"><strong>Variante ceci:</strong> Sostituisci lenticchie con 260 g ceci secchi (ammollati e lessati). Olio scendi a 30 g. → ~1101 kcal | P: 47g | F: 26g | C: 176g</div>
+    </div>
+  </div>
+
+  <!-- R3 -->
+  <div class="recipe-card" onclick="toggleCard(this)">
+    <div class="recipe-header">
+      <div class="recipe-num">3</div>
+      <div class="recipe-title-block">
+        <div class="recipe-title">Minestrone con Farro + Fagioli</div>
+        <div class="recipe-meta">
+          <span class="badge badge-pentola">🫕 Pentola</span>
+          <span class="badge badge-proteina">fagioli</span>
+        </div>
+      </div>
+      <div class="recipe-kcal">1097</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="recipe-body">
+      <div class="section-label">Ingredienti (2 porzioni)</div>
+      <table class="ing-table">
+        <tr><td>Fagioli secchi (ammollati e lessati)</td><td>250 g → ~625 g cotti</td></tr>
+        <tr><td>Farro perlato</td><td>250 g</td></tr>
+        <tr><td>Minestrone surgelato (busta)</td><td>500 g</td></tr>
+        <tr><td>Olio EVO</td><td>30 g (~2 cucchiai)</td></tr>
+        <tr><td>Sale</td><td>q.b.</td></tr>
+      </table>
+      <div class="section-label">Preparazione</div>
+      <p class="prep-text">Ammollo fagioli 8–12h. Bollitura vivace 10 min (obbligatoria), poi cuoci altri 40 min nella stessa acqua. Aggiungi minestrone surgelato e farro, cuoci altri 25–30 min. Olio a crudo nel piatto.</p>
+      <div class="section-label">Macros per porzione</div>
+      <div class="macros-grid">
+        <div class="macro-box"><div class="macro-val kcal">1097</div><div class="macro-lbl">kcal</div></div>
+        <div class="macro-box"><div class="macro-val prot">44g</div><div class="macro-lbl">prot</div></div>
+        <div class="macro-box"><div class="macro-val fat">21g</div><div class="macro-lbl">grassi</div></div>
+        <div class="macro-box"><div class="macro-val carb">189g</div><div class="macro-lbl">carb</div></div>
+      </div>
+      <div class="warning-note"><strong>Nota fagioli:</strong> Bollitura vivace 10 min obbligatoria (fasina). Per cannellini e borlotti il rischio è minore ma stesso processo per sicurezza.</div>
+    </div>
+  </div>
+
+  <!-- R4 -->
+  <div class="recipe-card" onclick="toggleCard(this)">
+    <div class="recipe-header">
+      <div class="recipe-num">4</div>
+      <div class="recipe-title-block">
+        <div class="recipe-title">Riso al Forno con Ceci</div>
+        <div class="recipe-meta">
+          <span class="badge badge-forno">🔥 Forno</span>
+          <span class="badge badge-proteina">ceci</span>
+        </div>
+      </div>
+      <div class="recipe-kcal">1106</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="recipe-body">
+      <div class="section-label">Ingredienti (2 porzioni)</div>
+      <table class="ing-table">
+        <tr><td>Riso integrale (secco)</td><td>220 g</td></tr>
+        <tr><td>Ceci secchi (ammollati e lessati)</td><td>250 g → ~625 g cotti</td></tr>
+        <tr><td>Broccoli surgelati</td><td>400 g</td></tr>
+        <tr><td>Passata di pomodoro</td><td>700 g (1 bottiglia intera)</td></tr>
+        <tr><td>Olio EVO</td><td>30 g (~2 cucchiai)</td></tr>
+        <tr><td>Sale, paprika</td><td>q.b.</td></tr>
+        <tr><td>Acqua</td><td>q.b. per coprire il riso a filo</td></tr>
+      </table>
+      <div class="section-label">Preparazione</div>
+      <p class="prep-text">In teglia alta metti riso crudo, ceci cotti, broccoli, passata, olio. Aggiungi acqua fino a coprire il riso a filo (~300–400 ml). Mescola. Copri con alluminio. Forno 200°C × 35 min coperto. Togli alluminio, 10 min scoperti per asciugare.</p>
+      <div class="section-label">Macros per porzione</div>
+      <div class="macros-grid">
+        <div class="macro-box"><div class="macro-val kcal">1166</div><div class="macro-lbl">kcal</div></div>
+        <div class="macro-box"><div class="macro-val prot">44g</div><div class="macro-lbl">prot</div></div>
+        <div class="macro-box"><div class="macro-val fat">28g</div><div class="macro-lbl">grassi</div></div>
+        <div class="macro-box"><div class="macro-val carb">194g</div><div class="macro-lbl">carb</div></div>
+      </div>
+      <div class="variant-note"><strong>Variante lenticchie:</strong> Sostituisci ceci con 250 g lenticchie secche. Lessale prima 20 min, poi in teglia. → ~1091 kcal | P: 47g | F: 19g | C: 186g</div>
+    </div>
+  </div>
+
+  <!-- R5 -->
+  <div class="recipe-card" onclick="toggleCard(this)">
+    <div class="recipe-header">
+      <div class="recipe-num">5</div>
+      <div class="recipe-title-block">
+        <div class="recipe-title">Pasta al Forno "Ignorante"</div>
+        <div class="recipe-meta">
+          <span class="badge badge-forno">🔥 Forno</span>
+          <span class="badge badge-proteina">lenticchie</span>
+        </div>
+      </div>
+      <div class="recipe-kcal">1111</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="recipe-body">
+      <div class="section-label">Ingredienti (2 porzioni)</div>
+      <table class="ing-table">
+        <tr><td>Pasta corta (cruda)</td><td>200 g</td></tr>
+        <tr><td>Lenticchie secche (lessate a parte)</td><td>220 g → ~550 g cotte</td></tr>
+        <tr><td>Broccoli surgelati</td><td>400 g</td></tr>
+        <tr><td>Passata di pomodoro</td><td>700 g (1 bottiglia)</td></tr>
+        <tr><td>Olio EVO</td><td>50 g (~3,5 cucchiai)</td></tr>
+        <tr><td>Latte di soia (per "panna")</td><td>100 ml</td></tr>
+        <tr><td>Sale, origano</td><td>q.b.</td></tr>
+        <tr><td>Acqua</td><td>q.b. per coprire la pasta a filo</td></tr>
+      </table>
+      <div class="section-label">Preparazione</div>
+      <p class="prep-text">Lessa le lenticchie a parte (20–25 min, scola). In teglia alta metti: pasta cruda, lenticchie cotte, passata, olio, mix latte+olio, acqua fino a coprire la pasta a filo. Mescola. Copri ermeticamente con alluminio. Forno 200°C × 30 min coperto. Rimuovi alluminio, altri 15 min di grill.</p>
+      <div class="section-label">Macros per porzione</div>
+      <div class="macros-grid">
+        <div class="macro-box"><div class="macro-val kcal">1111</div><div class="macro-lbl">kcal</div></div>
+        <div class="macro-box"><div class="macro-val prot">47g</div><div class="macro-lbl">prot</div></div>
+        <div class="macro-box"><div class="macro-val fat">30g</div><div class="macro-lbl">grassi</div></div>
+        <div class="macro-box"><div class="macro-val carb">164g</div><div class="macro-lbl">carb</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- R6 -->
+  <div class="recipe-card" onclick="toggleCard(this)">
+    <div class="recipe-header">
+      <div class="recipe-num">6</div>
+      <div class="recipe-title-block">
+        <div class="recipe-title">Teglia Tofu e Patate</div>
+        <div class="recipe-meta">
+          <span class="badge badge-forno">🔥 Forno</span>
+          <span class="badge badge-proteina">tofu</span>
+        </div>
+      </div>
+      <div class="recipe-kcal">1090</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="recipe-body">
+      <div class="section-label">Ingredienti (2 porzioni)</div>
+      <table class="ing-table">
+        <tr><td>Tofu (cubetti)</td><td>360 g (2 panetti)</td></tr>
+        <tr><td>Patate (cubetti)</td><td>1400 g</td></tr>
+        <tr><td>Broccoli surgelati</td><td>400 g</td></tr>
+        <tr><td>Olio EVO</td><td>60 g (~4 cucchiai)</td></tr>
+        <tr><td>Sale, rosmarino, spezie</td><td>q.b.</td></tr>
+      </table>
+      <div class="section-label">Preparazione</div>
+      <p class="prep-text">Taglia tofu e patate a cubetti. Metti tutto in teglia grande (o due). Versa l'olio, mescola bene finché tutto è unto. Forno 200°C × 40 min. Zero interventi.</p>
+      <div class="section-label">Macros per porzione</div>
+      <div class="macros-grid">
+        <div class="macro-box"><div class="macro-val kcal">1090</div><div class="macro-lbl">kcal</div></div>
+        <div class="macro-box"><div class="macro-val prot">42g</div><div class="macro-lbl">prot</div></div>
+        <div class="macro-box"><div class="macro-val fat">44g</div><div class="macro-lbl">grassi</div></div>
+        <div class="macro-box"><div class="macro-val carb">138g</div><div class="macro-lbl">carb</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- R7 -->
+  <div class="recipe-card" onclick="toggleCard(this)">
+    <div class="recipe-header">
+      <div class="recipe-num">7</div>
+      <div class="recipe-title-block">
+        <div class="recipe-title">Couscous + Ceci Croccanti</div>
+        <div class="recipe-meta">
+          <span class="badge badge-forno">🔥 Forno + Bollitore</span>
+          <span class="badge badge-proteina">ceci</span>
+        </div>
+      </div>
+      <div class="recipe-kcal">1130</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="recipe-body">
+      <div class="section-label">Ingredienti (2 porzioni)</div>
+      <table class="ing-table">
+        <tr><td>Ceci secchi (ammollati e lessati)</td><td>260 g → ~650 g cotti</td></tr>
+        <tr><td>Couscous (secco)</td><td>230 g</td></tr>
+        <tr><td>Broccoli surgelati</td><td>400 g</td></tr>
+        <tr><td>Olio EVO</td><td>35 g (~2,5 cucchiai)</td></tr>
+        <tr><td>Paprika, sale</td><td>q.b.</td></tr>
+      </table>
+      <div class="section-label">Preparazione</div>
+      <p class="prep-text">Metti i ceci cotti e i broccoli in teglia con olio, paprika e sale. Forno 200°C × 30 min finché i ceci sono croccanti. Idrata il couscous: 230 ml acqua bollente salata su 230 g couscous, copri 5 min, sgrana. Unisci al piatto.</p>
+      <div class="section-label">Macros per porzione</div>
+      <div class="macros-grid">
+        <div class="macro-box"><div class="macro-val kcal">1130</div><div class="macro-lbl">kcal</div></div>
+        <div class="macro-box"><div class="macro-val prot">46g</div><div class="macro-lbl">prot</div></div>
+        <div class="macro-box"><div class="macro-val fat">27g</div><div class="macro-lbl">grassi</div></div>
+        <div class="macro-box"><div class="macro-val carb">182g</div><div class="macro-lbl">carb</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- R8 -->
+  <div class="recipe-card" onclick="toggleCard(this)">
+    <div class="recipe-header">
+      <div class="recipe-num">8</div>
+      <div class="recipe-title-block">
+        <div class="recipe-title">Fagioli con Polenta</div>
+        <div class="recipe-meta">
+          <span class="badge badge-pentola">🫕 Pentola</span>
+          <span class="badge badge-proteina">fagioli</span>
+        </div>
+      </div>
+      <div class="recipe-kcal">1086</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="recipe-body">
+      <div class="section-label">Ingredienti (2 porzioni)</div>
+      <table class="ing-table">
+        <tr><td>Fagioli secchi (ammollati e lessati)</td><td>290 g → ~725 g cotti</td></tr>
+        <tr><td>Polenta istantanea</td><td>240 g</td></tr>
+        <tr><td>Broccoli surgelati</td><td>400 g</td></tr>
+        <tr><td>Olio EVO</td><td>25 g (~2 cucchiai)</td></tr>
+        <tr><td>Sale</td><td>q.b.</td></tr>
+      </table>
+      <div class="section-label">Preparazione</div>
+      <p class="prep-text">Ammollo fagioli 8–12h. Bollitura vivace 10 min, poi cuoci altri 40 min. Togli i fagioli con una schiumarola. Stessa acqua: broccoli 5 min, togli. Stessa acqua: versa la polenta a pioggia mescolando, cuoci 5 min. Servi polenta nel piatto, fagioli sopra con olio e sale, broccoli a lato.</p>
+      <div class="section-label">Macros per porzione</div>
+      <div class="macros-grid">
+        <div class="macro-box"><div class="macro-val kcal">1104</div><div class="macro-lbl">kcal</div></div>
+        <div class="macro-box"><div class="macro-val prot">46g</div><div class="macro-lbl">prot</div></div>
+        <div class="macro-box"><div class="macro-val fat">20g</div><div class="macro-lbl">grassi</div></div>
+        <div class="macro-box"><div class="macro-val carb">194g</div><div class="macro-lbl">carb</div></div>
+      </div>
+      <div class="warning-note"><strong>Nota fagioli:</strong> Bollitura vivace 10 min obbligatoria (fasina). Per cannellini e borlotti il rischio è minore ma stesso processo per sicurezza.</div>
+    </div>
+  </div>
+
+  <!-- R9 -->
+  <div class="recipe-card" onclick="toggleCard(this)">
+    <div class="recipe-header">
+      <div class="recipe-num">9</div>
+      <div class="recipe-title-block">
+        <div class="recipe-title">Pasta e Lenticchie</div>
+        <div class="recipe-meta">
+          <span class="badge badge-pentola">🫕 Pentola</span>
+          <span class="badge badge-proteina">lenticchie</span>
+        </div>
+      </div>
+      <div class="recipe-kcal">1108</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="recipe-body">
+      <div class="section-label">Ingredienti (2 porzioni)</div>
+      <table class="ing-table">
+        <tr><td>Lenticchie secche</td><td>320 g</td></tr>
+        <tr><td>Pasta corta</td><td>190 g</td></tr>
+        <tr><td>Broccoli surgelati</td><td>400 g</td></tr>
+        <tr><td>Olio EVO (a crudo)</td><td>30 g (~2 cucchiai)</td></tr>
+        <tr><td>Sale</td><td>q.b.</td></tr>
+      </table>
+      <div class="section-label">Preparazione</div>
+      <p class="prep-text">Acqua non salata a bollore. Butta le lenticchie, cuoci 20 min. Aggiungi sale, pasta e broccoli nella stessa acqua. Cuoci altri 12 min mescolando. Olio a crudo nel piatto.</p>
+      <div class="section-label">Macros per porzione</div>
+      <div class="macros-grid">
+        <div class="macro-box"><div class="macro-val kcal">1108</div><div class="macro-lbl">kcal</div></div>
+        <div class="macro-box"><div class="macro-val prot">58g</div><div class="macro-lbl">prot</div></div>
+        <div class="macro-box"><div class="macro-val fat">19g</div><div class="macro-lbl">grassi</div></div>
+        <div class="macro-box"><div class="macro-val carb">178g</div><div class="macro-lbl">carb</div></div>
+      </div>
+      <div class="variant-note"><strong>Variante ceci:</strong> Sostituisci lenticchie con 300 g ceci secchi. Cuocili 60 min prima in acqua non salata, poi aggiungi sale, pasta e broccoli, altri 12 min. Olio 35 g. → ~1113 kcal | P: 47g | F: 29g | C: 174g</div>
+    </div>
+  </div>
+
+  <!-- R10 -->
+  <div class="recipe-card" onclick="toggleCard(this)">
+    <div class="recipe-header">
+      <div class="recipe-num">10</div>
+      <div class="recipe-title-block">
+        <div class="recipe-title">Zuppa Ceci e Farro</div>
+        <div class="recipe-meta">
+          <span class="badge badge-pentola">🫕 Pentola</span>
+          <span class="badge badge-proteina">ceci</span>
+        </div>
+      </div>
+      <div class="recipe-kcal">1090</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="recipe-body">
+      <div class="section-label">Ingredienti (2 porzioni)</div>
+      <table class="ing-table">
+        <tr><td>Ceci secchi (ammollati e lessati)</td><td>270 g</td></tr>
+        <tr><td>Farro perlato</td><td>220 g</td></tr>
+        <tr><td>Broccoli surgelati</td><td>400 g</td></tr>
+        <tr><td>Olio EVO</td><td>35 g (~2,5 cucchiai)</td></tr>
+        <tr><td>Sale, rosmarino, alloro</td><td>q.b.</td></tr>
+      </table>
+      <div class="section-label">Preparazione</div>
+      <p class="prep-text">Metti i ceci lessati in pentola con ~1,2L acqua salata. Aggiungi farro e broccoli. Cuoci 30–35 min finché il farro è morbido. Deve risultare denso, quasi cremoso. Olio a crudo nel piatto o in cottura.</p>
+      <div class="section-label">Macros per porzione</div>
+      <div class="macros-grid">
+        <div class="macro-box"><div class="macro-val kcal">1090</div><div class="macro-lbl">kcal</div></div>
+        <div class="macro-box"><div class="macro-val prot">46g</div><div class="macro-lbl">prot</div></div>
+        <div class="macro-box"><div class="macro-val fat">29g</div><div class="macro-lbl">grassi</div></div>
+        <div class="macro-box"><div class="macro-val carb">171g</div><div class="macro-lbl">carb</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ==================== INFO & RECAP ==================== -->
+<div id="tab-info" class="section">
+  
+  <div class="info-note">
+    <strong>Meal Plan Vegan (2 porzioni)</strong><br>
+    Media: ~1111 kcal | P: 47g | F: 29g | C: 172g per porzione
+  </div>
+
+  <div class="section-label">Valori Nutrizionali Medi (per porzione)</div>
+  <table class="summary-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>kcal</th>
+        <th>P</th>
+        <th>F</th>
+        <th>C</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1 · Riso Integrale + Tofu</td><td>1104</td><td>41g</td><td>43g</td><td>141g</td></tr>
+      <tr><td>2 · Dahl Lenticchie + Cous</td><td>1110</td><td>54g</td><td>24g</td><td>171g</td></tr>
+      <tr><td>3 · Minestrone Farro + Fagioli</td><td>1097</td><td>44g</td><td>21g</td><td>189g</td></tr>
+      <tr><td>4 · Riso al Forno + Ceci</td><td>1166</td><td>44g</td><td>28g</td><td>194g</td></tr>
+      <tr><td>5 · Pasta al Forno Ignorante</td><td>1111</td><td>47g</td><td>30g</td><td>164g</td></tr>
+      <tr><td>6 · Tofu e Patate</td><td>1090</td><td>42g</td><td>44g</td><td>138g</td></tr>
+      <tr><td>7 · Couscous + Ceci Croccanti</td><td>1130</td><td>46g</td><td>27g</td><td>182g</td></tr>
+      <tr><td>8 · Fagioli con Polenta</td><td>1104</td><td>46g</td><td>20g</td><td>194g</td></tr>
+      <tr><td>9 · Pasta e Lenticchie</td><td>1108</td><td>58g</td><td>19g</td><td>178g</td></tr>
+      <tr><td>10 · Zuppa Ceci e Farro</td><td>1090</td><td>46g</td><td>29g</td><td>171g</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-label">Note Operative</div>
+  <div class="info-note">
+    <strong>Legenda:</strong> Quantità in grammi <strong>secchi/crudi</strong> (tranne patate e broccoli). Panna vegetale = latte di soia + olio mescolati.<br><br>
+    <strong>Preparazione:</strong> Per 2 porzioni (pranzo + cena). Si conservano in frigo 3–4 giorni. Fagioli e ceci richiedono ammollo la notte prima. Polenta: usa quella istantanea.
+  </div>
+
+  <div class="section-label">Sincronizzazione (PC ↔ Telefono)</div>
+  <div class="info-note" style="background:#f0f2f7;border-left:3px solid #2563a8">
+    Usa questa sezione per trasferire i dati della tua dispensa tra dispositivi.
+    <textarea id="sync-area" class="spesa-note-area" style="min-height:80px;font-size:0.7rem;margin-top:10px" placeholder="Codice di sincronizzazione..."></textarea>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px">
+      <button class="recipe-btn" style="text-align:center" onclick="exportSyncData()">Copia Dati 📋</button>
+      <button class="recipe-btn" style="text-align:center" onclick="importSyncData()">Importa Dati 📥</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ==================== SPESA ==================== -->
+<div id="tab-spesa" class="section">
+
+  <div id="spesa-empty" style="display:none" class="info-note">🎉 Dispensa completa, niente da comprare.</div>
+
+  <div id="buy-section-frigo">
+    <div class="shop-section-title" style="margin-top:0">🧊 Frigo / Freezer</div>
+    <table class="shop-table">
+      <thead><tr><th>Prodotto</th><th style="text-align:right">Da comprare</th></tr></thead>
+      <tbody id="buy-frigo"></tbody>
+    </table>
+  </div>
+
+  <div id="buy-section-secchi">
+    <div class="shop-section-title">🌾 Secchi</div>
+    <table class="shop-table">
+      <thead><tr><th>Prodotto</th><th style="text-align:right">Da comprare</th></tr></thead>
+      <tbody id="buy-secchi"></tbody>
+    </table>
+  </div>
+
+  <div id="buy-section-liquidi">
+    <div class="shop-section-title">🫙 Liquidi</div>
+    <table class="shop-table">
+      <thead><tr><th>Prodotto</th><th style="text-align:right">Da comprare</th></tr></thead>
+      <tbody id="buy-liquidi"></tbody>
+    </table>
+  </div>
+
+  <div id="buy-section-custom" style="display:none">
+    <div class="shop-section-title">➕ Extra</div>
+    <table class="shop-table">
+      <thead><tr><th>Prodotto</th><th style="text-align:right">Da comprare</th></tr></thead>
+      <tbody id="buy-custom"></tbody>
+    </table>
+  </div>
+
+  <!-- NOTE LIBERE -->
+  <div class="shop-section-title" style="margin-top:20px">📝 Note</div>
+  <textarea id="spesa-note" class="spesa-note-area" placeholder="Altre cose da comprare..." oninput="saveNotes(this.value)"></textarea>
+
+  <!-- CONSIGLIATI -->
+  <div id="suggested-section" style="display:none">
+    <div class="shop-section-title" style="margin-top:20px;color:var(--warn);border-bottom-color:var(--warn)">⚠︎ Consigliati (stanno per finire)</div>
+    <div class="info-note" style="background:var(--warn-bg);color:#7a4010;margin-bottom:8px;font-size:0.78rem">Questi prodotti bastano ancora, ma finiscono dopo la prossima cottura. Conviene prenderli ora.</div>
+    <table class="shop-table">
+      <thead><tr><th>Prodotto</th><th style="text-align:right">Da comprare</th></tr></thead>
+      <tbody id="buy-suggested"></tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- ==================== DISPENSA ==================== -->
+<div id="tab-dispensa" class="section">
+
+  <!-- DISPENSA ATTUALE -->
+  <div class="dispensa-card">
+    <div class="dispensa-card-header" onclick="toggleDispensaCard('dispensa-attuale')">
+      <div>
+        <div class="dispensa-card-title">📦 Dispensa attuale</div>
+        <div class="dispensa-card-sub">Quanto hai in casa (in grammi / unità base)</div>
+      </div>
+      <div class="chevron" id="chev-dispensa-attuale">▼</div>
+    </div>
+    <div class="dispensa-body" id="body-dispensa-attuale">
+      <div class="shop-section-title" style="margin-top:0;border-bottom:1px solid var(--border);padding-bottom:4px">🧊 Frigo / Freezer</div>
+      <table class="shop-table"><thead><tr><th>Prodotto</th><th style="text-align:center">Serve</th><th style="text-align:center">Ho</th></tr></thead><tbody id="disp-frigo"></tbody></table>
+      <div class="shop-section-title">🌾 Secchi</div>
+      <table class="shop-table"><thead><tr><th>Prodotto</th><th style="text-align:center">Serve</th><th style="text-align:center">Ho</th></tr></thead><tbody id="disp-secchi"></tbody></table>
+      <div class="shop-section-title">🫙 Liquidi</div>
+      <table class="shop-table"><thead><tr><th>Prodotto</th><th style="text-align:center">Serve</th><th style="text-align:center">Ho</th></tr></thead><tbody id="disp-liquidi"></tbody></table>
+      <div class="shop-section-title" id="disp-custom-title" style="display:none">➕ Extra</div>
+      <table class="shop-table" id="disp-custom-table" style="display:none"><thead><tr><th>Prodotto</th><th style="text-align:center">Serve</th><th style="text-align:center">Ho</th><th></th></tr></thead><tbody id="disp-custom"></tbody></table>
+      <button class="reset-btn" onclick="resetAll()">Azzera dispensa</button>
+    </div>
+  </div>
+
+  <div style="height:12px"></div>
+
+  <!-- PRODOTTI CUSTOM -->
+  <div class="dispensa-card">
+    <div class="dispensa-card-header" onclick="toggleDispensaCard('custom')">
+      <div>
+        <div class="dispensa-card-title">➕ Prodotti extra</div>
+        <div class="dispensa-card-sub">Aggiungi prodotti fuori dal meal plan</div>
+      </div>
+      <div class="chevron" id="chev-custom">▼</div>
+    </div>
+    <div class="dispensa-body" id="body-custom">
+      <div class="custom-form">
+        <div class="custom-field">
+          <label class="custom-label">Nome prodotto</label>
+          <input class="custom-input" id="cf-nome" type="text" placeholder="es. Yogurt di soia">
+        </div>
+        <div class="custom-form-row">
+          <div class="custom-field">
+            <label class="custom-label">Unità (g, pz, bott…)</label>
+            <input class="custom-input" id="cf-unit" type="text" placeholder="es. g">
+          </div>
+          <div class="custom-field">
+            <label class="custom-label">Dimensione confezione</label>
+            <input class="custom-input" id="cf-size" type="number" min="1" placeholder="es. 500">
+          </div>
+        </div>
+        <div class="custom-form-row">
+          <div class="custom-field">
+            <label class="custom-label">Scorta minima (Serve)</label>
+            <input class="custom-input" id="cf-need" type="number" min="0" placeholder="es. 1000">
+          </div>
+          <div class="custom-field">
+            <label class="custom-label">In casa (Ho)</label>
+            <input class="custom-input" id="cf-have" type="number" min="0" placeholder="es. 200">
+          </div>
+        </div>
+        <button class="confirm-btn" style="margin-top:10px" onclick="addCustomProduct()">+ Aggiungi prodotto</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:12px"></div>
+  <div class="dispensa-card">
+    <div class="dispensa-card-header" onclick="toggleDispensaCard('spesa-fatta')">
+      <div>
+        <div class="dispensa-card-title">🛒 Spesa fatta</div>
+        <div class="dispensa-card-sub">Aggiungi alla dispensa quello che hai comprato</div>
+      </div>
+      <div class="chevron" id="chev-spesa-fatta">▼</div>
+    </div>
+    <div class="dispensa-body" id="body-spesa-fatta">
+      <div class="info-note" style="margin-bottom:12px">Valori pre-popolati dalla colonna "Compra". Modifica se hai comprato di più o di meno, poi conferma.</div>
+      <div id="spesa-fatta-rows"></div>
+      <button class="confirm-btn" onclick="confermaSpesa()">✓ Conferma spesa</button>
+    </div>
+  </div>
+
+  <!-- HO CUCINATO -->
+  <div class="dispensa-card" style="margin-top:12px">
+    <div class="dispensa-card-header" onclick="toggleDispensaCard('cucinato')">
+      <div>
+        <div class="dispensa-card-title">🍳 Ho cucinato</div>
+        <div class="dispensa-card-sub">Scala le ricette cucinate dalla dispensa</div>
+      </div>
+      <div class="chevron" id="chev-cucinato">▼</div>
+    </div>
+    <div class="dispensa-body" id="body-cucinato">
+
+      <!-- ultima ricetta prima della spesa -->
+      <div class="section-label" style="margin-top:0">Ultima ricetta cucinata prima dell'ultima spesa</div>
+      <div id="ultima-spesa-display" class="ultima-display">
+        <span id="ultima-spesa-text">Non impostata</span>
+        <button class="ultima-change-btn" onclick="toggleUltimaEdit()">Cambia</button>
+      </div>
+      <div id="ultima-spesa-edit" style="display:none">
+        <div class="recipe-btn-grid" id="ultima-spesa-grid"></div>
+      </div>
+
+      <!-- ricette da scalare -->
+      <div class="section-label" style="margin-top:14px">Ricette cucinate da allora <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted)">(seleziona tutte)</span></div>
+      <div class="recipe-check-grid" id="recipe-check-grid"></div>
+
+      <!-- preview e conferma -->
+      <div id="cucinato-preview" style="display:none;margin-top:12px">
+        <div class="preview-title">Ingredienti da scalare:</div>
+        <div id="cucinato-preview-rows"></div>
+      </div>
+      <button class="confirm-btn" onclick="confermaCucinato()" style="margin-top:14px">✓ Scala dalla dispensa</button>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ==================== TABS ====================
+function showTab(event, name) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ==================== RECIPE TOGGLE ====================
+function toggleCard(card) {
+  card.classList.toggle('open');
+}
+
+// ==================== SHOPPING LIST ====================
+const shopData = {
+  frigo: [
+    { id: 'tofu',        name: 'Tofu',                unit: '4 panetti da 180g',   need: 720,                   storeSize: 180,  storeLabel: 'panetti da 180g', useUnits: true },
+    { id: 'patate',      name: 'Patate',               unit: '1,5 kg',              need: 1400,                  storeSize: 1,    storeLabel: 'g',              step: 100 },
+    { id: 'broccoli',    name: 'Broccoli surgelati',   unit: '5 buste da 500g',     need: 2800,                  storeSize: 500,  storeLabel: 'buste da 500g' },
+    { id: 'minestrone',  name: 'Minestrone surgelato', unit: '2 buste da 750g',     need: 1500,                  storeSize: 750,  storeLabel: 'buste da 750g' },
+  ],
+  secchi: [
+    { id: 'lenticchie',  name: 'Lenticchie secche',   unit: 'buste da 500g',       need: 800,                   storeSize: 500,  storeLabel: 'buste da 500g' },
+    { id: 'ceci',        name: 'Ceci secchi',          unit: 'buste da 500g',       need: 780,                   storeSize: 500,  storeLabel: 'buste da 500g' },
+    { id: 'fagioli',     name: 'Fagioli secchi',       unit: 'buste da 500g',       need: 540,                   storeSize: 500,  storeLabel: 'buste da 500g' },
+    { id: 'pasta',       name: 'Pasta corta',          unit: '500g',                need: 390,                   storeSize: 500,  storeLabel: 'pacchi da 500g' },
+    { id: 'couscous',    name: 'Couscous',             unit: '1 kg',                need: 430,                   storeSize: 1000, storeLabel: 'pacchi da 1kg' },
+    { id: 'farro',       name: 'Farro perlato',        unit: '500g',                need: 470,                   storeSize: 500,  storeLabel: 'pacchi da 500g' },
+    { id: 'riso',        name: 'Riso integrale',       unit: '1 kg',                need: 560,                   storeSize: 1000, storeLabel: 'pacchi da 1kg' },
+    { id: 'polenta',     name: 'Polenta istantanea',   unit: '500g',                need: 240,                   storeSize: 500,  storeLabel: 'pacchi da 500g' },
+  ],
+  liquidi: [
+    { id: 'olio',        name: 'Olio EVO',             unit: '1 bottiglia da 1L',   need: 385,                   storeSize: 1000, storeLabel: 'bottiglie da 1L' },
+    { id: 'passata',     name: 'Passata di pomodoro',  unit: '2 bottiglie da 700g', need: 1400,                  storeSize: 700,  storeLabel: 'bottiglie da 700g', useUnits: true },
+    { id: 'latte_soia',  name: 'Latte di soia',        unit: 'brick da 1L',         need: 2750,                  storeSize: 1000, storeLabel: 'brick da 1L', suggestedBuffer: 1000 },
+  ]
+};
+
+// ==================== STATE MANAGEMENT ====================
+const Store = {
+  inventory: {},
+  customs: [],
+  storageKey: 'mealplan_shop_v1',
+  customKey: 'mealplan_custom_v1',
+
+  init() {
+    try {
+      this.inventory = JSON.parse(localStorage.getItem(this.storageKey)) || {};
+      this.customs = JSON.parse(localStorage.getItem(this.customKey)) || [];
+    } catch(e) {
+      this.inventory = {};
+      this.customs = [];
+    }
+  },
+
+  persist() {
+    localStorage.setItem(this.storageKey, JSON.stringify(this.inventory));
+    localStorage.setItem(this.customKey, JSON.stringify(this.customs));
+  },
+
+  update(id, val, silent = false) {
+    if (val === '' || val === null) delete this.inventory[id];
+    else this.inventory[id] = val;
+    this.persist();
+    if (!silent) debouncedRefresh();
+  },
+
+  setCustoms(items) {
+    this.customs = items;
+    this.persist();
+    buildShopTable();
+  },
+
+  commit() {
+    this.persist();
+    buildShopTable();
+  }
+};
+Store.init();
+
+// Alias per retrocompatibilità e semplicità
+function loadSaved() { return Store.inventory; }
+function loadCustom() { return Store.customs; }
+function saveVal(id, val) { Store.update(id, val); }
+function saveNotes(val) { Store.update('_notes', val); }
+
+let refreshTimer;
+function debouncedRefresh() {
+  clearTimeout(refreshTimer);
+  refreshTimer = setTimeout(refreshBuyList, 250);
+}
+
+function calcBuy(need, have) {
+  const h = parseFloat(have);
+  if (isNaN(h)) return need;
+  return Math.max(0, need - h);
+}
+
+function buildBuyRow(item, saved) {
+  const have = saved[item.id] !== undefined ? saved[item.id] : '';
+  const buyBase = calcBuy(item.need, have);
+  const storeSize = item.storeSize || 1;
+  const buyUnits = buyBase > 0 ? Math.ceil(buyBase / storeSize) : 0;
+  const cls = buyUnits === 0 ? 'zero' : 'need';
+  const tr = document.createElement('tr');
+  tr.innerHTML =
+    '<td><div class="buy-row-name">' + item.name + '</div><div class="buy-row-sub">' + item.storeLabel + '</div></td>' +
+    '<td><div class="buy-row-amt ' + cls + '" id="buyrow-' + item.id + '">' + (buyUnits > 0 ? buyUnits : '—') + '</div></td>';
+  return tr;
+}
+
+function buildDispRow(item, saved) {
+  const haveBase = parseFloat(saved[item.id]) || 0;
+  const storeSize = item.storeSize || 1;
+  const unit = item.suffix || 'g';
+  
+  // Usiamo le unità (panetti/bottiglie) SOLO se l'item ha useUnits: true
+  const useUnits = !!item.useUnits;
+  const displayVal = useUnits ? parseFloat((haveBase / storeSize).toFixed(2)) : haveBase;
+  const displayUnit = useUnits ? item.storeLabel.split(' ')[0] : unit;
+  const needDisplay = item.need + unit;
+
+  const tr = document.createElement('tr');
+  tr.innerHTML =
+    '<td><div class="prod-name">' + item.name + '</div></td>' +
+    '<td style="text-align:center"><div class="need-val">' + needDisplay + '</div></td>' +
+    '<td style="text-align:center">' +
+      '<input class="have-input" type="number" step="any" min="0" placeholder="0" value="' + (displayVal || '') + '" ' +
+      'data-id="' + item.id + '" data-store-size="' + storeSize + '" data-use-units="' + useUnits + '" ' +
+      'oninput="onHaveInput(this)" style="width:72px;display:inline-block">' +
+      '<div style="font-size:0.7rem;color:var(--muted);text-align:center;margin-top:2px">' + displayUnit + '</div>' +
+    '</td>';
+  return tr;
+}
+
+function onHaveInput(input) {
+  const id = input.dataset.id;
+  const storeSize = parseFloat(input.dataset.storeSize) || 1;
+  const useUnits = input.dataset.useUnits === 'true';
+  let val = input.value.replace(',', '.');
+  let numVal = parseFloat(val);
+  
+  if (val === '') {
+    Store.update(id, '');
+  } else {
+    // Se useUnits è true, moltiplichiamo per storeSize, altrimenti usiamo il valore diretto (grammi)
+    const baseVal = isNaN(numVal) ? 0 : (useUnits ? numVal * storeSize : numVal);
+    Store.update(id, baseVal);
+  }
+}
+
+function refreshBuyList() {
+  clearTimeout(refreshTimer);
+  const saved = Store.inventory;
+  
+  // Aggiorna note se presenti nel DOM
+  const noteArea = document.getElementById('spesa-note');
+  if (noteArea && document.activeElement !== noteArea) noteArea.value = saved['_notes'] || '';
+
+  var totalToBuy = 0;
+
+  // Standard sections
+  ['frigo', 'secchi', 'liquidi'].forEach(function(section) {
+    const tbody = document.getElementById('buy-' + section);
+    const wrapper = document.getElementById('buy-section-' + section);
+    if (!tbody) return;
+    tbody.innerHTML = '';
+    var sectionCount = 0;
+    shopData[section].forEach(function(item) {
+      const have = saved[item.id] !== undefined ? saved[item.id] : '';
+      const buyBase = calcBuy(item.need, have);
+      const storeSize = item.storeSize || 1;
+      const buyUnits = buyBase > 0 ? Math.ceil(buyBase / storeSize) : 0;
+      if (buyUnits > 0) { tbody.appendChild(buildBuyRow(item, saved)); sectionCount++; totalToBuy++; }
+    });
+    if (wrapper) wrapper.style.display = sectionCount > 0 ? 'block' : 'none';
+  });
+
+  // Custom products
+  const customBuyTbody = document.getElementById('buy-custom');
+  const customBuyWrapper = document.getElementById('buy-section-custom');
+  if (customBuyTbody) {
+    customBuyTbody.innerHTML = '';
+    var customCount = 0;
+    customItems().forEach(function(item) {
+      const have = saved[item.id] !== undefined ? saved[item.id] : '';
+      const buyBase = calcBuy(item.need, have);
+      const storeSize = item.storeSize || 1;
+      const buyUnits = buyBase > 0 ? Math.ceil(buyBase / storeSize) : 0;
+      if (buyUnits > 0) { customBuyTbody.appendChild(buildBuyRow(item, saved)); customCount++; totalToBuy++; }
+    });
+    if (customBuyWrapper) customBuyWrapper.style.display = customCount > 0 ? 'block' : 'none';
+  }
+
+  const emptyMsg = document.getElementById('spesa-empty');
+  if (emptyMsg) emptyMsg.style.display = totalToBuy === 0 ? 'block' : 'none';
+  
+  refreshSuggested(saved);
+}
+
+function buildShopTable() {
+  const saved = loadSaved();
+  
+  // Rendering lista spesa (consolidato)
+  refreshBuyList();
+
+  // Dispensa inputs
+  ['frigo', 'secchi', 'liquidi'].forEach(function(section) {
+    const tbody = document.getElementById('disp-' + section);
+    if (tbody) { tbody.innerHTML = ''; shopData[section].forEach(function(item) { tbody.appendChild(buildDispRow(item, saved)); }); }
+  });
+  buildCustomDispRows();
+}
+
+// Max single-recipe consumption per ingredient id
+function buildMaxConsumption() {
+  var max = {};
+  recipeIngredients.forEach(function(r) {
+    r.ingredients.forEach(function(ing) {
+      if (!max[ing.id] || ing.amt > max[ing.id]) max[ing.id] = ing.amt;
+    });
+  });
+  return max;
+}
+
+function refreshSuggested(saved) {
+  if (!saved) saved = loadSaved();
+  var maxC = buildMaxConsumption();
+  var suggestedItems = [];
+  allItems().forEach(function(item) {
+    var have = parseFloat(saved[item.id]) || 0;
+    var buyBase = calcBuy(item.need, have);
+    if (buyBase > 0) return; // already in buy list
+    
+    var maxUse = maxC[item.id] || 0;
+    var buffer = item.suggestedBuffer || maxUse;
+    if (buffer > 0 && (have - buffer) < item.need) {
+      suggestedItems.push(item);
+    }
+  });
+
+  var section = document.getElementById('suggested-section');
+  var tbody = document.getElementById('buy-suggested');
+  if (!section || !tbody) return;
+
+  if (suggestedItems.length === 0) {
+    section.style.display = 'none';
+    return;
+  }
+  section.style.display = 'block';
+  tbody.innerHTML = '';
+  suggestedItems.forEach(function(item) {
+    var have = parseFloat(saved[item.id]) || 0;
+    var maxUse = maxC[item.id] || 0;
+    var buffer = item.suggestedBuffer || maxUse;
+    var minBuyBase = item.need + buffer - have;
+    var storeSize = item.storeSize || 1;
+    var unitsNeeded = Math.ceil(minBuyBase / storeSize);
+    var tr = document.createElement('tr');
+    tr.className = 'buy-row-suggested';
+    tr.innerHTML =
+      '<td><div class="buy-row-name">' + item.name + '</div><div class="buy-row-sub">' + item.storeLabel + '</div></td>' +
+      '<td><div class="buy-row-amt suggested" style="text-align:right">' + unitsNeeded + '</div></td>';
+    tbody.appendChild(tr);
+  });
+}
+
+function resetAll() {
+  if (!confirm('Azzerare tutta la dispensa?')) return;
+  Store.inventory = {};
+  Store.commit();
+}
+
+// ==================== CUSTOM PRODUCTS ====================
+function customItems() {
+  return Store.customs.map(function(c) {
+    return {
+      id: 'custom_' + c.id,
+      name: c.name,
+      unit: c.storeSize + ' ' + c.unit,
+      need: c.need,
+      storeSize: c.storeSize,
+      storeLabel: c.unit,
+      isCustom: true,
+      customId: c.id
+    };
+  });
+}
+
+function allItems() {
+  return [...shopData.frigo, ...shopData.secchi, ...shopData.liquidi, ...customItems()];
+}
+
+function addCustomProduct() {
+  const nome = document.getElementById('cf-nome').value.trim();
+  const unit = document.getElementById('cf-unit').value.trim();
+  const size = parseFloat(document.getElementById('cf-size').value) || 1;
+  const need = parseFloat(document.getElementById('cf-need').value) || 0;
+  const have = parseFloat(document.getElementById('cf-have').value) || 0;
+  if (!nome) { alert('Inserisci il nome del prodotto.'); return; }
+  
+  const id = Date.now();
+  const newItem = { id: id, name: nome, unit: unit || 'pz', storeSize: size, need: need };
+  
+  Store.customs.push(newItem);
+  Store.inventory['custom_' + id] = have;
+  Store.commit();
+
+  // clear form
+  ['cf-nome','cf-unit','cf-size','cf-need','cf-have'].forEach(function(id) {
+    document.getElementById(id).value = '';
+  });
+}
+
+function deleteCustomProduct(customId) {
+  if (!confirm('Rimuovere questo prodotto?')) return;
+  Store.customs = Store.customs.filter(function(c) { return c.id !== customId; });
+  delete Store.inventory['custom_' + customId];
+  Store.commit();
+}
+
+function buildCustomDispRows() {
+  const customs = loadCustom();
+  const title = document.getElementById('disp-custom-title');
+  const table = document.getElementById('disp-custom-table');
+  const tbody = document.getElementById('disp-custom');
+  if (!tbody) return;
+  if (customs.length === 0) {
+    title.style.display = 'none';
+    table.style.display = 'none';
+    return;
+  }
+  title.style.display = 'block';
+  table.style.display = 'table';
+  const saved = loadSaved();
+  tbody.innerHTML = '';
+  customs.forEach(function(c) {
+    const id = 'custom_' + c.id;
+    const have = saved[id] !== undefined ? saved[id] : '';
+    const unit = c.unit || 'pz';
+    const tr = document.createElement('tr');
+    tr.innerHTML =
+      '<td><div class="prod-name">' + c.name + '</div></td>' +
+      '<td style="text-align:center"><div class="need-val">' + c.need + (unit) + '</div></td>' +
+      '<td style="text-align:center"><input class="have-input" type="number" min="0" placeholder="0" value="' + have + '" data-id="' + id + '" data-need="' + c.need + '" oninput="onHaveInput(this,\'' + unit + '\')" style="width:72px;display:inline-block"><div style="font-size:0.7rem;color:var(--muted);text-align:center;margin-top:2px">' + unit + '</div></td>' +
+      '<td><button class="delete-btn" onclick="deleteCustomProduct(' + c.id + ')">🗑</button></td>';
+    tbody.appendChild(tr);
+  });
+}
+
+const recipeIngredients = [
+  { num:1,  name:'Riso Integrale + Tofu',       ingredients: [{id:'riso',amt:340},{id:'tofu',amt:360},{id:'broccoli',amt:400},{id:'olio',amt:50}] },
+  { num:2,  name:'Dahl Lenticchie + Couscous',  ingredients: [{id:'lenticchie',amt:260},{id:'couscous',amt:200},{id:'broccoli',amt:400},{id:'olio',amt:40},{id:'latte_soia',amt:150}] },
+  { num:3,  name:'Minestrone Farro + Fagioli',  ingredients: [{id:'fagioli',amt:250},{id:'farro',amt:250},{id:'minestrone',amt:500},{id:'olio',amt:30}] },
+  { num:4,  name:'Riso al Forno + Ceci',        ingredients: [{id:'riso',amt:220},{id:'ceci',amt:250},{id:'broccoli',amt:400},{id:'passata',amt:700},{id:'olio',amt:30}] },
+  { num:5,  name:'Pasta al Forno Ignorante',    ingredients: [{id:'pasta',amt:200},{id:'lenticchie',amt:220},{id:'broccoli',amt:400},{id:'passata',amt:700},{id:'olio',amt:50},{id:'latte_soia',amt:100}] },
+  { num:6,  name:'Teglia Tofu e Patate',        ingredients: [{id:'tofu',amt:360},{id:'patate',amt:1400},{id:'broccoli',amt:400},{id:'olio',amt:60}] },
+  { num:7,  name:'Couscous + Ceci Croccanti',   ingredients: [{id:'ceci',amt:260},{id:'couscous',amt:230},{id:'broccoli',amt:400},{id:'olio',amt:35}] },
+  { num:8,  name:'Fagioli con Polenta',         ingredients: [{id:'fagioli',amt:290},{id:'polenta',amt:240},{id:'broccoli',amt:400},{id:'olio',amt:25}] },
+  { num:9,  name:'Pasta e Lenticchie',          ingredients: [{id:'lenticchie',amt:320},{id:'pasta',amt:190},{id:'broccoli',amt:400},{id:'olio',amt:30}] },
+  { num:10, name:'Zuppa Ceci e Farro',          ingredients: [{id:'ceci',amt:270},{id:'farro',amt:220},{id:'broccoli',amt:400},{id:'olio',amt:35}] },
+];
+
+// (allItems defined above with custom support)
+function getItem(id) { return allItems().find(function(i){ return i.id === id; }); }
+function fmtAmt(id, amt) {
+  const item = getItem(id);
+  return (item && item.suffix) ? amt + ' ' + item.suffix : amt + 'g';
+}
+
+function toggleDispensaCard(key) {
+  const body = document.getElementById('body-' + key);
+  const chev = document.getElementById('chev-' + key);
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  chev.style.transform = isOpen ? '' : 'rotate(180deg)';
+  if (!isOpen && key === 'dispensa-attuale') buildShopTable();
+  if (!isOpen && key === 'custom') buildCustomDispRows();
+  if (!isOpen && key === 'spesa-fatta') buildSpesaFattaRows();
+  if (!isOpen && key === 'cucinato') buildRecipeBtns();
+}
+
+function buildSpesaFattaRows() {
+  const saved = loadSaved();
+  const container = document.getElementById('spesa-fatta-rows');
+  container.innerHTML = '';
+  allItems().forEach(function(item) {
+    const buyBase = calcBuy(item.need, saved[item.id] !== undefined ? saved[item.id] : '');
+    const storeSize = item.storeSize || 1;
+    const step = item.step ? (item.step / storeSize) : 1;
+    const suggestedUnits = buyBase > 0 ? Math.ceil(buyBase / storeSize) : 0;
+    const inputId = 'sf-input-' + item.id;
+    const div = document.createElement('div');
+    div.className = 'spesa-row';
+    div.innerHTML =
+      '<div class="spesa-row-name">' + item.name + '</div>' +
+      '<div class="spesa-stepper">' +
+        '<button class="spesa-step-btn" onclick="stepSpesa(\'' + inputId + '\',-' + step + ')">−</button>' +
+        '<input class="spesa-row-input" id="' + inputId + '" type="number" min="0" value="' + (suggestedUnits > 0 ? suggestedUnits : '') + '" placeholder="0" data-id="' + item.id + '" data-store-size="' + storeSize + '">' +
+        '<button class="spesa-step-btn" onclick="stepSpesa(\'' + inputId + '\',' + step + ')">+</button>' +
+      '</div>' +
+      '<div class="spesa-row-unit" style="font-size:0.7rem;min-width:80px">' + item.storeLabel + '</div>';
+    container.appendChild(div);
+  });
+}
+
+function stepSpesa(inputId, delta) {
+  const input = document.getElementById(inputId);
+  if (!input) return;
+  const current = parseFloat(input.value) || 0;
+  input.value = Math.max(0, current + delta) || '';
+}
+
+function confermaSpesa() {
+  const inputs = document.querySelectorAll('#spesa-fatta-rows .spesa-row-input');
+  var changed = 0;
+  inputs.forEach(function(input) {
+    const id = input.dataset.id;
+    const units = parseFloat(input.value) || 0;
+    if (units > 0) {
+      const storeSize = parseFloat(input.dataset.storeSize) || 1;
+      const addBase = units * storeSize;
+      const current = parseFloat(Store.inventory[id]) || 0;
+      Store.inventory[id] = current + addBase;
+      changed++;
+    }
+  });
+  if (changed === 0) { alert('Nessun valore da aggiungere.'); return; }
+  
+  Store.commit();
+  buildSpesaFattaRows();
+  alert('Dispensa aggiornata (' + changed + ' prodotti).');
+
+  // Chiudi la sezione per feedback visivo
+  const body = document.getElementById('body-spesa-fatta');
+  const chev = document.getElementById('chev-spesa-fatta');
+  if (body) body.classList.remove('open');
+  if (chev) chev.style.transform = '';
+}
+
+var selectedRecipesState = new Set();
+
+function buildRecipeBtns() {
+  buildCucinatoUI();
+}
+
+function buildCucinatoUI() {
+  // ultima spesa display
+  const saved = loadSaved();
+  const ultimaNum = saved['_ultima_spesa'] || null;
+  const ultimaR = ultimaNum ? recipeIngredients.find(function(r){ return r.num === ultimaNum; }) : null;
+  document.getElementById('ultima-spesa-text').textContent = ultimaR ? 'R' + ultimaR.num + ' · ' + ultimaR.name : 'Non impostata';
+
+  // ultima spesa edit grid
+  const grid = document.getElementById('ultima-spesa-grid');
+  grid.innerHTML = '';
+  recipeIngredients.forEach(function(r) {
+    const btn = document.createElement('button');
+    btn.className = 'recipe-btn' + (ultimaNum === r.num ? ' selected' : '');
+    btn.style.cssText = ultimaNum === r.num ? 'background:#e8f2eb;border-color:var(--accent2);color:var(--accent2)' : '';
+    btn.innerHTML = '<span class="rnum">' + r.num + '</span>' + r.name;
+    btn.onclick = function() { setUltimaSpesa(r.num); };
+    grid.appendChild(btn);
+  });
+
+  // checkboxes grid
+  buildCheckGrid();
+}
+
+function setUltimaSpesa(num) {
+  const saved = loadSaved();
+  saved['_ultima_spesa'] = num;
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+  toggleUltimaEdit();
+  buildCucinatoUI();
+}
+
+function toggleUltimaEdit() {
+  const edit = document.getElementById('ultima-spesa-edit');
+  const isOpen = edit.style.display !== 'none';
+  edit.style.display = isOpen ? 'none' : 'block';
+  document.querySelector('.ultima-change-btn').textContent = isOpen ? 'Cambia' : 'Chiudi';
+}
+
+function buildCheckGrid() {
+  const grid = document.getElementById('recipe-check-grid');
+  grid.innerHTML = '';
+  recipeIngredients.forEach(function(r) {
+    const btn = document.createElement('button');
+    btn.className = 'recipe-check-btn' + (selectedRecipesState.has(r.num) ? ' selected' : '');
+    btn.id = 'chk-' + r.num;
+    btn.innerHTML = '<span class="rnum">' + r.num + '</span>' + r.name;
+    btn.onclick = function() { toggleRecipeCheck(r.num); };
+    grid.appendChild(btn);
+  });
+  updatePreview();
+}
+
+function toggleRecipeCheck(num) {
+  if (selectedRecipesState.has(num)) {
+    selectedRecipesState.delete(num);
+  } else {
+    selectedRecipesState.add(num);
+  }
+  const btn = document.getElementById('chk-' + num);
+  if (btn) btn.classList.toggle('selected', selectedRecipesState.has(num));
+  updatePreview();
+}
+
+function getSelectedRecipes() {
+  // Trasforma il Set in array per preservare l'ordine di clic
+  const selectedNums = Array.from(selectedRecipesState);
+  return selectedNums.map(function(num) {
+    return recipeIngredients.find(function(r) { return r.num === num; });
+  }).filter(Boolean);
+}
+
+function updatePreview() {
+  const selected = getSelectedRecipes();
+  const preview = document.getElementById('cucinato-preview');
+  if (selected.length === 0) { preview.style.display = 'none'; return; }
+
+  // aggregate ingredients
+  const totals = {};
+  selected.forEach(function(r) {
+    r.ingredients.forEach(function(ing) {
+      totals[ing.id] = (totals[ing.id] || 0) + ing.amt;
+    });
+  });
+
+  const rows = document.getElementById('cucinato-preview-rows');
+  rows.innerHTML = '';
+  Object.keys(totals).forEach(function(id) {
+    const item = getItem(id);
+    const div = document.createElement('div');
+    div.className = 'preview-row';
+    div.innerHTML =
+      '<span class="preview-row-name">' + (item ? item.name : id) + '</span>' +
+      '<span class="preview-row-amt">- ' + fmtAmt(id, totals[id]) + '</span>';
+    rows.appendChild(div);
+  });
+  preview.style.display = 'block';
+}
+
+function confermaCucinato() {
+  const selected = getSelectedRecipes();
+  if (selected.length === 0) { alert('Seleziona almeno una ricetta.'); return; }
+
+  const totals = {};
+  selected.forEach(function(r) {
+    r.ingredients.forEach(function(ing) {
+      totals[ing.id] = (totals[ing.id] || 0) + ing.amt;
+    });
+    // Consumo colazione (250g per ricetta/giorno)
+    totals['latte_soia'] = (totals['latte_soia'] || 0) + 250;
+  });
+  Object.keys(totals).forEach(function(id) {
+    const current = parseFloat(Store.inventory[id]) || 0;
+    Store.inventory[id] = Math.max(0, current - totals[id]);
+  });
+
+  // aggiorna ultima spesa all'ultima ricetta selezionata
+  const lastNum = selected[selected.length - 1].num;
+  Store.inventory['_ultima_spesa'] = lastNum;
+
+  Store.commit();
+  
+  // Reset stato logico
+  selectedRecipesState.clear();
+  
+  buildCucinatoUI();
+  updatePreview();
+  
+  alert('Scalate ' + selected.length + ' ricett' + (selected.length === 1 ? 'a' : 'e') + ' dalla dispensa.');
+
+  // Chiudi la sezione per feedback visivo
+  const body = document.getElementById('body-cucinato');
+  const chev = document.getElementById('chev-cucinato');
+  if (body) body.classList.remove('open');
+  if (chev) chev.style.transform = '';
+}
+
+// ==================== SINCRONIZZAZIONE ====================
+function exportSyncData() {
+  const data = {
+    inventory: Store.inventory,
+    customs: Store.customs,
+    v: 1
+  };
+  const code = btoa(JSON.stringify(data));
+  const area = document.getElementById('sync-area');
+  area.value = code;
+  area.select();
+  try {
+    document.execCommand('copy');
+    alert('Codice copiato negli appunti! Invialo all\'altro dispositivo e incollalo lì.');
+  } catch (err) {
+    alert('Codice generato! Copialo manualmente dall\'area di testo.');
+  }
+}
+
+function importSyncData() {
+  const area = document.getElementById('sync-area');
+  const code = area.value.trim();
+  if (!code) { alert('Incolla prima un codice di sincronizzazione.'); return; }
+  
+  try {
+    const data = JSON.parse(atob(code));
+    if (!confirm('Importando questi dati sovrascriverai la dispensa attuale. Continuare?')) return;
+    
+    Store.inventory = data.inventory || {};
+    Store.customs = data.customs || [];
+    Store.commit();
+    
+    area.value = '';
+    alert('Dati importati con successo!');
+  } catch (err) {
+    alert('Codice non valido. Assicurati di aver copiato il codice corretto dal PC.');
+  }
+}
+
+// Inizializzazione al caricamento della pagina
+window.addEventListener('DOMContentLoaded', buildShopTable);
+
+// Registrazione Service Worker per PWA
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => console.log('Service Worker registrato!', reg))
+      .catch(err => console.error('Errore registrazione SW:', err));
+  });
+}
+</script>
+</body>
+</html>
