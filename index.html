@@ -649,6 +649,31 @@
   .buy-row-suggested .buy-row-name { color: var(--warn); }
   .buy-row-suggested .buy-row-sub { color: #b06010; }
 
+  /* MODALITÀ SUPERMERCATO */
+  .shop-table tr.bought {
+    opacity: 0.35;
+    text-decoration: line-through;
+    transition: opacity 0.2s;
+  }
+
+  /* BARRE DI SCORTA */
+  .stock-bar-container {
+    width: 100%;
+    height: 4px;
+    background: var(--pill-bg);
+    border-radius: 2px;
+    margin-top: 6px;
+    overflow: hidden;
+  }
+  .stock-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.3s, background-color 0.3s;
+  }
+  .stock-low { background: #d9534f; }
+  .stock-mid { background: #f0ad4e; }
+  .stock-ok { background: var(--accent2); }
+
   .recipe-check-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1395,6 +1420,8 @@ function buildBuyRow(item, saved) {
   const buyUnits = buyBase > 0 ? Math.ceil(buyBase / storeSize) : 0;
   const cls = buyUnits === 0 ? 'zero' : 'need';
   const tr = document.createElement('tr');
+  tr.style.cursor = 'pointer';
+  tr.onclick = function() { this.classList.toggle('bought'); };
   tr.innerHTML =
     '<td><div class="buy-row-name">' + item.name + '</div><div class="buy-row-sub">' + item.storeLabel + '</div></td>' +
     '<td><div class="buy-row-amt ' + cls + '" id="buyrow-' + item.id + '">' + (buyUnits > 0 ? buyUnits : '—') + '</div></td>';
@@ -1406,17 +1433,25 @@ function buildDispRow(item, saved) {
   const storeSize = item.storeSize || 1;
   const unit = item.suffix || 'g';
   
-  // Usiamo le unità (panetti/bottiglie) SOLO se l'item ha useUnits: true
   const useUnits = !!item.useUnits;
   const displayVal = useUnits ? parseFloat((haveBase / storeSize).toFixed(2)) : haveBase;
   const displayUnit = useUnits ? item.storeLabel.split(' ')[0] : unit;
   const needDisplay = item.need + unit;
 
+  // Calcolo percentuale per la barra di scorta
+  const pct = Math.min(100, (haveBase / item.need) * 100);
+  let colorClass = 'stock-ok';
+  if (pct < 25) colorClass = 'stock-low';
+  else if (pct < 60) colorClass = 'stock-mid';
+
   const tr = document.createElement('tr');
   tr.innerHTML =
-    '<td><div class="prod-name">' + item.name + '</div></td>' +
-    '<td style="text-align:center"><div class="need-val">' + needDisplay + '</div></td>' +
-    '<td style="text-align:center">' +
+    '<td style="padding-bottom:12px">' +
+      '<div class="prod-name">' + item.name + '</div>' +
+      '<div class="stock-bar-container"><div class="stock-bar-fill ' + colorClass + '" style="width:' + pct + '%"></div></div>' +
+    '</td>' +
+    '<td style="text-align:center; vertical-align:top; padding-top:10px"><div class="need-val">' + needDisplay + '</div></td>' +
+    '<td style="text-align:center; vertical-align:top; padding-top:10px">' +
       '<input class="have-input" type="number" step="any" min="0" placeholder="0" value="' + (displayVal || '') + '" ' +
       'data-id="' + item.id + '" data-store-size="' + storeSize + '" data-use-units="' + useUnits + '" ' +
       'oninput="onHaveInput(this)" style="width:72px;display:inline-block">' +
@@ -1432,12 +1467,26 @@ function onHaveInput(input) {
   let val = input.value.replace(',', '.');
   let numVal = parseFloat(val);
   
+  const baseVal = isNaN(numVal) ? 0 : (useUnits ? numVal * storeSize : numVal);
+  
   if (val === '') {
     Store.update(id, '');
   } else {
-    // Se useUnits è true, moltiplichiamo per storeSize, altrimenti usiamo il valore diretto (grammi)
-    const baseVal = isNaN(numVal) ? 0 : (useUnits ? numVal * storeSize : numVal);
     Store.update(id, baseVal);
+  }
+
+  // Aggiornamento visivo immediato della barra di scorta
+  const item = allItems().find(function(i) { return i.id === id; });
+  if (item && item.need > 0) {
+    const tr = input.closest('tr');
+    if (tr) {
+      const bar = tr.querySelector('.stock-bar-fill');
+      if (bar) {
+        const pct = Math.min(100, (baseVal / item.need) * 100);
+        bar.style.width = pct + '%';
+        bar.className = 'stock-bar-fill ' + (pct < 25 ? 'stock-low' : pct < 60 ? 'stock-mid' : 'stock-ok');
+      }
+    }
   }
 }
 
