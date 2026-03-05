@@ -1760,10 +1760,22 @@ function buildCucinatoUI() {
 }
 
 function setUltimaSpesa(num) {
-  const saved = loadSaved();
-  saved['_ultima_spesa'] = num;
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
-  toggleUltimaEdit();
+  Store.inventory['_ultima_spesa'] = num;
+  Store.persist();
+  
+  const r = recipeIngredients.find(function(item){ return item.num === num; });
+  alert('Impostata come ultima ricetta: R' + num + ' - ' + r.name);
+
+  // Chiudi la sezione
+  const edit = document.getElementById('ultima-spesa-edit');
+  if (edit) edit.style.display = 'none';
+  document.querySelector('.ultima-change-btn').textContent = 'Cambia';
+
+  const body = document.getElementById('body-cucinato');
+  const chev = document.getElementById('chev-cucinato');
+  if (body) body.classList.remove('open');
+  if (chev) chev.style.transform = '';
+
   buildCucinatoUI();
 }
 
