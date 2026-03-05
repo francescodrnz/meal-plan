@@ -52,12 +52,20 @@
     .summary-table th { background: #000 !important; color: var(--text); }
     .summary-table td { border-bottom-color: var(--border); }
     .summary-table tr:nth-child(even) td { background: #14110d; }
-    .buy-row-suggested { background: #241f15; }
-    .spesa-row-input, .have-input, .custom-input, .spesa-note-area { background: #0a0907; color: #fff; border-color: #3d362b; }
+    .buy-row-suggested { background: #241f15 !important; }
+    .suggested-info { background: #241f15 !important; color: #ead6a8 !important; }
+    .spesa-row-input, .have-input, .custom-input, .spesa-note-area { background: #0a0907 !important; color: #fff !important; border-color: #3d362b; }
+    .spesa-row-input:focus, .have-input:focus, .custom-input:focus, .spesa-note-area:focus { background: #1a1610 !important; border-color: var(--accent2) !important; color: #fff !important; }
     .spesa-step-btn, .recipe-btn { background: #1a1610; color: #f5f0e8; border-color: #3d362b; }
     .recipe-card { border-color: var(--border); }
     .recipe-header { background: var(--card); }
     .recipe-num { color: #3d362b; }
+    .badge-forno { background: #3d1a0a !important; color: #ff8c5a !important; }
+    .badge-pentola { background: #1a2e1f !important; color: #8bc39a !important; }
+    .badge-proteina { background: #2d2820 !important; color: #a89e8e !important; }
+    .prep-text { color: #d1c7b7 !important; }
+    .variant-note { background: #1a241d !important; color: #a8d1b5 !important; }
+    .warning-note { background: #241f15 !important; color: #ead6a8 !important; }
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -745,7 +753,6 @@
 
 <header>
   <h1>🥦 Meal Plan</h1>
-  <p>2 porzioni · ~1100 kcal/porzione · vegan</p>
 </header>
 
 <div class="tabs">
@@ -1214,8 +1221,8 @@
 
   <!-- CONSIGLIATI -->
   <div id="suggested-section" style="display:none">
-    <div class="shop-section-title" style="margin-top:20px;color:var(--warn);border-bottom-color:var(--warn)">⚠︎ Consigliati (stanno per finire)</div>
-    <div class="info-note" style="background:var(--warn-bg);color:#7a4010;margin-bottom:8px;font-size:0.78rem">Questi prodotti bastano ancora, ma finiscono dopo la prossima cottura. Conviene prenderli ora.</div>
+    <div class="shop-section-title" style="margin-top:20px;color:var(--warn);border-bottom-color:var(--warn)">⚠︎ Consigliati</div>
+    <div class="info-note suggested-info" style="background:var(--warn-bg);color:#7a4010;margin-bottom:8px;font-size:0.78rem">Questi prodotti bastano ancora, ma finiscono dopo la prossima cottura. Conviene prenderli ora.</div>
     <table class="shop-table">
       <thead><tr><th>Prodotto</th><th style="text-align:right">Da comprare</th></tr></thead>
       <tbody id="buy-suggested"></tbody>
