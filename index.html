@@ -30,6 +30,29 @@
     --shadow: 0 2px 12px rgba(0,0,0,0.08);
   }
 
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f0d0a;
+      --card: #1a1610;
+      --border: #2d2820;
+      --text: #f5f0e8;
+      --muted: #a89e8e;
+      --pill-bg: #2d2820;
+      --input-bg: #14110d;
+      --shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+    header { background: #000; }
+    .tabs { background: #000; }
+    .tab { background: #1a1610; color: #a89e8e; }
+    .variant-note { background: #1a241d; color: #a8d1b5; border-left-color: var(--accent2); }
+    .warning-note { background: #241f15; color: #ead6a8; border-left-color: #d4a017; }
+    .summary-table th { background: #000; }
+    .summary-table tr:nth-child(even) td { background: #14110d; }
+    .buy-row-suggested { background: #241f15; }
+    .spesa-row-input, .have-input, .custom-input, .spesa-note-area { background: #0a0907; color: #fff; border-color: #3d362b; }
+    .spesa-step-btn { background: #1a1610; color: #f5f0e8; border-color: #3d362b; }
+  }
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
