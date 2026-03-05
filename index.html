@@ -41,16 +41,23 @@
       --input-bg: #14110d;
       --shadow: 0 4px 16px rgba(0,0,0,0.3);
     }
-    header { background: #000; }
-    .tabs { background: #000; }
+    header, .tabs { background: #000 !important; }
     .tab { background: #1a1610; color: #a89e8e; }
+    .tab.active { background: var(--accent); color: #fff; }
     .variant-note { background: #1a241d; color: #a8d1b5; border-left-color: var(--accent2); }
     .warning-note { background: #241f15; color: #ead6a8; border-left-color: #d4a017; }
-    .summary-table th { background: #000; }
+    .info-note { background: #1a1610; color: var(--muted); }
+    /* Fix area sincronizzazione e note info */
+    #tab-info .info-note[style*="background:#f0f2f7"] { background: #141a24 !important; border-left-color: #3a7bc8 !important; color: #a8c4e8 !important; }
+    .summary-table th { background: #000 !important; color: var(--text); }
+    .summary-table td { border-bottom-color: var(--border); }
     .summary-table tr:nth-child(even) td { background: #14110d; }
     .buy-row-suggested { background: #241f15; }
     .spesa-row-input, .have-input, .custom-input, .spesa-note-area { background: #0a0907; color: #fff; border-color: #3d362b; }
-    .spesa-step-btn { background: #1a1610; color: #f5f0e8; border-color: #3d362b; }
+    .spesa-step-btn, .recipe-btn { background: #1a1610; color: #f5f0e8; border-color: #3d362b; }
+    .recipe-card { border-color: var(--border); }
+    .recipe-header { background: var(--card); }
+    .recipe-num { color: #3d362b; }
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
