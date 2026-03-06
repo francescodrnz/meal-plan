@@ -1778,7 +1778,7 @@ function startEditCustom(id) {
   } else {
     unitSelect.value = 'CUSTOM';
     unitSelect.style.display = 'none';
-    unitCustomInput.value = c.unit;
+    unitCustomInput.value = c.unit || '';
     unitCustomInput.style.display = 'block';
   }
 
@@ -1787,14 +1787,16 @@ function startEditCustom(id) {
   const catNewInput = document.getElementById('cf-category-new');
   const catOptions = Array.from(catSelect.options).map(opt => opt.value);
   
-  if (catOptions.includes(c.category)) {
-    catSelect.value = c.category;
+  const currentCat = c.category || '➕ Extra';
+  
+  if (catOptions.includes(currentCat)) {
+    catSelect.value = currentCat;
     catSelect.style.display = 'block';
     catNewInput.style.display = 'none';
   } else {
     catSelect.value = 'NEW_CAT';
     catSelect.style.display = 'none';
-    catNewInput.value = c.category;
+    catNewInput.value = currentCat;
     catNewInput.style.display = 'block';
   }
 
