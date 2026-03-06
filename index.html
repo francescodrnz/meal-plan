@@ -1275,8 +1275,20 @@
         </div>
         <div class="custom-form-row">
           <div class="custom-field">
-            <label class="custom-label">Unità (g, pz, bott…)</label>
-            <input class="custom-input" id="cf-unit" type="text" placeholder="es. g">
+            <label class="custom-label">Unità</label>
+            <select class="custom-input" id="cf-unit-select" onchange="handleUnitSelect(this.value)">
+              <option value="g">g</option>
+              <option value="kg">kg</option>
+              <option value="ml">ml</option>
+              <option value="L">L</option>
+              <option value="pz">pz</option>
+              <option value="bott">bott</option>
+              <option value="confezioni">confezioni</option>
+              <option value="vasetti">vasetti</option>
+              <option value="buste">buste</option>
+              <option value="CUSTOM">✍️ Altro...</option>
+            </select>
+            <input class="custom-input" id="cf-unit" type="text" placeholder="es. buste" style="display:none; margin-top:5px">
           </div>
           <div class="custom-field">
             <label class="custom-label">Dimensione confezione</label>
@@ -1293,7 +1305,8 @@
             <input class="custom-input" id="cf-have" type="number" min="0" placeholder="es. 200">
           </div>
         </div>
-        <button class="confirm-btn" style="margin-top:10px" onclick="addCustomProduct()">+ Aggiungi prodotto</button>
+        <button class="confirm-btn" id="cf-confirm-btn" style="margin-top:10px" onclick="addCustomProduct()">+ Aggiungi prodotto</button>
+        <button class="cancel-btn" id="cf-cancel-btn" style="margin-top:8px; display:none" onclick="cancelEditCustom()">Annulla modifica</button>
       </div>
     </div>
   </div>
@@ -1650,6 +1663,8 @@ function resetAll() {
 }
 
 // ==================== CUSTOM PRODUCTS ====================
+let editingCustomId = null;
+
 function customItems() {
   return Store.customs.map(function(c) {
     return {
@@ -1669,25 +1684,110 @@ function allItems() {
   return [...shopData.frigo, ...shopData.secchi, ...shopData.liquidi, ...customItems()];
 }
 
+function startEditCustom(id) {
+  const c = Store.customs.find(function(x) { return x.id === id; });
+  if (!c) return;
+
+  editingCustomId = id;
+  
+  // Popola campi
+  document.getElementById('cf-nome').value = c.name;
+  document.getElementById('cf-size').value = c.storeSize;
+  document.getElementById('cf-need').value = c.need;
+  document.getElementById('cf-have').value = Store.inventory['custom_' + id] || 0;
+
+  const select = document.getElementById('cf-unit-select');
+  const customInput = document.getElementById('cf-unit');
+  
+  // Gestione unità (se è tra quelle predefinite o CUSTOM)
+  const options = Array.from(select.options).map(opt => opt.value);
+  if (options.includes(c.unit) && c.unit !== 'CUSTOM') {
+    select.value = c.unit;
+    select.style.display = 'block';
+    customInput.style.display = 'none';
+  } else {
+    select.value = 'CUSTOM';
+    select.style.display = 'none';
+    customInput.value = c.unit;
+    customInput.style.display = 'block';
+  }
+
+  // Cambia UI pulsanti
+  document.getElementById('cf-confirm-btn').textContent = '💾 Salva modifiche';
+  document.getElementById('cf-cancel-btn').style.display = 'block';
+
+  // Apri la card se chiusa
+  const body = document.getElementById('body-custom');
+  if (!body.classList.contains('open')) toggleDispensaCard('custom');
+  
+  // Scroll al modulo
+  document.getElementById('body-custom').scrollIntoView({ behavior: 'smooth' });
+}
+
+function cancelEditCustom() {
+  editingCustomId = null;
+  
+  // Reset form
+  document.getElementById('cf-nome').value = '';
+  document.getElementById('cf-size').value = '';
+  document.getElementById('cf-need').value = '';
+  document.getElementById('cf-have').value = '';
+  document.getElementById('cf-unit').value = '';
+  document.getElementById('cf-unit').style.display = 'none';
+  document.getElementById('cf-unit-select').value = 'g';
+  document.getElementById('cf-unit-select').style.display = 'block';
+
+  // Reset UI pulsanti
+  document.getElementById('cf-confirm-btn').textContent = '+ Aggiungi prodotto';
+  document.getElementById('cf-cancel-btn').style.display = 'none';
+}
+
 function addCustomProduct() {
   const nome = document.getElementById('cf-nome').value.trim();
-  const unit = document.getElementById('cf-unit').value.trim();
+  const select = document.getElementById('cf-unit-select');
+  const customInput = document.getElementById('cf-unit');
+  
+  let unit = select.value;
+  if (unit === 'CUSTOM') {
+    unit = customInput.value.trim();
+  }
+  
   const size = parseFloat(document.getElementById('cf-size').value) || 1;
   const need = parseFloat(document.getElementById('cf-need').value) || 0;
   const have = parseFloat(document.getElementById('cf-have').value) || 0;
+  
   if (!nome) { alert('Inserisci il nome del prodotto.'); return; }
+  if (!unit) { alert('Inserisci l\'unità di misura.'); return; }
   
-  const id = Date.now();
-  const newItem = { id: id, name: nome, unit: unit || 'pz', storeSize: size, need: need };
+  if (editingCustomId) {
+    // MODIFICA
+    const index = Store.customs.findIndex(x => x.id === editingCustomId);
+    if (index !== -1) {
+      Store.customs[index] = { id: editingCustomId, name: nome, unit: unit, storeSize: size, need: need };
+      Store.inventory['custom_' + editingCustomId] = have;
+    }
+    editingCustomId = null;
+    alert('Prodotto aggiornato!');
+  } else {
+    // AGGIUNTA
+    const id = Date.now();
+    const newItem = { id: id, name: nome, unit: unit, storeSize: size, need: need };
+    Store.customs.push(newItem);
+    Store.inventory['custom_' + id] = have;
+  }
   
-  Store.customs.push(newItem);
-  Store.inventory['custom_' + id] = have;
   Store.commit();
+  cancelEditCustom(); // Pulisce tutto e resetta i pulsanti
+}
 
-  // clear form
-  ['cf-nome','cf-unit','cf-size','cf-need','cf-have'].forEach(function(id) {
-    document.getElementById(id).value = '';
-  });
+function handleUnitSelect(val) {
+  const customInput = document.getElementById('cf-unit');
+  const select = document.getElementById('cf-unit-select');
+  if (val === 'CUSTOM') {
+    select.style.display = 'none';
+    customInput.style.display = 'block';
+    customInput.focus();
+  }
 }
 
 function deleteCustomProduct(customId) {
@@ -1721,7 +1821,7 @@ function buildCustomDispRows() {
       '<td><div class="prod-name">' + c.name + '</div></td>' +
       '<td style="text-align:center"><div class="need-val">' + c.need + (unit) + '</div></td>' +
       '<td style="text-align:center"><input class="have-input" type="number" min="0" placeholder="0" value="' + have + '" data-id="' + id + '" data-need="' + c.need + '" oninput="onHaveInput(this,\'' + unit + '\')" style="width:72px;display:inline-block"><div style="font-size:0.7rem;color:var(--muted);text-align:center;margin-top:2px">' + unit + '</div></td>' +
-      '<td><button class="delete-btn" onclick="deleteCustomProduct(' + c.id + ')">🗑</button></td>';
+      '<td style="white-space:nowrap"><button class="delete-btn" onclick="startEditCustom(' + c.id + ')">✎</button><button class="delete-btn" onclick="deleteCustomProduct(' + c.id + ')">🗑</button></td>';
     tbody.appendChild(tr);
   });
 }
