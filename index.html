@@ -1814,14 +1814,30 @@ function buildCustomDispRows() {
   tbody.innerHTML = '';
   customs.forEach(function(c) {
     const id = 'custom_' + c.id;
-    const have = saved[id] !== undefined ? saved[id] : '';
+    const have = saved[id] !== undefined ? parseFloat(saved[id]) : 0;
     const unit = c.unit || 'pz';
+    
+    // Calcolo barra scorta
+    const pct = c.need > 0 ? Math.min(100, (have / c.need) * 100) : (have > 0 ? 100 : 0);
+    let colorClass = 'stock-ok';
+    if (pct < 25) colorClass = 'stock-low';
+    else if (pct < 60) colorClass = 'stock-mid';
+
     const tr = document.createElement('tr');
     tr.innerHTML =
-      '<td><div class="prod-name">' + c.name + '</div></td>' +
-      '<td style="text-align:center"><div class="need-val">' + c.need + (unit) + '</div></td>' +
-      '<td style="text-align:center"><input class="have-input" type="number" min="0" placeholder="0" value="' + have + '" data-id="' + id + '" data-need="' + c.need + '" oninput="onHaveInput(this,\'' + unit + '\')" style="width:72px;display:inline-block"><div style="font-size:0.7rem;color:var(--muted);text-align:center;margin-top:2px">' + unit + '</div></td>' +
-      '<td style="white-space:nowrap"><button class="delete-btn" onclick="startEditCustom(' + c.id + ')">✎</button><button class="delete-btn" onclick="deleteCustomProduct(' + c.id + ')">🗑</button></td>';
+      '<td style="padding-bottom:12px">' +
+        '<div class="prod-name">' + c.name + '</div>' +
+        '<div class="stock-bar-container"><div class="stock-bar-fill ' + colorClass + '" style="width:' + pct + '%"></div></div>' +
+      '</td>' +
+      '<td style="text-align:center; vertical-align:top; padding-top:10px"><div class="need-val">' + c.need + unit + '</div></td>' +
+      '<td style="text-align:center; vertical-align:top; padding-top:10px">' +
+        '<input class="have-input" type="number" min="0" placeholder="0" value="' + (have || '') + '" data-id="' + id + '" data-need="' + c.need + '" oninput="onHaveInput(this)" style="width:72px;display:inline-block">' +
+        '<div style="font-size:0.7rem;color:var(--muted);text-align:center;margin-top:2px">' + unit + '</div>' +
+      '</td>' +
+      '<td style="white-space:nowrap; vertical-align:top; padding-top:6px">' +
+        '<button class="delete-btn" onclick="startEditCustom(' + c.id + ')">✎</button>' +
+        '<button class="delete-btn" onclick="deleteCustomProduct(' + c.id + ')">🗑</button>' +
+      '</td>';
     tbody.appendChild(tr);
   });
 }
