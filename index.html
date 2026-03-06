@@ -1245,6 +1245,7 @@
             <option value="🧊 Frigo / Freezer">🧊 Frigo / Freezer</option>
             <option value="🌾 Secchi">🌾 Secchi</option>
             <option value="🫙 Liquidi">🫙 Liquidi</option>
+            <option value="➕ Extra">➕ Extra</option>
             <option value="NEW_CAT">➕ Nuova categoria...</option>
           </select>
           <input class="custom-input" id="cf-category-new" type="text" placeholder="es. Igiene" style="display:none; margin-top:5px">
@@ -1766,6 +1767,9 @@ function startEditCustom(id) {
   document.getElementById('cf-need').value = c.need;
   document.getElementById('cf-have').value = Store.inventory['custom_' + id] || 0;
 
+  // Assicurati che le categorie siano aggiornate prima di leggerle
+  updateCategoryDropdown();
+
   const unitSelect = document.getElementById('cf-unit-select');
   const unitCustomInput = document.getElementById('cf-unit');
   
@@ -1982,7 +1986,7 @@ function updateCategoryDropdown() {
   if (!select) return;
 
   // Categorie standard
-  const standards = ['🧊 Frigo / Freezer', '🌾 Secchi', '🫙 Liquidi'];
+  const standards = ['🧊 Frigo / Freezer', '🌾 Secchi', '🫙 Liquidi', '➕ Extra'];
   
   // Recupera categorie uniche dai prodotti custom esistenti
   const userCats = Store.customs
