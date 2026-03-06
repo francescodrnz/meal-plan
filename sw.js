@@ -1,13 +1,14 @@
-const CACHE_NAME = 'mealplan-v2'; // Incrementato a v2
+const CACHE_NAME = 'mealplan-v3'; // Incrementato per forzare l'aggiornamento
 const ASSETS = [
   'index.html',
-  'manifest.json'
+  'manifest.json',
+  'icon-192.png',
+  'icon-512.png'
 ];
 
 // Installazione: metti in cache i file necessari
 self.addEventListener('install', (event) => {
-  // Forza il Service Worker a diventare attivo immediatamente
-  self.skipWaiting();
+  self.skipWaiting(); // Forza l'attivazione immediata del nuovo SW
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
   );
@@ -25,15 +26,34 @@ self.addEventListener('activate', (event) => {
           }
         })
       );
-    })
+    }).then(() => self.clients.claim()) // Prendi subito il controllo delle pagine aperte
   );
 });
 
-// Strategia: prova dalla cache, altrimenti scarica dalla rete
+// Strategia: Network First per index.html e manifest, Cache First per il resto
 self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
-  );
+  const url = new URL(event.request.url);
+  
+  if (url.pathname.endsWith('index.html') || url.pathname === '/') {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          const clonedResponse = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clonedResponse));
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+  } else {
+    event.respondWith(
+      caches.match(event.request).then((response) => {
+        return response || fetch(event.request).then((fetchRes) => {
+          return caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, fetchRes.clone());
+            return fetchRes;
+          });
+        });
+      })
+    );
+  }
 });

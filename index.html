@@ -2016,8 +2016,32 @@ window.addEventListener('DOMContentLoaded', buildShopTable);
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('sw.js')
-      .then(reg => console.log('Service Worker registrato!', reg))
+      .then(reg => {
+        console.log('Service Worker registrato!', reg);
+        
+        // Controlla aggiornamenti all'avvio
+        reg.update();
+
+        // Ricarica la pagina se il service worker cambia (perché abbiamo usato skipWaiting)
+        reg.onupdatefound = () => {
+          const newSW = reg.installing;
+          newSW.onstatechange = () => {
+            if (newSW.state === 'activated') {
+              window.location.reload();
+            }
+          };
+        };
+      })
       .catch(err => console.error('Errore registrazione SW:', err));
+  });
+
+  // Gestione del cambio del service worker attivo
+  let refreshing = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (!refreshing) {
+      window.location.reload();
+      refreshing = true;
+    }
   });
 }
 </script>
