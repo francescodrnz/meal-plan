@@ -409,7 +409,7 @@ function refreshSuggested(saved) {
     var buffer = item.suggestedBuffer || maxUse;
     var minBuyBase = item.need + buffer - have;
     var storeSize = item.storeSize || 1;
-    var unitsNeeded = Math.ceil(minBuyBase / storeSize);
+    var unitsNeeded = Math.max(1, Math.ceil(minBuyBase / storeSize));
     var tr = document.createElement('tr');
     tr.className = 'buy-row-suggested';
     tr.innerHTML =
