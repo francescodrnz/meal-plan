@@ -14,23 +14,24 @@ function toggleCard(card) {
 // ==================== SHOPPING LIST ====================
 const shopData = {
   frigo: [
-    { id: 'tofu',        name: 'Tofu',                unit: '4 panetti da 180g',   need: 720,                   storeSize: 180,  storeLabel: 'panetti da 180g', useUnits: true },
+    { id: 'tofu',        name: 'Tofu',                unit: '2 panetti da 180g',   need: 360,                   storeSize: 180,  storeLabel: 'panetti da 180g', useUnits: true },
     { id: 'patate',      name: 'Patate',               unit: '1,5 kg',              need: 1400,                  storeSize: 1,    storeLabel: 'g',              step: 100 },
     { id: 'broccoli',    name: 'Broccoli surgelati',   unit: '5 buste da 500g',     need: 2800,                  storeSize: 500,  storeLabel: 'buste da 500g' },
     { id: 'minestrone',  name: 'Minestrone surgelato', unit: '2 buste da 750g',     need: 1500,                  storeSize: 750,  storeLabel: 'buste da 750g' },
   ],
   secchi: [
     { id: 'lenticchie',  name: 'Lenticchie secche',   unit: 'buste da 500g',       need: 800,                   storeSize: 500,  storeLabel: 'buste da 500g' },
-    { id: 'ceci',        name: 'Ceci secchi',          unit: 'buste da 500g',       need: 780,                   storeSize: 500,  storeLabel: 'buste da 500g' },
-    { id: 'fagioli',     name: 'Fagioli secchi',       unit: 'buste da 500g',       need: 540,                   storeSize: 500,  storeLabel: 'buste da 500g' },
+    { id: 'ceci',        name: 'Ceci secchi',          unit: 'buste da 500g',       need: 1070,                  storeSize: 500,  storeLabel: 'buste da 500g' },
+    { id: 'fagioli',     name: 'Fagioli secchi',       unit: 'buste da 500g',       need: 530,                   storeSize: 500,  storeLabel: 'buste da 500g' },
+    { id: 'quinoa',      name: 'Quinoa',               unit: 'buste da 200g',       need: 200,                   storeSize: 200,  storeLabel: 'buste da 200g' },
     { id: 'pasta',       name: 'Pasta corta',          unit: '500g',                need: 390,                   storeSize: 500,  storeLabel: 'pacchi da 500g' },
     { id: 'couscous',    name: 'Couscous',             unit: '1 kg',                need: 430,                   storeSize: 1000, storeLabel: 'pacchi da 1kg' },
     { id: 'farro',       name: 'Farro perlato',        unit: '500g',                need: 470,                   storeSize: 500,  storeLabel: 'pacchi da 500g' },
-    { id: 'riso',        name: 'Riso integrale',       unit: '1 kg',                need: 560,                   storeSize: 1000, storeLabel: 'pacchi da 1kg' },
-    { id: 'polenta',     name: 'Polenta istantanea',   unit: '500g',                need: 240,                   storeSize: 500,  storeLabel: 'pacchi da 500g' },
+    { id: 'riso',        name: 'Riso integrale',       unit: '1 kg',                need: 220,                   storeSize: 1000, storeLabel: 'pacchi da 1kg' },
+    { id: 'polenta',     name: 'Polenta istantanea',   unit: '500g',                need: 250,                   storeSize: 500,  storeLabel: 'pacchi da 500g' },
   ],
   liquidi: [
-    { id: 'olio',        name: 'Olio EVO',             unit: '1 bottiglia da 1L',   need: 385,                   storeSize: 1000, storeLabel: 'bottiglie da 1L' },
+    { id: 'olio',        name: 'Olio EVO',             unit: '1 bottiglia da 1L',   need: 365,                   storeSize: 1000, storeLabel: 'bottiglie da 1L' },
     { id: 'passata',     name: 'Passata di pomodoro',  unit: '2 bottiglie da 700g', need: 1400,                  storeSize: 700,  storeLabel: 'bottiglie da 700g', useUnits: true },
     { id: 'latte_soia',  name: 'Latte di soia',        unit: 'brick da 1L',         need: 2750,                  storeSize: 1000, storeLabel: 'brick da 1L', suggestedBuffer: 1000 },
   ]
@@ -655,14 +656,14 @@ function buildCustomDispRows() {
 }
 
 const recipeIngredients = [
-  { num:1,  name:'Riso Integrale + Tofu',       ingredients: [{id:'riso',amt:340},{id:'tofu',amt:360},{id:'broccoli',amt:400},{id:'olio',amt:50}] },
+  { num:1,  name:'Quinoa e Ceci',               ingredients: [{id:'quinoa',amt:200},{id:'ceci',amt:290},{id:'broccoli',amt:400},{id:'olio',amt:30}] },
   { num:2,  name:'Dahl Lenticchie + Couscous',  ingredients: [{id:'lenticchie',amt:260},{id:'couscous',amt:200},{id:'broccoli',amt:400},{id:'olio',amt:40},{id:'latte_soia',amt:150}] },
   { num:3,  name:'Minestrone Farro + Fagioli',  ingredients: [{id:'fagioli',amt:250},{id:'farro',amt:250},{id:'minestrone',amt:500},{id:'olio',amt:30}] },
   { num:4,  name:'Riso al Forno + Ceci',        ingredients: [{id:'riso',amt:220},{id:'ceci',amt:250},{id:'broccoli',amt:400},{id:'passata',amt:700},{id:'olio',amt:30}] },
   { num:5,  name:'Pasta al Forno Ignorante',    ingredients: [{id:'pasta',amt:200},{id:'lenticchie',amt:220},{id:'broccoli',amt:400},{id:'passata',amt:700},{id:'olio',amt:50},{id:'latte_soia',amt:100}] },
   { num:6,  name:'Teglia Tofu e Patate',        ingredients: [{id:'tofu',amt:360},{id:'patate',amt:1400},{id:'broccoli',amt:400},{id:'olio',amt:60}] },
   { num:7,  name:'Couscous + Ceci Croccanti',   ingredients: [{id:'ceci',amt:260},{id:'couscous',amt:230},{id:'broccoli',amt:400},{id:'olio',amt:35}] },
-  { num:8,  name:'Fagioli con Polenta',         ingredients: [{id:'fagioli',amt:290},{id:'polenta',amt:240},{id:'broccoli',amt:400},{id:'olio',amt:25}] },
+  { num:8,  name:'Fagioli con Polenta',         ingredients: [{id:'fagioli',amt:280},{id:'polenta',amt:250},{id:'broccoli',amt:400},{id:'olio',amt:25}] },
   { num:9,  name:'Pasta e Lenticchie',          ingredients: [{id:'lenticchie',amt:320},{id:'pasta',amt:190},{id:'broccoli',amt:400},{id:'olio',amt:30}] },
   { num:10, name:'Zuppa Ceci e Farro',          ingredients: [{id:'ceci',amt:270},{id:'farro',amt:220},{id:'broccoli',amt:400},{id:'olio',amt:35}] },
 ];
