@@ -73,10 +73,10 @@
   .set-label {
     font-weight: 600;
     font-size: 0.9rem;
-    width: 50px;
+    width: 44px;
   }
   .set-input {
-    width: 60px;
+    width: 50px;
     padding: 8px;
     border: 1.5px solid var(--border);
     border-radius: 8px;
@@ -102,6 +102,29 @@
     font-size: 0.7rem;
     color: var(--muted);
   }
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .adjust-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    border: 1.5px solid var(--border);
+    background: var(--pill-bg);
+    color: var(--text);
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 1;
+  }
+  .adjust-btn:active { background: var(--border); }
   .done-btn {
     padding: 8px 12px;
     border-radius: 8px;
@@ -337,11 +360,36 @@ const TOTAL_SETS = EXERCISES.length * SETS_PER_EX;
 let workoutActive = JSON.parse(localStorage.getItem('workout_active'));
 let chronoInterval = null;
 
+function createEmptyState() {
+  return Array(TOTAL_SETS).fill(null).map(() => ({ reps: '', kg: '', done: false }));
+}
+
+function prepopulateState(stateArr) {
+  const sessions = JSON.parse(localStorage.getItem('workout_sessions') || '[]');
+  if (sessions.length > 0) {
+    const lastSessionSets = sessions[0].sets;
+    let setIdx = 0;
+    EXERCISES.forEach((ex) => {
+      for (let i = 1; i <= SETS_PER_EX; i++) {
+        const lastSet = lastSessionSets.find(s => s.exercise === ex && s.set === i);
+        if (lastSet) {
+          stateArr[setIdx].reps = lastSet.reps;
+          stateArr[setIdx].kg = ex === 'Push Up' ? '' : lastSet.kg;
+        }
+        setIdx++;
+      }
+    });
+  }
+  return stateArr;
+}
+
 // Initialize workout state if null
 if (!workoutActive) {
   workoutActive = {
     started_at: null,
-    sets_state: Array(TOTAL_SETS).fill(null).map(() => ({ reps: '', kg: '', done: false }))
+    offset: 0,
+    is_running: false,
+    sets_state: prepopulateState(createEmptyState())
   };
 }
 
@@ -387,7 +435,7 @@ function getUltimaSessione(exerciseName) {
   for (let sess of sessions) {
     const exSets = sess.sets.filter(s => s.exercise === exerciseName);
     if (exSets.length > 0) {
-      return exSets.map(s => `${s.reps}x${s.kg}kg`).join(' | ');
+      return exSets.map(s => exerciseName === 'Push Up' ? `${s.reps} rep` : `${s.reps}x${s.kg}kg`).join(' | ');
     }
   }
   return null;
@@ -408,17 +456,30 @@ function renderAllenamento() {
       const s = workoutActive.sets_state[setIdx];
       const row = document.createElement('div');
       row.className = `set-row ${s.done ? 'done' : ''}`;
+      
+      const kgHtml = ex === 'Push Up' ? '<div class="input-group" style="visibility:hidden"></div>' : `
+        <div class="input-group">
+          <span class="input-label">kg</span>
+          <div class="input-wrapper">
+            <button class="adjust-btn" onclick="adjustSet(${setIdx}, 'kg', -0.5)" ${s.done ? 'disabled' : ''}>-</button>
+            <input type="number" class="set-input" step="0.5" value="${s.kg}" onchange="updateSet(${setIdx}, 'kg', this.value)" ${s.done ? 'disabled' : ''}>
+            <button class="adjust-btn" onclick="adjustSet(${setIdx}, 'kg', 0.5)" ${s.done ? 'disabled' : ''}>+</button>
+          </div>
+        </div>
+      `;
+
       row.innerHTML = `
         <div class="set-label">Set ${i}</div>
         <div class="input-group">
           <span class="input-label">reps</span>
-          <input type="number" class="set-input" min="1" value="${s.reps}" onchange="updateSet(${setIdx}, 'reps', this.value)" ${s.done ? 'disabled' : ''}>
+          <div class="input-wrapper">
+            <button class="adjust-btn" onclick="adjustSet(${setIdx}, 'reps', -1)" ${s.done ? 'disabled' : ''}>-</button>
+            <input type="number" class="set-input" min="1" value="${s.reps}" onchange="updateSet(${setIdx}, 'reps', this.value)" ${s.done ? 'disabled' : ''}>
+            <button class="adjust-btn" onclick="adjustSet(${setIdx}, 'reps', 1)" ${s.done ? 'disabled' : ''}>+</button>
+          </div>
         </div>
-        <div class="input-group">
-          <span class="input-label">kg</span>
-          <input type="number" class="set-input" step="0.5" value="${s.kg}" onchange="updateSet(${setIdx}, 'kg', this.value)" ${s.done ? 'disabled' : ''}>
-        </div>
-        <button class="done-btn" onclick="toggleSet(${setIdx})">✓ Done</button>
+        ${kgHtml}
+        <button class="done-btn" onclick="toggleSet(${setIdx})">✓</button>
       `;
       card.appendChild(row);
       setIdx++;
@@ -437,6 +498,16 @@ function renderAllenamento() {
   
   checkConcludi();
   renderChrono();
+}
+
+function adjustSet(idx, field, delta) {
+  let current = parseFloat(workoutActive.sets_state[idx][field]);
+  if (isNaN(current)) current = 0;
+  let next = current + delta;
+  if (next < 0) next = 0;
+  workoutActive.sets_state[idx][field] = next;
+  saveActive();
+  renderAllenamento();
 }
 
 function updateSet(idx, field, val) {
@@ -487,7 +558,7 @@ function concludiAllenamento() {
   EXERCISES.forEach(ex => {
     for (let i = 1; i <= SETS_PER_EX; i++) {
       const s = workoutActive.sets_state[idx];
-      setsData.push({ exercise: ex, set: i, reps: s.reps, kg: s.kg });
+      setsData.push({ exercise: ex, set: i, reps: s.reps, kg: ex === 'Push Up' ? '' : s.kg });
       idx++;
     }
   });
@@ -499,12 +570,12 @@ function concludiAllenamento() {
   });
   localStorage.setItem('workout_sessions', JSON.stringify(sessions));
   
-  // Reset
+  // Reset with prepopulated values for next time
   workoutActive = {
     started_at: null,
     offset: 0,
     is_running: false,
-    sets_state: Array(TOTAL_SETS).fill(null).map(() => ({ reps: '', kg: '', done: false }))
+    sets_state: prepopulateState(createEmptyState())
   };
   saveActive();
   renderAllenamento();
@@ -696,7 +767,7 @@ function renderStorico() {
           <td class="history-ex">${s.exercise}</td>
           <td>Set ${s.set}</td>
           <td>${s.reps} rep</td>
-          <td>${s.kg} kg</td>
+          <td>${s.exercise === 'Push Up' ? '-' : s.kg + ' kg'}</td>
         </tr>
       `;
     });
