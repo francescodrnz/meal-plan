@@ -294,10 +294,14 @@
 
 <!-- TAB PESO -->
 <div id="tab-peso" class="section">
-  <div class="weight-input-row">
-    <input type="date" id="peso-date">
-    <input type="number" id="peso-val" step="0.1" placeholder="kg" class="set-input" style="flex:1; width:auto; text-align:left;" oninput="this.classList.remove('provisional')">
-    <button onclick="salvaPeso()">Salva</button>
+  <div class="weight-input-row" style="align-items: center;">
+    <input type="date" id="peso-date" style="flex: 1; min-width: 110px;">
+    <div class="input-wrapper" style="flex: 1; display: flex;">
+      <button class="adjust-btn" onclick="adjustPeso(-0.1)">-</button>
+      <input type="number" id="peso-val" step="0.1" placeholder="kg" class="set-input" style="flex:1; width:auto; margin: 0; text-align:center;" oninput="this.classList.remove('provisional')">
+      <button class="adjust-btn" onclick="adjustPeso(0.1)">+</button>
+    </div>
+    <button onclick="salvaPeso()" style="flex: 1 1 100%;">Salva</button>
   </div>
   
   <div id="peso-stats" class="stats-block" style="display:none">
@@ -703,6 +707,16 @@ function salvaPeso() {
   renderPeso();
 }
 
+function adjustPeso(delta) {
+  const pesoVal = document.getElementById('peso-val');
+  let current = parseFloat(pesoVal.value);
+  if (isNaN(current)) current = 0;
+  let next = current + delta;
+  if (next < 0) next = 0;
+  pesoVal.value = next.toFixed(1);
+  pesoVal.classList.remove('provisional');
+}
+
 function editPeso(idx) {
   const log = JSON.parse(localStorage.getItem('body_weight_log') || '[]');
   log.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -786,14 +800,34 @@ function renderStatsAndChart(log) {
 
     if (startDate > endDate) startDate = new Date(endDate);
 
+    let lastKnownWeight = null;
+    for (let i = chartData.length - 1; i >= 0; i--) {
+      let d = new Date(chartData[i].date);
+      d.setHours(0,0,0,0);
+      if (d < startDate) {
+        lastKnownWeight = chartData[i].weight;
+        break;
+      }
+    }
+
     let currentDate = new Date(startDate);
+    let isFirstDay = true;
     while (currentDate <= endDate) {
       const dateStr = currentDate.getFullYear() + '-' + String(currentDate.getMonth() + 1).padStart(2, '0') + '-' + String(currentDate.getDate()).padStart(2, '0');
       labels.push(`${currentDate.getDate()}/${currentDate.getMonth()+1}`);
       
       const entry = chartData.find(e => e.date === dateStr);
-      dataPoints.push(entry ? entry.weight : null);
+      if (entry) {
+        dataPoints.push(entry.weight);
+      } else {
+        if (isFirstDay && lastKnownWeight !== null) {
+          dataPoints.push(lastKnownWeight);
+        } else {
+          dataPoints.push(null);
+        }
+      }
       
+      isFirstDay = false;
       currentDate.setDate(currentDate.getDate() + 1);
     }
   }
