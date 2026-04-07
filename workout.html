@@ -284,6 +284,8 @@
   
   <div id="exercises-container"></div>
   
+  <textarea id="workout-notes" class="spesa-note-area" style="width: 100%; min-height: 80px; padding: 12px; margin: 12px 0; border: 1.5px solid var(--border); border-radius: 10px; background: var(--input-bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.875rem;" placeholder="Note sessione (opzionale)..." oninput="updateNotes(this.value)"></textarea>
+  
   <button id="btn-concludi" class="confirm-btn" style="opacity: 0.5; pointer-events: none;" onclick="concludiAllenamento()">Concludi allenamento</button>
 </div>
 
@@ -389,8 +391,14 @@ if (!workoutActive) {
     started_at: null,
     offset: 0,
     is_running: false,
+    notes: '',
     sets_state: prepopulateState(createEmptyState())
   };
+}
+
+function updateNotes(val) {
+  workoutActive.notes = val;
+  saveActive();
 }
 
 // CHRONO LOGIC
@@ -408,13 +416,15 @@ function updateChrono() {
 }
 
 function toggleChrono() {
-  if (workoutActive.started_at) {
+  if (workoutActive.is_running) {
+    workoutActive.is_running = false;
+    workoutActive.offset = Date.now() - workoutActive.started_at;
+    workoutActive.started_at = null;
     clearInterval(chronoInterval);
     chronoInterval = null;
-    workoutActive.started_at = null;
   } else {
-    workoutActive.started_at = Date.now() - (workoutActive.offset || 0);
     workoutActive.is_running = true;
+    workoutActive.started_at = Date.now() - (workoutActive.offset || 0);
     chronoInterval = setInterval(updateChrono, 1000);
   }
   saveActive();
@@ -456,14 +466,15 @@ function renderAllenamento() {
       const s = workoutActive.sets_state[setIdx];
       const row = document.createElement('div');
       row.className = `set-row ${s.done ? 'done' : ''}`;
+      row.id = `set-row-${setIdx}`;
       
       const kgHtml = ex === 'Push Up' ? '<div class="input-group" style="visibility:hidden"></div>' : `
         <div class="input-group">
           <span class="input-label">kg</span>
           <div class="input-wrapper">
-            <button class="adjust-btn" onclick="adjustSet(${setIdx}, 'kg', -0.5)" ${s.done ? 'disabled' : ''}>-</button>
-            <input type="number" class="set-input" step="0.5" value="${s.kg}" onchange="updateSet(${setIdx}, 'kg', this.value)" ${s.done ? 'disabled' : ''}>
-            <button class="adjust-btn" onclick="adjustSet(${setIdx}, 'kg', 0.5)" ${s.done ? 'disabled' : ''}>+</button>
+            <button class="adjust-btn" id="btn-kg-minus-${setIdx}" onclick="adjustSet(${setIdx}, 'kg', -0.5)" ${s.done ? 'disabled' : ''}>-</button>
+            <input type="number" class="set-input" step="0.5" value="${s.kg}" id="input-kg-${setIdx}" onchange="updateSet(${setIdx}, 'kg', this.value)" ${s.done ? 'disabled' : ''}>
+            <button class="adjust-btn" id="btn-kg-plus-${setIdx}" onclick="adjustSet(${setIdx}, 'kg', 0.5)" ${s.done ? 'disabled' : ''}>+</button>
           </div>
         </div>
       `;
@@ -473,9 +484,9 @@ function renderAllenamento() {
         <div class="input-group">
           <span class="input-label">reps</span>
           <div class="input-wrapper">
-            <button class="adjust-btn" onclick="adjustSet(${setIdx}, 'reps', -1)" ${s.done ? 'disabled' : ''}>-</button>
-            <input type="number" class="set-input" min="1" value="${s.reps}" onchange="updateSet(${setIdx}, 'reps', this.value)" ${s.done ? 'disabled' : ''}>
-            <button class="adjust-btn" onclick="adjustSet(${setIdx}, 'reps', 1)" ${s.done ? 'disabled' : ''}>+</button>
+            <button class="adjust-btn" id="btn-reps-minus-${setIdx}" onclick="adjustSet(${setIdx}, 'reps', -1)" ${s.done ? 'disabled' : ''}>-</button>
+            <input type="number" class="set-input" min="1" value="${s.reps}" id="input-reps-${setIdx}" onchange="updateSet(${setIdx}, 'reps', this.value)" ${s.done ? 'disabled' : ''}>
+            <button class="adjust-btn" id="btn-reps-plus-${setIdx}" onclick="adjustSet(${setIdx}, 'reps', 1)" ${s.done ? 'disabled' : ''}>+</button>
           </div>
         </div>
         ${kgHtml}
@@ -498,6 +509,8 @@ function renderAllenamento() {
   
   checkConcludi();
   renderChrono();
+  const notesEl = document.getElementById('workout-notes');
+  if (notesEl && workoutActive.notes) notesEl.value = workoutActive.notes;
 }
 
 function adjustSet(idx, field, delta) {
@@ -507,7 +520,9 @@ function adjustSet(idx, field, delta) {
   if (next < 0) next = 0;
   workoutActive.sets_state[idx][field] = next;
   saveActive();
-  renderAllenamento();
+  
+  const input = document.getElementById(`input-${field}-${idx}`);
+  if (input) input.value = next;
 }
 
 function updateSet(idx, field, val) {
@@ -519,7 +534,23 @@ function toggleSet(idx) {
   const s = workoutActive.sets_state[idx];
   s.done = !s.done;
   saveActive();
-  renderAllenamento(); 
+  
+  const row = document.getElementById(`set-row-${idx}`);
+  if (row) {
+    if (s.done) row.classList.add('done');
+    else row.classList.remove('done');
+  }
+  
+  ['reps', 'kg'].forEach(f => {
+    const input = document.getElementById(`input-${f}-${idx}`);
+    if (input) input.disabled = s.done;
+    const btnMinus = document.getElementById(`btn-${f}-minus-${idx}`);
+    if (btnMinus) btnMinus.disabled = s.done;
+    const btnPlus = document.getElementById(`btn-${f}-plus-${idx}`);
+    if (btnPlus) btnPlus.disabled = s.done;
+  });
+
+  checkConcludi();
 }
 
 function saveActive() {
@@ -566,6 +597,7 @@ function concludiAllenamento() {
   sessions.unshift({
     date: new Date().toISOString(),
     duration_seconds: Math.floor((workoutActive.offset || 0) / 1000),
+    notes: workoutActive.notes || '',
     sets: setsData
   });
   localStorage.setItem('workout_sessions', JSON.stringify(sessions));
@@ -575,28 +607,15 @@ function concludiAllenamento() {
     started_at: null,
     offset: 0,
     is_running: false,
+    notes: '',
     sets_state: prepopulateState(createEmptyState())
   };
   saveActive();
+  const notesEl = document.getElementById('workout-notes');
+  if (notesEl) notesEl.value = '';
   renderAllenamento();
   alert('Allenamento salvato con successo!');
 }
-
-document.getElementById('chrono').onclick = () => {
-  if (workoutActive.is_running) {
-    workoutActive.is_running = false;
-    workoutActive.offset = Date.now() - workoutActive.started_at;
-    workoutActive.started_at = null;
-    clearInterval(chronoInterval);
-    chronoInterval = null;
-  } else {
-    workoutActive.is_running = true;
-    workoutActive.started_at = Date.now() - (workoutActive.offset || 0);
-    chronoInterval = setInterval(updateChrono, 1000);
-  }
-  saveActive();
-  renderChrono();
-};
 
 // ==================== PESO ====================
 let chartInstance = null;
@@ -760,6 +779,8 @@ function renderStorico() {
     const card = document.createElement('div');
     card.className = 'history-card';
     
+    let noteHtml = sess.notes ? `<div style="font-size: 0.8rem; color: var(--muted); margin-bottom: 8px;"><em>Note: ${sess.notes}</em></div>` : '';
+    
     let rowsHtml = '';
     sess.sets.forEach(s => {
       rowsHtml += `
@@ -780,6 +801,7 @@ function renderStorico() {
         </div>
         <button class="history-del" onclick="deleteSession(${i})">🗑</button>
       </div>
+      ${noteHtml}
       <table class="history-table">
         ${rowsHtml}
       </table>
