@@ -92,6 +92,9 @@
   .set-input::-webkit-outer-spin-button,
   .set-input::-webkit-inner-spin-button { -webkit-appearance: none; }
   .set-input:focus { outline: none; border-color: var(--accent2); background: var(--card); }
+  .set-input.provisional {
+    color: var(--muted) !important;
+  }
   .input-group {
     display: flex;
     align-items: center;
@@ -293,7 +296,7 @@
 <div id="tab-peso" class="section">
   <div class="weight-input-row">
     <input type="date" id="peso-date">
-    <input type="number" id="peso-val" step="0.1" placeholder="kg">
+    <input type="number" id="peso-val" step="0.1" placeholder="kg" class="set-input" style="flex:1; width:auto; text-align:left;" oninput="this.classList.remove('provisional')">
     <button onclick="salvaPeso()">Salva</button>
   </div>
   
@@ -376,7 +379,7 @@ let workoutActive = JSON.parse(localStorage.getItem('workout_active'));
 let chronoInterval = null;
 
 function createEmptyState() {
-  return Array(TOTAL_SETS).fill(null).map(() => ({ reps: '', kg: '', done: false }));
+  return Array(TOTAL_SETS).fill(null).map(() => ({ reps: '', kg: '', done: false, reps_prov: false, kg_prov: false }));
 }
 
 function prepopulateState(stateArr) {
@@ -389,7 +392,11 @@ function prepopulateState(stateArr) {
         const lastSet = lastSessionSets.find(s => s.exercise === ex && s.set === i);
         if (lastSet) {
           stateArr[setIdx].reps = lastSet.reps;
-          stateArr[setIdx].kg = ex === 'Push Up' ? '' : lastSet.kg;
+          stateArr[setIdx].reps_prov = true;
+          if (ex !== 'Push Up') {
+            stateArr[setIdx].kg = lastSet.kg;
+            stateArr[setIdx].kg_prov = true;
+          }
         }
         setIdx++;
       }
@@ -486,7 +493,7 @@ function renderAllenamento() {
           <span class="input-label">kg</span>
           <div class="input-wrapper">
             <button class="adjust-btn" id="btn-kg-minus-${setIdx}" onclick="adjustSet(${setIdx}, 'kg', -0.5)" ${s.done ? 'disabled' : ''}>-</button>
-            <input type="number" class="set-input" step="0.5" value="${s.kg}" id="input-kg-${setIdx}" onchange="updateSet(${setIdx}, 'kg', this.value)" ${s.done ? 'disabled' : ''}>
+            <input type="number" class="set-input ${s.kg_prov ? 'provisional' : ''}" step="0.5" value="${s.kg}" id="input-kg-${setIdx}" oninput="this.classList.remove('provisional'); updateSet(${setIdx}, 'kg', this.value)" ${s.done ? 'disabled' : ''}>
             <button class="adjust-btn" id="btn-kg-plus-${setIdx}" onclick="adjustSet(${setIdx}, 'kg', 0.5)" ${s.done ? 'disabled' : ''}>+</button>
           </div>
         </div>
@@ -498,7 +505,7 @@ function renderAllenamento() {
           <span class="input-label">reps</span>
           <div class="input-wrapper">
             <button class="adjust-btn" id="btn-reps-minus-${setIdx}" onclick="adjustSet(${setIdx}, 'reps', -1)" ${s.done ? 'disabled' : ''}>-</button>
-            <input type="number" class="set-input" min="1" value="${s.reps}" id="input-reps-${setIdx}" onchange="updateSet(${setIdx}, 'reps', this.value)" ${s.done ? 'disabled' : ''}>
+            <input type="number" class="set-input ${s.reps_prov ? 'provisional' : ''}" min="1" value="${s.reps}" id="input-reps-${setIdx}" oninput="this.classList.remove('provisional'); updateSet(${setIdx}, 'reps', this.value)" ${s.done ? 'disabled' : ''}>
             <button class="adjust-btn" id="btn-reps-plus-${setIdx}" onclick="adjustSet(${setIdx}, 'reps', 1)" ${s.done ? 'disabled' : ''}>+</button>
           </div>
         </div>
@@ -532,14 +539,19 @@ function adjustSet(idx, field, delta) {
   let next = current + delta;
   if (next < 0) next = 0;
   workoutActive.sets_state[idx][field] = next;
+  workoutActive.sets_state[idx][field + '_prov'] = false;
   saveActive();
   
   const input = document.getElementById(`input-${field}-${idx}`);
-  if (input) input.value = next;
+  if (input) {
+    input.value = next;
+    input.classList.remove('provisional');
+  }
 }
 
 function updateSet(idx, field, val) {
   workoutActive.sets_state[idx][field] = val;
+  workoutActive.sets_state[idx][field + '_prov'] = false;
   saveActive();
 }
 
@@ -643,6 +655,12 @@ function renderPeso() {
   
   document.getElementById('peso-date').value = new Date().toISOString().split('T')[0];
   
+  const pesoVal = document.getElementById('peso-val');
+  if (!pesoVal.value && log.length > 0) {
+    pesoVal.value = log[0].weight;
+    pesoVal.classList.add('provisional');
+  }
+  
   const listEl = document.getElementById('peso-list');
   listEl.innerHTML = '';
   
@@ -679,7 +697,9 @@ function salvaPeso() {
     log.push({ date: d, weight: w });
   }
   localStorage.setItem('body_weight_log', JSON.stringify(log));
-  document.getElementById('peso-val').value = '';
+  const pesoVal = document.getElementById('peso-val');
+  pesoVal.value = '';
+  pesoVal.classList.remove('provisional');
   renderPeso();
 }
 
@@ -687,7 +707,9 @@ function editPeso(idx) {
   const log = JSON.parse(localStorage.getItem('body_weight_log') || '[]');
   log.sort((a, b) => new Date(b.date) - new Date(a.date));
   document.getElementById('peso-date').value = log[idx].date;
-  document.getElementById('peso-val').value = log[idx].weight;
+  const pesoVal = document.getElementById('peso-val');
+  pesoVal.value = log[idx].weight;
+  pesoVal.classList.remove('provisional');
 }
 
 function deletePeso(idx) {
