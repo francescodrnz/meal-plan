@@ -652,12 +652,30 @@ function renderSummaryTable() {
   if (!tbody) return;
   
   let html = '';
+  let totKcal = 0, totP = 0, totF = 0, totC = 0;
+  let count = 0;
+  
   recipesData.forEach(baseR => {
     const r = getRecipeData(baseR.num);
     if (!r) return;
     html += `<tr><td>${r.num} · ${r.title}</td><td>${r.macros.kcal}</td><td>${r.macros.prot}</td><td>${r.macros.fat}</td><td>${r.macros.carb}</td></tr>`;
+    
+    totKcal += parseFloat(r.macros.kcal);
+    totP += parseFloat(r.macros.prot);
+    totF += parseFloat(r.macros.fat);
+    totC += parseFloat(r.macros.carb);
+    count++;
   });
   tbody.innerHTML = html;
+  
+  const avgDiv = document.getElementById('meal-plan-averages');
+  if (avgDiv && count > 0) {
+    const avgKcal = Math.round(totKcal / count);
+    const avgP = Math.round(totP / count);
+    const avgF = Math.round(totF / count);
+    const avgC = Math.round(totC / count);
+    avgDiv.innerHTML = `<strong>Meal Plan Vegan (2 porzioni)</strong><br>Media: ~${avgKcal} kcal | P: ${avgP}g | F: ${avgF}g | C: ${avgC}g per porzione`;
+  }
 }
 
 // ==================== TABS ====================
