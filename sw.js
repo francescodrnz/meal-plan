@@ -1,9 +1,11 @@
-const CACHE_NAME = 'mealplan-v4'; // Incrementato per forzare l'aggiornamento
+const CACHE_NAME = 'mealplan-v5'; // Incrementato per forzare l'aggiornamento
 const ASSETS = [
   'index.html',
   'manifest.json',
   'icon-192.png',
-  'icon-512.png'
+  'icon-512.png',
+  'script.js',
+  'style.css'
 ];
 
 // Installazione: metti in cache i file necessari
