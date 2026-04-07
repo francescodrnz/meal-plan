@@ -312,6 +312,19 @@
     </div>
   </div>
   
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+    <div style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted);">Andamento</div>
+    <select id="chart-timeframe" class="set-input" style="width: auto; padding: 4px 8px; font-size: 0.75rem;" onchange="renderPeso()">
+      <option value="7">7 giorni</option>
+      <option value="14">14 giorni</option>
+      <option value="30">1 mese</option>
+      <option value="60">2 mesi</option>
+      <option value="90">3 mesi</option>
+      <option value="180">6 mesi</option>
+      <option value="365">12 mesi</option>
+      <option value="max" selected>Max</option>
+    </select>
+  </div>
   <div class="chart-container">
     <canvas id="pesoChart"></canvas>
   </div>
@@ -728,7 +741,41 @@ function renderStatsAndChart(log) {
   const ctx = document.getElementById('pesoChart').getContext('2d');
   if (chartInstance) chartInstance.destroy();
   
+  const tfSelect = document.getElementById('chart-timeframe');
+  const timeframe = tfSelect ? tfSelect.value : 'max';
+  
   const chartData = [...log].sort((a, b) => new Date(a.date) - new Date(b.date));
+  let labels = [];
+  let dataPoints = [];
+
+  if (chartData.length > 0) {
+    let startDate;
+    let endDate = new Date();
+    endDate.setHours(0,0,0,0);
+
+    if (timeframe === 'max') {
+      startDate = new Date(chartData[0].date);
+      startDate.setHours(0,0,0,0);
+    } else {
+      const days = parseInt(timeframe, 10);
+      startDate = new Date(endDate);
+      startDate.setDate(endDate.getDate() - days + 1);
+    }
+
+    if (startDate > endDate) startDate = new Date(endDate);
+
+    let currentDate = new Date(startDate);
+    while (currentDate <= endDate) {
+      const dateStr = currentDate.getFullYear() + '-' + String(currentDate.getMonth() + 1).padStart(2, '0') + '-' + String(currentDate.getDate()).padStart(2, '0');
+      labels.push(`${currentDate.getDate()}/${currentDate.getMonth()+1}`);
+      
+      const entry = chartData.find(e => e.date === dateStr);
+      dataPoints.push(entry ? entry.weight : null);
+      
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
+  }
+
   const accent = getCSSVar('--accent') || '#c85a2a';
   const text = getCSSVar('--text') || '#1a1610';
   const gridColor = getCSSVar('--border') || '#e0d8c8';
@@ -736,17 +783,15 @@ function renderStatsAndChart(log) {
   chartInstance = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: chartData.map(e => {
-        const d = new Date(e.date);
-        return `${d.getDate()}/${d.getMonth()+1}`;
-      }),
+      labels: labels,
       datasets: [{
         label: 'Peso (kg)',
-        data: chartData.map(e => e.weight),
+        data: dataPoints,
         borderColor: accent,
         backgroundColor: accent,
         borderWidth: 2,
         pointRadius: 3,
+        spanGaps: true,
         tension: 0.2
       }]
     },
