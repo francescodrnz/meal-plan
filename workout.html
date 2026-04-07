@@ -14,6 +14,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
   /* Stili aggiuntivi per Workout */
+  .tabs { position: static !important; } /* Rimuove lo sticky per non sovrapporsi scrollando */
+  
   .header-link {
     font-size: 0.75rem;
     color: var(--muted);
@@ -84,6 +86,7 @@
     font-weight: 600;
     text-align: center;
     color: var(--text);
+    cursor: text;
     -moz-appearance: textfield;
   }
   .set-input::-webkit-outer-spin-button,
@@ -115,16 +118,26 @@
     color: white;
     border-color: var(--accent2);
   }
+  .ultima-sessione-row {
+    padding: 10px 16px;
+    background: var(--input-bg);
+    font-size: 0.75rem;
+    color: var(--text);
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
   
   /* Peso Tab */
   .weight-input-row {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 20px;
   }
   .weight-input-row input[type="date"],
   .weight-input-row input[type="number"] {
     flex: 1;
+    min-width: 100px;
     padding: 10px;
     border: 1.5px solid var(--border);
     border-radius: 10px;
@@ -134,6 +147,7 @@
     font-weight: 600;
   }
   .weight-input-row button {
+    flex: 1 1 100%;
     padding: 10px 16px;
     background: var(--accent2);
     color: white;
@@ -238,6 +252,7 @@
   <button class="tab active" onclick="showTab(event, 'allenamento')">Allenamento</button>
   <button class="tab" onclick="showTab(event, 'peso')">Peso</button>
   <button class="tab" onclick="showTab(event, 'storico')">Storico</button>
+  <button class="tab" onclick="showTab(event, 'info')">Info</button>
 </div>
 
 <!-- TAB ALLENAMENTO -->
@@ -259,11 +274,11 @@
   
   <div id="peso-stats" class="stats-block" style="display:none">
     <div class="stat-box">
-      <div class="stat-lbl">Media Sett.</div>
+      <div class="stat-lbl">Ultimi 7 gg</div>
       <div class="stat-val" id="stat-curr">--</div>
     </div>
     <div class="stat-box">
-      <div class="stat-lbl">Sett. Prec.</div>
+      <div class="stat-lbl">Prec. 7 gg</div>
       <div class="stat-val" id="stat-prev">--</div>
     </div>
     <div class="stat-box">
@@ -282,6 +297,19 @@
 <!-- TAB STORICO -->
 <div id="tab-storico" class="section">
   <div id="storico-list"></div>
+</div>
+
+<!-- TAB INFO -->
+<div id="tab-info" class="section">
+  <div class="info-note" style="background:#141a24;border-left:3px solid #3a7bc8;color:#a8c4e8;">
+    <strong>Sincronizzazione Dati</strong><br>
+    Usa questa sezione per trasferire o salvare un backup di tutti i dati di allenamento e peso.
+    <textarea id="workout-sync-area" style="width:100%; min-height:100px; padding:12px; margin-top:10px; border-radius:10px; background:var(--input-bg); color:var(--text); border:1.5px solid var(--border); font-size:0.75rem;" placeholder="Codice di sincronizzazione..."></textarea>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px">
+      <button class="done-btn" style="text-align:center; padding:10px;" onclick="exportWorkoutData()">Copia Dati 📋</button>
+      <button class="done-btn" style="text-align:center; padding:10px;" onclick="importWorkoutData()">Importa Dati 📥</button>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -333,14 +361,10 @@ function updateChrono() {
 
 function toggleChrono() {
   if (workoutActive.started_at) {
-    // Stop
     clearInterval(chronoInterval);
     chronoInterval = null;
     workoutActive.started_at = null;
   } else {
-    // Start (resume from 0 or existing logic? the prompt says "starts on tap, stops on tap. Persists across navigation... resumes correctly based on stored start timestamp")
-    // If it stops, does it reset or pause? "stops on tap" implies pausing or stopping. The prompt says "if user leaves and comes back mid-session, chronometer resumes correctly based on stored start timestamp". 
-    // Wait, the chronometer might need an offset if paused. Let's add an offset.
     workoutActive.started_at = Date.now() - (workoutActive.offset || 0);
     workoutActive.is_running = true;
     chronoInterval = setInterval(updateChrono, 1000);
@@ -356,6 +380,17 @@ function renderChrono() {
   } else {
     document.getElementById('chrono').innerText = formatTime(Math.floor((workoutActive.offset || 0) / 1000));
   }
+}
+
+function getUltimaSessione(exerciseName) {
+  const sessions = JSON.parse(localStorage.getItem('workout_sessions') || '[]');
+  for (let sess of sessions) {
+    const exSets = sess.sets.filter(s => s.exercise === exerciseName);
+    if (exSets.length > 0) {
+      return exSets.map(s => `${s.reps}x${s.kg}kg`).join(' | ');
+    }
+  }
+  return null;
 }
 
 // Render Allenamento
@@ -388,6 +423,15 @@ function renderAllenamento() {
       card.appendChild(row);
       setIdx++;
     }
+    
+    const ultima = getUltimaSessione(ex);
+    if (ultima) {
+      const ultRow = document.createElement('div');
+      ultRow.className = 'ultima-sessione-row';
+      ultRow.innerHTML = `<span style="font-weight:700;color:var(--muted)">Ultima sessione:</span> ${ultima}`;
+      card.appendChild(ultRow);
+    }
+    
     container.appendChild(card);
   });
   
@@ -404,7 +448,7 @@ function toggleSet(idx) {
   const s = workoutActive.sets_state[idx];
   s.done = !s.done;
   saveActive();
-  renderAllenamento(); // Re-render to update UI and disabled states
+  renderAllenamento(); 
 }
 
 function saveActive() {
@@ -467,17 +511,14 @@ function concludiAllenamento() {
   alert('Allenamento salvato con successo!');
 }
 
-// CHRONO FIX - the prompt wants tap to start/stop.
 document.getElementById('chrono').onclick = () => {
   if (workoutActive.is_running) {
-    // pause
     workoutActive.is_running = false;
     workoutActive.offset = Date.now() - workoutActive.started_at;
     workoutActive.started_at = null;
     clearInterval(chronoInterval);
     chronoInterval = null;
   } else {
-    // start
     workoutActive.is_running = true;
     workoutActive.started_at = Date.now() - (workoutActive.offset || 0);
     chronoInterval = setInterval(updateChrono, 1000);
@@ -495,7 +536,7 @@ function getCSSVar(name) {
 
 function renderPeso() {
   const log = JSON.parse(localStorage.getItem('body_weight_log') || '[]');
-  log.sort((a, b) => new Date(b.date) - new Date(a.date)); // Newest first
+  log.sort((a, b) => new Date(b.date) - new Date(a.date)); 
   
   document.getElementById('peso-date').value = new Date().toISOString().split('T')[0];
   
@@ -555,32 +596,29 @@ function deletePeso(idx) {
   renderPeso();
 }
 
-function getWeekNum(d) {
-  const date = new Date(d.getTime());
-  date.setHours(0, 0, 0, 0);
-  date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
-  const week1 = new Date(date.getFullYear(), 0, 4);
-  return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000 - 3 + (week1.getDay() + 6) % 7) / 7);
-}
-
 function renderStatsAndChart(log) {
   if (log.length < 7) {
     document.getElementById('peso-stats').style.display = 'none';
   } else {
     document.getElementById('peso-stats').style.display = 'grid';
+    
     const now = new Date();
-    const currWeek = getWeekNum(now);
-    const currYear = now.getFullYear();
+    now.setHours(0, 0, 0, 0);
+    const todayTime = now.getTime();
     
     let currSum = 0, currCount = 0;
     let prevSum = 0, prevCount = 0;
     
     log.forEach(e => {
       const d = new Date(e.date);
-      const w = getWeekNum(d);
-      const y = d.getFullYear();
-      if (y === currYear && w === currWeek) { currSum += e.weight; currCount++; }
-      else if (y === currYear && w === currWeek - 1) { prevSum += e.weight; prevCount++; }
+      d.setHours(0, 0, 0, 0);
+      const diffDays = Math.floor((todayTime - d.getTime()) / 86400000);
+      
+      if (diffDays >= 0 && diffDays < 7) { 
+        currSum += e.weight; currCount++; 
+      } else if (diffDays >= 7 && diffDays < 14) { 
+        prevSum += e.weight; prevCount++; 
+      }
     });
     
     const currAvg = currCount ? (currSum / currCount).toFixed(1) : '--';
@@ -685,6 +723,36 @@ function deleteSession(idx) {
   sessions.splice(idx, 1);
   localStorage.setItem('workout_sessions', JSON.stringify(sessions));
   renderStorico();
+}
+
+// ==================== INFO (SYNC) ====================
+function exportWorkoutData() {
+  const data = {
+    workout_sessions: JSON.parse(localStorage.getItem('workout_sessions') || '[]'),
+    workout_active: JSON.parse(localStorage.getItem('workout_active') || 'null'),
+    body_weight_log: JSON.parse(localStorage.getItem('body_weight_log') || '[]')
+  };
+  const str = btoa(encodeURIComponent(JSON.stringify(data)));
+  const area = document.getElementById('workout-sync-area');
+  area.value = str;
+  area.select();
+  document.execCommand('copy');
+  alert('Dati copiati negli appunti!');
+}
+
+function importWorkoutData() {
+  const str = document.getElementById('workout-sync-area').value.trim();
+  if (!str) return;
+  try {
+    const data = JSON.parse(decodeURIComponent(atob(str)));
+    if (data.workout_sessions) localStorage.setItem('workout_sessions', JSON.stringify(data.workout_sessions));
+    if (data.workout_active !== undefined) localStorage.setItem('workout_active', JSON.stringify(data.workout_active));
+    if (data.body_weight_log) localStorage.setItem('body_weight_log', JSON.stringify(data.body_weight_log));
+    alert('Dati importati con successo!');
+    location.reload();
+  } catch(e) {
+    alert('Codice non valido o corrotto.');
+  }
 }
 
 // Inizializzazione
