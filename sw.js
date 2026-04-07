@@ -1,11 +1,12 @@
-const CACHE_NAME = 'mealplan-v7'; // Incrementato per forzare l'aggiornamento
+const CACHE_NAME = 'mealplan-v8'; // Incrementato per forzare l'aggiornamento
 const ASSETS = [
   'index.html',
   'manifest.json',
   'icon-192.png',
   'icon-512.png',
   'script.js',
-  'style.css'
+  'style.css',
+  'workout.html'
 ];
 
 // Installazione: metti in cache i file necessari

@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workout Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#1a1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  /* Stili aggiuntivi per Workout */
+  .header-link {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-decoration: none;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--pill-bg);
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+  .chrono-display {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin: 10px 0 20px;
+    color: var(--accent);
+    cursor: pointer;
+    user-select: none;
+  }
+  .exercise-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .exercise-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--pill-bg);
+  }
+  .set-row {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    gap: 8px;
+    transition: opacity 0.2s;
+  }
+  .set-row:last-child { border-bottom: none; }
+  .set-row.done {
+    opacity: 0.5;
+  }
+  .set-row.done .set-label {
+    text-decoration: line-through;
+  }
+  .set-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    width: 50px;
+  }
+  .set-input {
+    width: 60px;
+    padding: 8px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    background: var(--input-bg);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text);
+    -moz-appearance: textfield;
+  }
+  .set-input::-webkit-outer-spin-button,
+  .set-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+  .set-input:focus { outline: none; border-color: var(--accent2); background: var(--card); }
+  .input-group {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+  }
+  .input-label {
+    font-size: 0.7rem;
+    color: var(--muted);
+  }
+  .done-btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1.5px solid var(--border);
+    background: var(--pill-bg);
+    font-weight: 700;
+    color: var(--text);
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+  }
+  .set-row.done .done-btn {
+    background: var(--accent2);
+    color: white;
+    border-color: var(--accent2);
+  }
+  
+  /* Peso Tab */
+  .weight-input-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .weight-input-row input[type="date"],
+  .weight-input-row input[type="number"] {
+    flex: 1;
+    padding: 10px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    background: var(--input-bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+  }
+  .weight-input-row button {
+    padding: 10px 16px;
+    background: var(--accent2);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-family: 'Syne', sans-serif;
+    cursor: pointer;
+  }
+  
+  .stats-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .stat-box {
+    background: var(--pill-bg);
+    padding: 12px 8px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .stat-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .stat-lbl {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+  }
+  
+  .chart-container {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .weight-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .weight-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card);
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+  .weight-date { font-weight: 600; color: var(--muted); font-size: 0.85rem; }
+  .weight-val { font-weight: 700; font-family: 'Syne', sans-serif; font-size: 1.1rem; }
+  .weight-actions button {
+    background: none; border: none; font-size: 1.1rem; cursor: pointer; padding: 4px; color: var(--muted);
+  }
+  
+  /* Storico Tab */
+  .history-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 12px;
+    padding: 16px;
+  }
+  .history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+  }
+  .history-date { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; text-transform: capitalize; }
+  .history-dur { font-size: 0.85rem; font-weight: 600; color: var(--accent); }
+  .history-del { color: #d9534f; background: none; border: none; cursor: pointer; font-size: 1.1rem; }
+  .history-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  .history-table th { text-align: left; padding: 4px 0; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+  .history-table td { padding: 6px 0; border-bottom: 1px solid var(--border); }
+  .history-table tr:last-child td { border-bottom: none; }
+  .history-ex { font-weight: 600; }
+</style>
+</head>
+<body>
+
+<header style="position: relative;">
+  <h1>🏋️ Allenamento</h1>
+  <a href="index.html" class="header-link">← Meal Plan</a>
+</header>
+
+<div class="tabs">
+  <button class="tab active" onclick="showTab(event, 'allenamento')">Allenamento</button>
+  <button class="tab" onclick="showTab(event, 'peso')">Peso</button>
+  <button class="tab" onclick="showTab(event, 'storico')">Storico</button>
+</div>
+
+<!-- TAB ALLENAMENTO -->
+<div id="tab-allenamento" class="section active">
+  <div class="chrono-display" id="chrono" onclick="toggleChrono()">00:00</div>
+  
+  <div id="exercises-container"></div>
+  
+  <button id="btn-concludi" class="confirm-btn" style="opacity: 0.5; pointer-events: none;" onclick="concludiAllenamento()">Concludi allenamento</button>
+</div>
+
+<!-- TAB PESO -->
+<div id="tab-peso" class="section">
+  <div class="weight-input-row">
+    <input type="date" id="peso-date">
+    <input type="number" id="peso-val" step="0.1" placeholder="kg">
+    <button onclick="salvaPeso()">Salva</button>
+  </div>
+  
+  <div id="peso-stats" class="stats-block" style="display:none">
+    <div class="stat-box">
+      <div class="stat-lbl">Media Sett.</div>
+      <div class="stat-val" id="stat-curr">--</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-lbl">Sett. Prec.</div>
+      <div class="stat-val" id="stat-prev">--</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-lbl">Delta</div>
+      <div class="stat-val" id="stat-delta">--</div>
+    </div>
+  </div>
+  
+  <div class="chart-container">
+    <canvas id="pesoChart"></canvas>
+  </div>
+  
+  <div class="weight-list" id="peso-list"></div>
+</div>
+
+<!-- TAB STORICO -->
+<div id="tab-storico" class="section">
+  <div id="storico-list"></div>
+</div>
+
+<script>
+// Tab Logic
+function showTab(evt, tabId) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + tabId).classList.add('active');
+  evt.currentTarget.classList.add('active');
+  if (tabId === 'peso') renderPeso();
+  if (tabId === 'storico') renderStorico();
+}
+
+// Data structures & Constants
+const EXERCISES = [
+  "Goblet Squat",
+  "Rematore",
+  "Hip Thrust",
+  "Push Up",
+  "Overhead Press"
+];
+const SETS_PER_EX = 2;
+const TOTAL_SETS = EXERCISES.length * SETS_PER_EX;
+
+let workoutActive = JSON.parse(localStorage.getItem('workout_active'));
+let chronoInterval = null;
+
+// Initialize workout state if null
+if (!workoutActive) {
+  workoutActive = {
+    started_at: null,
+    sets_state: Array(TOTAL_SETS).fill(null).map(() => ({ reps: '', kg: '', done: false }))
+  };
+}
+
+// CHRONO LOGIC
+function formatTime(sec) {
+  const m = Math.floor(sec / 60).toString().padStart(2, '0');
+  const s = (sec % 60).toString().padStart(2, '0');
+  return `${m}:${s}`;
+}
+
+function updateChrono() {
+  if (!workoutActive.started_at) return;
+  const now = Date.now();
+  const diffSec = Math.floor((now - workoutActive.started_at) / 1000);
+  document.getElementById('chrono').innerText = formatTime(diffSec);
+}
+
+function toggleChrono() {
+  if (workoutActive.started_at) {
+    // Stop
+    clearInterval(chronoInterval);
+    chronoInterval = null;
+    workoutActive.started_at = null;
+  } else {
+    // Start (resume from 0 or existing logic? the prompt says "starts on tap, stops on tap. Persists across navigation... resumes correctly based on stored start timestamp")
+    // If it stops, does it reset or pause? "stops on tap" implies pausing or stopping. The prompt says "if user leaves and comes back mid-session, chronometer resumes correctly based on stored start timestamp". 
+    // Wait, the chronometer might need an offset if paused. Let's add an offset.
+    workoutActive.started_at = Date.now() - (workoutActive.offset || 0);
+    workoutActive.is_running = true;
+    chronoInterval = setInterval(updateChrono, 1000);
+  }
+  saveActive();
+  renderChrono();
+}
+
+function renderChrono() {
+  if (workoutActive.started_at && workoutActive.is_running) {
+    if (!chronoInterval) chronoInterval = setInterval(updateChrono, 1000);
+    updateChrono();
+  } else {
+    document.getElementById('chrono').innerText = formatTime(Math.floor((workoutActive.offset || 0) / 1000));
+  }
+}
+
+// Render Allenamento
+function renderAllenamento() {
+  const container = document.getElementById('exercises-container');
+  container.innerHTML = '';
+  
+  let setIdx = 0;
+  EXERCISES.forEach((ex) => {
+    const card = document.createElement('div');
+    card.className = 'exercise-card';
+    card.innerHTML = `<div class="exercise-title">${ex}</div>`;
+    
+    for (let i = 1; i <= SETS_PER_EX; i++) {
+      const s = workoutActive.sets_state[setIdx];
+      const row = document.createElement('div');
+      row.className = `set-row ${s.done ? 'done' : ''}`;
+      row.innerHTML = `
+        <div class="set-label">Set ${i}</div>
+        <div class="input-group">
+          <span class="input-label">reps</span>
+          <input type="number" class="set-input" min="1" value="${s.reps}" onchange="updateSet(${setIdx}, 'reps', this.value)" ${s.done ? 'disabled' : ''}>
+        </div>
+        <div class="input-group">
+          <span class="input-label">kg</span>
+          <input type="number" class="set-input" step="0.5" value="${s.kg}" onchange="updateSet(${setIdx}, 'kg', this.value)" ${s.done ? 'disabled' : ''}>
+        </div>
+        <button class="done-btn" onclick="toggleSet(${setIdx})">✓ Done</button>
+      `;
+      card.appendChild(row);
+      setIdx++;
+    }
+    container.appendChild(card);
+  });
+  
+  checkConcludi();
+  renderChrono();
+}
+
+function updateSet(idx, field, val) {
+  workoutActive.sets_state[idx][field] = val;
+  saveActive();
+}
+
+function toggleSet(idx) {
+  const s = workoutActive.sets_state[idx];
+  s.done = !s.done;
+  saveActive();
+  renderAllenamento(); // Re-render to update UI and disabled states
+}
+
+function saveActive() {
+  if (!workoutActive.is_running && workoutActive.started_at) {
+    workoutActive.offset = Date.now() - workoutActive.started_at;
+  } else if (workoutActive.is_running) {
+    workoutActive.offset = Date.now() - workoutActive.started_at;
+  }
+  localStorage.setItem('workout_active', JSON.stringify(workoutActive));
+}
+
+function checkConcludi() {
+  const btn = document.getElementById('btn-concludi');
+  const allDone = workoutActive.sets_state.every(s => s.done);
+  if (allDone) {
+    btn.style.opacity = '1';
+    btn.style.pointerEvents = 'auto';
+  } else {
+    btn.style.opacity = '0.5';
+    btn.style.pointerEvents = 'none';
+  }
+}
+
+function concludiAllenamento() {
+  if (!confirm('Vuoi concludere l\'allenamento?')) return;
+  
+  if (chronoInterval) {
+    clearInterval(chronoInterval);
+    workoutActive.offset = Date.now() - workoutActive.started_at;
+  }
+  
+  const sessions = JSON.parse(localStorage.getItem('workout_sessions') || '[]');
+  
+  const setsData = [];
+  let idx = 0;
+  EXERCISES.forEach(ex => {
+    for (let i = 1; i <= SETS_PER_EX; i++) {
+      const s = workoutActive.sets_state[idx];
+      setsData.push({ exercise: ex, set: i, reps: s.reps, kg: s.kg });
+      idx++;
+    }
+  });
+  
+  sessions.unshift({
+    date: new Date().toISOString(),
+    duration_seconds: Math.floor((workoutActive.offset || 0) / 1000),
+    sets: setsData
+  });
+  localStorage.setItem('workout_sessions', JSON.stringify(sessions));
+  
+  // Reset
+  workoutActive = {
+    started_at: null,
+    offset: 0,
+    is_running: false,
+    sets_state: Array(TOTAL_SETS).fill(null).map(() => ({ reps: '', kg: '', done: false }))
+  };
+  saveActive();
+  renderAllenamento();
+  alert('Allenamento salvato con successo!');
+}
+
+// CHRONO FIX - the prompt wants tap to start/stop.
+document.getElementById('chrono').onclick = () => {
+  if (workoutActive.is_running) {
+    // pause
+    workoutActive.is_running = false;
+    workoutActive.offset = Date.now() - workoutActive.started_at;
+    workoutActive.started_at = null;
+    clearInterval(chronoInterval);
+    chronoInterval = null;
+  } else {
+    // start
+    workoutActive.is_running = true;
+    workoutActive.started_at = Date.now() - (workoutActive.offset || 0);
+    chronoInterval = setInterval(updateChrono, 1000);
+  }
+  saveActive();
+  renderChrono();
+};
+
+// ==================== PESO ====================
+let chartInstance = null;
+
+function getCSSVar(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+
+function renderPeso() {
+  const log = JSON.parse(localStorage.getItem('body_weight_log') || '[]');
+  log.sort((a, b) => new Date(b.date) - new Date(a.date)); // Newest first
+  
+  document.getElementById('peso-date').value = new Date().toISOString().split('T')[0];
+  
+  const listEl = document.getElementById('peso-list');
+  listEl.innerHTML = '';
+  
+  log.forEach((entry, i) => {
+    const d = new Date(entry.date).toLocaleDateString('it-IT', { day: '2-digit', month: 'short', year: 'numeric' });
+    const div = document.createElement('div');
+    div.className = 'weight-item';
+    div.innerHTML = `
+      <div>
+        <div class="weight-date">${d}</div>
+        <div class="weight-val">${entry.weight} kg</div>
+      </div>
+      <div class="weight-actions">
+        <button onclick="editPeso(${i})">✎</button>
+        <button onclick="deletePeso(${i})">🗑</button>
+      </div>
+    `;
+    listEl.appendChild(div);
+  });
+  
+  renderStatsAndChart(log);
+}
+
+function salvaPeso() {
+  const d = document.getElementById('peso-date').value;
+  const w = parseFloat(document.getElementById('peso-val').value);
+  if (!d || isNaN(w)) return;
+  
+  let log = JSON.parse(localStorage.getItem('body_weight_log') || '[]');
+  const existingIdx = log.findIndex(e => e.date === d);
+  if (existingIdx >= 0) {
+    log[existingIdx].weight = w;
+  } else {
+    log.push({ date: d, weight: w });
+  }
+  localStorage.setItem('body_weight_log', JSON.stringify(log));
+  document.getElementById('peso-val').value = '';
+  renderPeso();
+}
+
+function editPeso(idx) {
+  const log = JSON.parse(localStorage.getItem('body_weight_log') || '[]');
+  log.sort((a, b) => new Date(b.date) - new Date(a.date));
+  document.getElementById('peso-date').value = log[idx].date;
+  document.getElementById('peso-val').value = log[idx].weight;
+}
+
+function deletePeso(idx) {
+  if (!confirm('Eliminare questo peso?')) return;
+  const log = JSON.parse(localStorage.getItem('body_weight_log') || '[]');
+  log.sort((a, b) => new Date(b.date) - new Date(a.date));
+  log.splice(idx, 1);
+  localStorage.setItem('body_weight_log', JSON.stringify(log));
+  renderPeso();
+}
+
+function getWeekNum(d) {
+  const date = new Date(d.getTime());
+  date.setHours(0, 0, 0, 0);
+  date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
+  const week1 = new Date(date.getFullYear(), 0, 4);
+  return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000 - 3 + (week1.getDay() + 6) % 7) / 7);
+}
+
+function renderStatsAndChart(log) {
+  if (log.length < 7) {
+    document.getElementById('peso-stats').style.display = 'none';
+  } else {
+    document.getElementById('peso-stats').style.display = 'grid';
+    const now = new Date();
+    const currWeek = getWeekNum(now);
+    const currYear = now.getFullYear();
+    
+    let currSum = 0, currCount = 0;
+    let prevSum = 0, prevCount = 0;
+    
+    log.forEach(e => {
+      const d = new Date(e.date);
+      const w = getWeekNum(d);
+      const y = d.getFullYear();
+      if (y === currYear && w === currWeek) { currSum += e.weight; currCount++; }
+      else if (y === currYear && w === currWeek - 1) { prevSum += e.weight; prevCount++; }
+    });
+    
+    const currAvg = currCount ? (currSum / currCount).toFixed(1) : '--';
+    const prevAvg = prevCount ? (prevSum / prevCount).toFixed(1) : '--';
+    let delta = '--';
+    if (currAvg !== '--' && prevAvg !== '--') {
+      const diff = (currAvg - prevAvg).toFixed(1);
+      delta = diff > 0 ? `+${diff} ▲` : `${diff} ▼`;
+    }
+    
+    document.getElementById('stat-curr').innerText = currAvg !== '--' ? currAvg : '--';
+    document.getElementById('stat-prev').innerText = prevAvg !== '--' ? prevAvg : '--';
+    document.getElementById('stat-delta').innerText = delta;
+  }
+  
+  // CHART
+  const ctx = document.getElementById('pesoChart').getContext('2d');
+  if (chartInstance) chartInstance.destroy();
+  
+  const chartData = [...log].sort((a, b) => new Date(a.date) - new Date(b.date));
+  const accent = getCSSVar('--accent') || '#c85a2a';
+  const text = getCSSVar('--text') || '#1a1610';
+  const gridColor = getCSSVar('--border') || '#e0d8c8';
+  
+  chartInstance = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: chartData.map(e => {
+        const d = new Date(e.date);
+        return `${d.getDate()}/${d.getMonth()+1}`;
+      }),
+      datasets: [{
+        label: 'Peso (kg)',
+        data: chartData.map(e => e.weight),
+        borderColor: accent,
+        backgroundColor: accent,
+        borderWidth: 2,
+        pointRadius: 3,
+        tension: 0.2
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { ticks: { color: text }, grid: { color: gridColor } },
+        y: { ticks: { color: text }, grid: { color: gridColor } }
+      }
+    }
+  });
+}
+
+// ==================== STORICO ====================
+function renderStorico() {
+  const sessions = JSON.parse(localStorage.getItem('workout_sessions') || '[]');
+  const listEl = document.getElementById('storico-list');
+  listEl.innerHTML = '';
+  
+  if (sessions.length === 0) {
+    listEl.innerHTML = '<div class="info-note">Nessun allenamento completato.</div>';
+    return;
+  }
+  
+  sessions.forEach((sess, i) => {
+    const d = new Date(sess.date).toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+    const dur = formatTime(sess.duration_seconds);
+    
+    const card = document.createElement('div');
+    card.className = 'history-card';
+    
+    let rowsHtml = '';
+    sess.sets.forEach(s => {
+      rowsHtml += `
+        <tr>
+          <td class="history-ex">${s.exercise}</td>
+          <td>Set ${s.set}</td>
+          <td>${s.reps} rep</td>
+          <td>${s.kg} kg</td>
+        </tr>
+      `;
+    });
+    
+    card.innerHTML = `
+      <div class="history-header">
+        <div>
+          <div class="history-date">${d}</div>
+          <div class="history-dur">⏳ ${dur}</div>
+        </div>
+        <button class="history-del" onclick="deleteSession(${i})">🗑</button>
+      </div>
+      <table class="history-table">
+        ${rowsHtml}
+      </table>
+    `;
+    listEl.appendChild(card);
+  });
+}
+
+function deleteSession(idx) {
+  if (!confirm('Eliminare questo allenamento dallo storico?')) return;
+  const sessions = JSON.parse(localStorage.getItem('workout_sessions') || '[]');
+  sessions.splice(idx, 1);
+  localStorage.setItem('workout_sessions', JSON.stringify(sessions));
+  renderStorico();
+}
+
+// Inizializzazione
+renderAllenamento();
+</script>
+</body>
+</html>
