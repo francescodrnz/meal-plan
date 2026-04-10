@@ -935,11 +935,38 @@ function exportWorkoutData() {
   alert('Dati copiati negli appunti!');
 }
 
-function importWorkoutData() {
+async function compressToBase64(dataObj) {
+  const jsonStr = JSON.stringify(dataObj);
+  const stream = new Blob([jsonStr]).stream().pipeThrough(new CompressionStream('deflate'));
+  const blob = await new Response(stream).blob();
+  const buffer = await blob.arrayBuffer();
+  const bytes = new Uint8Array(buffer);
+  let binary = '';
+  for (let i = 0; i < bytes.byteLength; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  return 'DEFLATE_' + btoa(binary);
+}
+
+async function decompressFromBase64(str) {
+  if (str.startsWith('DEFLATE_')) {
+    const b64 = str.substring(8);
+    const binary = atob(b64);
+    const bytes = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+    const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate'));
+    const text = await new Response(stream).text();
+    return JSON.parse(text);
+  } else {
+    return JSON.parse(decodeURIComponent(atob(str)));
+  }
+}
+
+async function importWorkoutData() {
   const str = document.getElementById('workout-sync-area').value.trim();
   if (!str) return;
   try {
-    const data = JSON.parse(decodeURIComponent(atob(str)));
+    const data = await decompressFromBase64(str);
     if (data.workout_sessions) localStorage.setItem('workout_sessions', JSON.stringify(data.workout_sessions));
     if (data.workout_active !== undefined) localStorage.setItem('workout_active', JSON.stringify(data.workout_active));
     if (data.body_weight_log) localStorage.setItem('body_weight_log', JSON.stringify(data.body_weight_log));
@@ -950,14 +977,14 @@ function importWorkoutData() {
   }
 }
 
-function backupToTelegram(type) {
+async function backupToTelegram(type) {
   if (type !== 'workout') return;
   const data = {
     workout_sessions: JSON.parse(localStorage.getItem('workout_sessions') || '[]'),
     workout_active: JSON.parse(localStorage.getItem('workout_active') || 'null'),
     body_weight_log: JSON.parse(localStorage.getItem('body_weight_log') || '[]')
   };
-  const str = btoa(encodeURIComponent(JSON.stringify(data)));
+  const str = await compressToBase64(data);
   const text = `/backup_workout ${str}`;
   const url = `https://t.me/botchecontaimessaggibot?text=${encodeURIComponent(text)}`;
   window.open(url, '_blank');

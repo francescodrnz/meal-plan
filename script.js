@@ -1693,14 +1693,40 @@ function fallbackCopy(area) {
   }
 }
 
-function importSyncData() {
+async function compressToBase64(dataObj) {
+  const jsonStr = JSON.stringify(dataObj);
+  const stream = new Blob([jsonStr]).stream().pipeThrough(new CompressionStream('deflate'));
+  const blob = await new Response(stream).blob();
+  const buffer = await blob.arrayBuffer();
+  const bytes = new Uint8Array(buffer);
+  let binary = '';
+  for (let i = 0; i < bytes.byteLength; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  return 'DEFLATE_' + btoa(binary);
+}
+
+async function decompressFromBase64(str) {
+  if (str.startsWith('DEFLATE_')) {
+    const b64 = str.substring(8);
+    const binary = atob(b64);
+    const bytes = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+    const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate'));
+    const text = await new Response(stream).text();
+    return JSON.parse(text);
+  } else {
+    return JSON.parse(decodeURIComponent(atob(str)));
+  }
+}
+
+async function importSyncData() {
   const area = document.getElementById('sync-area');
   const code = area.value.trim();
   if (!code) { alert('Incolla prima un codice di sincronizzazione.'); return; }
   
   try {
-    // decodeURIComponent ripristina la stringa originale dopo atob
-    const data = JSON.parse(decodeURIComponent(atob(code)));
+    const data = await decompressFromBase64(code);
     if (!confirm('Importando questi dati sovrascriverai la dispensa attuale. Continuare?')) return;
     
     Store.inventory = data.inventory || {};
@@ -1710,18 +1736,18 @@ function importSyncData() {
     area.value = '';
     alert('Dati importati con successo!');
   } catch (err) {
-    alert('Codice non valido. Assicurati di aver copiato il codice corretto dal PC.');
+    alert('Codice non valido o corrotto. Assicurati di aver copiato il codice corretto.');
   }
 }
 
-function backupToTelegram(type) {
+async function backupToTelegram(type) {
   if (type !== 'mealplan') return;
   const data = {
     inventory: Store.inventory,
     customs: Store.customs,
     v: 1
   };
-  const code = btoa(encodeURIComponent(JSON.stringify(data)));
+  const code = await compressToBase64(data);
   const text = `/backup_mealplan ${code}`;
   const url = `https://t.me/botchecontaimessaggibot?text=${encodeURIComponent(text)}`;
   window.open(url, '_blank');
