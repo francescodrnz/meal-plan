@@ -1714,6 +1714,19 @@ function importSyncData() {
   }
 }
 
+function backupToTelegram(type) {
+  if (type !== 'mealplan') return;
+  const data = {
+    inventory: Store.inventory,
+    customs: Store.customs,
+    v: 1
+  };
+  const code = btoa(encodeURIComponent(JSON.stringify(data)));
+  const text = `/backup_mealplan ${code}`;
+  const url = `https://t.me/botchecontaimessaggibot?text=${encodeURIComponent(text)}`;
+  window.open(url, '_blank');
+}
+
 // Inizializzazione al caricamento della pagina
 window.addEventListener('DOMContentLoaded', () => {
 

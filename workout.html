@@ -354,6 +354,7 @@
       <button class="done-btn" style="text-align:center; padding:10px;" onclick="exportWorkoutData()">Copia Dati 📋</button>
       <button class="done-btn" style="text-align:center; padding:10px;" onclick="importWorkoutData()">Importa Dati 📥</button>
     </div>
+    <button class="done-btn" style="width:100%;text-align:center; padding:10px; margin-top:8px; background:#0088cc; color:white; border:none;" onclick="backupToTelegram('workout')">Backup Telegram 🤖</button>
   </div>
 </div>
 
@@ -947,6 +948,19 @@ function importWorkoutData() {
   } catch(e) {
     alert('Codice non valido o corrotto.');
   }
+}
+
+function backupToTelegram(type) {
+  if (type !== 'workout') return;
+  const data = {
+    workout_sessions: JSON.parse(localStorage.getItem('workout_sessions') || '[]'),
+    workout_active: JSON.parse(localStorage.getItem('workout_active') || 'null'),
+    body_weight_log: JSON.parse(localStorage.getItem('body_weight_log') || '[]')
+  };
+  const str = btoa(encodeURIComponent(JSON.stringify(data)));
+  const text = `/backup_workout ${str}`;
+  const url = `https://t.me/botchecontaimessaggibot?text=${encodeURIComponent(text)}`;
+  window.open(url, '_blank');
 }
 
 // Inizializzazione
