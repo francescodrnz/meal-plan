@@ -6,16 +6,16 @@ const recipesData = [
       { "class": "badge-pentola", "text": "🫕 Pentola" },
       { "class": "badge-proteina", "text": "ceci" }
     ],
-    "kcal": 1092,
+    "kcal": 1100,
     "ingredientsList": [
-      { "name": "Quinoa (secca)", "qty": "200 g" },
-      { "name": "Ceci secchi (da ammollare e lessare)", "qty": "340 g" },
+      { "name": "Quinoa (secca)", "qty": "150 g" },
+      { "name": "Ceci secchi (da ammollare e lessare)", "qty": "400 g" },
       { "name": "Broccoli surgelati", "qty": "400 g" },
-      { "name": "Olio EVO", "qty": "10 g" },
+      { "name": "Olio EVO", "qty": "15 g" },
       { "name": "Sale, spezie a piacere", "qty": "q.b." }
     ],
-    "prep": "Sciacqua bene la quinoa e cuocila in circa 400 ml d'acqua finché assorbe il liquido. A parte, cuoci i broccoli in acqua bollente. Unisci la quinoa cotta, i ceci già lessati e i broccoli, condisci con olio e spezie.",
-    "macros": { "kcal": 1092, "prot": "52g", "fat": "22g", "carb": "174g" },
+    "prep": "Sciacqua bene la quinoa e cuocila in circa 300 ml d'acqua finché assorbe il liquido. A parte, cuoci i broccoli in acqua bollente. Unisci la quinoa cotta, i ceci già lessati e i broccoli, condisci con olio e spezie.",
+    "macros": { "kcal": 1100, "prot": "55g", "fat": "23g", "carb": "172g" },
     "note": null
   },
   {
@@ -25,17 +25,17 @@ const recipesData = [
       { "class": "badge-pentola", "text": "🫕 Pentola" },
       { "class": "badge-proteina", "text": "lenticchie" }
     ],
-    "kcal": 1054,
+    "kcal": 1085,
     "ingredientsList": [
       { "name": "Lenticchie secche", "qty": "320 g" },
-      { "name": "Couscous (secco)", "qty": "140 g" },
+      { "name": "Couscous (secco)", "qty": "185 g" },
       { "name": "Broccoli surgelati", "qty": "400 g" },
-      { "name": "Olio EVO", "qty": "30 g" },
+      { "name": "Olio EVO", "qty": "25 g" },
       { "name": "Latte di soia (per \"panna\")", "qty": "150 ml" },
       { "name": "Sale, curcuma, cumino, pepe", "qty": "q.b." }
     ],
-    "prep": "Cuoci lenticchie + broccoli in ~1,2L acqua per 30 min. Aggiungi il mix latte+olio e spezie, spegni. Idrata il couscous a parte: 140 ml acqua bollente salata su 140 g couscous, copri 5 min, sgrana. Unisci nel piatto.",
-    "macros": { "kcal": 1054, "prot": "57g", "fat": "19g", "carb": "158g" },
+    "prep": "Cuoci lenticchie + broccoli in ~1,2L acqua per 30 min. Aggiungi il mix latte+olio e spezie, spegni. Idrata il couscous a parte: 185 ml acqua bollente salata su 185 g couscous, copri 5 min, sgrana. Unisci nel piatto.",
+    "macros": { "kcal": 1085, "prot": "60g", "fat": "17g", "carb": "174g" },
     "note": null
   },
   {
@@ -45,16 +45,16 @@ const recipesData = [
       { "class": "badge-pentola", "text": "🫕 Pentola" },
       { "class": "badge-proteina", "text": "fagioli" }
     ],
-    "kcal": 1065,
+    "kcal": 1077,
     "ingredientsList": [
-      { "name": "Fagioli secchi (da ammollare e lessare)", "qty": "390 g" },
-      { "name": "Farro perlato", "qty": "120 g" },
+      { "name": "Fagioli secchi (da ammollare e lessare)", "qty": "430 g" },
+      { "name": "Farro perlato", "qty": "160 g" },
       { "name": "Minestrone surgelato (busta)", "qty": "500 g" },
-      { "name": "Olio EVO", "qty": "25 g" },
+      { "name": "Olio EVO", "qty": "20 g" },
       { "name": "Sale", "qty": "q.b." }
     ],
     "prep": "Ammollo fagioli 8–12h. Bollitura vivace 10 min (obbligatoria), poi cuoci altri 40 min nella stessa acqua. Aggiungi minestrone surgelato e farro, cuoci altri 25–30 min. Olio a crudo.",
-    "macros": { "kcal": 1065, "prot": "55g", "fat": "17g", "carb": "173g" },
+    "macros": { "kcal": 1077, "prot": "58g", "fat": "16g", "carb": "182g" },
     "note": { "class": "warning-note", "text": "<strong>Nota fagioli:</strong> Bollitura vivace 10 min obbligatoria (fasina). Per cannellini e borlotti stesso processo per sicurezza." }
   },
   {
@@ -64,18 +64,18 @@ const recipesData = [
       { "class": "badge-forno", "text": "🔥 Forno" },
       { "class": "badge-proteina", "text": "ceci" }
     ],
-    "kcal": 1038,
+    "kcal": 1135,
     "ingredientsList": [
-      { "name": "Riso integrale (secco)", "qty": "50 g" },
-      { "name": "Ceci secchi (da ammollare e lessare)", "qty": "420 g" },
+      { "name": "Riso integrale (secco)", "qty": "80 g" },
+      { "name": "Ceci secchi (da ammollare e lessare)", "qty": "430 g" },
       { "name": "Broccoli surgelati", "qty": "400 g" },
       { "name": "Passata di pomodoro", "qty": "700 g" },
-      { "name": "Olio EVO", "qty": "10 g" },
+      { "name": "Olio EVO", "qty": "15 g" },
       { "name": "Sale, paprika", "qty": "q.b." },
       { "name": "Acqua", "qty": "q.b. per coprire il riso a filo" }
     ],
     "prep": "In teglia alta metti riso crudo, ceci cotti, broccoli, passata, olio. Aggiungi acqua fino a coprire il riso a filo. Mescola. Copri con alluminio. Forno 200°C × 35 min coperto. Togli alluminio, 10 min scoperti.",
-    "macros": { "kcal": 1038, "prot": "52g", "fat": "20g", "carb": "167g" },
+    "macros": { "kcal": 1135, "prot": "55g", "fat": "20g", "carb": "187g" },
     "note": null
   },
   {
@@ -85,19 +85,19 @@ const recipesData = [
       { "class": "badge-forno", "text": "🔥 Forno" },
       { "class": "badge-proteina", "text": "lenticchie" }
     ],
-    "kcal": 1054,
+    "kcal": 1099,
     "ingredientsList": [
-      { "name": "Pasta corta (cruda)", "qty": "150 g" },
-      { "name": "Lenticchie secche (lessate a parte)", "qty": "290 g" },
+      { "name": "Pasta corta (cruda)", "qty": "160 g" },
+      { "name": "Lenticchie secche (lessate a parte)", "qty": "285 g" },
       { "name": "Broccoli surgelati", "qty": "400 g" },
       { "name": "Passata di pomodoro", "qty": "700 g" },
-      { "name": "Olio EVO", "qty": "25 g" },
+      { "name": "Olio EVO", "qty": "30 g" },
       { "name": "Latte di soia (per \"panna\")", "qty": "100 ml" },
       { "name": "Sale, origano", "qty": "q.b." },
       { "name": "Acqua", "qty": "q.b. per coprire la pasta a filo" }
     ],
     "prep": "Lessa le lenticchie a parte. In teglia alta metti: pasta cruda, lenticchie cotte, passata, olio, mix latte+olio, acqua per coprire la pasta a filo. Copri ermeticamente con alluminio. Forno 200°C × 30 min. Rimuovi alluminio, altri 15 min grill.",
-    "macros": { "kcal": 1054, "prot": "57g", "fat": "17g", "carb": "162g" },
+    "macros": { "kcal": 1099, "prot": "58g", "fat": "19g", "carb": "176g" },
     "note": null
   },
   {
@@ -107,16 +107,16 @@ const recipesData = [
       { "class": "badge-forno", "text": "🔥 Forno" },
       { "class": "badge-proteina", "text": "tofu" }
     ],
-    "kcal": 1053,
+    "kcal": 1098,
     "ingredientsList": [
       { "name": "Tofu (cubetti)", "qty": "540 g (3 panetti)" },
-      { "name": "Patate (cubetti)", "qty": "1500 g" },
+      { "name": "Patate (cubetti)", "qty": "1300 g" },
       { "name": "Broccoli surgelati", "qty": "400 g" },
-      { "name": "Olio EVO", "qty": "15 g" },
+      { "name": "Olio EVO", "qty": "40 g" },
       { "name": "Sale, rosmarino, spezie", "qty": "q.b." }
     ],
     "prep": "Taglia tofu e patate a cubetti. Metti tutto in teglia. Versa l'olio, mescola bene finché tutto è unto. Forno 200°C × 40 min. Zero interventi.",
-    "macros": { "kcal": 1053, "prot": "56g", "fat": "29g", "carb": "139g" },
+    "macros": { "kcal": 1098, "prot": "54g", "fat": "42g", "carb": "130g" },
     "note": null
   },
   {
@@ -126,16 +126,16 @@ const recipesData = [
       { "class": "badge-forno", "text": "🔥 Forno + Bollitore" },
       { "class": "badge-proteina", "text": "ceci" }
     ],
-    "kcal": 1056,
+    "kcal": 1123,
     "ingredientsList": [
-      { "name": "Ceci secchi (da ammollare e lessare)", "qty": "440 g" },
-      { "name": "Couscous (secco)", "qty": "80 g" },
+      { "name": "Ceci secchi (da ammollare e lessare)", "qty": "410 g" },
+      { "name": "Couscous (secco)", "qty": "150 g" },
       { "name": "Broccoli surgelati", "qty": "400 g" },
-      { "name": "Olio EVO", "qty": "10 g" },
+      { "name": "Olio EVO", "qty": "15 g" },
       { "name": "Paprika, sale", "qty": "q.b." }
     ],
-    "prep": "Metti i ceci cotti e i broccoli in teglia con olio, paprika e sale. Forno 200°C × 30 min. Idrata il couscous: 80 ml acqua bollente salata su 80 g couscous, copri 5 min, sgrana. Unisci.",
-    "macros": { "kcal": 1056, "prot": "53g", "fat": "19g", "carb": "171g" },
+    "prep": "Metti i ceci cotti e i broccoli in teglia con olio, paprika e sale. Forno 200°C × 30 min. Idrata il couscous: 150 ml acqua bollente salata su 150 g couscous, copri 5 min, sgrana. Unisci.",
+    "macros": { "kcal": 1123, "prot": "55g", "fat": "19g", "carb": "185g" },
     "note": null
   },
   {
@@ -145,16 +145,16 @@ const recipesData = [
       { "class": "badge-pentola", "text": "🫕 Pentola" },
       { "class": "badge-proteina", "text": "fagioli" }
     ],
-    "kcal": 1056,
+    "kcal": 1052,
     "ingredientsList": [
-      { "name": "Fagioli secchi", "qty": "410 g" },
-      { "name": "Polenta istantanea", "qty": "120 g" },
+      { "name": "Fagioli secchi", "qty": "460 g" },
+      { "name": "Polenta istantanea", "qty": "140 g" },
       { "name": "Broccoli surgelati", "qty": "400 g" },
-      { "name": "Olio EVO", "qty": "15 g" },
+      { "name": "Olio EVO", "qty": "20 g" },
       { "name": "Sale", "qty": "q.b." }
     ],
     "prep": "Ammollo fagioli 8–12h. Bollitura vivace 10 min, cuoci altri 40 min. Togli i fagioli. Stessa acqua: broccoli 5 min, togli. Stessa acqua: versa la polenta a pioggia, cuoci 5 min. Assembla.",
-    "macros": { "kcal": 1056, "prot": "54g", "fat": "11g", "carb": "183g" },
+    "macros": { "kcal": 1052, "prot": "58g", "fat": "15g", "carb": "176g" },
     "note": { "class": "warning-note", "text": "<strong>Nota fagioli:</strong> Bollitura vivace 10 min obbligatoria (fasina). Per cannellini e borlotti stesso processo per sicurezza." }
   },
   {
@@ -164,16 +164,16 @@ const recipesData = [
       { "class": "badge-pentola", "text": "🫕 Pentola" },
       { "class": "badge-proteina", "text": "lenticchie" }
     ],
-    "kcal": 1055,
+    "kcal": 1083,
     "ingredientsList": [
-      { "name": "Lenticchie secche", "qty": "310 g" },
-      { "name": "Pasta corta", "qty": "190 g" },
+      { "name": "Lenticchie secche", "qty": "350 g" },
+      { "name": "Pasta corta", "qty": "180 g" },
       { "name": "Broccoli surgelati", "qty": "400 g" },
       { "name": "Olio EVO (a crudo)", "qty": "25 g" },
       { "name": "Sale", "qty": "q.b." }
     ],
     "prep": "Acqua non salata a bollore. Butta le lenticchie, cuoci 20 min. Aggiungi sale, pasta e broccoli nella stessa acqua. Cuoci altri 12 min mescolando. Olio a crudo nel piatto.",
-    "macros": { "kcal": 1055, "prot": "56g", "fat": "16g", "carb": "167g" },
+    "macros": { "kcal": 1083, "prot": "61g", "fat": "16g", "carb": "176g" },
     "note": null
   },
   {
@@ -183,16 +183,16 @@ const recipesData = [
       { "class": "badge-pentola", "text": "🫕 Pentola" },
       { "class": "badge-proteina", "text": "ceci" }
     ],
-    "kcal": 1055,
+    "kcal": 1120,
     "ingredientsList": [
       { "name": "Ceci secchi (da ammollare e lessare)", "qty": "430 g" },
-      { "name": "Farro perlato", "qty": "100 g" },
+      { "name": "Farro perlato", "qty": "130 g" },
       { "name": "Broccoli surgelati", "qty": "400 g" },
-      { "name": "Olio EVO", "qty": "10 g" },
+      { "name": "Olio EVO", "qty": "20 g" },
       { "name": "Sale, rosmarino, alloro", "qty": "q.b." }
     ],
     "prep": "Metti i ceci lessati in pentola con acqua salata. Aggiungi farro e broccoli. Cuoci 30–35 min finché il farro è morbido. Olio a crudo o in cottura.",
-    "macros": { "kcal": 1055, "prot": "54g", "fat": "20g", "carb": "171g" },
+    "macros": { "kcal": 1120, "prot": "55g", "fat": "23g", "carb": "179g" },
     "note": null
   }
 ];
@@ -414,24 +414,24 @@ function toggleCard(card) {
 // ==================== SHOPPING LIST ====================
 const shopData = {
   frigo: [
-    { id: 'tofu',        name: 'Tofu',                unit: '2 panetti da 180g',   need: 360,                   storeSize: 180,  storeLabel: 'panetti da 180g', useUnits: true },
-    { id: 'patate',      name: 'Patate',               unit: '1,5 kg',              need: 1400,                  storeSize: 1,    storeLabel: 'g',              step: 100 },
-    { id: 'broccoli',    name: 'Broccoli surgelati',   unit: '5 buste da 500g',     need: 2800,                  storeSize: 500,  storeLabel: 'buste da 500g' },
+    { id: 'tofu',        name: 'Tofu',                unit: '3 panetti da 180g',   need: 540,                   storeSize: 180,  storeLabel: 'panetti da 180g', useUnits: true },
+    { id: 'patate',      name: 'Patate',               unit: '1,3 kg',              need: 1300,                  storeSize: 1,    storeLabel: 'g',              step: 100 },
+    { id: 'broccoli',    name: 'Broccoli surgelati',   unit: '8 buste da 500g',     need: 4000,                  storeSize: 500,  storeLabel: 'buste da 500g' },
     { id: 'minestrone',  name: 'Minestrone surgelato', unit: '2 buste da 750g',     need: 1500,                  storeSize: 750,  storeLabel: 'buste da 750g' },
   ],
   secchi: [
-    { id: 'lenticchie',  name: 'Lenticchie secche',   unit: 'buste da 500g',       need: 800,                   storeSize: 500,  storeLabel: 'buste da 500g' },
-    { id: 'ceci',        name: 'Ceci secchi',          unit: 'buste da 500g',       need: 1070,                  storeSize: 500,  storeLabel: 'buste da 500g' },
-    { id: 'fagioli',     name: 'Fagioli secchi',       unit: 'buste da 500g',       need: 530,                   storeSize: 500,  storeLabel: 'buste da 500g' },
-    { id: 'quinoa',      name: 'Quinoa',               unit: 'buste da 200g',       need: 200,                   storeSize: 200,  storeLabel: 'buste da 200g' },
-    { id: 'pasta',       name: 'Pasta corta',          unit: '500g',                need: 390,                   storeSize: 500,  storeLabel: 'pacchi da 500g' },
-    { id: 'couscous',    name: 'Couscous',             unit: '1 kg',                need: 430,                   storeSize: 1000, storeLabel: 'pacchi da 1kg' },
-    { id: 'farro',       name: 'Farro perlato',        unit: '500g',                need: 470,                   storeSize: 500,  storeLabel: 'pacchi da 500g' },
-    { id: 'riso',        name: 'Riso integrale',       unit: '1 kg',                need: 220,                   storeSize: 1000, storeLabel: 'pacchi da 1kg' },
-    { id: 'polenta',     name: 'Polenta istantanea',   unit: '500g',                need: 250,                   storeSize: 500,  storeLabel: 'pacchi da 500g' },
+    { id: 'lenticchie',  name: 'Lenticchie secche',   unit: 'buste da 500g',       need: 955,                   storeSize: 500,  storeLabel: 'buste da 500g' },
+    { id: 'ceci',        name: 'Ceci secchi',          unit: 'buste da 500g',       need: 1670,                  storeSize: 500,  storeLabel: 'buste da 500g' },
+    { id: 'fagioli',     name: 'Fagioli secchi',       unit: 'buste da 500g',       need: 890,                   storeSize: 500,  storeLabel: 'buste da 500g' },
+    { id: 'quinoa',      name: 'Quinoa',               unit: 'buste da 200g',       need: 150,                   storeSize: 200,  storeLabel: 'buste da 200g' },
+    { id: 'pasta',       name: 'Pasta corta',          unit: '500g',                need: 340,                   storeSize: 500,  storeLabel: 'pacchi da 500g' },
+    { id: 'couscous',    name: 'Couscous',             unit: '1 kg',                need: 335,                   storeSize: 1000, storeLabel: 'pacchi da 1kg' },
+    { id: 'farro',       name: 'Farro perlato',        unit: '500g',                need: 290,                   storeSize: 500,  storeLabel: 'pacchi da 500g' },
+    { id: 'riso',        name: 'Riso integrale',       unit: '1 kg',                need: 80,                    storeSize: 1000, storeLabel: 'pacchi da 1kg' },
+    { id: 'polenta',     name: 'Polenta istantanea',   unit: '500g',                need: 140,                   storeSize: 500,  storeLabel: 'pacchi da 500g' },
   ],
   liquidi: [
-    { id: 'olio',        name: 'Olio EVO',             unit: '1 bottiglia da 1L',   need: 365,                   storeSize: 1000, storeLabel: 'bottiglie da 1L' },
+    { id: 'olio',        name: 'Olio EVO',             unit: '1 bottiglia da 1L',   need: 225,                   storeSize: 1000, storeLabel: 'bottiglie da 1L' },
     { id: 'passata',     name: 'Passata di pomodoro',  unit: '2 bottiglie da 700g', need: 1400,                  storeSize: 700,  storeLabel: 'bottiglie da 700g', useUnits: true },
     { id: 'latte_soia',  name: 'Latte di soia',        unit: 'brick da 1L',         need: 2750,                  storeSize: 1000, storeLabel: 'brick da 1L', suggestedBuffer: 1000 },
   ]
@@ -1058,16 +1058,16 @@ function buildCustomDispRows() {
 }
 
 const recipeIngredients = [
-  { num:1,  name:'Quinoa e Ceci',               ingredients: [{id:'quinoa',amt:200},{id:'ceci',amt:340},{id:'broccoli',amt:400},{id:'olio',amt:10}] },
-  { num:2,  name:'Dahl Lenticchie + Couscous',  ingredients: [{id:'lenticchie',amt:320},{id:'couscous',amt:140},{id:'broccoli',amt:400},{id:'olio',amt:30},{id:'latte_soia',amt:150}] },
-  { num:3,  name:'Minestrone Farro + Fagioli',  ingredients: [{id:'fagioli',amt:390},{id:'farro',amt:120},{id:'minestrone',amt:500},{id:'olio',amt:25}] },
-  { num:4,  name:'Riso al Forno + Ceci',        ingredients: [{id:'riso',amt:50},{id:'ceci',amt:420},{id:'broccoli',amt:400},{id:'passata',amt:700},{id:'olio',amt:10}] },
-  { num:5,  name:'Pasta al Forno Ignorante',    ingredients: [{id:'pasta',amt:150},{id:'lenticchie',amt:290},{id:'broccoli',amt:400},{id:'passata',amt:700},{id:'olio',amt:25},{id:'latte_soia',amt:100}] },
-  { num:6,  name:'Teglia Tofu e Patate',        ingredients: [{id:'tofu',amt:540},{id:'patate',amt:1500},{id:'broccoli',amt:400},{id:'olio',amt:15}] },
-  { num:7,  name:'Couscous + Ceci Croccanti',   ingredients: [{id:'ceci',amt:440},{id:'couscous',amt:80},{id:'broccoli',amt:400},{id:'olio',amt:10}] },
-  { num:8,  name:'Fagioli con Polenta',         ingredients: [{id:'fagioli',amt:410},{id:'polenta',amt:120},{id:'broccoli',amt:400},{id:'olio',amt:15}] },
-  { num:9,  name:'Pasta e Lenticchie',          ingredients: [{id:'lenticchie',amt:310},{id:'pasta',amt:190},{id:'broccoli',amt:400},{id:'olio',amt:25}] },
-  { num:10, name:'Zuppa Ceci e Farro',          ingredients: [{id:'ceci',amt:430},{id:'farro',amt:100},{id:'broccoli',amt:400},{id:'olio',amt:10}] }
+  { num:1,  name:'Quinoa e Ceci',               ingredients: [{id:'quinoa',amt:150},{id:'ceci',amt:400},{id:'broccoli',amt:400},{id:'olio',amt:15}] },
+  { num:2,  name:'Dahl Lenticchie + Couscous',  ingredients: [{id:'lenticchie',amt:320},{id:'couscous',amt:185},{id:'broccoli',amt:400},{id:'olio',amt:25},{id:'latte_soia',amt:150}] },
+  { num:3,  name:'Minestrone Farro + Fagioli',  ingredients: [{id:'fagioli',amt:430},{id:'farro',amt:160},{id:'minestrone',amt:500},{id:'olio',amt:20}] },
+  { num:4,  name:'Riso al Forno + Ceci',        ingredients: [{id:'riso',amt:80},{id:'ceci',amt:430},{id:'broccoli',amt:400},{id:'passata',amt:700},{id:'olio',amt:15}] },
+  { num:5,  name:'Pasta al Forno Ignorante',    ingredients: [{id:'pasta',amt:160},{id:'lenticchie',amt:285},{id:'broccoli',amt:400},{id:'passata',amt:700},{id:'olio',amt:30},{id:'latte_soia',amt:100}] },
+  { num:6,  name:'Teglia Tofu e Patate',        ingredients: [{id:'tofu',amt:540},{id:'patate',amt:1300},{id:'broccoli',amt:400},{id:'olio',amt:40}] },
+  { num:7,  name:'Couscous + Ceci Croccanti',   ingredients: [{id:'ceci',amt:410},{id:'couscous',amt:150},{id:'broccoli',amt:400},{id:'olio',amt:15}] },
+  { num:8,  name:'Fagioli con Polenta',         ingredients: [{id:'fagioli',amt:460},{id:'polenta',amt:140},{id:'broccoli',amt:400},{id:'olio',amt:20}] },
+  { num:9,  name:'Pasta e Lenticchie',          ingredients: [{id:'lenticchie',amt:350},{id:'pasta',amt:180},{id:'broccoli',amt:400},{id:'olio',amt:25}] },
+  { num:10, name:'Zuppa Ceci e Farro',          ingredients: [{id:'ceci',amt:430},{id:'farro',amt:130},{id:'broccoli',amt:400},{id:'olio',amt:20}] }
 ];
 
 // (allItems defined above with custom support)
