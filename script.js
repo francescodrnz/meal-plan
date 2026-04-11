@@ -416,7 +416,7 @@ const shopData = {
   frigo: [
     { id: 'tofu',        name: 'Tofu',                unit: '3 panetti da 180g',   need: 540,                   storeSize: 180,  storeLabel: 'panetti da 180g', useUnits: true },
     { id: 'patate',      name: 'Patate',               unit: '1,3 kg',              need: 1300,                  storeSize: 1,    storeLabel: 'g',              step: 100 },
-    { id: 'broccoli',    name: 'Broccoli surgelati',   unit: '8 buste da 500g',     need: 4000,                  storeSize: 500,  storeLabel: 'buste da 500g' },
+    { id: 'broccoli',    name: 'Broccoli surgelati',   unit: '5 buste da 500g',     need: 2800,                  storeSize: 500,  storeLabel: 'buste da 500g' },
     { id: 'minestrone',  name: 'Minestrone surgelato', unit: '2 buste da 750g',     need: 1500,                  storeSize: 750,  storeLabel: 'buste da 750g' },
   ],
   secchi: [
