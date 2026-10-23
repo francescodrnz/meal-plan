@@ -13,14 +13,14 @@ App in uso, pubblicata su GitHub Pages da `main`
   Chart.js.
 - **Service worker:** le pagine sono network-first, compresa la radice
   `/meal-plan/` (decisione 0002); il resto è cache-first.
-- **Notion** (decisione 0001): Ricette ha la casella "In rotazione"; c'è il
-  database Prodotti (reparto, unità, confezione, tipo confezione, si conta
-  in dispensa) collegato a Ingredienti, con 38 prodotti; "Standard
-  ricette" descrive le regole nuove e i fattori di conversione. Le 4
-  ricette su Notion sono al nuovo standard (ogni ingrediente ha il suo
-  Prodotto, tranne l'acqua); nessuna ha ancora "In rotazione".
+- **Notion** (decisione 0001): 23 ricette, tutte nuove e al nuovo standard
+  (ogni ingrediente ha il suo Prodotto, tranne l'acqua), nessuna ancora "In
+  rotazione"; 55 prodotti. Le 10 ricette dell'app non ci sono ancora.
+- **`ricette.json`:** lo genera ogni notte la GitHub Action "ricette da
+  notion", provata a mano e verde; il bot committa su `main` solo se il file
+  cambia. L'app non lo legge ancora.
 - **Documentazione:** il metodo è in uso; `README.md` segue le sezioni fisse
-  e descrive com'è fatta l'app, chiavi e formati di export compresi.
+  e descrive com'è fatta l'app, chiavi, formati di export e `ricette.json`.
 
-Prossimo passo: portare su Notion le 10 ricette dell'app, prima voce del
-gruppo 0001 in `TODO.md`.
+Prossimo passo: portare su Notion le 10 ricette dell'app col connettore MCP,
+prima voce di `TODO.md`; poi il piano del rework.

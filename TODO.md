@@ -9,11 +9,10 @@ CONVENZIONI.md, idee non urgenti in BACKLOG.md.
 In quest'ordine: ogni passo serve al successivo.
 
 - [S] Portare su Notion le 10 ricette dell'app (`recipesData` +
-  `recipeIngredients`), con lo standard nuovo.
-- [M] GitHub Action che genera `ricette.json` da Notion, di notte e a mano:
-  integrazione Notion, token nei secret, formato di `ricette.json`.
-- [L] Rework del piano pasti sul modello del mockup della decisione 0001,
-  con migrazione della dispensa e import dei vecchi codici. Piano in
-  `lavori/` prima di iniziare.
+  `recipeIngredients`), con lo standard nuovo. Serve il connettore MCP: il
+  token in `.env` legge soltanto.
+- [L] Rework del piano pasti sul modello del mockup della decisione 0001:
+  legge `ricette.json` (network-first in `sw.js`), migra la dispensa e
+  importa i vecchi codici. Piano in `lavori/` prima di iniziare.
 - [S] Dopo il rework: togliere da Notion "Porzioni da fare", la vista
   "Lista spesa" e la sezione "Come si usa" di "Standard ricette".

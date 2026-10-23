@@ -45,8 +45,11 @@ Actions › "ricette da notion" › Run workflow, lo script legge i database
 Notion Ricette, Ingredienti e Prodotti e scrive `ricette.json` nella radice.
 Il bot committa su `main` solo se il file è cambiato. L'app non lo legge
 ancora: lo farà il rework della decisione 0001.
-- Accesso: connessione Notion interna in sola lettura, collegata ai tre
-  database; il suo token sta nel secret `NOTION_TOKEN` del repo.
+- Accesso: connessione Notion interna `meal-plan`, in sola lettura, collegata
+  ai tre database. Il suo token sta nel secret `NOTION_TOKEN` del repo e, in
+  locale, in `.env` nella radice (ignorato da git).
+- `ricette.json` non è in `ASSETS` né ha una regola sua in `sw.js`: diventa
+  network-first col rework.
 - Se una richiesta fallisce, o Notion non restituisce ricette o prodotti, lo
   script esce con errore e il file resta quello di prima. Gli avvisi
   (ingrediente senza prodotto, ricetta senza passi, blocchi non esportati)
@@ -96,7 +99,10 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
 
 ## Misure
 
-- 2026-10-23: 10 ricette, fra 1085 e 1100 kcal ciascuna; cache `mealplan-v11`.
+- 2026-10-23: 10 ricette nell'app, fra 1085 e 1100 kcal ciascuna; cache
+  `mealplan-v11`.
+- 2026-10-23: `ricette.json` da Notion: 23 ricette, 55 prodotti, 150 KB; lo
+  script ci mette circa 25 s.
 
 ## Limiti e comportamenti noti
 
@@ -118,7 +124,7 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
 
 ```sh
 python3 -m http.server 8000   # dalla radice, poi http://localhost:8000
-NOTION_TOKEN=ntn_... python3 .github/scripts/ricette.py   # ricette.json in locale
+set -a; . ./.env; set +a; python3 .github/scripts/ricette.py   # ricette.json in locale
 ```
 
 In locale il service worker tiene la cache: per vedere le modifiche aumenta
@@ -144,3 +150,5 @@ verso la rete hanno l'icona ⚙.
   della modalità Bulk: il rework è in `TODO.md`.
 - [0002](decisioni/0002-pagine-network-first.md) — tutte le pagine
   network-first nel service worker, non solo la radice.
+- [0003](decisioni/0003-accesso-a-notion.md) — token Notion in sola lettura
+  in `.env` per leggere, connettore MCP per scrivere.

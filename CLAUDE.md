@@ -21,6 +21,12 @@ manca in `TODO.md`.
   `mealplan_bulk_v1`, `workout_sessions`, `workout_active` e
   `body_weight_log`. Per spostare i dati da un dispositivo all'altro si usano
   i codici di import/export.
+- **Ricette su Notion** (decisione 0001): una GitHub Action le copia ogni
+  notte in `ricette.json`, che l'app non legge ancora. Per scrivere su Notion
+  si usa il connettore MCP; per leggere, e per lanciare lo script in locale,
+  il token in sola lettura in `.env` nella radice (ignorato da git; su GitHub
+  è il secret `NOTION_TOKEN`). Il valore del token non va mai in un file
+  tracciato.
 
 ## Regole vincolanti
 
@@ -35,7 +41,9 @@ manca in `TODO.md`.
   precedente deve restare importabile.
 - **Mobile prima di tutto:** ogni modifica all'interfaccia si prova alla
   larghezza di un telefono.
-- Si committa e si fa push solo quando lo chiede l'utente.
+- Si committa e si fa push solo quando lo chiede l'utente. Unica eccezione:
+  il bot dell'Action committa `ricette.json` su `main` da solo, quindi
+  **`git pull` prima di lavorare e prima di pushare**.
 
 ## Verifica
 
