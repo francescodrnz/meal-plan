@@ -30,4 +30,5 @@ CSS in cache.
 - le pagine arrivano dalla rete, `script.js` e `style.css` dalla cache;
 - offline si aprono `/meal-plan/`, `workout.html` e `/meal-plan/?x=1`.
 
-Resta da provare l'aggiornamento su un telefono vero, dopo il push.
+2026-10-23, dopo il push su GitHub Pages: dal telefono `/meal-plan/` e
+l'app installata sono passate alla `v11`.
