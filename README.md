@@ -1,33 +1,106 @@
-# 🥦 Meal Plan PWA
+# Meal Plan
 
-Un'applicazione web progressiva (PWA) moderna per la pianificazione dei pasti vegani, ottimizzata per l'uso mobile. Gestisce ricette ad alto contenuto proteico, liste della spesa intelligenti e una dispensa dinamica con supporto offline completo.
+## A cosa serve
 
-## 🚀 Caratteristiche Principali
+PWA personale da usare sul telefono. Ha due pagine collegate fra loro:
+- il piano pasti vegano per due persone, con dispensa e lista della spesa;
+- il registro degli allenamenti e del peso corporeo.
 
-- **Gestione Ricette**: 10 ricette vegane bilanciate (~1100 kcal) con calcolo automatico dei macros.
-- **Dispensa Dinamica**: Gestione scorte con barre di avanzamento visive (verde/giallo/rosso) e supporto per unità di misura miste (g, kg, pz, bott).
-- **Prodotti Extra**: Possibilità di aggiungere, modificare ed eliminare prodotti personalizzati fuori dal piano base.
-- **Categorie Intelligenti**: Organizzazione automatica della spesa e della dispensa in categorie (Frigo, Secchi, Liquidi) con supporto per nuove categorie create dall'utente.
-- **Lista Spesa Automatica**: Calcolo dei quantitativi necessari in base alle scorte minime impostate e a quanto già presente in casa.
-- **Sync Locale**: Trasferimento dati tra dispositivi (PC ↔ Smartphone) tramite codici di import/export, garantendo la massima privacy senza database esterni.
-- **PWA Ready**: Installabile come app nativa su iOS e Android. Funziona offline grazie al Service Worker integrato.
+Funziona offline e tiene i dati solo sul dispositivo.
 
-## 📱 Installazione Mobile
+## Com'è fatto
 
-L'app è ottimizzata per essere ospitata su **GitHub Pages**:
+File tutti nella radice, serviti da GitHub Pages senza build. `style.css`,
+`sw.js`, `manifest.json` e le icone sono condivisi fra le due pagine.
 
-1. Carica i file in un repository GitHub.
-2. Attiva **Settings > Pages** selezionando il branch `main`.
-3. Apri il link dal browser dello smartphone.
-4. **Android (Chrome)**: Seleziona "Installa app" dal menu.
-5. **iOS (Safari)**: Tocca l'icona "Condividi" e seleziona "Aggiungi alla schermata Home".
+**Piano pasti** (`index.html` + `script.js`). Schede Ricette, Lista Spesa,
+Dispensa, Info.
+- `recipesData` contiene le ricette come si vedono a schermo (ingredienti in
+  testo, macro, preparazione).
+- `recipeIngredients` contiene le stesse ricette in grammi per id di prodotto:
+  da qui si calcola il fabbisogno.
+- `shopData` elenca i prodotti per categoria (frigo, secchi, liquidi).
+- `applyBulkToShopData()` calcola il fabbisogno: somma gli ingredienti delle
+  ricette, aggiunge il latte di soia della colazione (2500 g) e, in modalità
+  Bulk, aggiunge i delta di `bulkOverrides`.
+- La lista della spesa è il fabbisogno meno quello che c'è in dispensa.
+- `Store` tiene la dispensa e i prodotti extra creati dall'utente.
 
-## 🛠 Note Tecniche
+**Allenamenti** (`workout.html`, script nella pagina). Schede Allenamento,
+Peso, Storico, Info. Registra le sessioni, il peso corporeo e i grafici con
+Chart.js.
 
-- **Stack**: Vanilla JS (ES6+), HTML5, CSS3 (con supporto nativo Dark Mode).
-- **Persistenza**: LocalStorage API per dati persistenti senza account.
-- **Offline**: Service Worker con strategia *Network-First* per aggiornamenti rapidi.
-- **Performance**: Zero dipendenze esterne, caricamento istantaneo.
+**Service worker** (`sw.js`):
+- `index.html` (e il percorso `/`) è network-first: la versione nuova arriva
+  appena c'è rete.
+- Tutto il resto è cache-first: i file in `ASSETS` più quelli presi dalla rete
+  al primo uso, cioè Chart.js e i Google Fonts.
+- All'attivazione cancella le cache con nome diverso da `CACHE_NAME`.
 
----
-Progettato per semplificare la gestione alimentare quotidiana.
+**Dati in `localStorage`:**
+
+| Chiave | Pagina | Contenuto |
+|---|---|---|
+| `mealplan_shop_v1` | piano pasti | dispensa: quantità per id di prodotto |
+| `mealplan_custom_v1` | piano pasti | prodotti extra |
+| `mealplan_bulk_v1` | piano pasti | modalità Bulk attiva (`"true"`/`"false"`) |
+| `workout_sessions` | allenamenti | storico delle sessioni |
+| `workout_active` | allenamenti | sessione in corso |
+| `body_weight_log` | allenamenti | pesate |
+
+**Codici di import/export** (scheda Info di ciascuna pagina):
+- Piano pasti: `{inventory, customs, v: 1}`. Non contiene la modalità Bulk.
+- Allenamenti: `{workout_sessions, workout_active, body_weight_log}`.
+
+L'export produce base64 di `encodeURIComponent(JSON)`. L'import accetta
+anche il formato compresso `DEFLATE_<base64>`, che è quello prodotto dal
+backup su Telegram: il pulsante apre `t.me/botchecontaimessaggibot` con il
+codice pronto da inviare, con il comando `/backup_mealplan` o
+`/backup_workout`.
+
+## Come si usa
+
+- Indirizzo: https://francescodrnz.github.io/meal-plan/
+- Installazione su Android (Chrome): menu › "Installa app".
+- Installazione su iOS (Safari): Condividi › "Aggiungi alla schermata Home".
+- Per spostare i dati su un altro dispositivo: Info › esporta, poi sull'altro
+  dispositivo Info › incolla il codice e importa. L'import del piano pasti
+  sovrascrive la dispensa, dopo una conferma.
+
+## Misure
+
+- 2026-10-23: 10 ricette, fra 1085 e 1100 kcal ciascuna; cache `mealplan-v10`.
+
+## Limiti e comportamenti noti
+
+- **Le ricette stanno in due posti** (`recipesData` e `recipeIngredients`):
+  se cambi una ricetta devi cambiarle tutte e due, altrimenti quello che vedi
+  e la lista della spesa non coincidono più. Se cambia la proteina di una
+  ricetta, va aggiornato anche `bulkOverrides`.
+- **Un aggiornamento non arriva se non aumenti `CACHE_NAME`**: tutto tranne
+  `index.html` è cache-first.
+- **Network-first vale solo con il percorso esatto.** Il controllo è su
+  `pathname === '/'`, ma su GitHub Pages la radice è `/meal-plan/`. Aprendo
+  `.../meal-plan/` senza `index.html`, quindi, anche la pagina viene servita
+  dalla cache. L'app installata non ha il problema perché parte da
+  `start_url: index.html`.
+- La modalità Bulk non passa con i codici di export: va riattivata a mano su
+  ogni dispositivo.
+- Il commento in `sw.js` dice "Network First per index.html e manifest", ma
+  `manifest.json` è cache-first.
+
+## Comandi utili
+
+```sh
+python3 -m http.server 8000   # dalla radice, poi http://localhost:8000
+```
+
+In locale il service worker tiene la cache: per vedere le modifiche aumenta
+`CACHE_NAME`, oppure usa DevTools › Application › Update on reload.
+
+## Decisioni collegate
+
+Nessuna per ora.
+
+Lavori aperti sui limiti qui sopra: `TODO.md` (service worker) e
+`BACKLOG.md` (ricette in un posto solo, Bulk nei codici di export).

@@ -16,7 +16,8 @@ manca in `TODO.md`.
 - **Hosting:** GitHub Pages dal branch `main`, cartella radice. Un push su
   `main` è un rilascio.
 - **Dati solo sul dispositivo**, in `localStorage`, senza server. Le chiavi
-  sono `mealplan_bulk_v1`, `workout_sessions`, `workout_active` e
+  sono `mealplan_shop_v1` (dispensa), `mealplan_custom_v1` (prodotti extra),
+  `mealplan_bulk_v1`, `workout_sessions`, `workout_active` e
   `body_weight_log`. Per spostare i dati da un dispositivo all'altro si usano
   i codici di import/export.
 
