@@ -39,6 +39,31 @@ Chart.js.
   al primo uso, cioè Chart.js e i Google Fonts.
 - All'attivazione cancella le cache con nome diverso da `CACHE_NAME`.
 
+**Ricette da Notion** (`.github/scripts/ricette.py` +
+`.github/workflows/ricette.yml`). Ogni notte alle 3:17 UTC, o a mano da
+Actions › "ricette da notion" › Run workflow, lo script legge i database
+Notion Ricette, Ingredienti e Prodotti e scrive `ricette.json` nella radice.
+Il bot committa su `main` solo se il file è cambiato. L'app non lo legge
+ancora: lo farà il rework della decisione 0001.
+- Accesso: connessione Notion interna in sola lettura, collegata ai tre
+  database; il suo token sta nel secret `NOTION_TOKEN` del repo.
+- Se una richiesta fallisce, o Notion non restituisce ricette o prodotti, lo
+  script esce con errore e il file resta quello di prima. Gli avvisi
+  (ingrediente senza prodotto, ricetta senza passi, blocchi non esportati)
+  finiscono nel riepilogo del run.
+- Formato: `{versione: 1, prodotti, ricette}`, ordinati per nome, senza data
+  di generazione, così un giro senza modifiche dà un file identico.
+  - prodotto: `id`, `nome`, `reparto`, `unita`, `confezione`,
+    `tipoConfezione`, `siConta`. Unità e confezione sono `null` per i
+    prodotti che si segnano solo come presenti (spezie, aglio, limone…).
+  - ricetta: `id`, `nome`, `rotazione`, `provata`, `porzioni`, `kcal`,
+    `proteine`, `base`, `descrizione`, `ingredienti`, `passi`, `note`.
+  - ingrediente: `nome`, `quantita` **per porzione** (`null` se `q.b.`),
+    `unita`, `prodotto` (id, `null` per l'acqua), `tipo`, `facoltativo`,
+    `nota`.
+  - `passi` e `note`: `{testo, sotto?}`, presi dal corpo della pagina sotto i
+    titoli "Procedimento" e "Note"; `sotto` sono i sotto-punti, un livello.
+
 **Dati in `localStorage`:**
 
 | Chiave | Pagina | Contenuto |
@@ -84,11 +109,16 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
   rompersi.
 - La modalità Bulk non passa con i codici di export: va riattivata a mano su
   ogni dispositivo.
+- **Il bot committa su `main`**: prima di lavorare e di pushare in locale
+  serve `git pull`.
+- GitHub sospende i workflow pianificati dopo 60 giorni senza attività sul
+  repo: se succede, si riattiva da Actions.
 
 ## Comandi utili
 
 ```sh
 python3 -m http.server 8000   # dalla radice, poi http://localhost:8000
+NOTION_TOKEN=ntn_... python3 .github/scripts/ricette.py   # ricette.json in locale
 ```
 
 In locale il service worker tiene la cache: per vedere le modifiche aumenta

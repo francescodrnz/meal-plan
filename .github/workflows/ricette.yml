@@ -1,0 +1,38 @@
+# Rigenera ricette.json da Notion (decisione 0001): ogni notte e a mano.
+# Committa solo se il file è cambiato.
+name: ricette da notion
+
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ricette
+  cancel-in-progress: false
+
+jobs:
+  ricette:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Scarica da Notion
+        run: python3 .github/scripts/ricette.py
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+
+      - name: Committa se è cambiato
+        run: |
+          git add ricette.json
+          if git diff --cached --quiet; then
+            echo "Nessuna modifica."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'ricette aggiornate da notion'
+          git push
