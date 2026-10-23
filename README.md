@@ -3,7 +3,7 @@
 ## A cosa serve
 
 PWA personale da usare sul telefono. Ha due pagine collegate fra loro:
-- il piano pasti vegano per due persone, con dispensa e lista della spesa;
+- il piano pasti vegano per una persona, con dispensa e lista della spesa;
 - il registro degli allenamenti e del peso corporeo.
 
 Funziona offline e tiene i dati solo sul dispositivo.
@@ -100,7 +100,6 @@ In locale il service worker tiene la cache: per vedere le modifiche aumenta
 
 ## Decisioni collegate
 
-Nessuna per ora.
-
-Lavori aperti sui limiti qui sopra: `TODO.md` (service worker) e
-`BACKLOG.md` (ricette in un posto solo, Bulk nei codici di export).
+- [0001](decisioni/0001-ricette-su-notion-app-come-tasca.md) — ricette su
+  Notion, l'app come tasca. Supera i limiti delle ricette in due posti e
+  della modalità Bulk: il rework è in `TODO.md`.

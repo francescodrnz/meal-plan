@@ -1,8 +1,9 @@
 # Meal Plan
 
-PWA personale per uso mobile: piano pasti vegano per due persone, con
-dispensa e lista della spesa (`index.html` + `script.js`), più una pagina
-per gli allenamenti (`workout.html`, con lo script dentro la pagina).
+PWA personale per uso mobile: piano pasti vegano per una persona (due
+porzioni a ricetta, pranzo e cena), con dispensa e lista della spesa
+(`index.html` + `script.js`), più una pagina per gli allenamenti
+(`workout.html`, con lo script dentro la pagina).
 Interfaccia in italiano.
 
 Metodo di lavoro in `CONVENZIONI.md`, stato attuale in `STATO.md`, cosa

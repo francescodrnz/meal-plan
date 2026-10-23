@@ -7,11 +7,13 @@ App in uso, pubblicata su GitHub Pages da `main`
 `mealplan-v10`.
 
 - **Piano pasti** (`index.html`, `script.js`): ricette, dispensa, prodotti
-  extra, lista della spesa e import/export funzionano.
+  extra, lista della spesa e import/export funzionano, ma oggi si usa solo
+  per le quantità delle ricette: la dispensa non è più aggiornata.
 - **Allenamenti** (`workout.html`): sessioni, peso corporeo e grafici con
   Chart.js.
 - **Documentazione:** il metodo è in uso; `README.md` segue le sezioni fisse
   e descrive com'è fatta l'app, chiavi e formati di export compresi.
 
-Prossimo passo: il network-first della radice in `sw.js` (prima voce di
-`TODO.md`).
+Deciso il rework del piano pasti (decisione 0001): ricette su Notion,
+app come tasca. Prossimo passo: la preparazione di Notion, prima voce
+del gruppo 0001 in `TODO.md`.

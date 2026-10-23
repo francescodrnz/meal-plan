@@ -9,3 +9,20 @@ CONVENZIONI.md, idee non urgenti in BACKLOG.md.
 - [M] In `sw.js` rendere network-first anche la radice `/meal-plan/` (oggi
   il controllo è `pathname === '/'`) e correggere il commento che dice
   network-first anche per il manifest. Aumentare `CACHE_NAME`.
+
+## Ricette su Notion, l'app come tasca (decisione 0001)
+
+In quest'ordine: ogni passo serve al successivo.
+
+- [S] Notion: casella "In rotazione" su Ricette; database Prodotti (nome,
+  reparto, unità, confezione, si conta in dispensa) collegato a
+  Ingredienti; "Standard ricette" aggiornato (Prodotti, ml per olio e
+  salse, cucchiai solo per le spezie).
+- [S] Convertire al nuovo standard le ricette già su Notion.
+- [S] Portare su Notion le 10 ricette dell'app (`recipesData` +
+  `recipeIngredients`), con lo standard nuovo.
+- [M] GitHub Action che genera `ricette.json` da Notion, di notte e a mano:
+  integrazione Notion, token nei secret, formato di `ricette.json`.
+- [L] Rework del piano pasti sul modello del mockup della decisione 0001,
+  con migrazione della dispensa e import dei vecchi codici. Piano in
+  `lavori/` prima di iniziare.

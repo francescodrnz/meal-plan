@@ -7,3 +7,4 @@ Modello in `0000-modello.md`. Le regole stanno in `../CONVENZIONI.md`.
 
 | N | Titolo | Stato | Unità |
 |---|---|---|---|
+| 0001 | Ricette su Notion, l'app come tasca | decisa | trasversale |
