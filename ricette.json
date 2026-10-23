@@ -1,0 +1,4459 @@
+{
+  "versione": 1,
+  "prodotti": [
+    {
+      "id": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+      "nome": "Aglio",
+      "reparto": "Frutta e verdura",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
+      "id": "402d208f-0d59-81ea-b851-cf99d3fbd91b",
+      "nome": "Aglio in polvere",
+      "reparto": "Spezie",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
+      "id": "402d208f-0d59-81a5-b4e9-fa6e0d8b834c",
+      "nome": "Amido di mais",
+      "reparto": "Altro",
+      "unita": "g",
+      "confezione": 250,
+      "tipoConfezione": "pacco",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-8109-b504-ff18310acf08",
+      "nome": "Broccoli surgelati",
+      "reparto": "Surgelati",
+      "unita": "g",
+      "confezione": 750,
+      "tipoConfezione": "pacco",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-818f-a183-dcce8bb62267",
+      "nome": "Burro d'arachidi",
+      "reparto": "Condimenti",
+      "unita": "g",
+      "confezione": 350,
+      "tipoConfezione": "vasetto",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-818f-a2ee-ccf4fa578e12",
+      "nome": "Cannella in stecca",
+      "reparto": "Spezie",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
+      "id": "402d208f-0d59-81e8-82d1-eee6be4b7781",
+      "nome": "Capperi",
+      "reparto": "Conserve",
+      "unita": "g",
+      "confezione": 100,
+      "tipoConfezione": "vasetto",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-81a2-adca-c62ad70404c5",
+      "nome": "Carote",
+      "reparto": "Frutta e verdura",
+      "unita": "pz",
+      "confezione": 1,
+      "tipoConfezione": "pz",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-8141-ae86-cec1215c4550",
+      "nome": "Cavolfiore",
+      "reparto": "Frutta e verdura",
+      "unita": "g",
+      "confezione": 800,
+      "tipoConfezione": "pz",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-817d-96b6-f346f78fc856",
+      "nome": "Cavolo nero",
+      "reparto": "Frutta e verdura",
+      "unita": "g",
+      "confezione": 300,
+      "tipoConfezione": "pz",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
+      "nome": "Ceci secchi",
+      "reparto": "Legumi",
+      "unita": "g",
+      "confezione": 500,
+      "tipoConfezione": "pacco",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-8134-a549-c8270478c000",
+      "nome": "Cipolla",
+      "reparto": "Frutta e verdura",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
+      "id": "402d208f-0d59-81d9-b6a2-fe8f6f10c0a4",
+      "nome": "Citronella",
+      "reparto": "Spezie",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
+      "id": "402d208f-0d59-8101-995d-e828474878a5",
+      "nome": "Concentrato di pomodoro",
+      "reparto": "Conserve",
+      "unita": "g",
+      "confezione": 130,
+      "tipoConfezione": "vasetto",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-81e0-942d-eb2ed78c30e4",
+      "nome": "Cous cous",
+      "reparto": "Pasta riso e cereali",
+      "unita": "g",
+      "confezione": 500,
+      "tipoConfezione": "pacco",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-8190-9dbb-f47f5c9185ae",
+      "nome": "Cumino",
+      "reparto": "Spezie",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
+      "id": "402d208f-0d59-8109-b3a5-c263c1bd10e1",
+      "nome": "Curry giallo",
+      "reparto": "Spezie",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
+      "id": "402d208f-0d59-81b3-ac52-d96beeab1a3c",
+      "nome": "Datteri",
+      "reparto": "Altro",
+      "unita": "pz",
+      "confezione": 25,
+      "tipoConfezione": "pacco",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-8100-81da-d2d890a6a21f",
+      "nome": "Fagioli rossi in scatola",
+      "reparto": "Legumi",
+      "unita": "g",
+      "confezione": 240,
+      "tipoConfezione": "lattina",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-81d2-b0f1-f41b7b757748",
+      "nome": "Fagioli secchi",
+      "reparto": "Legumi",
+      "unita": "g",
+      "confezione": 500,
+      "tipoConfezione": "pacco",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-81d6-a151-e26d8ea8a422",
+      "nome": "Garam masala",
+      "reparto": "Spezie",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
+      "id": "402d208f-0d59-81e5-b08e-dc53316776df",
+      "nome": "Latte di soia",
+      "reparto": "Latte e bevande vegetali",
+      "unita": "ml",
+      "confezione": 1000,
+      "tipoConfezione": "bottiglia",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-8105-a243-d0332e52caf5",
+      "nome": "Lenticchie secche",
+      "reparto": "Legumi",
+      "unita": "g",
+      "confezione": 500,
+      "tipoConfezione": "pacco",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-819d-a3b6-ebc3ec4e6b17",
+      "nome": "Limone",
+      "reparto": "Frutta e verdura",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
+      "id": "402d208f-0d59-810e-af65-de60a0d85352",
+      "nome": "Miglio",
+      "reparto": "Pasta riso e cereali",
+      "unita": "g",
+      "confezione": 500,
+      "tipoConfezione": "pacco",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-8192-bfa6-c301d09b4399",
+      "nome": "Minestrone surgelato light",
+      "reparto": "Surgelati",
+      "unita": "g",
+      "confezione": 700,
+      "tipoConfezione": "pacco",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-81f3-bd02-dadf890f0083",
+      "nome": "Miso",
+      "reparto": "Frigo",
+      "unita": "g",
+      "confezione": 300,
+      "tipoConfezione": "vasetto",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-8120-ac30-ca36508e09b4",
+      "nome": "Mix quesadilla",
+      "reparto": "Spezie",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
+      "id": "402d208f-0d59-8172-80f1-c191f25b4593",
+      "nome": "Olio di semi",
+      "reparto": "Condimenti",
+      "unita": "ml",
+      "confezione": 1000,
+      "tipoConfezione": "bottiglia",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-81dd-a7db-e985866a49f9",
+      "nome": "Olio extravergine",
+      "reparto": "Condimenti",
+      "unita": "ml",
+      "confezione": 1000,
+      "tipoConfezione": "bottiglia",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-81c7-b64a-c8ed6b492b9e",
+      "nome": "Origano",
+      "reparto": "Spezie",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
+      "id": "402d208f-0d59-81e4-a72b-fdc0ce3b0e5c",
+      "nome": "Paprika affumicata",
+      "reparto": "Spezie",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
+      "id": "402d208f-0d59-81b4-ae78-c089b1b0a9a3",
+      "nome": "Pasta corta",
+      "reparto": "Pasta riso e cereali",
+      "unita": "g",
+      "confezione": 500,
+      "tipoConfezione": "pacco",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-815b-8c33-f63352af7917",
+      "nome": "Pepe",
+      "reparto": "Spezie",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
+      "id": "402d208f-0d59-81a8-9dc3-df2f875c837c",
+      "nome": "Peperoncini secchi",
+      "reparto": "Spezie",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
+      "id": "402d208f-0d59-817a-beda-dbe6828c2637",
+      "nome": "Peperoncino in polvere",
+      "reparto": "Spezie",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
+      "id": "402d208f-0d59-81e0-ae9d-cc3c5968a68a",
+      "nome": "Piselli surgelati",
+      "reparto": "Surgelati",
+      "unita": "g",
+      "confezione": 450,
+      "tipoConfezione": "pacco",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-810e-aba7-d88eb8df00cb",
+      "nome": "Polenta istantanea",
+      "reparto": "Pasta riso e cereali",
+      "unita": "g",
+      "confezione": 500,
+      "tipoConfezione": "pacco",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-8198-902d-d5176f398977",
+      "nome": "Polpa di pomodoro",
+      "reparto": "Conserve",
+      "unita": "g",
+      "confezione": 400,
+      "tipoConfezione": "lattina",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-81c4-a4d4-c1f7573de34b",
+      "nome": "Pomodorini",
+      "reparto": "Frutta e verdura",
+      "unita": "pz",
+      "confezione": 25,
+      "tipoConfezione": "pacco",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-818f-bd2c-c038dde85e11",
+      "nome": "Porri",
+      "reparto": "Frutta e verdura",
+      "unita": "pz",
+      "confezione": 1,
+      "tipoConfezione": "pz",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-816f-9140-d92336127e88",
+      "nome": "Quinoa",
+      "reparto": "Pasta riso e cereali",
+      "unita": "g",
+      "confezione": 500,
+      "tipoConfezione": "pacco",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-81af-8be6-ed073849172d",
+      "nome": "Riso",
+      "reparto": "Pasta riso e cereali",
+      "unita": "g",
+      "confezione": 1000,
+      "tipoConfezione": "pacco",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-81ec-b192-d95dca5dedb3",
+      "nome": "Rosmarino",
+      "reparto": "Spezie",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
+      "id": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+      "nome": "Sale",
+      "reparto": "Spezie",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
+      "id": "402d208f-0d59-8155-88e2-e8bdf5a33fb5",
+      "nome": "Salsa di soia",
+      "reparto": "Condimenti",
+      "unita": "ml",
+      "confezione": 250,
+      "tipoConfezione": "bottiglia",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-8176-96cb-fd20d3e5366e",
+      "nome": "Spaghetti",
+      "reparto": "Pasta riso e cereali",
+      "unita": "g",
+      "confezione": 500,
+      "tipoConfezione": "pacco",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-8108-8344-d09266b39e1b",
+      "nome": "Spinaci surgelati",
+      "reparto": "Surgelati",
+      "unita": "g",
+      "confezione": 750,
+      "tipoConfezione": "pacco",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-81cb-8317-c0561439981c",
+      "nome": "Tabasco",
+      "reparto": "Condimenti",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
+      "id": "402d208f-0d59-81bc-8c8c-f0ee0ae6a8d6",
+      "nome": "Tofu",
+      "reparto": "Frigo",
+      "unita": "g",
+      "confezione": 180,
+      "tipoConfezione": "panetto",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-812f-80cb-db66a3e565f2",
+      "nome": "Tortillas grandi",
+      "reparto": "Pasta riso e cereali",
+      "unita": "pz",
+      "confezione": 6,
+      "tipoConfezione": "pacco",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-8103-a2b4-f176b039d57c",
+      "nome": "Verza",
+      "reparto": "Frutta e verdura",
+      "unita": "g",
+      "confezione": 1000,
+      "tipoConfezione": "pz",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-819c-aa36-ce55fb7ab135",
+      "nome": "Zenzero fresco",
+      "reparto": "Frutta e verdura",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
+      "id": "402d208f-0d59-81e4-8de9-e263fc19129f",
+      "nome": "Zenzero in polvere",
+      "reparto": "Spezie",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
+      "id": "402d208f-0d59-8117-857a-e47220d0612f",
+      "nome": "Zucca",
+      "reparto": "Frutta e verdura",
+      "unita": "g",
+      "confezione": 1500,
+      "tipoConfezione": "pz",
+      "siConta": true
+    }
+  ],
+  "ricette": [
+    {
+      "id": "3f3d208f-0d59-815d-8f7b-e7a630f31d28",
+      "nome": "Burrito tofu e fagioli (da treno)",
+      "rotazione": false,
+      "provata": true,
+      "porzioni": 3,
+      "kcal": 1030,
+      "proteine": 55,
+      "base": [
+        "Altro"
+      ],
+      "descrizione": "Pranzo da portare in treno, si mangia freddo. A porzione un panetto di tofu e una scatola di fagioli; 3 porzioni finiscono la confezione da 6 tortillas.",
+      "ingredienti": [
+        {
+          "nome": "Tortillas grandi",
+          "quantita": 2,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-812f-80cb-db66a3e565f2",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "circa 60 g l'una"
+        },
+        {
+          "nome": "Tofu",
+          "quantita": 180,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81bc-8c8c-f0ee0ae6a8d6",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Fagioli neri o rossi",
+          "quantita": 240,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8100-81da-d2d890a6a21f",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Riso",
+          "quantita": 35,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Olio",
+          "quantita": 15,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Miso",
+          "quantita": 18,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81f3-bd02-dadf890f0083",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Paprika affumicata",
+          "quantita": 1,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81e4-a72b-fdc0ce3b0e5c",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Cumino",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8190-9dbb-f47f5c9185ae",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Aglio in polvere",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81ea-b851-cf99d3fbd91b",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Origano",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81c7-b64a-c8ed6b492b9e",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Pepe",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-815b-8c33-f63352af7917",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-817a-beda-dbe6828c2637",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": ""
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Riso. Cuoci il riso in abbondante acqua salata, come la pasta, per circa 15 minuti. Scolalo e lascialo intiepidire."
+        },
+        {
+          "testo": "Tofu. Mentre il riso cuoce, tampona il tofu con carta da cucina, schiaccialo per far uscire l'acqua e sbriciolalo a pezzi irregolari."
+        },
+        {
+          "testo": "Carbon steel. Scalda la padella vuota a fuoco medio-alto per 2-3 minuti, poi aggiungi l'olio e aspetta che diventi luccicante. Versa il tofu e non toccarlo per 3-4 minuti, finché si stacca da solo. Poi giralo e cuoci finché è dorato e asciutto, circa 8 minuti in tutto.",
+          "sotto": [
+            "Fagioli e miso. Sciogli il miso in 2 cucchiai d'acqua. Aggiungi in padella i fagioli scolati e il miso sciolto, e scalda per 3 minuti a fiamma bassa. Schiaccia una parte dei fagioli con la spatola, così il ripieno lega."
+          ]
+        },
+        {
+          "testo": "Spezie. Abbassa la fiamma, aggiungi tutte le spezie e mescola per 30 secondi."
+        },
+        {
+          "testo": "Riso. Spegni il fuoco e mescola il riso nel ripieno. Assaggia: di solito il sale del miso basta."
+        },
+        {
+          "testo": "Arrotolare. Scalda le tortillas pochi secondi in padella, così si piegano senza spaccarsi. Dividi il ripieno tra le tortillas, mettendolo nella parte bassa di ciascuna, ripiega i lati verso il centro e arrotola stretto. Avvolgi nella stagnola e lascia raffreddare prima di metterli nella borsa."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1030 kcal e 55 g di proteine. Le tortillas cambiano molto da marca a marca, quindi controlla l'etichetta."
+        },
+        {
+          "testo": "Con le piadine: prendile all'olio, perché molte contengono strutto. Sono più caloriche, quindi togli il riso. Si arrotolano peggio: scaldale bene e chiudile a mezzaluna."
+        },
+        {
+          "testo": "Fagioli rossi: sono più duri dei neri, quindi schiacciane una parte in più."
+        },
+        {
+          "testo": "Sale: il miso sala già, assaggia prima di aggiungerne."
+        },
+        {
+          "testo": "In frigo si conservano 2-3 giorni."
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-81b0-8fc8-d5eb6ea9b5ed",
+      "nome": "Chili di fagioli con quinoa",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 1020,
+      "proteine": 43,
+      "base": [
+        "Altro"
+      ],
+      "descrizione": "Fagioli secchi in pressione con pomodoro e mix quesadilla, quinoa cotta direttamente nel chili.",
+      "ingredienti": [
+        {
+          "nome": "Fagioli secchi",
+          "quantita": 120,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi, ammollati 8-12 ore e scolati. Rossi o borlotti"
+        },
+        {
+          "nome": "Quinoa",
+          "quantita": 80,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-816f-9140-d92336127e88",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sciacquata, dopo la pressione"
+        },
+        {
+          "nome": "Polpa di pomodoro",
+          "quantita": 200,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8198-902d-d5176f398977",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "In pressione"
+        },
+        {
+          "nome": "Concentrato di pomodoro",
+          "quantita": 15,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8101-995d-e828474878a5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Soffritto"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Carota",
+          "quantita": 1,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a2-adca-c62ad70404c5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A dadini, soffritto"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Mix quesadilla",
+          "quantita": 1.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8120-ac30-ca36508e09b4",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Soffritto"
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": 1,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a8-9dc3-df2f875c837c",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Secco, sbriciolato, in pressione"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 25,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Soffritto"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 600,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Tre quarti per i fagioli in pressione, il resto con la quinoa"
+        },
+        {
+          "nome": "Sale",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In pressione, poi aggiusta"
+        },
+        {
+          "nome": "Limone",
+          "quantita": 0.25,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-819d-a3b6-ebc3ec4e6b17",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Succo, alla fine"
+        },
+        {
+          "nome": "Tabasco",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-81cb-8317-c0561439981c",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sul piatto"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Soffritto. Nella pentola a pressione aperta scalda l'olio e cuoci cipolla tritata e carota a dadini 5 minuti a fuoco medio. Aggiungi aglio, mix quesadilla e concentrato e cuoci un minuto mescolando."
+        },
+        {
+          "testo": "Carica la pentola. Unisci i fagioli scolati, la polpa di pomodoro, i peperoncini secchi sbriciolati, il sale e l'acqua per i fagioli. Gratta bene il fondo."
+        },
+        {
+          "testo": "Pressione. Chiudi e porta a pressione. Dal fischio cuoci 15 minuti a fiamma bassa, poi sfiata."
+        },
+        {
+          "testo": "Quinoa. Sciacqua bene la quinoa in un colino, così perde l'amaro. Aggiungila al chili con l'acqua per la quinoa e fai sobbollire a pentola aperta 15 minuti, mescolando spesso, finché si vede il filino bianco attorno ai chicchi."
+        },
+        {
+          "testo": "Finale. Schiaccia qualche fagiolo per addensare, aggiungi il succo di limone e aggiusta di sale. Sul piatto tabasco a piacere."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1020 kcal e 43 g di proteine."
+        },
+        {
+          "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
+        },
+        {
+          "testo": "Spezie: il mix quesadilla contiene già paprika, cumino, cacao e arancia, non serve altro."
+        },
+        {
+          "testo": "Conservazione: in frigo 3-4 giorni, il giorno dopo è più buono. Si addensa: scalda con un goccio d'acqua."
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-8118-a4bb-c897a6d63a4a",
+      "nome": "Curry di ceci e cavolfiore con riso",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 1100,
+      "proteine": 40,
+      "base": [
+        "Riso"
+      ],
+      "descrizione": "Ceci al curry in pressione, poi riso e cavolfiore cotti nella stessa pentola.",
+      "ingredienti": [
+        {
+          "nome": "Ceci secchi",
+          "quantita": 140,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi, ammollati 12 ore e scolati"
+        },
+        {
+          "nome": "Riso",
+          "quantita": 75,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sciacquato, seconda pressione. Basmati o comune"
+        },
+        {
+          "nome": "Cavolfiore",
+          "quantita": 250,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8141-ae86-cec1215c4550",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A cimette piccole, seconda pressione"
+        },
+        {
+          "nome": "Polpa di pomodoro",
+          "quantita": 100,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8198-902d-d5176f398977",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Con i ceci"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Zenzero fresco",
+          "quantita": 5,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-819c-aa36-ce55fb7ab135",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Grattugiato, soffritto. Senza: mezzo cucchiaino di zenzero in polvere"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 25,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Soffritto"
+        },
+        {
+          "nome": "Cumino",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8190-9dbb-f47f5c9185ae",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In semi (Zanzibar), tostato nell'olio. Se finito: ometti, c'è già nel mix curry"
+        },
+        {
+          "nome": "Curry giallo",
+          "quantita": 1.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8109-b3a5-c263c1bd10e1",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Zanzibar. Se finito: mix curry, stessa dose"
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": 0.25,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-817a-beda-dbe6828c2637",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Hot chilly di Zanzibar. Se finito: cayenna macinata"
+        },
+        {
+          "nome": "Garam masala",
+          "quantita": 0.25,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81d6-a151-e26d8ea8a422",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Zanzibar, a fuoco spento. Se finito: un pizzico di mix korma, o ometti"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 650,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Due terzi con i ceci, un terzo con riso e cavolfiore"
+        },
+        {
+          "nome": "Sale",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Con i ceci, poi aggiusta"
+        },
+        {
+          "nome": "Limone",
+          "quantita": 0.25,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-819d-a3b6-ebc3ec4e6b17",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Succo, a fuoco spento"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Soffritto. Nella pentola a pressione aperta scalda l'olio e tosta il cumino in semi 30 secondi. Aggiungi la cipolla tritata e cuoci 5 minuti a fuoco medio, poi aglio e zenzero grattugiato per un minuto."
+        },
+        {
+          "testo": "Spezie. Aggiungi curry e peperoncino e mescola 30 secondi senza farli bruciare."
+        },
+        {
+          "testo": "Ceci. Unisci ceci scolati, polpa di pomodoro, sale e l'acqua per i ceci. Gratta bene il fondo. Chiudi e porta a pressione: dal fischio 20 minuti a fiamma bassa, poi sfiata."
+        },
+        {
+          "testo": "Riso e cavolfiore. Controlla i ceci: se non sono morbidi, altri 5 minuti in pressione. Aggiungi il riso sciacquato, il cavolfiore a cimette piccole e l'acqua per il riso. Mescola e gratta bene il fondo."
+        },
+        {
+          "testo": "Seconda pressione. Dal fischio cuoci 5 minuti a fiamma bassa, poi spegni e lascia scendere la pressione da sola (circa 10 minuti)."
+        },
+        {
+          "testo": "Finale. A fuoco spento aggiungi garam masala e succo di limone. Mescola e aggiusta di sale."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1100 kcal e 40 g di proteine."
+        },
+        {
+          "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
+        },
+        {
+          "testo": "Se si attacca: se la pentola puzza di bruciato prima del fischio, spegni, apri, aggiungi un mestolo d'acqua e gratta il fondo."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni. Scalda con un goccio d'acqua."
+        },
+        {
+          "testo": "Versione senza spezie di Zanzibar (per quando finiscono):",
+          "sotto": [
+            "Cumino in semi → ometti, il cumino c'è già nel mix curry.",
+            "Curry giallo → mix curry, stessa dose.",
+            "Hot chilly → cayenna macinata, stessa dose.",
+            "Garam masala → un pizzico di mix korma, oppure ometti."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-81dc-8edb-f1a22a8ab770",
+      "nome": "Khichdi di lenticchie e spinaci",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 980,
+      "proteine": 42,
+      "base": [
+        "Riso"
+      ],
+      "descrizione": "Stufato indiano di lenticchie e riso cotti insieme in pentola a pressione, con spezie di Zanzibar.",
+      "ingredienti": [
+        {
+          "nome": "Lenticchie secche",
+          "quantita": 130,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Marroni o verdi, sciacquate con il riso"
+        },
+        {
+          "nome": "Riso",
+          "quantita": 70,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sciacquato con le lenticchie"
+        },
+        {
+          "nome": "Spinaci surgelati",
+          "quantita": 150,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8108-8344-d09266b39e1b",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Ancora surgelati, in pressione"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Zenzero fresco",
+          "quantita": 5,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-819c-aa36-ce55fb7ab135",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Grattugiato, soffritto. Senza: mezzo cucchiaino di zenzero in polvere"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 25,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Soffritto"
+        },
+        {
+          "nome": "Cumino",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8190-9dbb-f47f5c9185ae",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In semi (Zanzibar), tostato nell'olio. Se finito: ometti, c'è già nel mix curry"
+        },
+        {
+          "nome": "Curry giallo",
+          "quantita": 1,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8109-b3a5-c263c1bd10e1",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Zanzibar. Se finito: mix curry, stessa dose"
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": 0.25,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-817a-beda-dbe6828c2637",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Hot chilly di Zanzibar. Se finito: cayenna macinata"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 550,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "In pressione"
+        },
+        {
+          "nome": "Sale",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In pressione, poi aggiusta"
+        },
+        {
+          "nome": "Garam masala",
+          "quantita": 0.25,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81d6-a151-e26d8ea8a422",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Zanzibar, a fuoco spento. Se finito: un pizzico di mix korma, o ometti"
+        },
+        {
+          "nome": "Limone",
+          "quantita": 0.25,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-819d-a3b6-ebc3ec4e6b17",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Succo, a fuoco spento"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Lavaggio. Sciacqua lenticchie e riso insieme in un colino finché l'acqua esce quasi limpida."
+        },
+        {
+          "testo": "Soffritto. Nella pentola a pressione aperta scalda l'olio e tosta il cumino in semi 30 secondi, finché profuma. Aggiungi la cipolla tritata e cuoci 5 minuti a fuoco medio, poi aglio e zenzero grattugiato per un minuto."
+        },
+        {
+          "testo": "Spezie. Aggiungi curry e peperoncino e mescola 30 secondi senza farli bruciare."
+        },
+        {
+          "testo": "Carica la pentola. Unisci lenticchie, riso, spinaci ancora surgelati, sale e acqua. Gratta bene il fondo."
+        },
+        {
+          "testo": "Pressione. Chiudi e porta a pressione. Dal fischio cuoci 8 minuti a fiamma bassa, poi spegni e lascia scendere la pressione da sola."
+        },
+        {
+          "testo": "Finale. Mescola con energia: deve venire cremoso, come un risotto molto morbido. Se è troppo denso aggiungi acqua calda. A fuoco spento unisci garam masala e succo di limone, poi aggiusta di sale."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 980 kcal e 42 g di proteine."
+        },
+        {
+          "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni. Si addensa molto: scaldalo con acqua."
+        },
+        {
+          "testo": "Versione senza spezie di Zanzibar (per quando finiscono):",
+          "sotto": [
+            "Cumino in semi → ometti, il cumino c'è già nel mix curry.",
+            "Curry giallo → mix curry, stessa dose.",
+            "Hot chilly → cayenna macinata, stessa dose.",
+            "Garam masala → un pizzico di mix korma, oppure ometti."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "401d208f-0d59-8107-ba5b-c7b76a2582ea",
+      "nome": "Mafe di ceci al burro d'arachidi (pentola a pressione)",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 1050,
+      "proteine": 58,
+      "base": [
+        "Altro"
+      ],
+      "descrizione": "Stufato di arachidi dell'Africa occidentale, versione con ceci secchi in pentola a pressione e spezie di Zanzibar.",
+      "ingredienti": [
+        {
+          "nome": "Cumino",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8190-9dbb-f47f5c9185ae",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In semi (Zanzibar), tostato nell'olio. Se finito: ometti, il cumino c'è già nel mix curry"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Carota",
+          "quantita": 1,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a2-adca-c62ad70404c5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A rondelle, soffritto"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1.5,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Curry giallo",
+          "quantita": 1.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8109-b3a5-c263c1bd10e1",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Zanzibar. Se finito: 1,5 cucchiaini di mix curry"
+        },
+        {
+          "nome": "Zenzero in polvere",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81e4-8de9-e263fc19129f",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Zanzibar. Se finito: mezzo cucchiaino di mix korma, che contiene zenzero"
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": 0.25,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-817a-beda-dbe6828c2637",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Hot chilly di Zanzibar. Se finito: cayenna macinata, oppure 1 peperoncino secco intero in pressione e poi tolto"
+        },
+        {
+          "nome": "Polpa di pomodoro",
+          "quantita": 200,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8198-902d-d5176f398977",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "In pressione"
+        },
+        {
+          "nome": "Datteri",
+          "quantita": 1,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81b3-ac52-d96beeab1a3c",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritati, in pressione"
+        },
+        {
+          "nome": "Cannella in stecca",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-818f-a2ee-ccf4fa578e12",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Pezzetto da 3-4 cm per due porzioni, in pressione e poi tolto. Se finita: ometti"
+        },
+        {
+          "nome": "Citronella",
+          "quantita": 3,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81d9-b6a2-fe8f6f10c0a4",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Bastoncini secchi di Zanzibar, in pressione e poi tolti. Se finita: 2 strisce di scorza di limone"
+        },
+        {
+          "nome": "Sale",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In pressione, poi aggiusta alla fine"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 350,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Deve coprire i ceci di circa 2 cm"
+        },
+        {
+          "nome": "Burro d'arachidi",
+          "quantita": 25,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-818f-a183-dcce8bb62267",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Dopo la pressione, sciolto in un mestolo di brodo"
+        },
+        {
+          "nome": "Broccoli surgelati",
+          "quantita": 150,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8109-b504-ff18310acf08",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Dopo la pressione"
+        },
+        {
+          "nome": "Latte di soia",
+          "quantita": 50,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81e5-b08e-dc53316776df",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A fuoco spento"
+        },
+        {
+          "nome": "Garam masala",
+          "quantita": 0.25,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81d6-a151-e26d8ea8a422",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Zanzibar, a fuoco spento. Se finito: un pizzico di mix korma, o ometti"
+        },
+        {
+          "nome": "Limone",
+          "quantita": 0.25,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-819d-a3b6-ebc3ec4e6b17",
+          "tipo": "Da comprare",
+          "facoltativo": true,
+          "nota": "Succo, a fuoco spento. Senza: qualche goccia di tabasco in più"
+        },
+        {
+          "nome": "Pepe",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-815b-8c33-f63352af7917",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Macinato al momento sul piatto"
+        },
+        {
+          "nome": "Tabasco",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-81cb-8317-c0561439981c",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sul piatto, se lo vuoi più piccante"
+        },
+        {
+          "nome": "Ceci secchi",
+          "quantita": 200,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi, ammollati 12 ore e scolati"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 7.5,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Soffritto"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Soffritto. Nella pentola a pressione aperta scalda l'olio e tosta il cumino in semi per 30 secondi, finché profuma. Aggiungi cipolla e carote e cuoci 5 minuti a fuoco medio, poi l'aglio per un altro minuto."
+        },
+        {
+          "testo": "Spezie. Aggiungi curry, zenzero e peperoncino e mescola per 30 secondi senza farle bruciare."
+        },
+        {
+          "testo": "Carica la pentola. Unisci ceci scolati, polpa di pomodoro, datteri tritati, cannella, citronella, sale e acqua. Gratta bene il fondo con un cucchiaio di legno: se resta attaccato qualcosa, la pentola rischia di bruciare sotto pressione."
+        },
+        {
+          "testo": "Pressione. Chiudi e porta a pressione. Dal fischio cuoci 20 minuti a fiamma bassa, poi spegni e lascia scendere la pressione da sola (circa 10 minuti)."
+        },
+        {
+          "testo": "Arachidi e broccoli. Apri, togli cannella e citronella e controlla i ceci: se non sono morbidi, altri 5 minuti in pressione. Sciogli il burro d'arachidi in un mestolo di brodo caldo e rimettilo nella pentola. Aggiungi i broccoli ancora surgelati e fai sobbollire senza coperchio 6-8 minuti, finché lo stufato si addensa."
+        },
+        {
+          "testo": "Finale. A fuoco spento aggiungi latte di soia, garam masala e succo di limone. Assaggia e aggiusta di sale. Sul piatto pepe macinato e, se vuoi, tabasco."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1050 kcal e 58 g di proteine (carboidrati ~120 g, grassi ~34 g, fibre ~40 g)."
+        },
+        {
+          "testo": "Cereale: non serve. Se lo vuoi, usa 125 g di ceci secchi a porzione e aggiungi 65 g di miglio o quinoa crudi a porzione, cotti a parte: le calorie restano più o meno le stesse."
+        },
+        {
+          "testo": "Burro d'arachidi dopo la pressione: è denso e sul fondo si attacca, sotto pressione rischia di bruciare."
+        },
+        {
+          "testo": "Sale: mettine poco in pressione e aggiusta alla fine."
+        },
+        {
+          "testo": "Conservazione: in frigo 3-4 giorni, il giorno dopo è anche più buono. Si addensa: scaldalo con un goccio d'acqua."
+        },
+        {
+          "testo": "Versione senza spezie di Zanzibar (per quando finiscono):",
+          "sotto": [
+            "Curry giallo + cumino in semi → mix curry (stessa dose del curry giallo). Il cumino c'è già dentro, quindi i semi si saltano.",
+            "Zenzero in polvere → mezzo cucchiaino di mix korma a porzione, che contiene zenzero.",
+            "Hot chilly → cayenna macinata (stessa dose), oppure 1-2 peperoncini secchi interi in pressione e poi tolti.",
+            "Citronella → 2 strisce di scorza di limone a porzione, in pressione e poi tolte.",
+            "Cannella in stecca → si può omettere.",
+            "Garam masala → un pizzico di mix korma a fuoco spento, oppure ometti.",
+            "Non usare insieme mix curry e mix korma in dose piena: il piatto diventa un curry indiano e si perde il sapore dell'arachide."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-8142-9755-c3577095ffb3",
+      "nome": "Minestra di fagioli, porri e miglio",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 1030,
+      "proteine": 41,
+      "base": [
+        "Altro"
+      ],
+      "descrizione": "Fagioli in pressione coi porri, poi il miglio cotto nel brodo. Limone e olio crudo alla fine.",
+      "ingredienti": [
+        {
+          "nome": "Fagioli secchi",
+          "quantita": 130,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi, ammollati 8-12 ore e scolati. Cannellini o borlotti"
+        },
+        {
+          "nome": "Miglio",
+          "quantita": 70,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-810e-af65-de60a0d85352",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sciacquato bene, seconda pressione"
+        },
+        {
+          "nome": "Porri",
+          "quantita": 1.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-818f-bd2c-c038dde85e11",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A rondelle, soffritto"
+        },
+        {
+          "nome": "Carota",
+          "quantita": 1,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a2-adca-c62ad70404c5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A dadini, soffritto"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Rosmarino",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81ec-b192-d95dca5dedb3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 25,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Metà nel soffritto, metà a crudo"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 800,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Tre quarti per i fagioli, il resto con il miglio"
+        },
+        {
+          "nome": "Sale",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Con i fagioli, poi aggiusta"
+        },
+        {
+          "nome": "Limone",
+          "quantita": 0.25,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-819d-a3b6-ebc3ec4e6b17",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Succo, alla fine"
+        },
+        {
+          "nome": "Pepe",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-815b-8c33-f63352af7917",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sul piatto"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Soffritto. Nella pentola a pressione aperta scalda metà dell'olio e cuoci porri a rondelle e carota a dadini 5 minuti a fuoco medio. Aggiungi aglio e rosmarino e cuoci un altro minuto."
+        },
+        {
+          "testo": "Fagioli. Unisci i fagioli scolati, il sale e l'acqua per i fagioli. Gratta bene il fondo. Chiudi e porta a pressione: dal fischio 15 minuti a fiamma bassa, poi sfiata."
+        },
+        {
+          "testo": "Miglio. Controlla i fagioli: se non sono morbidi, altri 5 minuti in pressione. Aggiungi il miglio sciacquato bene e l'acqua per il miglio."
+        },
+        {
+          "testo": "Seconda pressione. Dal fischio cuoci 6 minuti a fiamma bassa, poi spegni e lascia scendere la pressione da sola."
+        },
+        {
+          "testo": "Impiattamento. Aggiusta di sale e completa con succo di limone, il resto dell'olio a crudo e pepe."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1030 kcal e 41 g di proteine."
+        },
+        {
+          "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
+        },
+        {
+          "testo": "Miglio: sciacqualo bene in un colino, altrimenti sa di amaro."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni. Il miglio continua ad assorbire: allungala con acqua quando la scaldi."
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-8147-b1ed-fcbf14b8d3ad",
+      "nome": "Minestra di fagioli, verza e riso alla piemontese",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 1070,
+      "proteine": 42,
+      "base": [
+        "Riso"
+      ],
+      "descrizione": "Minestra densa: fagioli in pressione, poi verza e riso cotti nel brodo.",
+      "ingredienti": [
+        {
+          "nome": "Fagioli secchi",
+          "quantita": 130,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi, ammollati 8-12 ore e scolati. Borlotti o cannellini"
+        },
+        {
+          "nome": "Riso",
+          "quantita": 75,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Seconda pressione"
+        },
+        {
+          "nome": "Verza",
+          "quantita": 250,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8103-a2b4-f176b039d57c",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A striscioline, seconda pressione"
+        },
+        {
+          "nome": "Porri",
+          "quantita": 1,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-818f-bd2c-c038dde85e11",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A rondelle, soffritto. Senza: mezza cipolla"
+        },
+        {
+          "nome": "Carota",
+          "quantita": 1,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a2-adca-c62ad70404c5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A dadini, soffritto"
+        },
+        {
+          "nome": "Rosmarino",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81ec-b192-d95dca5dedb3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 25,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Metà nel soffritto, metà a crudo"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 750,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Tutta con i fagioli in pressione"
+        },
+        {
+          "nome": "Sale",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Con i fagioli, poi aggiusta"
+        },
+        {
+          "nome": "Pepe",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-815b-8c33-f63352af7917",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sul piatto"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Soffritto. Nella pentola a pressione aperta scalda metà dell'olio e cuoci il porro a rondelle e la carota a dadini 5 minuti a fuoco medio, con il rosmarino."
+        },
+        {
+          "testo": "Fagioli. Unisci i fagioli scolati, il sale e l'acqua. Gratta bene il fondo. Chiudi e porta a pressione: dal fischio 15 minuti a fiamma bassa, poi sfiata."
+        },
+        {
+          "testo": "Verza e riso. Controlla i fagioli: se non sono morbidi, altri 5 minuti in pressione. Aggiungi la verza a striscioline e il riso, mescola e gratta il fondo."
+        },
+        {
+          "testo": "Seconda pressione. Dal fischio cuoci 5 minuti a fiamma bassa, poi spegni e lascia scendere la pressione da sola (circa 10 minuti)."
+        },
+        {
+          "testo": "Impiattamento. Deve venire densa, il cucchiaio quasi in piedi. Aggiusta di sale e servi con il resto dell'olio a crudo e pepe."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1070 kcal e 42 g di proteine."
+        },
+        {
+          "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
+        },
+        {
+          "testo": "Senza porro: mezza cipolla a porzione."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni. Il riso continua ad assorbire: allungala con acqua quando la scaldi."
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-8152-a971-d85e80b044ab",
+      "nome": "Minestrone con fagioli e miglio",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 1090,
+      "proteine": 53,
+      "base": [
+        "Altro"
+      ],
+      "descrizione": "Minestrone surgelato potenziato con fagioli secchi e miglio, due passaggi in pentola a pressione.",
+      "ingredienti": [
+        {
+          "nome": "Fagioli secchi",
+          "quantita": 150,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi, ammollati 8-12 ore e scolati"
+        },
+        {
+          "nome": "Miglio",
+          "quantita": 65,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-810e-af65-de60a0d85352",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sciacquato bene, seconda pressione"
+        },
+        {
+          "nome": "Minestrone surgelato light",
+          "quantita": 300,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8192-bfa6-c301d09b4399",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Senza patate, anche ancora surgelato"
+        },
+        {
+          "nome": "Piselli surgelati",
+          "quantita": 75,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e0-ae9d-cc3c5968a68a",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Seconda pressione"
+        },
+        {
+          "nome": "Carota",
+          "quantita": 1,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a2-adca-c62ad70404c5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A rondelle, seconda pressione"
+        },
+        {
+          "nome": "Miso",
+          "quantita": 18,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81f3-bd02-dadf890f0083",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Sciolto in un mestolo di brodo, a fuoco spento"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 15,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "A crudo nel piatto"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 875,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Tre quarti per i fagioli, il resto con il miglio"
+        },
+        {
+          "nome": "Polpa di pomodoro",
+          "quantita": 25,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8198-902d-d5176f398977",
+          "tipo": "Da comprare",
+          "facoltativo": true,
+          "nota": "Seconda pressione"
+        },
+        {
+          "nome": "Limone",
+          "quantita": 0.25,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-819d-a3b6-ebc3ec4e6b17",
+          "tipo": "Da comprare",
+          "facoltativo": true,
+          "nota": "Succo, sul piatto"
+        },
+        {
+          "nome": "Tabasco",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-81cb-8317-c0561439981c",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sul piatto"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Fagioli. Metti in pentola a pressione i fagioli scolati con l'acqua per i fagioli. Dal fischio cuoci 15 minuti a fiamma bassa, poi sfiata."
+        },
+        {
+          "testo": "Verdure e miglio. Aggiungi minestrone (anche ancora surgelato), piselli, carote a rondelle, miglio sciacquato bene, l'eventuale polpa di pomodoro e l'acqua per il miglio. Richiudi e dal fischio cuoci 6 minuti, poi lascia scendere la pressione da sola."
+        },
+        {
+          "testo": "Miso. Sciogli il miso in un mestolo di brodo e aggiungilo a fuoco spento. Assaggia prima di salare, perché il miso è già salato."
+        },
+        {
+          "testo": "Impiattamento. Olio a crudo nel piatto e, se ti va, limone e tabasco."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1090 kcal e 53 g di proteine."
+        },
+        {
+          "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
+        },
+        {
+          "testo": "Consistenza: viene densa, più zuppa che brodo."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni. Il miglio continua ad assorbire liquido: allungala con acqua quando la scaldi."
+        }
+      ]
+    },
+    {
+      "id": "3f1d208f-0d59-8141-86c3-e0baf680dc44",
+      "nome": "Pasta chili sin carne (una pentola)",
+      "rotazione": false,
+      "provata": true,
+      "porzioni": 2,
+      "kcal": 1110,
+      "proteine": 59,
+      "base": [
+        "Pasta"
+      ],
+      "descrizione": "Venuta buonissima. Tofu nella carbon steel, tutto il resto nell'inox.",
+      "ingredienti": [
+        {
+          "nome": "Fusilli",
+          "quantita": 100,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81b4-ae78-c089b1b0a9a3",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "vanno bene anche le penne, evitare le farfalle"
+        },
+        {
+          "nome": "Tofu",
+          "quantita": 180,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81bc-8c8c-f0ee0ae6a8d6",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Legumi in scatola",
+          "quantita": 240,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8100-81da-d2d890a6a21f",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "fagioli rossi, oppure metà fagioli rossi e metà ceci"
+        },
+        {
+          "nome": "Polpa di pomodoro",
+          "quantita": 200,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8198-902d-d5176f398977",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Broccoli surgelati",
+          "quantita": 175,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8109-b504-ff18310acf08",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "150-200 g a porzione"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Pomodorini",
+          "quantita": 2.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81c4-a4d4-c1f7573de34b",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Limone",
+          "quantita": 0.25,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-819d-a3b6-ebc3ec4e6b17",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "il succo, per la marinatura"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Olio",
+          "quantita": 22.5,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "2/3 per il tofu, 1/3 per il soffritto"
+        },
+        {
+          "nome": "Salsa di soia",
+          "quantita": 35,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-8155-88e2-e8bdf5a33fb5",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "due terzi in marinatura, il resto in cottura al posto del sale"
+        },
+        {
+          "nome": "Mix quesadilla",
+          "quantita": 2,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8120-ac30-ca36508e09b4",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "metà in marinatura, metà nel sugo"
+        },
+        {
+          "nome": "Aglio in polvere",
+          "quantita": 0.25,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81ea-b851-cf99d3fbd91b",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "marinatura"
+        },
+        {
+          "nome": "Peperoncini secchi",
+          "quantita": 0.75,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a8-9dc3-df2f875c837c",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "sugo"
+        },
+        {
+          "nome": "Miso",
+          "quantita": 3,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81f3-bd02-dadf890f0083",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "a fuoco spento"
+        },
+        {
+          "nome": "Origano",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-81c7-b64a-c8ed6b492b9e",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Pepe",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-815b-8c33-f63352af7917",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "marinatura"
+        },
+        {
+          "nome": "Tabasco",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-81cb-8317-c0561439981c",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": ""
+        },
+        {
+          "nome": "Acqua calda",
+          "quantita": 275,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "aggiungine poca alla volta se si asciuga"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Marinatura. Strizza bene il tofu in un canovaccio, sbriciolalo a pezzi irregolari e mescolalo con la marinatura. Lascia riposare 20-30 minuti. Il tofu assorbe quasi tutto il liquido, ed è normale. Intanto trita cipolla e aglio e taglia a metà i pomodorini."
+        },
+        {
+          "testo": "Tofu nella carbon steel. Scalda la padella vuota a fuoco medio-alto per 2-3 minuti, poi aggiungi l'olio per il tofu e aspetta che diventi luccicante. Versa il tofu ben scolato e non toccarlo per 3-4 minuti, finché si stacca da solo. Giralo con una spatola di metallo e cuoci finché è dorato e asciutto, 8-10 minuti in tutto. Se la padella è piccola, fallo in due giri. Tienilo da parte."
+        },
+        {
+          "testo": "Base nell'inox (padella larga e alta o pentola bassa). Scalda il resto dell'olio e cuoci la cipolla 5 minuti a fuoco medio. Aggiungi aglio, peperoncini sbriciolati e mix quesadilla, e tosta 1 minuto."
+        },
+        {
+          "testo": "Sugo. Unisci polpa di pomodoro, legumi scolati e sciacquati, eventuale liquido avanzato della marinatura e origano. Fai sobbollire 10 minuti e schiaccia un po' di legumi con la forchetta per addensare."
+        },
+        {
+          "testo": "Pasta. Aggiungi la pasta cruda, l'acqua calda e il resto della soia al posto del sale. Mescola spesso raschiando il fondo e aggiungi acqua poca alla volta se si asciuga. Conta 2-3 minuti in più rispetto alla confezione. Assaggia a metà cottura e regola di sale."
+        },
+        {
+          "testo": "Broccoli. Dopo 4-5 minuti di cottura della pasta, aggiungi i broccoli ancora surgelati."
+        },
+        {
+          "testo": "Finale. Negli ultimi 2-3 minuti unisci tofu e pomodorini. A fuoco spento sciogli il miso in un mestolino del liquido di cottura e mescolalo nella pentola."
+        },
+        {
+          "testo": "Impiattamento. Completa con tabasco a piacere e, se vuoi, un po' di limone a crudo."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1110 kcal e 59 g di proteine. Per stare sulle 1050 metti 15 ml d'olio a porzione."
+        },
+        {
+          "testo": "Con 120 g di legumi a porzione: circa 970 kcal e 50 g di proteine. Per compensare passa a 120 g di pasta a porzione e aggiungi un po' d'acqua in più in cottura."
+        },
+        {
+          "testo": "Sale: soia e miso salano già. Assaggia sempre prima di aggiungerne."
+        },
+        {
+          "testo": "Spezie: il mix quesadilla sostituisce cumino e paprika, perché contiene già paprika, cumino, cacao e arancia."
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-81ef-b063-ea950db86ef2",
+      "nome": "Pasta e ceci",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 1080,
+      "proteine": 41,
+      "base": [
+        "Pasta"
+      ],
+      "descrizione": "Ceci secchi in pressione col soffritto, in parte schiacciati, poi la pasta cotta nel loro brodo.",
+      "ingredienti": [
+        {
+          "nome": "Ceci secchi",
+          "quantita": 140,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi, ammollati 12 ore e scolati"
+        },
+        {
+          "nome": "Pasta corta",
+          "quantita": 80,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81b4-ae78-c089b1b0a9a3",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Dopo la pressione, cotta nel brodo dei ceci"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Carota",
+          "quantita": 1,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a2-adca-c62ad70404c5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Concentrato di pomodoro",
+          "quantita": 20,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8101-995d-e828474878a5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Soffritto"
+        },
+        {
+          "nome": "Rosmarino",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81ec-b192-d95dca5dedb3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 25,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Metà nel soffritto, metà a crudo"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 550,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "In pressione; poi calda se la pasta si asciuga"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Poco in pressione, poi aggiusta"
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a8-9dc3-df2f875c837c",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Secco, sbriciolato, in pressione"
+        },
+        {
+          "nome": "Pepe",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-815b-8c33-f63352af7917",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sul piatto"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Soffritto. Nella pentola a pressione aperta scalda metà dell'olio e cuoci cipolla e carota tritate 5 minuti a fuoco medio. Aggiungi aglio, rosmarino e concentrato e cuoci un minuto mescolando."
+        },
+        {
+          "testo": "Carica la pentola. Unisci i ceci scolati, il peperoncino, un po' di sale e l'acqua. Gratta bene il fondo."
+        },
+        {
+          "testo": "Pressione. Chiudi e porta a pressione. Dal fischio cuoci 20 minuti a fiamma bassa, poi sfiata."
+        },
+        {
+          "testo": "Crema. Controlla i ceci: se non sono morbidi, altri 5 minuti in pressione. Schiacciane circa metà con la forchetta o col minipimer."
+        },
+        {
+          "testo": "Pasta. Porta a bollore a pentola aperta, aggiungi la pasta e cuocila mescolando spesso. Se si asciuga, aggiungi acqua calda poca alla volta. Conta 2-3 minuti in più rispetto alla confezione."
+        },
+        {
+          "testo": "Impiattamento. Aggiusta di sale e completa con il resto dell'olio a crudo e pepe."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1080 kcal e 41 g di proteine."
+        },
+        {
+          "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
+        },
+        {
+          "testo": "Conservazione: in frigo 2-3 giorni. La pasta si gonfia: scaldala con acqua."
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-812c-8943-ce6f359b0ed0",
+      "nome": "Pasta e fagioli con verza",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 1060,
+      "proteine": 46,
+      "base": [
+        "Pasta"
+      ],
+      "descrizione": "Fagioli secchi in pressione, poi verza e pasta cotte nel brodo. Densa, da cucchiaio.",
+      "ingredienti": [
+        {
+          "nome": "Fagioli secchi",
+          "quantita": 120,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi, ammollati 8-12 ore e scolati. Borlotti o cannellini"
+        },
+        {
+          "nome": "Pasta corta",
+          "quantita": 90,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81b4-ae78-c089b1b0a9a3",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Dopo la pressione, cotta nella minestra"
+        },
+        {
+          "nome": "Verza",
+          "quantita": 200,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8103-a2b4-f176b039d57c",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A striscioline sottili, con la pasta"
+        },
+        {
+          "nome": "Polpa di pomodoro",
+          "quantita": 100,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8198-902d-d5176f398977",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "In pressione"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Carota",
+          "quantita": 1,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a2-adca-c62ad70404c5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Rosmarino",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81ec-b192-d95dca5dedb3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 25,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Metà nel soffritto, metà a crudo"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 600,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "In pressione; poi calda se la pasta si asciuga"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Poco in pressione, poi aggiusta"
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a8-9dc3-df2f875c837c",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Secco, sbriciolato, in pressione"
+        },
+        {
+          "nome": "Pepe",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-815b-8c33-f63352af7917",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sul piatto"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Soffritto. Nella pentola a pressione aperta scalda metà dell'olio e cuoci cipolla e carota tritate 5 minuti a fuoco medio. Aggiungi aglio e rosmarino e cuoci un altro minuto."
+        },
+        {
+          "testo": "Carica la pentola. Unisci i fagioli scolati, la polpa di pomodoro, il peperoncino, un po' di sale e l'acqua. Gratta bene il fondo."
+        },
+        {
+          "testo": "Pressione. Chiudi e porta a pressione. Dal fischio cuoci 15 minuti a fiamma bassa, poi sfiata."
+        },
+        {
+          "testo": "Crema. Controlla i fagioli: se non sono morbidi, altri 5 minuti in pressione. Schiacciane un paio di mestoli con la forchetta o col minipimer, così la minestra diventa cremosa."
+        },
+        {
+          "testo": "Verza e pasta. Porta a bollore, aggiungi la verza a striscioline sottili e la pasta. Cuoci a pentola aperta mescolando spesso e aggiungi acqua calda poca alla volta se si asciuga. Conta 2-3 minuti in più rispetto alla confezione."
+        },
+        {
+          "testo": "Impiattamento. Aggiusta di sale e servi con il resto dell'olio a crudo e pepe."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1060 kcal e 46 g di proteine."
+        },
+        {
+          "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
+        },
+        {
+          "testo": "Conservazione: in frigo 2-3 giorni. La pasta si gonfia: scaldala con acqua."
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-81a5-82b5-ed55cb8801a2",
+      "nome": "Pasta e lenticchie",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 1040,
+      "proteine": 44,
+      "base": [
+        "Pasta"
+      ],
+      "descrizione": "Lenticchie in pressione col soffritto, poi la pasta cotta dentro. Variante con cavolo nero o verza nelle note.",
+      "ingredienti": [
+        {
+          "nome": "Lenticchie secche",
+          "quantita": 120,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Marroni o verdi, sciacquate"
+        },
+        {
+          "nome": "Pasta corta",
+          "quantita": 90,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81b4-ae78-c089b1b0a9a3",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Dopo la pressione, cotta dentro"
+        },
+        {
+          "nome": "Carota",
+          "quantita": 1,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a2-adca-c62ad70404c5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Concentrato di pomodoro",
+          "quantita": 15,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8101-995d-e828474878a5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Soffritto"
+        },
+        {
+          "nome": "Polpa di pomodoro",
+          "quantita": 100,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8198-902d-d5176f398977",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "In pressione"
+        },
+        {
+          "nome": "Rosmarino",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81ec-b192-d95dca5dedb3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 25,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Metà nel soffritto, metà a crudo"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 600,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "In pressione; poi calda se la pasta si asciuga"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Poco in pressione, poi aggiusta"
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a8-9dc3-df2f875c837c",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Secco, sbriciolato, in pressione"
+        },
+        {
+          "nome": "Limone",
+          "quantita": 0.25,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-819d-a3b6-ebc3ec4e6b17",
+          "tipo": "Da comprare",
+          "facoltativo": true,
+          "nota": "Scorza grattugiata sul piatto"
+        },
+        {
+          "nome": "Cavolo nero",
+          "quantita": 100,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-817d-96b6-f346f78fc856",
+          "tipo": "Da comprare",
+          "facoltativo": true,
+          "nota": "Variante: a striscioline, con la pasta. Oppure verza o spinaci surgelati"
+        },
+        {
+          "nome": "Pepe",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-815b-8c33-f63352af7917",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sul piatto"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Soffritto. Nella pentola a pressione aperta scalda metà dell'olio e cuoci cipolla e carota tritate 5 minuti a fuoco medio. Aggiungi aglio, rosmarino e concentrato e cuoci un minuto mescolando."
+        },
+        {
+          "testo": "Carica la pentola. Unisci le lenticchie sciacquate, la polpa di pomodoro, il peperoncino, un po' di sale e l'acqua. Gratta bene il fondo."
+        },
+        {
+          "testo": "Pressione. Chiudi e porta a pressione. Dal fischio cuoci 10 minuti a fiamma bassa, poi sfiata."
+        },
+        {
+          "testo": "Pasta. Porta a bollore a pentola aperta, aggiungi la pasta e cuocila mescolando spesso. Se si asciuga, aggiungi acqua calda poca alla volta. Conta 2-3 minuti in più rispetto alla confezione."
+        },
+        {
+          "testo": "Impiattamento. Aggiusta di sale e completa con il resto dell'olio a crudo, scorza di limone grattugiata e pepe."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1040 kcal e 44 g di proteine."
+        },
+        {
+          "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
+        },
+        {
+          "testo": "Variante con verdura: aggiungi insieme alla pasta 100 g a porzione di cavolo nero o verza a striscioline, oppure spinaci surgelati (circa 35 kcal e 3 g di proteine in più)."
+        },
+        {
+          "testo": "Conservazione: in frigo 2-3 giorni. La pasta si gonfia: scaldala con acqua."
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-817b-940a-fa5e238d0f00",
+      "nome": "Pasta, ceci e cavolfiore alla siciliana",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 1110,
+      "proteine": 42,
+      "base": [
+        "Pasta"
+      ],
+      "descrizione": "Cavolfiore stracotto con capperi e datteri, ceci in pressione e pasta cotta nel sugo. Una pentola.",
+      "ingredienti": [
+        {
+          "nome": "Ceci secchi",
+          "quantita": 120,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi, ammollati 12 ore e scolati"
+        },
+        {
+          "nome": "Pasta corta",
+          "quantita": 90,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81b4-ae78-c089b1b0a9a3",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Dopo la pressione, cotta nel sugo"
+        },
+        {
+          "nome": "Cavolfiore",
+          "quantita": 250,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8141-ae86-cec1215c4550",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A cimette, anche il torsolo a pezzetti. In pressione"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Soffritto"
+        },
+        {
+          "nome": "Capperi",
+          "quantita": 10,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e8-82d1-eee6be4b7781",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sciacquati, soffritto"
+        },
+        {
+          "nome": "Concentrato di pomodoro",
+          "quantita": 15,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8101-995d-e828474878a5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Soffritto"
+        },
+        {
+          "nome": "Datteri",
+          "quantita": 2,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81b3-ac52-d96beeab1a3c",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritati, in pressione"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 25,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Metà nel soffritto, metà a crudo"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 600,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "In pressione; poi calda se la pasta si asciuga"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Dopo la pressione, i capperi salano già"
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a8-9dc3-df2f875c837c",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Secco, sbriciolato, soffritto"
+        },
+        {
+          "nome": "Limone",
+          "quantita": 0.25,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-819d-a3b6-ebc3ec4e6b17",
+          "tipo": "Da comprare",
+          "facoltativo": true,
+          "nota": "Scorza grattugiata sul piatto"
+        },
+        {
+          "nome": "Pepe",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-815b-8c33-f63352af7917",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sul piatto"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Soffritto. Nella pentola a pressione aperta scalda metà dell'olio e cuoci la cipolla tritata 5 minuti a fuoco medio. Aggiungi aglio, capperi sciacquati, peperoncino sbriciolato e concentrato e cuoci un minuto mescolando."
+        },
+        {
+          "testo": "Carica la pentola. Unisci i ceci scolati, il cavolfiore a cimette (anche il torsolo tagliato a pezzetti), i datteri tritati e l'acqua. Gratta bene il fondo."
+        },
+        {
+          "testo": "Pressione. Chiudi e porta a pressione. Dal fischio cuoci 20 minuti a fiamma bassa, poi sfiata."
+        },
+        {
+          "testo": "Schiaccia. Il cavolfiore deve essere sfatto: schiaccialo contro le pareti con il cucchiaio, così fa da crema. Assaggia e sala."
+        },
+        {
+          "testo": "Pasta. Porta a bollore, aggiungi la pasta e cuocila nel sugo mescolando spesso. Se si asciuga, aggiungi acqua calda poca alla volta. Conta 2-3 minuti in più rispetto alla confezione."
+        },
+        {
+          "testo": "Impiattamento. Completa con il resto dell'olio a crudo, pepe e, se vuoi, scorza di limone grattugiata."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1110 kcal e 42 g di proteine."
+        },
+        {
+          "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
+        },
+        {
+          "testo": "Sale: i capperi salano già, assaggia prima di aggiungerne."
+        },
+        {
+          "testo": "Datteri: prendono il posto dell'uvetta della versione siciliana. Danno il contrasto dolce ai capperi."
+        },
+        {
+          "testo": "Conservazione: in frigo 2 giorni. La pasta si gonfia: scaldala con un goccio d'acqua."
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-81a9-851a-faa1de3ff0ba",
+      "nome": "Polenta incatenata (fagioli e cavolo nero)",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 1100,
+      "proteine": 44,
+      "base": [
+        "Altro"
+      ],
+      "descrizione": "Piatto toscano: la polenta istantanea cuoce direttamente nel brodo dei fagioli. Pentola a pressione.",
+      "ingredienti": [
+        {
+          "nome": "Fagioli secchi",
+          "quantita": 130,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi, ammollati 8-12 ore e scolati. Borlotti o cannellini"
+        },
+        {
+          "nome": "Polenta istantanea",
+          "quantita": 90,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-810e-aba7-d88eb8df00cb",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Dopo la pressione, a pioggia nel brodo"
+        },
+        {
+          "nome": "Cavolo nero",
+          "quantita": 150,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-817d-96b6-f346f78fc856",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A striscioline, senza costa, in pressione. Se manca: verza"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Carota",
+          "quantita": 1,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a2-adca-c62ad70404c5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Polpa di pomodoro",
+          "quantita": 100,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8198-902d-d5176f398977",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "In pressione"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 25,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Metà nel soffritto, metà a crudo"
+        },
+        {
+          "nome": "Rosmarino",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81ec-b192-d95dca5dedb3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 700,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "In pressione; aggiungine se il brodo è poco per la polenta"
+        },
+        {
+          "nome": "Sale",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Nel brodo prima della polenta"
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a8-9dc3-df2f875c837c",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Secco, sbriciolato, in pressione"
+        },
+        {
+          "nome": "Pepe",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-815b-8c33-f63352af7917",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sul piatto"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Soffritto. Nella pentola a pressione aperta scalda metà dell'olio e cuoci cipolla e carota tritate 5 minuti a fuoco medio. Aggiungi aglio e rosmarino e cuoci un altro minuto."
+        },
+        {
+          "testo": "Carica la pentola. Unisci i fagioli scolati, il cavolo nero a striscioline (senza la costa centrale), la polpa di pomodoro, il peperoncino e l'acqua. Gratta bene il fondo con un cucchiaio di legno: se resta attaccato qualcosa, sotto pressione rischia di bruciare."
+        },
+        {
+          "testo": "Pressione. Chiudi e porta a pressione. Dal fischio cuoci 15 minuti a fiamma bassa, poi sfiata."
+        },
+        {
+          "testo": "Controlla il brodo. Assaggia i fagioli: se non sono morbidi, altri 5 minuti in pressione. Sala adesso, perché dopo la polenta è difficile. Il brodo deve essere abbondante: la polenta ne assorbe circa quattro volte il suo peso, quindi se ce n'è poco aggiungi acqua calda."
+        },
+        {
+          "testo": "Polenta. Porta a bollore a pentola aperta, versa la polenta a pioggia mescolando con la frusta, abbassa il fuoco e cuoci per il tempo della confezione mescolando spesso."
+        },
+        {
+          "testo": "Impiattamento. Servi subito con il resto dell'olio a crudo e pepe macinato."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1100 kcal e 44 g di proteine."
+        },
+        {
+          "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
+        },
+        {
+          "testo": "Sale: va messo nel brodo prima della polenta."
+        },
+        {
+          "testo": "Senza cavolo nero: la verza va bene con gli stessi tempi. Con gli spinaci surgelati, aggiungili dopo la pressione."
+        },
+        {
+          "testo": "Conservazione: in frigo 2-3 giorni. Si rapprende: il giorno dopo tagliala a fette e scaldala nella carbon steel con un filo d'olio, oppure scaldala in pentola con un po' d'acqua mescolando."
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-81e1-86be-f9e752022fd7",
+      "nome": "Riso al miso con tofu e verza",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 1030,
+      "proteine": 43,
+      "base": [
+        "Riso"
+      ],
+      "descrizione": "Tofu rosolato, riso, verza e piselli in pentola a pressione, miso a fuoco spento. Un panetto di tofu a porzione.",
+      "ingredienti": [
+        {
+          "nome": "Tofu",
+          "quantita": 180,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81bc-8c8c-f0ee0ae6a8d6",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sbriciolato, nella carbon steel"
+        },
+        {
+          "nome": "Riso",
+          "quantita": 110,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tostato nella pentola a pressione"
+        },
+        {
+          "nome": "Verza",
+          "quantita": 200,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8103-a2b4-f176b039d57c",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A striscioline, in pressione"
+        },
+        {
+          "nome": "Piselli surgelati",
+          "quantita": 80,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e0-ae9d-cc3c5968a68a",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Ancora surgelati, in pressione"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, base"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, base"
+        },
+        {
+          "nome": "Zenzero fresco",
+          "quantita": 5,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-819c-aa36-ce55fb7ab135",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Grattugiato, base. Senza: mezzo cucchiaino di zenzero in polvere"
+        },
+        {
+          "nome": "Salsa di soia",
+          "quantita": 20,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-8155-88e2-e8bdf5a33fb5",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Per sfumare"
+        },
+        {
+          "nome": "Miso",
+          "quantita": 12,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81f3-bd02-dadf890f0083",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "A fuoco spento, sciolto in acqua calda"
+        },
+        {
+          "nome": "Olio di semi",
+          "quantita": 25,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-8172-80f1-c191f25b4593",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Metà per il tofu, metà per la base"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 230,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "In pressione"
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-817a-beda-dbe6828c2637",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sul piatto, oppure tabasco"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Tofu nella carbon steel. Strizza bene il tofu e sbriciolalo a pezzi irregolari. Scalda la padella vuota 2-3 minuti a fuoco medio-alto, aggiungi l'olio per il tofu e aspetta che diventi luccicante. Versa il tofu e non toccarlo finché si stacca da solo, poi giralo: 8-10 minuti in tutto, finché è dorato. Intanto vai avanti col passaggio 2."
+        },
+        {
+          "testo": "Base nella pentola a pressione. Scalda il resto dell'olio e cuoci la cipolla tritata 4 minuti a fuoco medio, poi aglio e zenzero grattugiato per un minuto. Aggiungi il riso e tostalo un minuto mescolando."
+        },
+        {
+          "testo": "Carica la pentola. Sfuma con la salsa di soia, poi unisci la verza a striscioline, i piselli ancora surgelati, l'acqua e il tofu. Gratta bene il fondo."
+        },
+        {
+          "testo": "Pressione. Chiudi e porta a pressione. Dal fischio cuoci 6 minuti a fiamma bassa, poi spegni e lascia scendere la pressione da sola (circa 10 minuti)."
+        },
+        {
+          "testo": "Miso. Sciogli il miso in un mestolino d'acqua calda e mescolalo nel riso a fuoco spento."
+        },
+        {
+          "testo": "Impiattamento. Peperoncino o tabasco a piacere."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1030 kcal e 43 g di proteine."
+        },
+        {
+          "testo": "Sale: non serve, soia e miso salano già."
+        },
+        {
+          "testo": "Miso: va aggiunto a fuoco spento, se bolle perde sapore."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni. Scalda con un goccio d'acqua."
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-81cd-92e8-e7b14f028d82",
+      "nome": "Riso al pomodoro con tofu e piselli (pentola a pressione)",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 1040,
+      "proteine": 42,
+      "base": [
+        "Riso"
+      ],
+      "descrizione": "Tofu sbriciolato rosolato nella pentola a pressione, poi riso, pomodoro e piselli. Un panetto di tofu a porzione.",
+      "ingredienti": [
+        {
+          "nome": "Tofu",
+          "quantita": 180,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81bc-8c8c-f0ee0ae6a8d6",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sbriciolato, nella carbon steel"
+        },
+        {
+          "nome": "Riso",
+          "quantita": 110,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tostato nella pentola a pressione"
+        },
+        {
+          "nome": "Piselli surgelati",
+          "quantita": 150,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e0-ae9d-cc3c5968a68a",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Ancora surgelati, in pressione"
+        },
+        {
+          "nome": "Polpa di pomodoro",
+          "quantita": 150,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8198-902d-d5176f398977",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "In pressione"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, base"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, base"
+        },
+        {
+          "nome": "Olio di semi",
+          "quantita": 25,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-8172-80f1-c191f25b4593",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Metà per il tofu, metà per la base"
+        },
+        {
+          "nome": "Salsa di soia",
+          "quantita": 10,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-8155-88e2-e8bdf5a33fb5",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Per sfumare"
+        },
+        {
+          "nome": "Origano",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81c7-b64a-c8ed6b492b9e",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In pressione"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 200,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "In pressione"
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": 0.25,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-817a-beda-dbe6828c2637",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Hot chilly di Zanzibar, in pressione. Se finito: cayenna macinata"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Alla fine, la soia sala già"
+        },
+        {
+          "nome": "Tabasco",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-81cb-8317-c0561439981c",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sul piatto"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Tofu nella carbon steel. Strizza bene il tofu in un canovaccio e sbriciolalo a pezzi irregolari. Scalda la padella vuota 2-3 minuti a fuoco medio-alto, aggiungi l'olio per il tofu e aspetta che diventi luccicante. Versa il tofu e non toccarlo finché si stacca da solo, poi giralo: 8-10 minuti in tutto, finché è dorato. Intanto vai avanti col passaggio 2."
+        },
+        {
+          "testo": "Base nella pentola a pressione. Scalda il resto dell'olio e cuoci la cipolla tritata 4 minuti a fuoco medio, poi l'aglio per un minuto. Aggiungi il riso e tostalo un minuto mescolando."
+        },
+        {
+          "testo": "Carica la pentola. Sfuma con la salsa di soia, poi unisci polpa di pomodoro, piselli ancora surgelati, origano, peperoncino, acqua e il tofu. Gratta bene il fondo: il pomodoro sotto pressione tende ad attaccarsi."
+        },
+        {
+          "testo": "Pressione. Chiudi e porta a pressione. Dal fischio cuoci 6 minuti a fiamma bassa, poi spegni e lascia scendere la pressione da sola (circa 10 minuti)."
+        },
+        {
+          "testo": "Finale. Mescola, assaggia e aggiusta di sale. Sul piatto tabasco a piacere."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1040 kcal e 42 g di proteine."
+        },
+        {
+          "testo": "Sale: la soia sala già, assaggia alla fine."
+        },
+        {
+          "testo": "Se si attacca: se la pentola puzza di bruciato prima del fischio, spegni, apri, aggiungi un mestolo d'acqua e gratta il fondo."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni. Il riso si asciuga: scaldalo con un goccio d'acqua."
+        }
+      ]
+    },
+    {
+      "id": "3f4d208f-0d59-81ac-ad82-d8ede82a6a20",
+      "nome": "Riso saltato con tofu e verdure",
+      "rotazione": false,
+      "provata": true,
+      "porzioni": 2,
+      "kcal": 1040,
+      "proteine": 40,
+      "base": [
+        "Riso"
+      ],
+      "descrizione": "Piatto unico in padella, un panetto di tofu a porzione. Meglio con riso freddo o avanzato.",
+      "ingredienti": [
+        {
+          "nome": "Riso",
+          "quantita": 110,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "basmati o comune"
+        },
+        {
+          "nome": "Tofu",
+          "quantita": 180,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81bc-8c8c-f0ee0ae6a8d6",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Piselli surgelati",
+          "quantita": 80,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e0-ae9d-cc3c5968a68a",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Minestrone surgelato light",
+          "quantita": 150,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8192-bfa6-c301d09b4399",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "senza patate"
+        },
+        {
+          "nome": "Olio di semi",
+          "quantita": 30,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-8172-80f1-c191f25b4593",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "metà per il tofu, metà per il riso"
+        },
+        {
+          "nome": "Salsa di soia",
+          "quantita": 40,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-8155-88e2-e8bdf5a33fb5",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Amido di mais",
+          "quantita": 8,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81a5-b4e9-fa6e0d8b834c",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "per il tofu più croccante"
+        },
+        {
+          "nome": "Zenzero in polvere",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81e4-8de9-e263fc19129f",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": ""
+        },
+        {
+          "nome": "Miso",
+          "quantita": 6,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81f3-bd02-dadf890f0083",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "sciolto nella soia; se lo usi togli ½ cucchiaio di soia"
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-817a-beda-dbe6828c2637",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": ""
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Riso. Cuoci il riso in acqua salata per circa 12 minuti, scolalo e allargalo su un piatto a raffreddare. Se hai del riso avanzato dal giorno prima è anche meglio: freddo si sgrana e non si attacca."
+        },
+        {
+          "testo": "Tofu. Tampona il tofu con carta da cucina e taglialo a cubetti. Se vuoi che venga più croccante, passali nell'amido di mais."
+        },
+        {
+          "testo": "Rosolare il tofu. Scalda la padella vuota a fuoco alto per 2-3 minuti, poi aggiungi metà dell'olio e aspetta che diventi luccicante. Versa il tofu e non toccarlo finché non si stacca da solo, poi giralo e cuoci finché è dorato su più lati, circa 8 minuti in tutto. Toglilo e tienilo da parte."
+        },
+        {
+          "testo": "Verdure. Nella stessa padella, a fuoco alto, metti minestrone e piselli ancora surgelati. Lasciali andare finché l'acqua è tutta evaporata e iniziano a sfrigolare, circa 7 minuti. Se ci sono pezzi grossi, tipo fagiolini lunghi, spezzali."
+        },
+        {
+          "testo": "Saltare il riso. Aggiungi il resto dell'olio, l'aglio schiacciato e lo zenzero, poi il riso. Salta a fuoco alto per 2-3 minuti, mescolando poco così prende un po' di colore."
+        },
+        {
+          "testo": "Unire. Rimetti il tofu, versa la salsa di soia e salta ancora un minuto. Assaggia e aggiusta con altra soia se serve."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1040 kcal e 40 g di proteine."
+        },
+        {
+          "testo": "Sale: la salsa di soia sala già, non serve aggiungerne alla fine."
+        },
+        {
+          "testo": "Con il miso: sciogli 1 cucchiaino di miso nella salsa di soia prima di versarla e togli mezzo cucchiaio di soia."
+        },
+        {
+          "testo": "Spezie: peperoncino, pepe e aglio in polvere (al posto di quello fresco) ci stanno bene. Paprika affumicata, cumino e origano no."
+        },
+        {
+          "testo": "Il riso alla fine deve essere asciutto: se è troppo umido diventa una pappa."
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-81ee-9863-f473970938de",
+      "nome": "Risotto zucca, porri e ceci (pentola a pressione)",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 1100,
+      "proteine": 39,
+      "base": [
+        "Riso"
+      ],
+      "descrizione": "Ceci in pressione, poi risotto nella stessa pentola col loro brodo. Il miso alla fine fa la parte del parmigiano.",
+      "ingredienti": [
+        {
+          "nome": "Ceci secchi",
+          "quantita": 140,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi, ammollati 12 ore e scolati"
+        },
+        {
+          "nome": "Riso",
+          "quantita": 75,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Da risotto se ce l'hai, va bene anche il comune"
+        },
+        {
+          "nome": "Zucca",
+          "quantita": 250,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8117-857a-e47220d0612f",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Pulita, a cubetti di 1 cm"
+        },
+        {
+          "nome": "Porri",
+          "quantita": 1,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-818f-bd2c-c038dde85e11",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A rondelle sottili, soffritto"
+        },
+        {
+          "nome": "Miso",
+          "quantita": 12,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81f3-bd02-dadf890f0083",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Mantecatura, a fuoco spento"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 20,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Metà nel soffritto, metà in mantecatura"
+        },
+        {
+          "nome": "Rosmarino",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81ec-b192-d95dca5dedb3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 450,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Per i ceci; il loro brodo poi va nel risotto"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Un pizzico nei ceci, poi assaggia dopo il miso"
+        },
+        {
+          "nome": "Pepe",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-815b-8c33-f63352af7917",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sul piatto"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Ceci. Metti in pentola a pressione i ceci scolati con la parte d'acqua per i ceci e un pizzico di sale. Dal fischio cuoci 20 minuti a fiamma bassa, poi sfiata. Versa ceci e brodo in una ciotola."
+        },
+        {
+          "testo": "Soffritto. Nella pentola vuota scalda metà dell'olio e cuoci il porro a rondelle sottili 5 minuti a fuoco medio, con il rosmarino."
+        },
+        {
+          "testo": "Tostatura. Aggiungi il riso e tostalo 1-2 minuti mescolando."
+        },
+        {
+          "testo": "Carica la pentola. Unisci la zucca a cubetti di 1 cm, i ceci e il loro brodo. Il liquido deve essere circa due volte e mezza il peso del riso: se il brodo è poco, aggiungi acqua calda. Gratta bene il fondo."
+        },
+        {
+          "testo": "Pressione. Chiudi e porta a pressione. Dal fischio cuoci 6 minuti a fiamma bassa, poi sfiata subito."
+        },
+        {
+          "testo": "Mantecatura. Sciogli il miso in un mestolino del liquido e rimettilo nella pentola con il resto dell'olio. Mescola con energia per un minuto: la zucca si sfalda e fa da crema. Pepe e, se serve, sale."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1100 kcal e 39 g di proteine."
+        },
+        {
+          "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
+        },
+        {
+          "testo": "Con i ceci in scatola: salti il passaggio 1. Usa una scatola sgocciolata a porzione (240 g) al posto dei ceci secchi e acqua calda al posto del brodo."
+        },
+        {
+          "testo": "Miso: va aggiunto a fuoco spento, se bolle perde sapore."
+        },
+        {
+          "testo": "Conservazione: in frigo 2 giorni. Si asciuga: scalda con brodo o acqua."
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-8149-b14b-fbd8b10beb9c",
+      "nome": "Spaghetti al ragù di tofu e lenticchie",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 1020,
+      "proteine": 52,
+      "base": [
+        "Pasta"
+      ],
+      "descrizione": "Ragù in pentola a pressione, poi gli spaghetti cotti direttamente nel sugo. Un panetto di tofu a porzione.",
+      "ingredienti": [
+        {
+          "nome": "Tofu",
+          "quantita": 180,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81bc-8c8c-f0ee0ae6a8d6",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sbriciolato fine, nella carbon steel"
+        },
+        {
+          "nome": "Lenticchie secche",
+          "quantita": 50,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Marroni o verdi, sciacquate. Ragù"
+        },
+        {
+          "nome": "Spaghetti",
+          "quantita": 90,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8176-96cb-fd20d3e5366e",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Spezzati a metà, cotti nel sugo"
+        },
+        {
+          "nome": "Polpa di pomodoro",
+          "quantita": 200,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8198-902d-d5176f398977",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Ragù"
+        },
+        {
+          "nome": "Carota",
+          "quantita": 1,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a2-adca-c62ad70404c5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Salsa di soia",
+          "quantita": 15,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-8155-88e2-e8bdf5a33fb5",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Per sfumare il tofu"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 20,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Metà per il tofu, metà per il soffritto"
+        },
+        {
+          "nome": "Origano",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81c7-b64a-c8ed6b492b9e",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Ragù"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 500,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Metà per il ragù in pressione, metà calda per gli spaghetti"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Poco nel ragù, la soia sala già"
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a8-9dc3-df2f875c837c",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Secco, sbriciolato, nel ragù"
+        },
+        {
+          "nome": "Tabasco",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-81cb-8317-c0561439981c",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sul piatto"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Tofu nella carbon steel. Strizza bene il tofu e sbriciolalo fine con le mani. Scalda la padella vuota 2-3 minuti a fuoco medio-alto, aggiungi l'olio per il tofu e aspetta che diventi luccicante. Versa il tofu e non toccarlo finché si stacca da solo, poi giralo: 8-10 minuti in tutto, finché è dorato e asciutto. Alla fine sfuma con la salsa di soia. Intanto vai avanti col passaggio 2."
+        },
+        {
+          "testo": "Soffritto nella pentola a pressione. Scalda il resto dell'olio e cuoci cipolla e carota tritate 5 minuti a fuoco medio, poi l'aglio per un minuto."
+        },
+        {
+          "testo": "Ragù. Unisci lenticchie sciacquate, polpa di pomodoro, origano, peperoncino, un po' di sale e l'acqua per il ragù. Gratta bene il fondo. Chiudi e porta a pressione: dal fischio 10 minuti a fiamma bassa, poi sfiata."
+        },
+        {
+          "testo": "Spaghetti. Aggiungi il tofu e l'acqua calda per gli spaghetti e porta a bollore a pentola aperta. Aggiungi gli spaghetti spezzati a metà e cuocili nel sugo mescolando spesso. Se si asciuga, aggiungi acqua calda poca alla volta. Conta 2-3 minuti in più rispetto alla confezione."
+        },
+        {
+          "testo": "Impiattamento. Aggiusta di sale. Tabasco o peperoncino a piacere."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1020 kcal e 52 g di proteine."
+        },
+        {
+          "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
+        },
+        {
+          "testo": "Ragù in più: puoi fare il ragù per 4 porzioni e congelarne metà prima di aggiungere gli spaghetti."
+        },
+        {
+          "testo": "Conservazione: in frigo 2-3 giorni. Scalda con un goccio d'acqua."
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-81c1-9da0-c4f8f23da264",
+      "nome": "Spaghetti arachidi e miso con tofu",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 980,
+      "proteine": 50,
+      "base": [
+        "Pasta"
+      ],
+      "descrizione": "Spaghetti cotti in padella con poca acqua, salsa di burro d'arachidi e miso, tofu e verza. Un panetto di tofu a porzione.",
+      "ingredienti": [
+        {
+          "nome": "Tofu",
+          "quantita": 180,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81bc-8c8c-f0ee0ae6a8d6",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A cubetti, nella carbon steel"
+        },
+        {
+          "nome": "Spaghetti",
+          "quantita": 100,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8176-96cb-fd20d3e5366e",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Spezzati a metà, cotti in padella"
+        },
+        {
+          "nome": "Verza",
+          "quantita": 150,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8103-a2b4-f176b039d57c",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A striscioline sottili, con gli spaghetti. Oppure broccoli o spinaci surgelati"
+        },
+        {
+          "nome": "Burro d'arachidi",
+          "quantita": 30,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-818f-a183-dcce8bb62267",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Salsa"
+        },
+        {
+          "nome": "Miso",
+          "quantita": 12,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81f3-bd02-dadf890f0083",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Salsa, a fuoco spento"
+        },
+        {
+          "nome": "Salsa di soia",
+          "quantita": 20,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-8155-88e2-e8bdf5a33fb5",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Salsa"
+        },
+        {
+          "nome": "Limone",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-819d-a3b6-ebc3ec4e6b17",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Succo, salsa"
+        },
+        {
+          "nome": "Zenzero fresco",
+          "quantita": 5,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-819c-aa36-ce55fb7ab135",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Grattugiato, nell'acqua degli spaghetti. Senza: mezzo cucchiaino di zenzero in polvere"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Schiacciato, nell'acqua degli spaghetti"
+        },
+        {
+          "nome": "Olio di semi",
+          "quantita": 15,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-8172-80f1-c191f25b4593",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Per il tofu"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 350,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Per cuocere gli spaghetti; aggiungine se si asciuga"
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-817a-beda-dbe6828c2637",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sul piatto, oppure tabasco"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Salsa. In una ciotola mescola burro d'arachidi, miso, salsa di soia, succo di limone e qualche cucchiaio d'acqua calda finché è liscia."
+        },
+        {
+          "testo": "Tofu nella carbon steel. Strizza il tofu e taglialo a cubetti. Scalda la padella vuota 2-3 minuti a fuoco medio-alto, aggiungi l'olio e aspetta che diventi luccicante. Versa il tofu e non toccarlo finché si stacca da solo, poi giralo: 8-10 minuti in tutto, finché è dorato. Tienilo da parte."
+        },
+        {
+          "testo": "Spaghetti nell'inox (padella larga e alta o pentola bassa). Metti l'acqua, aglio schiacciato e zenzero grattugiato e porta a bollore. Aggiungi gli spaghetti spezzati a metà e la verza a striscioline sottili."
+        },
+        {
+          "testo": "Cottura. Cuoci mescolando spesso, perché con poca acqua gli spaghetti si attaccano. Se si asciuga prima che siano cotti, aggiungi acqua calda poca alla volta."
+        },
+        {
+          "testo": "Mantecatura. Quando gli spaghetti sono al dente e resta solo un velo d'acqua sul fondo, spegni il fuoco. Aggiungi la salsa e il tofu e mescola: l'acqua di cottura rende la salsa cremosa."
+        },
+        {
+          "testo": "Impiattamento. Peperoncino o tabasco a piacere."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 980 kcal e 50 g di proteine."
+        },
+        {
+          "testo": "Miso: va aggiunto a fuoco spento, se bolle perde sapore."
+        },
+        {
+          "testo": "Sale: non serve, soia e miso salano già."
+        },
+        {
+          "testo": "Varianti: al posto della verza vanno bene broccoli surgelati o spinaci surgelati, nello stesso momento."
+        },
+        {
+          "testo": "Conservazione: in frigo 2 giorni. È buono anche freddo."
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-816a-8dd7-c361e40d2068",
+      "nome": "Stufato di ceci e zucca con cous cous",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 1110,
+      "proteine": 41,
+      "base": [
+        "Couscous"
+      ],
+      "descrizione": "Ceci in pressione con spezie calde e datteri, zucca a pentola aperta, cous cous versato nel sugo a fuoco spento.",
+      "ingredienti": [
+        {
+          "nome": "Ceci secchi",
+          "quantita": 130,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi, ammollati 12 ore e scolati"
+        },
+        {
+          "nome": "Cous cous",
+          "quantita": 80,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e0-942d-eb2ed78c30e4",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A fuoco spento, nel sugo"
+        },
+        {
+          "nome": "Zucca",
+          "quantita": 200,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8117-857a-e47220d0612f",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Pulita, a cubetti di 2 cm, dopo la pressione"
+        },
+        {
+          "nome": "Carota",
+          "quantita": 1,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a2-adca-c62ad70404c5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A dadini, soffritto"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Concentrato di pomodoro",
+          "quantita": 15,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8101-995d-e828474878a5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Soffritto"
+        },
+        {
+          "nome": "Datteri",
+          "quantita": 2,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81b3-ac52-d96beeab1a3c",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritati, in pressione"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 20,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Soffritto"
+        },
+        {
+          "nome": "Cumino",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8190-9dbb-f47f5c9185ae",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In semi (Zanzibar), tostato nell'olio. Se finito: mezzo cucchiaino di mix curry"
+        },
+        {
+          "nome": "Cannella in stecca",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-818f-a2ee-ccf4fa578e12",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Pezzetto da 3-4 cm per due porzioni, in pressione e poi tolto. Se finita: ometti"
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": 0.25,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-817a-beda-dbe6828c2637",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Hot chilly di Zanzibar, in pressione. Se finito: cayenna macinata"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 450,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "In pressione; aggiungine se il sugo è poco per il cous cous"
+        },
+        {
+          "nome": "Sale",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In pressione, poi aggiusta"
+        },
+        {
+          "nome": "Limone",
+          "quantita": 0.25,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-819d-a3b6-ebc3ec4e6b17",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Succo, alla fine"
+        },
+        {
+          "nome": "Tabasco",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-81cb-8317-c0561439981c",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sul piatto"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Soffritto. Nella pentola a pressione aperta scalda l'olio e tosta il cumino in semi 30 secondi. Aggiungi cipolla tritata e carota a dadini e cuoci 5 minuti a fuoco medio, poi aglio e concentrato per un minuto."
+        },
+        {
+          "testo": "Carica la pentola. Unisci i ceci scolati, i datteri tritati, la cannella, il peperoncino, il sale e l'acqua. Gratta bene il fondo."
+        },
+        {
+          "testo": "Pressione. Chiudi e porta a pressione. Dal fischio cuoci 20 minuti a fiamma bassa, poi sfiata."
+        },
+        {
+          "testo": "Zucca. Togli la cannella e controlla i ceci: se non sono morbidi, altri 5 minuti in pressione. Aggiungi la zucca a cubetti di 2 cm e fai sobbollire senza coperchio 10-12 minuti, finché è morbida."
+        },
+        {
+          "testo": "Cous cous. Il sugo deve essere abbondante: se è poco aggiungi acqua calda. Spegni il fuoco, versa il cous cous, mescola, metti il coperchio e lascia riposare 5 minuti. Sgrana con la forchetta."
+        },
+        {
+          "testo": "Finale. Aggiungi il succo di limone, assaggia e aggiusta di sale. Sul piatto tabasco a piacere."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1110 kcal e 41 g di proteine."
+        },
+        {
+          "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
+        },
+        {
+          "testo": "Zucca: se la metti in pressione con i ceci si sfalda del tutto. Va bene se la vuoi a crema."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni. Il cous cous assorbe il sugo: scalda con un goccio d'acqua."
+        },
+        {
+          "testo": "Versione senza spezie di Zanzibar (per quando finiscono):",
+          "sotto": [
+            "Cumino in semi → mezzo cucchiaino di mix curry a porzione.",
+            "Cannella in stecca → ometti.",
+            "Hot chilly → cayenna macinata, stessa dose."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-81c4-a2b6-c2d7f60476b5",
+      "nome": "Tofu in sugo piccante con spinaci e cous cous",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 990,
+      "proteine": 44,
+      "base": [
+        "Couscous"
+      ],
+      "descrizione": "Tofu a cubi nel pomodoro piccante con spinaci, cous cous versato nella padella alla fine. Un panetto di tofu a porzione.",
+      "ingredienti": [
+        {
+          "nome": "Tofu",
+          "quantita": 180,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81bc-8c8c-f0ee0ae6a8d6",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A cubetti, nella carbon steel"
+        },
+        {
+          "nome": "Cous cous",
+          "quantita": 100,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e0-942d-eb2ed78c30e4",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A fuoco spento, nella padella"
+        },
+        {
+          "nome": "Polpa di pomodoro",
+          "quantita": 200,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8198-902d-d5176f398977",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sugo"
+        },
+        {
+          "nome": "Spinaci surgelati",
+          "quantita": 150,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8108-8344-d09266b39e1b",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Ancora surgelati, nel sugo"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, sugo"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, sugo"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 30,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Metà per il tofu, metà per il sugo"
+        },
+        {
+          "nome": "Cumino",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8190-9dbb-f47f5c9185ae",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In semi (Zanzibar), sugo. Se finito: mezzo cucchiaino di mix quesadilla"
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": 0.25,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-817a-beda-dbe6828c2637",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Hot chilly di Zanzibar, sugo. Se finito: cayenna macinata"
+        },
+        {
+          "nome": "Origano",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81c7-b64a-c8ed6b492b9e",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Sugo"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 120,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Per il cous cous, portata a bollore nel sugo"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Sugo"
+        },
+        {
+          "nome": "Tabasco",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-81cb-8317-c0561439981c",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sul piatto"
+        },
+        {
+          "nome": "Limone",
+          "quantita": 0.25,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-819d-a3b6-ebc3ec4e6b17",
+          "tipo": "Da comprare",
+          "facoltativo": true,
+          "nota": "Succo, sul piatto"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Tofu nella carbon steel. Strizza il tofu e taglialo a cubetti. Scalda la padella vuota 2-3 minuti a fuoco medio-alto, aggiungi l'olio per il tofu e aspetta che diventi luccicante. Versa il tofu e non toccarlo finché si stacca da solo, poi giralo: 8-10 minuti in tutto, finché è dorato. Intanto vai avanti col passaggio 2."
+        },
+        {
+          "testo": "Sugo nell'inox (padella larga e alta o pentola bassa). Scalda il resto dell'olio e cuoci la cipolla tritata 4 minuti a fuoco medio. Aggiungi aglio, cumino e peperoncino e cuoci un minuto."
+        },
+        {
+          "testo": "Pomodoro e spinaci. Unisci polpa di pomodoro, spinaci ancora surgelati, origano e sale. Fai sobbollire 15 minuti mescolando ogni tanto."
+        },
+        {
+          "testo": "Tofu. Aggiungi il tofu e lascialo insaporire 2 minuti nel sugo."
+        },
+        {
+          "testo": "Cous cous. Versa l'acqua e porta a bollore. Spegni il fuoco, aggiungi il cous cous, mescola, metti il coperchio e lascia riposare 5 minuti. Sgrana con la forchetta."
+        },
+        {
+          "testo": "Impiattamento. Tabasco a piacere e, se vuoi, un po' di limone a crudo."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 990 kcal e 44 g di proteine."
+        },
+        {
+          "testo": "Piccante: regola con il peperoncino nel sugo e il tabasco sul piatto."
+        },
+        {
+          "testo": "Conservazione: in frigo 2-3 giorni. Il cous cous assorbe il sugo: scalda con un goccio d'acqua."
+        },
+        {
+          "testo": "Versione senza spezie di Zanzibar (per quando finiscono):",
+          "sotto": [
+            "Cumino in semi → mezzo cucchiaino di mix quesadilla a porzione.",
+            "Hot chilly → cayenna macinata, stessa dose."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-8127-a6ba-d50cfa436184",
+      "nome": "Zuppa di lenticchie, zucca e zenzero con quinoa",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 990,
+      "proteine": 45,
+      "base": [
+        "Altro"
+      ],
+      "descrizione": "Zuppa densa cotta tutta insieme in pentola a pressione, frullata a metà.",
+      "ingredienti": [
+        {
+          "nome": "Lenticchie secche",
+          "quantita": 120,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Marroni o verdi, sciacquate"
+        },
+        {
+          "nome": "Quinoa",
+          "quantita": 60,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-816f-9140-d92336127e88",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sciacquata, in pressione"
+        },
+        {
+          "nome": "Zucca",
+          "quantita": 300,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8117-857a-e47220d0612f",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Pulita, a cubetti, in pressione"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Zenzero fresco",
+          "quantita": 8,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-819c-aa36-ce55fb7ab135",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Grattugiato, soffritto. Senza: un cucchiaino di zenzero in polvere"
+        },
+        {
+          "nome": "Cumino",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8190-9dbb-f47f5c9185ae",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In semi (Zanzibar), tostato nell'olio. Se finito: mezzo cucchiaino di mix curry"
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": 0.25,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-817a-beda-dbe6828c2637",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Hot chilly di Zanzibar, in pressione. Se finito: cayenna macinata"
+        },
+        {
+          "nome": "Latte di soia",
+          "quantita": 100,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81e5-b08e-dc53316776df",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A fuoco spento"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 25,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Metà nel soffritto, metà a crudo"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 650,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "In pressione"
+        },
+        {
+          "nome": "Sale",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In pressione, poi aggiusta"
+        },
+        {
+          "nome": "Limone",
+          "quantita": 0.25,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-819d-a3b6-ebc3ec4e6b17",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Succo, a fuoco spento"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Soffritto. Nella pentola a pressione aperta scalda metà dell'olio e tosta il cumino in semi 30 secondi. Aggiungi la cipolla tritata e cuoci 4 minuti a fuoco medio, poi aglio e zenzero grattugiato per un minuto."
+        },
+        {
+          "testo": "Carica la pentola. Unisci le lenticchie sciacquate, la zucca a cubetti, la quinoa sciacquata in un colino, il peperoncino, il sale e l'acqua. Gratta bene il fondo."
+        },
+        {
+          "testo": "Pressione. Chiudi e porta a pressione. Dal fischio cuoci 10 minuti a fiamma bassa, poi spegni e lascia scendere la pressione da sola."
+        },
+        {
+          "testo": "Frulla. Frulla metà zuppa col minipimer direttamente nella pentola, oppure schiacciala con il cucchiaio. Deve restare densa con pezzi interi."
+        },
+        {
+          "testo": "Finale. A fuoco spento aggiungi latte di soia e succo di limone. Aggiusta di sale e servi con il resto dell'olio a crudo."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 990 kcal e 45 g di proteine."
+        },
+        {
+          "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
+        },
+        {
+          "testo": "Conservazione: in frigo 3-4 giorni. Si addensa: scalda con acqua."
+        },
+        {
+          "testo": "Versione senza spezie di Zanzibar (per quando finiscono):",
+          "sotto": [
+            "Cumino in semi → mezzo cucchiaino di mix curry a porzione.",
+            "Hot chilly → cayenna macinata, stessa dose."
+          ]
+        }
+      ]
+    }
+  ]
+}
