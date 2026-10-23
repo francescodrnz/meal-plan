@@ -15,10 +15,12 @@ App in uso, pubblicata su GitHub Pages da `main`
   `/meal-plan/` (decisione 0002); il resto è cache-first.
 - **Notion** (decisione 0001): Ricette ha la casella "In rotazione"; c'è il
   database Prodotti (reparto, unità, confezione, tipo confezione, si conta
-  in dispensa) collegato a Ingredienti; "Standard ricette" descrive le
-  regole nuove. Le ricette già su Notion non sono ancora convertite.
+  in dispensa) collegato a Ingredienti, con 38 prodotti; "Standard
+  ricette" descrive le regole nuove e i fattori di conversione. Le 4
+  ricette su Notion sono al nuovo standard (ogni ingrediente ha il suo
+  Prodotto, tranne l'acqua); nessuna ha ancora "In rotazione".
 - **Documentazione:** il metodo è in uso; `README.md` segue le sezioni fisse
   e descrive com'è fatta l'app, chiavi e formati di export compresi.
 
-Prossimo passo: convertire al nuovo standard le ricette già su Notion,
-prima voce del gruppo 0001 in `TODO.md`.
+Prossimo passo: portare su Notion le 10 ricette dell'app, prima voce del
+gruppo 0001 in `TODO.md`.

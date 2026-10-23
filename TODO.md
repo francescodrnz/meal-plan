@@ -8,8 +8,6 @@ CONVENZIONI.md, idee non urgenti in BACKLOG.md.
 
 In quest'ordine: ogni passo serve al successivo.
 
-- [S] Convertire al nuovo standard le ricette già su Notion: Prodotto
-  collegato a ogni ingrediente, panetti e lattine in g, olio e salse in ml.
 - [S] Portare su Notion le 10 ricette dell'app (`recipesData` +
   `recipeIngredients`), con lo standard nuovo.
 - [M] GitHub Action che genera `ricette.json` da Notion, di notte e a mano:
