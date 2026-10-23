@@ -6,9 +6,9 @@ CONVENZIONI.md, idee non urgenti in BACKLOG.md.
 
 ## Service worker
 
-- [M] In `sw.js` rendere network-first anche la radice `/meal-plan/` (oggi
-  il controllo è `pathname === '/'`) e correggere il commento che dice
-  network-first anche per il manifest. Aumentare `CACHE_NAME`.
+- [S] Dopo il push della `v11`: dal telefono aprire `.../meal-plan/` e
+  l'app installata, e controllare che arrivi la versione nuova (decisione
+  0002, conseguenze da verificare).
 
 ## Ricette su Notion, l'app come tasca (decisione 0001)
 

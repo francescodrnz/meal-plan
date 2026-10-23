@@ -31,8 +31,10 @@ Peso, Storico, Info. Registra le sessioni, il peso corporeo e i grafici con
 Chart.js.
 
 **Service worker** (`sw.js`):
-- `index.html` (e il percorso `/`) è network-first: la versione nuova arriva
-  appena c'è rete.
+- Le pagine (ogni navigazione: `/meal-plan/`, `index.html`, `workout.html`)
+  sono network-first: la versione nuova arriva appena c'è rete. In cache
+  finiscono solo le risposte riuscite; offline si usa la copia della pagina,
+  altrimenti `index.html`.
 - Tutto il resto è cache-first: i file in `ASSETS` più quelli presi dalla rete
   al primo uso, cioè Chart.js e i Google Fonts.
 - All'attivazione cancella le cache con nome diverso da `CACHE_NAME`.
@@ -69,7 +71,7 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
 
 ## Misure
 
-- 2026-10-23: 10 ricette, fra 1085 e 1100 kcal ciascuna; cache `mealplan-v10`.
+- 2026-10-23: 10 ricette, fra 1085 e 1100 kcal ciascuna; cache `mealplan-v11`.
 
 ## Limiti e comportamenti noti
 
@@ -78,16 +80,10 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
   e la lista della spesa non coincidono più. Se cambia la proteina di una
   ricetta, va aggiornato anche `bulkOverrides`.
 - **Un aggiornamento non arriva se non aumenti `CACHE_NAME`**: tutto tranne
-  `index.html` è cache-first.
-- **Network-first vale solo con il percorso esatto.** Il controllo è su
-  `pathname === '/'`, ma su GitHub Pages la radice è `/meal-plan/`. Aprendo
-  `.../meal-plan/` senza `index.html`, quindi, anche la pagina viene servita
-  dalla cache. L'app installata non ha il problema perché parte da
-  `start_url: index.html`.
+  le pagine HTML è cache-first, e una pagina nuova con JS o CSS vecchi può
+  rompersi.
 - La modalità Bulk non passa con i codici di export: va riattivata a mano su
   ogni dispositivo.
-- Il commento in `sw.js` dice "Network First per index.html e manifest", ma
-  `manifest.json` è cache-first.
 
 ## Comandi utili
 
@@ -98,8 +94,23 @@ python3 -m http.server 8000   # dalla radice, poi http://localhost:8000
 In locale il service worker tiene la cache: per vedere le modifiche aumenta
 `CACHE_NAME`, oppure usa DevTools › Application › Update on reload.
 
+Per provare il service worker con lo stesso percorso di GitHub Pages
+(`/meal-plan/`), servi una cartella che contiene un link al repo:
+
+```sh
+mkdir -p /tmp/www && ln -sfn "$PWD" /tmp/www/meal-plan
+python3 -m http.server 8001 --bind 127.0.0.1 -d /tmp/www   # http://localhost:8001/meal-plan/
+```
+
+Il service worker parte solo su `localhost` o HTTPS. Da un'altra macchina si
+passa da un tunnel SSH (`ssh -L 8001:localhost:8001 <host>`) e si apre
+`localhost` lì. In DevTools › Network le richieste fatte dal service worker
+verso la rete hanno l'icona ⚙.
+
 ## Decisioni collegate
 
 - [0001](decisioni/0001-ricette-su-notion-app-come-tasca.md) — ricette su
   Notion, l'app come tasca. Supera i limiti delle ricette in due posti e
   della modalità Bulk: il rework è in `TODO.md`.
+- [0002](decisioni/0002-pagine-network-first.md) — tutte le pagine
+  network-first nel service worker, non solo la radice.

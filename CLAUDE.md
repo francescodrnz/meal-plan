@@ -25,7 +25,7 @@ manca in `TODO.md`.
 ## Regole vincolanti
 
 - **Cache del service worker:** `sw.js` serve tutto con la strategia
-  cache-first tranne `index.html`. Quindi **ogni modifica** a un file in
+  cache-first tranne le pagine HTML. Quindi **ogni modifica** a un file in
   `ASSETS` richiede di aumentare `CACHE_NAME` (`mealplan-vN` → `vN+1`),
   altrimenti i telefoni continuano a usare la versione vecchia. Anche un
   file nuovo da servire va aggiunto ad `ASSETS`.
@@ -40,7 +40,9 @@ manca in `TODO.md`.
 ## Verifica
 
 - In locale: `python3 -m http.server 8000` dalla radice, poi si apre
-  `http://localhost:8000`. Dal telefono si usa l'IP del PC sulla stessa rete.
+  `http://localhost:8000`. Il service worker parte solo su `localhost` o
+  HTTPS: da un altro dispositivo l'IP del PC carica la pagina ma non il
+  service worker, quindi serve un tunnel SSH (`ssh -L 8000:localhost:8000`).
 - Il service worker in locale tiene la cache: per vedere le modifiche si
   aumenta `CACHE_NAME`, oppure si usa DevTools › Application › Update on
   reload.

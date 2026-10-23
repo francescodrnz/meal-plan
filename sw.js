@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mealplan-v10'; // Incrementato per forzare l'aggiornamento
+const CACHE_NAME = 'mealplan-v11'; // Incrementato per forzare l'aggiornamento
 const ASSETS = [
   'index.html',
   'manifest.json',
@@ -33,19 +33,21 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Strategia: Network First per index.html e manifest, Cache First per il resto
+// Strategia: Network First per le pagine, Cache First per il resto
 self.addEventListener('fetch', (event) => {
-  const url = new URL(event.request.url);
-  
-  if (url.pathname.endsWith('index.html') || url.pathname === '/') {
+  if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request)
         .then((response) => {
-          const clonedResponse = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clonedResponse));
+          // Solo risposte buone: un errore o un redirect non sostituiscono la copia in cache
+          if (response.ok) {
+            const clonedResponse = response.clone();
+            event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clonedResponse)));
+          }
           return response;
         })
-        .catch(() => caches.match(event.request))
+        // Offline: la copia della pagina, altrimenti index.html (es. /meal-plan/ o indirizzi con ?parametri)
+        .catch(() => caches.match(event.request).then((cached) => cached || caches.match('index.html')))
     );
   } else {
     event.respondWith(
