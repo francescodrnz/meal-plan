@@ -1,6 +1,6 @@
 # 0004 — Ricette: si vedono tutte, il piano resta la rotazione
 
-Stato: decisa il 2026-10-24
+Stato: decisa il 2026-10-24 (il raggruppamento: superata da 0006)
 Unità: app (piano pasti)
 
 ## Contesto

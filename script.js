@@ -623,11 +623,13 @@ function gruppoRicette(titolo, ricette, nelPiano, azione) {
     '<div class="rec-list">' + ricette.map(r => rigaRicetta(r, nelPiano, azione)).join('') + '</div></div>';
 }
 
+// Gruppi come la scheda Piano (decisione 0006): la casella di Notion conta solo come partenza del piano.
 function disegnaRicette() {
-  const nelPiano = mappaPiano(leggiPiano());
+  const piatti = piattiDelPiano(leggiPiano());
+  const nelPiano = new Map(piatti.map(x => [x.ricetta.id, x.porzioni]));
   $('v-ricette').innerHTML =
-    gruppoRicette('In rotazione', catalogo.ricette.filter(r => r.rotazione), nelPiano, 'apri') +
-    gruppoRicette('Altre ricette', catalogo.ricette.filter(r => !r.rotazione), nelPiano, 'apri');
+    gruppoRicette('Nel piano', piatti.map(x => x.ricetta), nelPiano, 'apri') +
+    gruppoRicette('Altre ricette', catalogo.ricette.filter(r => !nelPiano.has(r.id)), nelPiano, 'apri');
 }
 
 // ==================== SCHEDA PIANO ====================
@@ -816,11 +818,15 @@ function disegnaCasa(s) {
   const diCasa = perReparti(catalogo.prodotti.filter(p => fab.serve.has(p.id)));
   const mancano = diCasa.filter(p => manca(s.dispensa, p.id)).length;
 
-  const righeCompra = compra.map(p => rigaProdotto(p, s.dispensa, fab.quantita[p.id], daComprare.get(p.id))).join('') +
-    extraSotto.map(r => {
-      const c = s.extra.find(x => 'custom_' + x.id === r.chiave);
-      return c ? rigaExtra(c, s.dispensa, r) : '';
-    }).join('');
+  // Divise per reparto come "Al super": [{reparto, html}] -> righe con le intestazioni.
+  const perCategorie = voci => perReparto(voci, v => v.reparto).map(([reparto, vv]) =>
+    '<div class="rep">' + esc(reparto) + '</div>' + vv.map(v => v.html).join('')).join('');
+  const righeCompra = perCategorie(
+    compra.map(p => ({ reparto: p.reparto, html: rigaProdotto(p, s.dispensa, fab.quantita[p.id], daComprare.get(p.id)) }))
+      .concat(extraSotto.map(r => {
+        const c = s.extra.find(x => 'custom_' + x.id === r.chiave);
+        return c ? { reparto: r.reparto, html: rigaExtra(c, s.dispensa, r) } : null;
+      }).filter(Boolean)));
 
   const tutta = perReparto(catalogo.prodotti, p => p.reparto).map(([reparto, pp]) =>
       '<div class="rep">' + esc(reparto) + '</div>' +
@@ -830,7 +836,7 @@ function disegnaCasa(s) {
   $('v-spesa').innerHTML = segSpesa() +
     sezione('Da comprare', compra.length + extraSotto.length, righeCompra ? '<div class="items">' + righeCompra + '</div>' : '') +
     sezione('Ce l\'hai già', basta.length, basta.length
-      ? '<div class="items">' + basta.map(p => rigaProdotto(p, s.dispensa, fab.quantita[p.id], null)).join('') + '</div>' : '') +
+      ? '<div class="items">' + perCategorie(basta.map(p => ({ reparto: p.reparto, html: rigaProdotto(p, s.dispensa, fab.quantita[p.id], null) }))) + '</div>' : '') +
     sezione('Spezie e cose di casa', mancano ? (mancano === 1 ? '1 manca' : mancano + ' mancano') : 'tutto in casa', diCasa.length
       ? '<div class="items">' + diCasa.map(p => rigaCasa(p, s.dispensa, testoUsi(usi[p.id] || {}))).join('') + '</div>' : '') +
     '<details class="rest" id="tutta-dispensa"' + (tuttaLaDispensa ? ' open' : '') + '><summary><h2 class="sec-title">Tutta la dispensa</h2></summary>' +

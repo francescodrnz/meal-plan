@@ -20,8 +20,9 @@ Grafica e flussi sono quelli del mockup `decisioni/0001-mockup.html`.
 - Header col titolo della scheda e ⋮ (menu dal basso: Backup, Prodotti extra,
   Allenamenti); schede Ricette, Piano, Spesa in basso, la scheda attiva in
   `location.hash`. Il badge su Spesa conta le righe ancora da prendere.
-  Ricette: prima quelle in rotazione, poi le altre, con l'emoji dell'icona
-  della pagina Notion (🍽️ se manca).
+  Ricette: "Nel piano" (gli stessi piatti della scheda Piano, decisione
+  0006), poi le altre, con l'emoji dell'icona della pagina Notion (🍽️ se
+  manca).
 - In `script.js` la logica (piano, fabbisogno, dispensa, lista, migrazione,
   import/export) sta sopra; l'interfaccia sotto, con i pulsanti che dicono
   cosa fanno in `data-azione` e un solo gestore di click (`AZIONI`). Pagine a
@@ -41,8 +42,8 @@ Grafica e flussi sono quelli del mockup `decisioni/0001-mockup.html`.
 - **Spesa**: lista = fabbisogno meno dispensa, arrotondata a confezioni; i
   prodotti senza `siConta` compaiono solo se segnati "manca"; gli extra
   quando sono sotto la scorta minima; più le cose scritte a mano.
-  - "A casa": da comprare (servono, compra, −/+ della dispensa), ce l'hai
-    già, spezie e cose di casa (c'è/manca), "Tutta la dispensa" a
+  - "A casa": da comprare (servono, compra, −/+ della dispensa) e ce l'hai
+    già, divise per reparto come "Al super"; spezie e cose di casa (c'è/manca), "Tutta la dispensa" a
     scomparsa, le note solo se ce ne sono.
   - "Al super" (si apre lì se c'è già qualcosa spuntato): barra di
     avanzamento, righe per reparto nell'ordine di `ORDINE_REPARTI`, "Nel
@@ -202,10 +203,12 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
 
 ## Comandi utili
 
-Prove senza Chrome collegato: Playwright in un venv (`pip install
-playwright`), con il browser scaricato in una cartella temporanea:
+Prove senza Chrome collegato: Playwright con `uv run --with playwright
+python …` (o in un venv), con il browser scaricato in una cartella temporanea:
 `PLAYWRIGHT_BROWSERS_PATH=<cartella> python -m playwright install chromium`
-(circa 120 MB). Con `color_scheme='dark'` nel contesto si prova il tema
+(circa 120 MB). Al primo avvio la pagina si ricarica da sola quando il SW si
+installa: aspettare un paio di secondi prima di toccarla. Se la porta 8000 è
+già occupata (risponde 404 a tutto), usarne un'altra. Con `color_scheme='dark'` nel contesto si prova il tema
 scuro; per provare un aggiornamento del SW si serve una cartella con un link
 `meal-plan` che prima punta a `git archive HEAD` estratto e poi al repo.
 
@@ -246,3 +249,5 @@ verso la rete hanno l'icona ⚙.
   mostra tutte le ricette.
 - [0005](decisioni/0005-piano-modificabile.md) — il piano è la rotazione più
   le modifiche fatte dal telefono (`aggiunte`, porzioni a 0).
+- [0006](decisioni/0006-ricette-raggruppate-come-il-piano.md) — la scheda
+  Ricette raggruppa per "Nel piano", non per la casella di Notion.

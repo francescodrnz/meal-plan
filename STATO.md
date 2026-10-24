@@ -4,16 +4,17 @@ Aggiornato il 2026-10-24.
 
 App pubblicata su GitHub Pages da `main`
 (https://francescodrnz.github.io/meal-plan/). Cache del service worker:
-`mealplan-v13`, con l'interfaccia nuova del piano pasti; da controllare che
+`mealplan-v15`, con l'interfaccia nuova del piano pasti; da controllare che
 sia arrivata sul telefono.
 
 - **Piano pasti** (`index.html`, `script.js`, `piano.css`): grafica e flussi
   del mockup della decisione 0001 (`decisioni/0001-mockup.html`). Schede
-  Ricette, Piano, Spesa in basso, emoji delle ricette da Notion. Piano =
-  rotazione più le modifiche dal telefono (decisione 0005): "Aggiungi
-  piatto", porzioni a 0 per togliere. Spesa "A casa" / "Al super" con
-  "Aggiungi altro". Dispensa stimata, migrazione e codici `MP2_` / `MP2D_`
-  invariati. Provato in locale con Playwright a 390 px, chiaro e scuro,
+  Ricette (raggruppata "Nel piano" / altre, decisione 0006), Piano, Spesa
+  in basso, emoji delle ricette da Notion. Piano = rotazione più le
+  modifiche dal telefono (decisione 0005): "Aggiungi piatto", porzioni a 0
+  per togliere. Spesa "A casa" (da comprare e ce l'hai già divise per
+  reparto) / "Al super" con "Aggiungi altro". Dispensa stimata, migrazione
+  e codici `MP2_` / `MP2D_` invariati. Provato in locale con Playwright a 390 px, chiaro e scuro,
   compreso l'aggiornamento dalla v12 con dati e codici vecchi.
 - **Allenamenti** (`workout.html`): sessioni, peso corporeo e grafici con
   Chart.js; invariato, usa ancora `style.css`.

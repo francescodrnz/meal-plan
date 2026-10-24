@@ -8,7 +8,7 @@ CONVENZIONI.md, idee non urgenti in BACKLOG.md.
 
 In quest'ordine: ogni passo serve al successivo.
 
-- [S] Sul telefono, dopo il rilascio (cache `mealplan-v13`): l'app passa da
+- [S] Sul telefono, dopo il rilascio (cache `mealplan-v15`): l'app passa da
   sola all'interfaccia nuova (schede in basso, emoji), il piano e la
   dispensa di prima ci sono ancora, "Aggiungi piatto" e "Al super"
   funzionano a portata di pollice. Poi provare un
