@@ -8,11 +8,14 @@ CONVENZIONI.md, idee non urgenti in BACKLOG.md.
 
 In quest'ordine: ogni passo serve al successivo.
 
-- [S] Portare su Notion le 10 ricette dell'app (`recipesData` +
-  `recipeIngredients`), con lo standard nuovo. Serve il connettore MCP: il
-  token in `.env` legge soltanto.
 - [L] Rework del piano pasti sul modello del mockup della decisione 0001:
   legge `ricette.json` (network-first in `sw.js`), migra la dispensa e
   importa i vecchi codici. Piano in `lavori/` prima di iniziare.
 - [S] Dopo il rework: togliere da Notion "Porzioni da fare", la vista
   "Lista spesa" e la sezione "Come si usa" di "Standard ricette".
+
+## Notion
+
+- [S] Controllare se in casa ci sono curcuma, alloro e paprika dolce (le
+  usano le ricette venute dall'app) e aggiornare "Spezie in dispensa" in
+  "Standard ricette".

@@ -101,8 +101,9 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
 
 - 2026-10-23: 10 ricette nell'app, fra 1085 e 1100 kcal ciascuna; cache
   `mealplan-v11`.
-- 2026-10-23: `ricette.json` da Notion: 23 ricette, 55 prodotti, 150 KB; lo
-  script ci mette circa 25 s.
+- 2026-10-23: lo script `ricette.py` ci mette circa 25 s.
+- 2026-10-24: `ricette.json` da Notion: 33 ricette (10 in rotazione), 61
+  prodotti, 184 KB.
 
 ## Limiti e comportamenti noti
 
@@ -119,6 +120,15 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
   serve `git pull`.
 - GitHub sospende i workflow pianificati dopo 60 giorni senza attività sul
   repo: se succede, si riattiva da Actions.
+- **Scrivere una ricetta su Notion col connettore MCP:** `create-view` con
+  `parent_page_id` aggiunge la vista degli ingredienti in fondo alla pagina.
+  Quindi prima si crea la pagina solo con "## Ingredienti" e la sua riga,
+  poi la vista, poi Procedimento e Note con `insert_content`. Due
+  ordinamenti vanno in un solo `SORT BY "Facoltativo" ASC, "Tipo" ASC`: con
+  due `SORT BY` resta solo l'ultimo.
+- Le 10 ricette portate dall'app su Notion hanno l'acqua stimata a tavolino
+  e i legumi passati in pentola a pressione: alla prima volta che si
+  cucinano, le dosi d'acqua vanno controllate.
 
 ## Comandi utili
 
