@@ -8,9 +8,10 @@ CONVENZIONI.md, idee non urgenti in BACKLOG.md.
 
 In quest'ordine: ogni passo serve al successivo.
 
-- [L] Rework del piano pasti sul modello del mockup della decisione 0001:
-  legge `ricette.json` (network-first in `sw.js`), migra la dispensa e
-  importa i vecchi codici. Piano in `lavori/` prima di iniziare.
+- [S] Sul telefono, dopo il rilascio del rework: l'app passa da sola alle
+  schede Ricette/Piano/Spesa e la dispensa risulta migrata. Poi provare un
+  backup Telegram (`MP2D_`): il bot lo salva e, restituito, si importa. Se
+  il bot scarta il prefisso, si sistema il bot o si cambia prefisso.
 - [S] Dopo il rework: togliere da Notion "Porzioni da fare", la vista
   "Lista spesa" e la sezione "Come si usa" di "Standard ricette".
 

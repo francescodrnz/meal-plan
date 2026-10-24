@@ -13,249 +13,45 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="stylesheet" href="style.css">
 <style>
-  /* Rimuove lo sticky per non sovrapporsi scrollando, come richiesto */
+  /* Schede non sticky, per non sovrapporsi scrollando */
   .tabs { position: static !important; }
 </style>
 </head>
 <body>
 
-<header style="position: relative;">
+<header class="header-riga">
   <h1>🥦 Meal Plan</h1>
-  <a href="workout.html" style="font-size: 0.75rem; color: var(--muted); text-decoration: none; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: var(--pill-bg); padding: 6px 12px; border-radius: 12px; font-weight: 600;">Allenamento 🏋️</a>
+  <button class="menu-btn" onclick="apriOverlay('menu')" aria-label="Menu">☰</button>
 </header>
 
 <div class="tabs">
-  <button class="tab active" onclick="showTab(event, 'ricette')">Ricette</button>
-  <button class="tab" onclick="showTab(event, 'spesa')">Lista Spesa</button>
-  <button class="tab" onclick="showTab(event, 'dispensa')">Dispensa</button>
-  <button class="tab" onclick="showTab(event, 'info')">Info</button>
+  <button class="tab active" data-tab="ricette" onclick="mostraScheda('ricette')">Ricette</button>
+  <button class="tab" data-tab="piano" onclick="mostraScheda('piano')">Piano</button>
+  <button class="tab" data-tab="spesa" onclick="mostraScheda('spesa')">Spesa</button>
 </div>
 
-<!-- ==================== RICETTE ==================== -->
-<div id="tab-ricette" class="section active">
-  <div id="recipes-container"></div>
+<div id="avviso-catalogo" class="info-note avviso" hidden></div>
 
+<div id="tab-ricette" class="section active"></div>
+<div id="tab-piano" class="section"></div>
+<div id="tab-spesa" class="section"></div>
+
+<!-- Scheda ricetta, a tutto schermo -->
+<div id="scheda" class="overlay" hidden>
+  <div class="overlay-bar">
+    <button class="overlay-chiudi" onclick="chiudiOverlay()" aria-label="Indietro">←</button>
+    <div class="overlay-titolo" id="scheda-titolo"></div>
+  </div>
+  <div class="overlay-corpo" id="scheda-corpo"></div>
 </div>
 
-<!-- ==================== INFO & RECAP ==================== -->
-<div id="tab-info" class="section">
-  
-  <div class="info-note" id="meal-plan-averages">
-    <strong>Meal Plan Vegan (2 porzioni)</strong><br>
-    Media: ~1111 kcal | P: 47g | F: 29g | C: 172g per porzione
+<!-- Menu -->
+<div id="menu" class="overlay" hidden>
+  <div class="overlay-bar">
+    <button class="overlay-chiudi" onclick="chiudiOverlay()" aria-label="Indietro">←</button>
+    <div class="overlay-titolo">Menu</div>
   </div>
-
-  
-  <div class="section-label" style="display: flex; justify-content: space-between; align-items: center;">
-    <span>Modalità Bulk</span>
-    <label class="switch">
-      <input type="checkbox" id="bulk-toggle" onchange="toggleBulkMode(this.checked)">
-      <span class="slider round"></span>
-    </label>
-  </div>
-  <div class="variant-note" id="bulk-desc" style="display:none; margin-bottom:16px;">
-    <strong>🔥 Bulk Attivo:</strong> +80g legumi / +180g tofu per ogni ricetta. Porzioni, lista spesa e macro aggiornati.
-  </div>
-
-  <div class="section-label">Valori Nutrizionali Medi (per porzione)</div>
-  <table class="summary-table">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>kcal</th>
-        <th>P</th>
-        <th>F</th>
-        <th>C</th>
-      </tr>
-    </thead>
-    <tbody id="summary-tbody">
-    </tbody>
-  </table>
-
-  <div class="section-label">Note Operative</div>
-  <div class="info-note">
-    <strong>Legenda:</strong> Quantità in grammi <strong>secchi/crudi</strong> (tranne patate e broccoli). Panna vegetale = latte di soia + olio mescolati.<br><br>
-    <strong>Preparazione:</strong> Per 2 porzioni (pranzo + cena). Si conservano in frigo 3–4 giorni. Fagioli e ceci richiedono ammollo la notte prima. Polenta: usa quella istantanea.
-  </div>
-
-  <div class="section-label">Sincronizzazione (PC ↔ Telefono)</div>
-  <div class="info-note" style="background:#f0f2f7;border-left:3px solid #2563a8">
-    Usa questa sezione per trasferire i dati della tua dispensa tra dispositivi.
-    <textarea id="sync-area" class="spesa-note-area" style="min-height:80px;font-size:0.7rem;margin-top:10px" placeholder="Codice di sincronizzazione..."></textarea>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px">
-      <button class="recipe-btn" style="text-align:center" onclick="exportSyncData()">Copia Dati 📋</button>
-      <button class="recipe-btn" style="text-align:center" onclick="importSyncData()">Importa Dati 📥</button>
-    </div>
-    <button class="recipe-btn" style="width:100%;text-align:center; margin-top:8px; background:#0088cc; color:white; border:none;" onclick="backupToTelegram('mealplan')">Backup Telegram 🤖</button>
-  </div>
-
-</div>
-
-<!-- ==================== SPESA ==================== -->
-<div id="tab-spesa" class="section">
-
-  <div id="spesa-empty" style="display:none" class="info-note">🎉 Dispensa completa, niente da comprare.</div>
-
-  <!-- Contenitore dinamico per le categorie della spesa -->
-  <div id="buy-dynamic-sections"></div>
-
-  <!-- NOTE LIBERE -->
-  <div class="shop-section-title" style="margin-top:20px">📝 Note</div>
-  <textarea id="spesa-note" class="spesa-note-area" placeholder="Altre cose da comprare..." oninput="saveNotes(this.value)"></textarea>
-
-  <!-- CONSIGLIATI -->
-  <div id="suggested-section" style="display:none">
-    <div class="shop-section-title" style="margin-top:20px;color:var(--warn);border-bottom-color:var(--warn)">⚠︎ Consigliati</div>
-    <div class="info-note suggested-info" style="background:var(--warn-bg);color:#7a4010;margin-bottom:8px;font-size:0.78rem">Questi prodotti bastano ancora, ma finiscono dopo la prossima cottura. Conviene prenderli ora.</div>
-    <table class="shop-table">
-      <thead><tr><th>Prodotto</th><th style="text-align:right">Da comprare</th></tr></thead>
-      <tbody id="buy-suggested"></tbody>
-    </table>
-  </div>
-
-</div>
-
-<!-- ==================== DISPENSA ==================== -->
-<div id="tab-dispensa" class="section">
-
-  <!-- DISPENSA ATTUALE -->
-  <div class="dispensa-card">
-    <div class="dispensa-card-header" onclick="toggleDispensaCard('dispensa-attuale')">
-      <div>
-        <div class="dispensa-card-title">📦 Dispensa attuale</div>
-        <div class="dispensa-card-sub">Quanto hai in casa (in grammi / unità base)</div>
-      </div>
-      <div class="chevron" id="chev-dispensa-attuale">▼</div>
-    </div>
-    <div class="dispensa-body" id="body-dispensa-attuale">
-      <!-- Contenitore dinamico per le categorie della dispensa -->
-      <div id="disp-dynamic-sections"></div>
-      
-      <button class="reset-btn" onclick="resetAll()">Azzera dispensa</button>
-    </div>
-  </div>
-
-  <div style="height:12px"></div>
-
-  <!-- PRODOTTI CUSTOM -->
-  <div class="dispensa-card">
-    <div class="dispensa-card-header" onclick="toggleDispensaCard('custom')">
-      <div>
-        <div class="dispensa-card-title">➕ Prodotti extra</div>
-        <div class="dispensa-card-sub">Aggiungi prodotti fuori dal meal plan</div>
-      </div>
-      <div class="chevron" id="chev-custom">▼</div>
-    </div>
-    <div class="dispensa-body" id="body-custom">
-      <div class="custom-form">
-        <div class="custom-field">
-          <label class="custom-label">Nome prodotto</label>
-          <input class="custom-input" id="cf-nome" type="text" placeholder="es. Yogurt di soia">
-        </div>
-        <div class="custom-field">
-          <label class="custom-label">Categoria</label>
-          <select class="custom-input" id="cf-category-select" onchange="handleCategorySelect(this.value)">
-            <option value="🧊 Frigo / Freezer">🧊 Frigo / Freezer</option>
-            <option value="🌾 Secchi">🌾 Secchi</option>
-            <option value="🫙 Liquidi">🫙 Liquidi</option>
-            <option value="➕ Extra">➕ Extra</option>
-            <option value="NEW_CAT">➕ Nuova categoria...</option>
-          </select>
-          <input class="custom-input" id="cf-category-new" type="text" placeholder="es. Igiene" style="display:none; margin-top:5px">
-        </div>
-        <div class="custom-form-row">
-          <div class="custom-field">
-            <label class="custom-label">Unità</label>
-            <select class="custom-input" id="cf-unit-select" onchange="handleUnitSelect(this.value)">
-              <option value="g">g</option>
-              <option value="kg">kg</option>
-              <option value="ml">ml</option>
-              <option value="L">L</option>
-              <option value="pz">pz</option>
-              <option value="bott">bott</option>
-              <option value="confezioni">confezioni</option>
-              <option value="vasetti">vasetti</option>
-              <option value="buste">buste</option>
-              <option value="CUSTOM">✍️ Altro...</option>
-            </select>
-            <input class="custom-input" id="cf-unit" type="text" placeholder="es. buste" style="display:none; margin-top:5px">
-          </div>
-          <div class="custom-field">
-            <label class="custom-label">Dimensione confezione</label>
-            <input class="custom-input" id="cf-size" type="number" min="1" placeholder="es. 500">
-          </div>
-        </div>
-        <div class="custom-form-row">
-          <div class="custom-field">
-            <label class="custom-label">Scorta minima (Serve)</label>
-            <input class="custom-input" id="cf-need" type="number" min="0" placeholder="es. 1000">
-          </div>
-          <div class="custom-field">
-            <label class="custom-label">In casa (Ho)</label>
-            <input class="custom-input" id="cf-have" type="number" min="0" placeholder="es. 200">
-          </div>
-        </div>
-        <button class="confirm-btn" id="cf-confirm-btn" style="margin-top:10px" onclick="addCustomProduct()">+ Aggiungi prodotto</button>
-        <button class="cancel-btn" id="cf-cancel-btn" style="margin-top:8px; display:none" onclick="cancelEditCustom()">Annulla modifica</button>
-        <button class="reset-btn" id="cf-delete-btn" style="margin-top:20px; color:#d9534f; border-color:#d9534f; display:none" onclick="deleteCustomProductFromEdit()">Elimina prodotto</button>
-      </div>
-    </div>
-  </div>
-
-  <div style="height:12px"></div>
-  <div class="dispensa-card">
-    <div class="dispensa-card-header" onclick="toggleDispensaCard('spesa-fatta')">
-      <div>
-        <div class="dispensa-card-title">🛒 Spesa fatta</div>
-        <div class="dispensa-card-sub">Aggiungi alla dispensa quello che hai comprato</div>
-      </div>
-      <div class="chevron" id="chev-spesa-fatta">▼</div>
-    </div>
-    <div class="dispensa-body" id="body-spesa-fatta">
-      <div class="info-note" style="margin-bottom:12px">Valori pre-popolati dalla colonna "Compra". Modifica se hai comprato di più o di meno, poi conferma.</div>
-      <div id="spesa-fatta-rows"></div>
-      <button class="confirm-btn" onclick="confermaSpesa()">✓ Conferma spesa</button>
-    </div>
-  </div>
-
-  <!-- HO CUCINATO -->
-  <div class="dispensa-card" style="margin-top:12px">
-    <div class="dispensa-card-header" onclick="toggleDispensaCard('cucinato')">
-      <div>
-        <div class="dispensa-card-title">🍳 Ho cucinato</div>
-        <div class="dispensa-card-sub">Scala le ricette cucinate dalla dispensa</div>
-      </div>
-      <div class="chevron" id="chev-cucinato">▼</div>
-    </div>
-    <div class="dispensa-body" id="body-cucinato">
-
-      <!-- ultima ricetta prima della spesa -->
-      <div class="section-label" style="margin-top:0">Ultima ricetta cucinata prima dell'ultima spesa</div>
-      <div id="ultima-spesa-display" class="ultima-display">
-        <span id="ultima-spesa-text">Non impostata</span>
-        <button class="ultima-change-btn" onclick="toggleUltimaEdit()">Cambia</button>
-      </div>
-      <div id="ultima-spesa-edit" style="display:none">
-        <div class="recipe-btn-grid" id="ultima-spesa-grid"></div>
-      </div>
-
-      <!-- ricette da scalare -->
-      <div class="section-label" style="margin-top:14px">Ricette cucinate da allora <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted)">(seleziona tutte)</span></div>
-      <div class="recipe-check-grid" id="recipe-check-grid"></div>
-
-      <!-- preview e conferma -->
-      <div id="cucinato-preview" style="display:none;margin-top:12px">
-        <div class="preview-title">Ingredienti da scalare:</div>
-        <div id="cucinato-preview-rows"></div>
-      </div>
-      <div style="display:flex; gap:8px; margin-top:14px;">
-        <button class="confirm-btn" onclick="confermaCucinato()" style="margin-top:0; flex:2">✓ Scala dalla dispensa</button>
-        <button class="cancel-btn" onclick="toggleModificaCucinato()" id="btn-modifica-cucinato" style="margin-top:0; flex:1">✏️ Modifica</button>
-      </div>
-
-    </div>
-  </div>
-
+  <div class="overlay-corpo" id="menu-corpo"></div>
 </div>
 
 <script src="script.js"></script>

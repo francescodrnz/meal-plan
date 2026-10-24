@@ -1,1417 +1,321 @@
-const recipesData = [
-  {
-    "num": 1,
-    "title": "Quinoa e Ceci",
-    "badges": [
-      { "class": "badge-pentola", "text": "🫕 Pentola" },
-      { "class": "badge-proteina", "text": "ceci" }
-    ],
-    "kcal": 1100,
-    "ingredientsList": [
-      { "name": "Quinoa (secca)", "qty": "150 g" },
-      { "name": "Ceci secchi (da ammollare e lessare)", "qty": "400 g" },
-      { "name": "Broccoli surgelati", "qty": "400 g" },
-      { "name": "Olio EVO", "qty": "15 g" },
-      { "name": "Sale, spezie a piacere", "qty": "q.b." }
-    ],
-    "prep": "Sciacqua bene la quinoa e cuocila in circa 300 ml d'acqua finché assorbe il liquido. A parte, cuoci i broccoli in acqua bollente. Unisci la quinoa cotta, i ceci già lessati e i broccoli, condisci con olio e spezie.",
-    "macros": { "kcal": 1100, "prot": "55g", "fat": "23g", "carb": "172g" },
-    "note": null
-  },
-  {
-    "num": 2,
-    "title": "Dahl Lenticchie + Couscous",
-    "badges": [
-      { "class": "badge-pentola", "text": "🫕 Pentola" },
-      { "class": "badge-proteina", "text": "lenticchie" }
-    ],
-    "kcal": 1085,
-    "ingredientsList": [
-      { "name": "Lenticchie secche", "qty": "320 g" },
-      { "name": "Couscous (secco)", "qty": "185 g" },
-      { "name": "Broccoli surgelati", "qty": "400 g" },
-      { "name": "Olio EVO", "qty": "25 g" },
-      { "name": "Latte di soia (per \"panna\")", "qty": "150 ml" },
-      { "name": "Sale, curcuma, cumino, pepe", "qty": "q.b." }
-    ],
-    "prep": "Cuoci lenticchie + broccoli in ~1,2L acqua per 30 min. Aggiungi il mix latte+olio e spezie, spegni. Idrata il couscous a parte: 185 ml acqua bollente salata su 185 g couscous, copri 5 min, sgrana. Unisci nel piatto.",
-    "macros": { "kcal": 1085, "prot": "60g", "fat": "17g", "carb": "174g" },
-    "note": null
-  },
-  {
-    "num": 3,
-    "title": "Minestrone con Farro + Fagioli",
-    "badges": [
-      { "class": "badge-pentola", "text": "🫕 Pentola" },
-      { "class": "badge-proteina", "text": "fagioli" }
-    ],
-    "kcal": 1077,
-    "ingredientsList": [
-      { "name": "Fagioli secchi (da ammollare e lessare)", "qty": "430 g" },
-      { "name": "Farro perlato", "qty": "160 g" },
-      { "name": "Minestrone surgelato (busta)", "qty": "500 g" },
-      { "name": "Olio EVO", "qty": "20 g" },
-      { "name": "Sale", "qty": "q.b." }
-    ],
-    "prep": "Ammollo fagioli 8–12h. Bollitura vivace 10 min (obbligatoria), poi cuoci altri 40 min nella stessa acqua. Aggiungi minestrone surgelato e farro, cuoci altri 25–30 min. Olio a crudo.",
-    "macros": { "kcal": 1077, "prot": "58g", "fat": "16g", "carb": "182g" },
-    "note": { "class": "warning-note", "text": "<strong>Nota fagioli:</strong> Bollitura vivace 10 min obbligatoria (fasina). Per cannellini e borlotti stesso processo per sicurezza." }
-  },
-  {
-    "num": 4,
-    "title": "Riso al Forno con Ceci",
-    "badges": [
-      { "class": "badge-forno", "text": "🔥 Forno" },
-      { "class": "badge-proteina", "text": "ceci" }
-    ],
-    "kcal": 1135,
-    "ingredientsList": [
-      { "name": "Riso integrale (secco)", "qty": "80 g" },
-      { "name": "Ceci secchi (da ammollare e lessare)", "qty": "430 g" },
-      { "name": "Broccoli surgelati", "qty": "400 g" },
-      { "name": "Passata di pomodoro", "qty": "700 g" },
-      { "name": "Olio EVO", "qty": "15 g" },
-      { "name": "Sale, paprika", "qty": "q.b." },
-      { "name": "Acqua", "qty": "q.b. per coprire il riso a filo" }
-    ],
-    "prep": "In teglia alta metti riso crudo, ceci cotti, broccoli, passata, olio. Aggiungi acqua fino a coprire il riso a filo. Mescola. Copri con alluminio. Forno 200°C × 35 min coperto. Togli alluminio, 10 min scoperti.",
-    "macros": { "kcal": 1135, "prot": "55g", "fat": "20g", "carb": "187g" },
-    "note": null
-  },
-  {
-    "num": 5,
-    "title": "Pasta al Forno \"Ignorante\"",
-    "badges": [
-      { "class": "badge-forno", "text": "🔥 Forno" },
-      { "class": "badge-proteina", "text": "lenticchie" }
-    ],
-    "kcal": 1099,
-    "ingredientsList": [
-      { "name": "Pasta corta (cruda)", "qty": "160 g" },
-      { "name": "Lenticchie secche (lessate a parte)", "qty": "285 g" },
-      { "name": "Broccoli surgelati", "qty": "400 g" },
-      { "name": "Passata di pomodoro", "qty": "700 g" },
-      { "name": "Olio EVO", "qty": "30 g" },
-      { "name": "Latte di soia (per \"panna\")", "qty": "100 ml" },
-      { "name": "Sale, origano", "qty": "q.b." },
-      { "name": "Acqua", "qty": "q.b. per coprire la pasta a filo" }
-    ],
-    "prep": "Lessa le lenticchie a parte. In teglia alta metti: pasta cruda, lenticchie cotte, passata, olio, mix latte+olio, acqua per coprire la pasta a filo. Copri ermeticamente con alluminio. Forno 200°C × 30 min. Rimuovi alluminio, altri 15 min grill.",
-    "macros": { "kcal": 1099, "prot": "58g", "fat": "19g", "carb": "176g" },
-    "note": null
-  },
-  {
-    "num": 6,
-    "title": "Teglia Tofu e Patate",
-    "badges": [
-      { "class": "badge-forno", "text": "🔥 Forno" },
-      { "class": "badge-proteina", "text": "tofu" }
-    ],
-    "kcal": 1098,
-    "ingredientsList": [
-      { "name": "Tofu (cubetti)", "qty": "540 g (3 panetti)" },
-      { "name": "Patate (cubetti)", "qty": "1300 g" },
-      { "name": "Broccoli surgelati", "qty": "400 g" },
-      { "name": "Olio EVO", "qty": "40 g" },
-      { "name": "Sale, rosmarino, spezie", "qty": "q.b." }
-    ],
-    "prep": "Taglia tofu e patate a cubetti. Metti tutto in teglia. Versa l'olio, mescola bene finché tutto è unto. Forno 200°C × 40 min. Zero interventi.",
-    "macros": { "kcal": 1098, "prot": "54g", "fat": "42g", "carb": "130g" },
-    "note": null
-  },
-  {
-    "num": 7,
-    "title": "Couscous + Ceci Croccanti",
-    "badges": [
-      { "class": "badge-forno", "text": "🔥 Forno + Bollitore" },
-      { "class": "badge-proteina", "text": "ceci" }
-    ],
-    "kcal": 1123,
-    "ingredientsList": [
-      { "name": "Ceci secchi (da ammollare e lessare)", "qty": "410 g" },
-      { "name": "Couscous (secco)", "qty": "150 g" },
-      { "name": "Broccoli surgelati", "qty": "400 g" },
-      { "name": "Olio EVO", "qty": "15 g" },
-      { "name": "Paprika, sale", "qty": "q.b." }
-    ],
-    "prep": "Metti i ceci cotti e i broccoli in teglia con olio, paprika e sale. Forno 200°C × 30 min. Idrata il couscous: 150 ml acqua bollente salata su 150 g couscous, copri 5 min, sgrana. Unisci.",
-    "macros": { "kcal": 1123, "prot": "55g", "fat": "19g", "carb": "185g" },
-    "note": null
-  },
-  {
-    "num": 8,
-    "title": "Fagioli con Polenta",
-    "badges": [
-      { "class": "badge-pentola", "text": "🫕 Pentola" },
-      { "class": "badge-proteina", "text": "fagioli" }
-    ],
-    "kcal": 1052,
-    "ingredientsList": [
-      { "name": "Fagioli secchi", "qty": "460 g" },
-      { "name": "Polenta istantanea", "qty": "140 g" },
-      { "name": "Broccoli surgelati", "qty": "400 g" },
-      { "name": "Olio EVO", "qty": "20 g" },
-      { "name": "Sale", "qty": "q.b." }
-    ],
-    "prep": "Ammollo fagioli 8–12h. Bollitura vivace 10 min, cuoci altri 40 min. Togli i fagioli. Stessa acqua: broccoli 5 min, togli. Stessa acqua: versa la polenta a pioggia, cuoci 5 min. Assembla.",
-    "macros": { "kcal": 1052, "prot": "58g", "fat": "15g", "carb": "176g" },
-    "note": { "class": "warning-note", "text": "<strong>Nota fagioli:</strong> Bollitura vivace 10 min obbligatoria (fasina). Per cannellini e borlotti stesso processo per sicurezza." }
-  },
-  {
-    "num": 9,
-    "title": "Pasta e Lenticchie",
-    "badges": [
-      { "class": "badge-pentola", "text": "🫕 Pentola" },
-      { "class": "badge-proteina", "text": "lenticchie" }
-    ],
-    "kcal": 1083,
-    "ingredientsList": [
-      { "name": "Lenticchie secche", "qty": "350 g" },
-      { "name": "Pasta corta", "qty": "180 g" },
-      { "name": "Broccoli surgelati", "qty": "400 g" },
-      { "name": "Olio EVO (a crudo)", "qty": "25 g" },
-      { "name": "Sale", "qty": "q.b." }
-    ],
-    "prep": "Acqua non salata a bollore. Butta le lenticchie, cuoci 20 min. Aggiungi sale, pasta e broccoli nella stessa acqua. Cuoci altri 12 min mescolando. Olio a crudo nel piatto.",
-    "macros": { "kcal": 1083, "prot": "61g", "fat": "16g", "carb": "176g" },
-    "note": null
-  },
-  {
-    "num": 10,
-    "title": "Zuppa Ceci e Farro",
-    "badges": [
-      { "class": "badge-pentola", "text": "🫕 Pentola" },
-      { "class": "badge-proteina", "text": "ceci" }
-    ],
-    "kcal": 1120,
-    "ingredientsList": [
-      { "name": "Ceci secchi (da ammollare e lessare)", "qty": "430 g" },
-      { "name": "Farro perlato", "qty": "130 g" },
-      { "name": "Broccoli surgelati", "qty": "400 g" },
-      { "name": "Olio EVO", "qty": "20 g" },
-      { "name": "Sale, rosmarino, alloro", "qty": "q.b." }
-    ],
-    "prep": "Metti i ceci lessati in pentola con acqua salata. Aggiungi farro e broccoli. Cuoci 30–35 min finché il farro è morbido. Olio a crudo o in cottura.",
-    "macros": { "kcal": 1120, "prot": "55g", "fat": "23g", "carb": "179g" },
-    "note": null
-  }
-];
+// Piano pasti: ricette da ricette.json (generato da Notion), piano, dispensa stimata e spesa.
 
-
-// ==================== BULK MODE & RECIPE RENDER ====================
-let isBulkMode = false;
-
-const bulkOverrides = {
-  1: { id: 'ceci', amtDelta: 80, kcal: 280, p: 18, f: 2, c: 48 },
-  2: { id: 'lenticchie', amtDelta: 80, kcal: 280, p: 20, f: 1, c: 48 },
-  3: { id: 'fagioli', amtDelta: 80, kcal: 266, p: 18, f: 1, c: 48 },
-  4: { id: 'ceci', amtDelta: 80, kcal: 280, p: 18, f: 2, c: 48 },
-  5: { id: 'lenticchie', amtDelta: 80, kcal: 280, p: 20, f: 1, c: 48 },
-  6: { id: 'tofu', amtDelta: 180, kcal: 259, p: 29, f: 16, c: 5 },
-  7: { id: 'ceci', amtDelta: 80, kcal: 280, p: 18, f: 2, c: 48 },
-  8: { id: 'fagioli', amtDelta: 80, kcal: 266, p: 18, f: 1, c: 48 },
-  9: { id: 'lenticchie', amtDelta: 80, kcal: 280, p: 20, f: 1, c: 48 },
-  10: { id: 'ceci', amtDelta: 80, kcal: 280, p: 18, f: 2, c: 48 }
+// ==================== CHIAVI ====================
+const CHIAVI = {
+  piano: 'mealplan_piano_v2',
+  dispensa: 'mealplan_dispensa_v2',
+  cucina: 'mealplan_cucina_v2',
+  spesa: 'mealplan_spesa_v2', // righe spuntate della lista, fino a "Spesa fatta"
+  extra: 'mealplan_custom_v1',
+  v1: 'mealplan_shop_v1' // dispensa vecchia: si legge per la migrazione, non si scrive mai
 };
 
-
-function applyBulkToShopData() {
-  const all = [...shopData.frigo, ...shopData.secchi, ...shopData.liquidi];
-  
-  // 1. Azzera e calcola dinamicamente il baseNeed da recipeIngredients
-  all.forEach(item => item.baseNeed = 0);
-  recipeIngredients.forEach(r => {
-    r.ingredients.forEach(ing => {
-      const target = all.find(x => x.id === ing.id);
-      if (target) target.baseNeed += ing.amt;
-    });
-  });
-
-  // 1b. Aggiunge il consumo fisso della colazione (250g latte di soia x 10 giorni)
-  const latte = all.find(x => x.id === 'latte_soia');
-  if (latte) latte.baseNeed += 2500;
-
-  // 2. Calcola i delta della modalità Bulk e imposta il need finale
-  all.forEach(item => {
-    let addedNeed = 0;
-    if (isBulkMode) {
-      Object.keys(bulkOverrides).forEach(num => {
-        if (bulkOverrides[num].id === item.id) {
-           addedNeed += bulkOverrides[num].amtDelta;
-        }
-      });
-    }
-    item.need = item.baseNeed + addedNeed;
-  });
-}
-
-function toggleBulkMode(forceVal) {
-  isBulkMode = forceVal !== undefined ? forceVal : !isBulkMode;
-  localStorage.setItem('mealplan_bulk_v1', isBulkMode);
-  
-  const toggleInput = document.getElementById('bulk-toggle');
-  if (toggleInput) toggleInput.checked = isBulkMode;
-  
-  const desc = document.getElementById('bulk-desc');
-  if (desc) desc.style.display = isBulkMode ? 'block' : 'none';
-  
-  renderRecipes();
-  applyBulkToShopData();
-  buildShopTable();
-  updatePreview();
-  renderSummaryTable();
-}
-
-function getRecipeData(num) {
-  const baseData = recipesData.find(r => r.num === num);
-  const logicData = recipeIngredients.find(r => r.num === num);
-  if (!baseData || !logicData) return null;
-  
-  // Clone data to avoid mutating base
-  const res = JSON.parse(JSON.stringify(baseData));
-  res.logicIngredients = JSON.parse(JSON.stringify(logicData.ingredients));
-  
-  if (isBulkMode && bulkOverrides[num]) {
-    const override = bulkOverrides[num];
-    // Update visual macro
-    res.macros.kcal += Math.round(override.kcal / 2);
-    res.macros.prot = (parseFloat(res.macros.prot) + override.p / 2).toFixed(0) + 'g';
-    res.macros.fat = (parseFloat(res.macros.fat) + override.f / 2).toFixed(0) + 'g';
-    res.macros.carb = (parseFloat(res.macros.carb) + override.c / 2).toFixed(0) + 'g';
-    res.kcal += Math.round(override.kcal / 2);
-    
-    // Update logic ingredients
-    const logicIng = res.logicIngredients.find(i => i.id === override.id);
-    if (logicIng) logicIng.amt += override.amtDelta;
-    
-    // Update visual ingredients
-    const visualIngNameMap = {
-      'ceci': ['Ceci secchi', 'ceci'],
-      'lenticchie': ['Lenticchie secche', 'lenticchie'],
-      'fagioli': ['Fagioli secchi', 'fagioli'],
-      'tofu': ['Tofu']
-    };
-    
-    res.ingredientsList.forEach(ing => {
-      const matchKeywords = visualIngNameMap[override.id];
-      if (matchKeywords && matchKeywords.some(kw => ing.name.toLowerCase().includes(kw.toLowerCase()))) {
-        // Just extract the number and add delta
-        const numMatch = ing.qty.match(/(\d+)/);
-        if (numMatch) {
-            const oldVal = parseInt(numMatch[1]);
-            const newVal = oldVal + override.amtDelta;
-            ing.qty = ing.qty.replace(oldVal.toString(), newVal.toString());
-        }
-      }
-    });
-  }
-  
-  return res;
-}
-
-function getActiveRecipeLogicIngredients(num) {
-  const r = getRecipeData(num);
-  return r ? r.logicIngredients : [];
-}
-
-function renderRecipes() {
-  const container = document.getElementById('recipes-container');
-  if (!container) return;
-  
-  let html = '';
-  recipesData.forEach(baseR => {
-    const r = getRecipeData(baseR.num);
-    if (!r) return;
-    
-    let badgesHtml = r.badges.map(b => `<span class="badge ${b.class}">${b.text}</span>`).join('\n          ');
-    
-    let ingHtml = r.ingredientsList.map(i => `<tr><td>${i.name}</td><td>${i.qty}</td></tr>`).join('\n        ');
-    
-    let noteHtml = r.note ? `<div class="${r.note.class}">${r.note.text}</div>` : '';
-    
-    html += `
-  <div class="recipe-card" onclick="toggleCard(this)">
-    <div class="recipe-header">
-      <div class="recipe-num">${r.num}</div>
-      <div class="recipe-title-block">
-        <div class="recipe-title" data-original-text="${r.title}">${r.title}</div>
-        <div class="recipe-meta">
-          ${badgesHtml}
-        </div>
-      </div>
-      <div class="recipe-kcal">${r.kcal}</div>
-      <div class="chevron">▼</div>
-    </div>
-    <div class="recipe-body">
-      <div class="section-label">Ingredienti (2 porzioni)</div>
-      <table class="ing-table">
-        ${ingHtml}
-      </table>
-      <div class="section-label">Preparazione</div>
-      <p class="prep-text">${r.prep}</p>
-      <div class="section-label">Macros per porzione</div>
-      <div class="macros-grid">
-        <div class="macro-box"><div class="macro-val kcal">${r.macros.kcal}</div><div class="macro-lbl">kcal</div></div>
-        <div class="macro-box"><div class="macro-val prot">${r.macros.prot}</div><div class="macro-lbl">prot</div></div>
-        <div class="macro-box"><div class="macro-val fat">${r.macros.fat}</div><div class="macro-lbl">grassi</div></div>
-        <div class="macro-box"><div class="macro-val carb">${r.macros.carb}</div><div class="macro-lbl">carb</div></div>
-      </div>
-      ${noteHtml}
-    </div>
-  </div>`;
-  });
-  
-  container.innerHTML = html;
-  
-  // Re-run availability check with current inventory
-  updateRecipeAvailability();
-}
-
-function renderSummaryTable() {
-  const tbody = document.getElementById('summary-tbody');
-  if (!tbody) return;
-  
-  let html = '';
-  let totKcal = 0, totP = 0, totF = 0, totC = 0;
-  let count = 0;
-  
-  recipesData.forEach(baseR => {
-    const r = getRecipeData(baseR.num);
-    if (!r) return;
-    html += `<tr><td>${r.num} · ${r.title}</td><td>${r.macros.kcal}</td><td>${r.macros.prot}</td><td>${r.macros.fat}</td><td>${r.macros.carb}</td></tr>`;
-    
-    totKcal += parseFloat(r.macros.kcal);
-    totP += parseFloat(r.macros.prot);
-    totF += parseFloat(r.macros.fat);
-    totC += parseFloat(r.macros.carb);
-    count++;
-  });
-  tbody.innerHTML = html;
-  
-  const avgDiv = document.getElementById('meal-plan-averages');
-  if (avgDiv && count > 0) {
-    const avgKcal = Math.round(totKcal / count);
-    const avgP = Math.round(totP / count);
-    const avgF = Math.round(totF / count);
-    const avgC = Math.round(totC / count);
-    avgDiv.innerHTML = `<strong>Meal Plan Vegan (2 porzioni)</strong><br>Media: ~${avgKcal} kcal | P: ${avgP}g | F: ${avgF}g | C: ${avgC}g per porzione`;
-  }
-}
-
-// ==================== TABS ====================
-function showTab(event, name) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('tab-' + name).classList.add('active');
-  event.target.classList.add('active');
-}
-
-// ==================== RECIPE TOGGLE ====================
-function toggleCard(card) {
-  card.classList.toggle('open');
-}
-
-// ==================== SHOPPING LIST ====================
-const shopData = {
-  frigo: [
-    { id: 'tofu',        name: 'Tofu',                unit: '3 panetti da 180g',   need: 540,                   storeSize: 180,  storeLabel: 'panetti da 180g', useUnits: true },
-    { id: 'patate',      name: 'Patate',               unit: '1,3 kg',              need: 1300,                  storeSize: 1,    storeLabel: 'g',              step: 100 },
-    { id: 'broccoli',    name: 'Broccoli surgelati',   unit: '5 buste da 500g',     need: 2800,                  storeSize: 500,  storeLabel: 'buste da 500g' },
-    { id: 'minestrone',  name: 'Minestrone surgelato', unit: '2 buste da 750g',     need: 1500,                  storeSize: 750,  storeLabel: 'buste da 750g' },
-  ],
-  secchi: [
-    { id: 'lenticchie',  name: 'Lenticchie secche',   unit: 'buste da 500g',       need: 955,                   storeSize: 500,  storeLabel: 'buste da 500g' },
-    { id: 'ceci',        name: 'Ceci secchi',          unit: 'buste da 500g',       need: 1670,                  storeSize: 500,  storeLabel: 'buste da 500g' },
-    { id: 'fagioli',     name: 'Fagioli secchi',       unit: 'buste da 500g',       need: 890,                   storeSize: 500,  storeLabel: 'buste da 500g' },
-    { id: 'quinoa',      name: 'Quinoa',               unit: 'buste da 200g',       need: 150,                   storeSize: 200,  storeLabel: 'buste da 200g' },
-    { id: 'pasta',       name: 'Pasta corta',          unit: '500g',                need: 340,                   storeSize: 500,  storeLabel: 'pacchi da 500g' },
-    { id: 'couscous',    name: 'Couscous',             unit: '1 kg',                need: 335,                   storeSize: 1000, storeLabel: 'pacchi da 1kg' },
-    { id: 'farro',       name: 'Farro perlato',        unit: '500g',                need: 290,                   storeSize: 500,  storeLabel: 'pacchi da 500g' },
-    { id: 'riso',        name: 'Riso integrale',       unit: '1 kg',                need: 80,                    storeSize: 1000, storeLabel: 'pacchi da 1kg' },
-    { id: 'polenta',     name: 'Polenta istantanea',   unit: '500g',                need: 140,                   storeSize: 500,  storeLabel: 'pacchi da 500g' },
-  ],
-  liquidi: [
-    { id: 'olio',        name: 'Olio EVO',             unit: '1 bottiglia da 1L',   need: 225,                   storeSize: 1000, storeLabel: 'bottiglie da 1L' },
-    { id: 'passata',     name: 'Passata di pomodoro',  unit: '2 bottiglie da 700g', need: 1400,                  storeSize: 700,  storeLabel: 'bottiglie da 700g', useUnits: true },
-    { id: 'latte_soia',  name: 'Latte di soia',        unit: 'brick da 1L',         need: 2750,                  storeSize: 1000, storeLabel: 'brick da 1L', suggestedBuffer: 1000 },
-  ]
-};
-
-// ==================== STATE MANAGEMENT ====================
-const Store = {
-  inventory: {},
-  customs: [],
-  storageKey: 'mealplan_shop_v1',
-  customKey: 'mealplan_custom_v1',
-
-  init() {
-    try {
-      this.inventory = JSON.parse(localStorage.getItem(this.storageKey)) || {};
-      this.customs = JSON.parse(localStorage.getItem(this.customKey)) || [];
-    } catch(e) {
-      this.inventory = {};
-      this.customs = [];
-    }
-  },
-
-  persist() {
-    localStorage.setItem(this.storageKey, JSON.stringify(this.inventory));
-    localStorage.setItem(this.customKey, JSON.stringify(this.customs));
-  },
-
-  update(id, val, silent = false) {
-    if (val === '' || val === null) delete this.inventory[id];
-    else this.inventory[id] = val;
-    this.persist();
-    if (!silent) debouncedRefresh();
-  },
-
-  setCustoms(items) {
-    this.customs = items;
-    this.persist();
-    buildShopTable();
-  },
-
-  commit() {
-    this.persist();
-    buildShopTable();
-  }
-};
-Store.init();
-
-// Alias per retrocompatibilità e semplicità
-function loadSaved() { return Store.inventory; }
-function loadCustom() { return Store.customs; }
-function saveVal(id, val) { Store.update(id, val); }
-function saveNotes(val) { Store.update('_notes', val); }
-
-let refreshTimer;
-function debouncedRefresh() {
-  clearTimeout(refreshTimer);
-  refreshTimer = setTimeout(refreshBuyList, 250);
-}
-
-function calcBuy(need, have) {
-  const h = parseFloat(have);
-  if (isNaN(h)) return need;
-  return Math.max(0, need - h);
-}
-
-function buildBuyRow(item, saved) {
-  const have = saved[item.id] !== undefined ? saved[item.id] : '';
-  const buyBase = calcBuy(item.need, have);
-  const storeSize = item.storeSize || 1;
-  const buyUnits = buyBase > 0 ? Math.ceil(buyBase / storeSize) : 0;
-  const cls = buyUnits === 0 ? 'zero' : 'need';
-  const tr = document.createElement('tr');
-  tr.style.cursor = 'pointer';
-  tr.onclick = function() { this.classList.toggle('bought'); };
-  tr.innerHTML =
-    '<td><div class="buy-row-name">' + item.name + '</div><div class="buy-row-sub">' + item.storeLabel + '</div></td>' +
-    '<td><div class="buy-row-amt ' + cls + '" id="buyrow-' + item.id + '">' + (buyUnits > 0 ? buyUnits : '—') + '</div></td>';
-  return tr;
-}
-
-function buildDispRow(item, saved) {
-  const haveBase = parseFloat(saved[item.id]) || 0;
-  const storeSize = item.storeSize || 1;
-  const unit = item.suffix || 'g';
-  
-  const useUnits = !!item.useUnits;
-  const displayVal = useUnits ? parseFloat((haveBase / storeSize).toFixed(2)) : haveBase;
-  const displayUnit = useUnits ? item.storeLabel.split(' ')[0] : unit;
-  const needDisplay = item.need + unit;
-
-  // Calcolo percentuale per la barra di scorta
-  const pct = Math.min(100, (haveBase / item.need) * 100);
-  let colorClass = 'stock-ok';
-  if (pct < 25) colorClass = 'stock-low';
-  else if (pct < 60) colorClass = 'stock-mid';
-
-  const tr = document.createElement('tr');
-  tr.innerHTML =
-    '<td style="padding-bottom:12px">' +
-      '<div class="prod-name">' + item.name + '</div>' +
-      '<div class="stock-bar-container"><div class="stock-bar-fill ' + colorClass + '" style="width:' + pct + '%"></div></div>' +
-    '</td>' +
-    '<td style="text-align:center; vertical-align:top; padding-top:10px"><div class="need-val">' + needDisplay + '</div></td>' +
-    '<td style="text-align:center; vertical-align:top; padding-top:10px">' +
-      '<input class="have-input" type="number" step="any" min="0" placeholder="0" value="' + (displayVal || '') + '" ' +
-      'data-id="' + item.id + '" data-store-size="' + storeSize + '" data-use-units="' + useUnits + '" ' +
-      'oninput="onHaveInput(this)" style="width:72px;display:inline-block">' +
-      '<div style="font-size:0.7rem;color:var(--muted);text-align:center;margin-top:2px">' + displayUnit + '</div>' +
-    '</td>';
-  return tr;
-}
-
-function onHaveInput(input) {
-  const id = input.dataset.id;
-  const storeSize = parseFloat(input.dataset.storeSize) || 1;
-  const useUnits = input.dataset.useUnits === 'true';
-  let val = input.value.replace(',', '.');
-  let numVal = parseFloat(val);
-  
-  const baseVal = isNaN(numVal) ? 0 : (useUnits ? numVal * storeSize : numVal);
-  
-  if (val === '') {
-    Store.update(id, '');
-  } else {
-    Store.update(id, baseVal);
-  }
-
-  // Aggiornamento visivo immediato della barra di scorta
-  const item = allItems().find(function(i) { return i.id === id; });
-  if (item && item.need > 0) {
-    const tr = input.closest('tr');
-    if (tr) {
-      const bar = tr.querySelector('.stock-bar-fill');
-      if (bar) {
-        const pct = Math.min(100, (baseVal / item.need) * 100);
-        bar.style.width = pct + '%';
-        bar.className = 'stock-bar-fill ' + (pct < 25 ? 'stock-low' : pct < 60 ? 'stock-mid' : 'stock-ok');
-      }
-    }
-  }
-}
-
-function refreshBuyList() {
-  clearTimeout(refreshTimer);
-  const saved = Store.inventory;
-  
-  const noteArea = document.getElementById('spesa-note');
-  if (noteArea && document.activeElement !== noteArea) noteArea.value = saved['_notes'] || '';
-
-  const dynamicContainer = document.getElementById('buy-dynamic-sections');
-  if (!dynamicContainer) return;
-  dynamicContainer.innerHTML = '';
-
-  var totalToBuy = 0;
-
-  // Raggruppa tutti i prodotti per categoria
-  const groups = {};
-
-  // Prodotti standard
-  ['frigo', 'secchi', 'liquidi'].forEach(section => {
-    let label = '';
-    if (section === 'frigo') label = '🧊 Frigo / Freezer';
-    if (section === 'secchi') label = '🌾 Secchi';
-    if (section === 'liquidi') label = '🫙 Liquidi';
-    
-    shopData[section].forEach(item => {
-      const have = saved[item.id] !== undefined ? saved[item.id] : '';
-      const buyBase = calcBuy(item.need, have);
-      const storeSize = item.storeSize || 1;
-      const buyUnits = buyBase > 0 ? Math.ceil(buyBase / storeSize) : 0;
-      
-      if (buyUnits > 0) {
-        if (!groups[label]) groups[label] = [];
-        groups[label].push(item);
-        totalToBuy++;
-      }
-    });
-  });
-
-  // Prodotti extra
-  customItems().forEach(item => {
-    const have = saved[item.id] !== undefined ? saved[item.id] : '';
-    const buyBase = calcBuy(item.need, have);
-    const storeSize = item.storeSize || 1;
-    const buyUnits = buyBase > 0 ? Math.ceil(buyBase / storeSize) : 0;
-    
-    if (buyUnits > 0) {
-      const label = item.category || '➕ Extra';
-      if (!groups[label]) groups[label] = [];
-      groups[label].push(item);
-      totalToBuy++;
-    }
-  });
-
-  // Genera HTML per ogni gruppo
-  Object.keys(groups).forEach(label => {
-    const sectionDiv = document.createElement('div');
-    sectionDiv.innerHTML = 
-      '<div class="shop-section-title">' + label + '</div>' +
-      '<table class="shop-table">' +
-        '<thead><tr><th>Prodotto</th><th style="text-align:right">Da comprare</th></tr></thead>' +
-        '<tbody id="buy-group-' + label.replace(/\s/g, '') + '"></tbody>' +
-      '</table>';
-    
-    const tbody = sectionDiv.querySelector('tbody');
-    groups[label].forEach(item => {
-      tbody.appendChild(buildBuyRow(item, saved));
-    });
-    dynamicContainer.appendChild(sectionDiv);
-  });
-
-  const emptyMsg = document.getElementById('spesa-empty');
-  if (emptyMsg) emptyMsg.style.display = totalToBuy === 0 ? 'block' : 'none';
-  
-  refreshSuggested(saved);
-  updateRecipeAvailability(saved);
-}
-
-function updateRecipeAvailability(saved) {
-  if (!saved) saved = loadSaved();
-  const cards = document.querySelectorAll('.recipe-card');
-  
-  recipeIngredients.forEach(r => {
-    const activeIngs = getActiveRecipeLogicIngredients(r.num);
-    let canCook = true;
-    for (let ing of activeIngs) {
-      let have = parseFloat(saved[ing.id]) || 0;
-      if (have < ing.amt) {
-        canCook = false;
-        break;
-      }
-    }
-    
-    cards.forEach(card => {
-      const numElem = card.querySelector('.recipe-num');
-      if (numElem && parseInt(numElem.textContent) === r.num) {
-        const titleElem = card.querySelector('.recipe-title');
-        if (titleElem) {
-          let originalText = titleElem.dataset.originalText;
-          if (!originalText) {
-             originalText = titleElem.textContent.replace(/ ✅| ❌/g, '').trim();
-             titleElem.dataset.originalText = originalText;
-          }
-          titleElem.textContent = originalText + (canCook ? ' ✅' : ' ❌');
-        }
-      }
-    });
-  });
-}
-
-function buildShopTable() {
-  const saved = loadSaved();
-  refreshBuyList();
-
-  const dynamicContainer = document.getElementById('disp-dynamic-sections');
-  if (!dynamicContainer) return;
-  dynamicContainer.innerHTML = '';
-
-  // Raggruppa tutti i prodotti per categoria
-  const groups = {};
-
-  // Prodotti standard
-  ['frigo', 'secchi', 'liquidi'].forEach(section => {
-    let label = '';
-    if (section === 'frigo') label = '🧊 Frigo / Freezer';
-    if (section === 'secchi') label = '🌾 Secchi';
-    if (section === 'liquidi') label = '🫙 Liquidi';
-    
-    shopData[section].forEach(item => {
-      if (!groups[label]) groups[label] = [];
-      groups[label].push({ ...item, isCustom: false });
-    });
-  });
-
-  // Prodotti extra
-  customItems().forEach(item => {
-    const label = item.category || '➕ Extra';
-    if (!groups[label]) groups[label] = [];
-    groups[label].push({ ...item, isCustom: true });
-  });
-
-  // Genera HTML per ogni gruppo
-  Object.keys(groups).forEach(label => {
-    const sectionDiv = document.createElement('div');
-    sectionDiv.innerHTML = 
-      '<div class="shop-section-title">' + label + '</div>' +
-      '<table class="shop-table">' +
-        '<thead><tr><th>Prodotto</th><th style="text-align:center">Serve</th><th style="text-align:center">Ho</th><th></th></tr></thead>' +
-        '<tbody></tbody>' +
-      '</table>';
-    
-    const tbody = sectionDiv.querySelector('tbody');
-    groups[label].forEach(item => {
-      if (item.isCustom) {
-        // Riga custom con tasti edit/delete
-        const id = 'custom_' + item.customId;
-        const have = saved[id] !== undefined ? parseFloat(saved[id]) : 0;
-        const unit = item.storeLabel || 'pz';
-        const pct = item.need > 0 ? Math.min(100, (have / item.need) * 100) : (have > 0 ? 100 : 0);
-        let colorClass = 'stock-ok';
-        if (pct < 25) colorClass = 'stock-low';
-        else if (pct < 60) colorClass = 'stock-mid';
-
-        const tr = document.createElement('tr');
-        tr.innerHTML =
-          '<td style="padding-bottom:12px">' +
-            '<div class="prod-name">' + item.name + '</div>' +
-            '<div class="stock-bar-container"><div class="stock-bar-fill ' + colorClass + '" style="width:' + pct + '%"></div></div>' +
-          '</td>' +
-          '<td style="text-align:center; vertical-align:top; padding-top:10px"><div class="need-val">' + item.need + unit + '</div></td>' +
-          '<td style="text-align:center; vertical-align:top; padding-top:10px">' +
-            '<input class="have-input" type="number" min="0" placeholder="0" value="' + (have || '') + '" data-id="' + id + '" data-need="' + item.need + '" oninput="onHaveInput(this)" style="width:72px;display:inline-block">' +
-            '<div style="font-size:0.7rem;color:var(--muted);text-align:center;margin-top:2px">' + unit + '</div>' +
-          '</td>' +
-          '<td style="white-space:nowrap; vertical-align:top; padding-top:6px">' +
-            '<button class="delete-btn" onclick="startEditCustom(' + item.customId + ')">✎</button>' +
-          '</td>';
-        tbody.appendChild(tr);
-      } else {
-        // Riga standard
-        tbody.appendChild(buildDispRow(item, saved));
-      }
-    });
-    dynamicContainer.appendChild(sectionDiv);
-  });
-}
-
-// Rimuovo buildCustomDispRows perché ora è integrata in buildShopTable
-function buildCustomDispRows() { buildShopTable(); }
-
-// Max single-recipe consumption per ingredient id
-function buildMaxConsumption() {
-  var max = {};
-  recipeIngredients.forEach(function(r) {
-    const activeIngs = getActiveRecipeLogicIngredients(r.num);
-    activeIngs.forEach(function(ing) {
-      if (!max[ing.id] || ing.amt > max[ing.id]) max[ing.id] = ing.amt;
-    });
-  });
-  return max;
-}
-
-function refreshSuggested(saved) {
-  if (!saved) saved = loadSaved();
-  var maxC = buildMaxConsumption();
-  var suggestedItems = [];
-  allItems().forEach(function(item) {
-    var have = parseFloat(saved[item.id]) || 0;
-    var buyBase = calcBuy(item.need, have);
-    if (buyBase > 0) return; // already in buy list
-    
-    if (item.isCustom) {
-      if (item.need > 0 && have < item.need * 1.33) {
-        suggestedItems.push(item);
-      }
-    } else {
-      var maxUse = maxC[item.id] || 0;
-      var buffer = item.suggestedBuffer || maxUse;
-      if (buffer > 0 && (have - buffer) < item.need) {
-        suggestedItems.push(item);
-      }
-    }
-  });
-
-  var section = document.getElementById('suggested-section');
-  var tbody = document.getElementById('buy-suggested');
-  if (!section || !tbody) return;
-
-  if (suggestedItems.length === 0) {
-    section.style.display = 'none';
-    return;
-  }
-  section.style.display = 'block';
-  tbody.innerHTML = '';
-  suggestedItems.forEach(function(item) {
-    var have = parseFloat(saved[item.id]) || 0;
-    var maxUse = maxC[item.id] || 0;
-    var buffer = item.suggestedBuffer || maxUse;
-    var minBuyBase = item.need + buffer - have;
-    var storeSize = item.storeSize || 1;
-    var unitsNeeded = Math.max(1, Math.ceil(minBuyBase / storeSize));
-    var tr = document.createElement('tr');
-    tr.className = 'buy-row-suggested';
-    tr.innerHTML =
-      '<td><div class="buy-row-name">' + item.name + '</div><div class="buy-row-sub">' + item.storeLabel + '</div></td>' +
-      '<td><div class="buy-row-amt suggested" style="text-align:right">' + unitsNeeded + '</div></td>';
-    tbody.appendChild(tr);
-  });
-}
-
-function resetAll() {
-  if (!confirm('Azzerare tutta la dispensa?')) return;
-  Store.inventory = {};
-  Store.commit();
-}
-
-// ==================== CUSTOM PRODUCTS ====================
-let editingCustomId = null;
-
-function customItems() {
-  return Store.customs.map(function(c) {
-    return {
-      id: 'custom_' + c.id,
-      name: c.name,
-      unit: c.storeSize + ' ' + (c.unit || 'pz'),
-      need: c.need,
-      storeSize: c.storeSize,
-      storeLabel: c.unit || 'pz',
-      isCustom: true,
-      customId: c.id,
-      category: c.category // Aggiunta categoria
-    };
-  });
-}
-
-function allItems() {
-  return [...shopData.frigo, ...shopData.secchi, ...shopData.liquidi, ...customItems()];
-}
-
-function startEditCustom(id) {
-  const c = Store.customs.find(function(x) { return x.id === id; });
-  if (!c) return;
-
-  editingCustomId = id;
-  
-  // Popola campi
-  document.getElementById('cf-nome').value = c.name;
-  document.getElementById('cf-size').value = c.storeSize;
-  document.getElementById('cf-need').value = c.need;
-  document.getElementById('cf-have').value = Store.inventory['custom_' + id] || 0;
-
-  // Assicurati che le categorie siano aggiornate prima di leggerle
-  updateCategoryDropdown();
-
-  const unitSelect = document.getElementById('cf-unit-select');
-  const unitCustomInput = document.getElementById('cf-unit');
-  
-  // Gestione unità
-  const unitOptions = Array.from(unitSelect.options).map(opt => opt.value);
-  if (unitOptions.includes(c.unit) && c.unit !== 'CUSTOM') {
-    unitSelect.value = c.unit;
-    unitSelect.style.display = 'block';
-    unitCustomInput.style.display = 'none';
-  } else {
-    unitSelect.value = 'CUSTOM';
-    unitSelect.style.display = 'none';
-    unitCustomInput.value = c.unit || '';
-    unitCustomInput.style.display = 'block';
-  }
-
-  // Gestione categoria
-  const catSelect = document.getElementById('cf-category-select');
-  const catNewInput = document.getElementById('cf-category-new');
-  const catOptions = Array.from(catSelect.options).map(opt => opt.value);
-  
-  const currentCat = c.category || '➕ Extra';
-  
-  if (catOptions.includes(currentCat)) {
-    catSelect.value = currentCat;
-    catSelect.style.display = 'block';
-    catNewInput.style.display = 'none';
-  } else {
-    catSelect.value = 'NEW_CAT';
-    catSelect.style.display = 'none';
-    catNewInput.value = currentCat;
-    catNewInput.style.display = 'block';
-  }
-
-  // Cambia UI pulsanti
-  document.getElementById('cf-confirm-btn').textContent = '💾 Salva modifiche';
-  document.getElementById('cf-cancel-btn').style.display = 'block';
-  document.getElementById('cf-delete-btn').style.display = 'block';
-
-  // Apri la card se chiusa
-  const body = document.getElementById('body-custom');
-  if (!body.classList.contains('open')) toggleDispensaCard('custom');
-  
-  // Scroll al modulo
-  document.getElementById('body-custom').scrollIntoView({ behavior: 'smooth' });
-}
-
-function cancelEditCustom() {
-  editingCustomId = null;
-  
-  // Reset form
-  document.getElementById('cf-nome').value = '';
-  document.getElementById('cf-size').value = '';
-  document.getElementById('cf-need').value = '';
-  document.getElementById('cf-have').value = '';
-  document.getElementById('cf-unit').value = '';
-  document.getElementById('cf-unit').style.display = 'none';
-  document.getElementById('cf-unit-select').value = 'g';
-  document.getElementById('cf-unit-select').style.display = 'block';
-  
-  document.getElementById('cf-category-new').value = '';
-  document.getElementById('cf-category-new').style.display = 'none';
-  document.getElementById('cf-category-select').value = '🧊 Frigo / Freezer';
-  document.getElementById('cf-category-select').style.display = 'block';
-
-  // Reset UI pulsanti
-  document.getElementById('cf-confirm-btn').textContent = '+ Aggiungi prodotto';
-  document.getElementById('cf-cancel-btn').style.display = 'none';
-  document.getElementById('cf-delete-btn').style.display = 'none';
-}
-
-function deleteCustomProductFromEdit() {
-  if (editingCustomId) {
-    if (confirm('Eliminare definitivamente questo prodotto?')) {
-      const idToDelete = editingCustomId;
-      cancelEditCustom();
-      Store.customs = Store.customs.filter(function(c) { return c.id !== idToDelete; });
-      delete Store.inventory['custom_' + idToDelete];
-      Store.commit();
-    }
-  }
-}
-
-function addCustomProduct() {
-  const nome = document.getElementById('cf-nome').value.trim();
-  const uSelect = document.getElementById('cf-unit-select');
-  const uInput = document.getElementById('cf-unit');
-  const cSelect = document.getElementById('cf-category-select');
-  const cInput = document.getElementById('cf-category-new');
-  
-  let unit = uSelect.value === 'CUSTOM' ? uInput.value.trim() : uSelect.value;
-  let category = cSelect.value === 'NEW_CAT' ? cInput.value.trim() : cSelect.value;
-  
-  const size = parseFloat(document.getElementById('cf-size').value) || 1;
-  const need = parseFloat(document.getElementById('cf-need').value) || 0;
-  const have = parseFloat(document.getElementById('cf-have').value) || 0;
-  
-  if (!nome) { alert('Inserisci il nome del prodotto.'); return; }
-  if (!unit) { alert('Inserisci l\'unità di misura.'); return; }
-  if (!category) { alert('Inserisci la categoria.'); return; }
-  
-  if (editingCustomId) {
-    const index = Store.customs.findIndex(x => x.id === editingCustomId);
-    if (index !== -1) {
-      Store.customs[index] = { id: editingCustomId, name: nome, unit: unit, storeSize: size, need: need, category: category };
-      Store.inventory['custom_' + editingCustomId] = have;
-    }
-    editingCustomId = null;
-  } else {
-    const id = Date.now();
-    const newItem = { id: id, name: nome, unit: unit, storeSize: size, need: need, category: category };
-    Store.customs.push(newItem);
-    Store.inventory['custom_' + id] = have;
-  }
-  
-  Store.commit();
-  cancelEditCustom();
-}
-
-function handleUnitSelect(val) {
-  const customInput = document.getElementById('cf-unit');
-  const select = document.getElementById('cf-unit-select');
-  if (val === 'CUSTOM') {
-    select.style.display = 'none';
-    customInput.style.display = 'block';
-    customInput.focus();
-  }
-}
-
-function handleCategorySelect(val) {
-  const customInput = document.getElementById('cf-category-new');
-  const select = document.getElementById('cf-category-select');
-  if (val === 'NEW_CAT') {
-    select.style.display = 'none';
-    customInput.style.display = 'block';
-    customInput.focus();
-  }
-}
-
-function deleteCustomProduct(customId) {
-  if (!confirm('Rimuovere questo prodotto?')) return;
-  Store.customs = Store.customs.filter(function(c) { return c.id !== customId; });
-  delete Store.inventory['custom_' + customId];
-  Store.commit();
-}
-
-function buildCustomDispRows() {
-  const customs = loadCustom();
-  const title = document.getElementById('disp-custom-title');
-  const table = document.getElementById('disp-custom-table');
-  const tbody = document.getElementById('disp-custom');
-  if (!tbody) return;
-  if (customs.length === 0) {
-    title.style.display = 'none';
-    table.style.display = 'none';
-    return;
-  }
-  title.style.display = 'block';
-  table.style.display = 'table';
-  const saved = loadSaved();
-  tbody.innerHTML = '';
-  customs.forEach(function(c) {
-    const id = 'custom_' + c.id;
-    const have = saved[id] !== undefined ? parseFloat(saved[id]) : 0;
-    const unit = c.unit || 'pz';
-    
-    // Calcolo barra scorta
-    const pct = c.need > 0 ? Math.min(100, (have / c.need) * 100) : (have > 0 ? 100 : 0);
-    let colorClass = 'stock-ok';
-    if (pct < 25) colorClass = 'stock-low';
-    else if (pct < 60) colorClass = 'stock-mid';
-
-    const tr = document.createElement('tr');
-    tr.innerHTML =
-      '<td style="padding-bottom:12px">' +
-        '<div class="prod-name">' + c.name + '</div>' +
-        '<div class="stock-bar-container"><div class="stock-bar-fill ' + colorClass + '" style="width:' + pct + '%"></div></div>' +
-      '</td>' +
-      '<td style="text-align:center; vertical-align:top; padding-top:10px"><div class="need-val">' + c.need + unit + '</div></td>' +
-      '<td style="text-align:center; vertical-align:top; padding-top:10px">' +
-        '<input class="have-input" type="number" min="0" placeholder="0" value="' + (have || '') + '" data-id="' + id + '" data-need="' + c.need + '" oninput="onHaveInput(this)" style="width:72px;display:inline-block">' +
-        '<div style="font-size:0.7rem;color:var(--muted);text-align:center;margin-top:2px">' + unit + '</div>' +
-      '</td>' +
-      '<td style="white-space:nowrap; vertical-align:top; padding-top:6px">' +
-        '<button class="delete-btn" onclick="startEditCustom(' + c.id + ')">✎</button>' +
-        '<button class="delete-btn" onclick="deleteCustomProduct(' + c.id + ')">🗑</button>' +
-      '</td>';
-    tbody.appendChild(tr);
-  });
-}
-
-const recipeIngredients = [
-  { num:1,  name:'Quinoa e Ceci',               ingredients: [{id:'quinoa',amt:150},{id:'ceci',amt:400},{id:'broccoli',amt:400},{id:'olio',amt:15}] },
-  { num:2,  name:'Dahl Lenticchie + Couscous',  ingredients: [{id:'lenticchie',amt:320},{id:'couscous',amt:185},{id:'broccoli',amt:400},{id:'olio',amt:25},{id:'latte_soia',amt:150}] },
-  { num:3,  name:'Minestrone Farro + Fagioli',  ingredients: [{id:'fagioli',amt:430},{id:'farro',amt:160},{id:'minestrone',amt:500},{id:'olio',amt:20}] },
-  { num:4,  name:'Riso al Forno + Ceci',        ingredients: [{id:'riso',amt:80},{id:'ceci',amt:430},{id:'broccoli',amt:400},{id:'passata',amt:700},{id:'olio',amt:15}] },
-  { num:5,  name:'Pasta al Forno Ignorante',    ingredients: [{id:'pasta',amt:160},{id:'lenticchie',amt:285},{id:'broccoli',amt:400},{id:'passata',amt:700},{id:'olio',amt:30},{id:'latte_soia',amt:100}] },
-  { num:6,  name:'Teglia Tofu e Patate',        ingredients: [{id:'tofu',amt:540},{id:'patate',amt:1300},{id:'broccoli',amt:400},{id:'olio',amt:40}] },
-  { num:7,  name:'Couscous + Ceci Croccanti',   ingredients: [{id:'ceci',amt:410},{id:'couscous',amt:150},{id:'broccoli',amt:400},{id:'olio',amt:15}] },
-  { num:8,  name:'Fagioli con Polenta',         ingredients: [{id:'fagioli',amt:460},{id:'polenta',amt:140},{id:'broccoli',amt:400},{id:'olio',amt:20}] },
-  { num:9,  name:'Pasta e Lenticchie',          ingredients: [{id:'lenticchie',amt:350},{id:'pasta',amt:180},{id:'broccoli',amt:400},{id:'olio',amt:25}] },
-  { num:10, name:'Zuppa Ceci e Farro',          ingredients: [{id:'ceci',amt:430},{id:'farro',amt:130},{id:'broccoli',amt:400},{id:'olio',amt:20}] }
-];
-
-// (allItems defined above with custom support)
-function getItem(id) { return allItems().find(function(i){ return i.id === id; }); }
-function fmtAmt(id, amt) {
-  const item = getItem(id);
-  return (item && item.suffix) ? amt + ' ' + item.suffix : amt + 'g';
-}
-
-function updateCategoryDropdown() {
-  const select = document.getElementById('cf-category-select');
-  if (!select) return;
-
-  // Categorie standard
-  const standards = ['🧊 Frigo / Freezer', '🌾 Secchi', '🫙 Liquidi', '➕ Extra'];
-  
-  // Recupera categorie uniche dai prodotti custom esistenti
-  const userCats = Store.customs
-    .map(c => c.category)
-    .filter(cat => cat && !standards.includes(cat));
-  
-  const uniqueUserCats = [...new Set(userCats)].sort();
-
-  // Ricostruisci il menu
-  let html = '';
-  standards.forEach(cat => {
-    html += '<option value="' + cat + '">' + cat + '</option>';
-  });
-  
-  if (uniqueUserCats.length > 0) {
-    html += '<optgroup label="Le tue categorie">';
-    uniqueUserCats.forEach(cat => {
-      html += '<option value="' + cat + '">' + cat + '</option>';
-    });
-    html += '</optgroup>';
-  }
-  
-  html += '<option value="NEW_CAT">➕ Nuova categoria...</option>';
-  
-  // Salva il valore corrente per non perderlo durante il refresh (se non è NEW_CAT)
-  const currentVal = select.value;
-  select.innerHTML = html;
-  
-  if (currentVal && currentVal !== 'NEW_CAT') {
-    select.value = currentVal;
-  }
-}
-
-function toggleDispensaCard(key) {
-  const body = document.getElementById('body-' + key);
-  const chev = document.getElementById('chev-' + key);
-  const isOpen = body.classList.contains('open');
-  body.classList.toggle('open', !isOpen);
-  chev.style.transform = isOpen ? '' : 'rotate(180deg)';
-  if (!isOpen && key === 'dispensa-attuale') buildShopTable();
-  if (!isOpen && key === 'custom') {
-    updateCategoryDropdown();
-    buildCustomDispRows();
-  }
-  if (!isOpen && key === 'spesa-fatta') buildSpesaFattaRows();
-  if (!isOpen && key === 'cucinato') buildRecipeBtns();
-}
-
-function buildSpesaFattaRows() {
-  const saved = loadSaved();
-  const container = document.getElementById('spesa-fatta-rows');
-  container.innerHTML = '';
-  allItems().forEach(function(item) {
-    const buyBase = calcBuy(item.need, saved[item.id] !== undefined ? saved[item.id] : '');
-    const storeSize = item.storeSize || 1;
-    const step = item.step ? (item.step / storeSize) : 1;
-    const suggestedUnits = buyBase > 0 ? Math.ceil(buyBase / storeSize) : 0;
-    const inputId = 'sf-input-' + item.id;
-    const div = document.createElement('div');
-    div.className = 'spesa-row';
-    div.innerHTML =
-      '<div class="spesa-row-name">' + item.name + '</div>' +
-      '<div class="spesa-stepper">' +
-        '<button class="spesa-step-btn" onclick="stepSpesa(\'' + inputId + '\',-' + step + ')">−</button>' +
-        '<input class="spesa-row-input" id="' + inputId + '" type="number" min="0" value="' + (suggestedUnits > 0 ? suggestedUnits : '') + '" placeholder="0" data-id="' + item.id + '" data-store-size="' + storeSize + '">' +
-        '<button class="spesa-step-btn" onclick="stepSpesa(\'' + inputId + '\',' + step + ')">+</button>' +
-      '</div>' +
-      '<div class="spesa-row-unit" style="font-size:0.7rem;min-width:80px">' + item.storeLabel + '</div>';
-    container.appendChild(div);
-  });
-}
-
-function stepSpesa(inputId, delta) {
-  const input = document.getElementById(inputId);
-  if (!input) return;
-  const current = parseFloat(input.value) || 0;
-  input.value = Math.max(0, current + delta) || '';
-}
-
-function confermaSpesa() {
-  const inputs = document.querySelectorAll('#spesa-fatta-rows .spesa-row-input');
-  var changed = 0;
-  inputs.forEach(function(input) {
-    const id = input.dataset.id;
-    const units = parseFloat(input.value) || 0;
-    if (units > 0) {
-      const storeSize = parseFloat(input.dataset.storeSize) || 1;
-      const addBase = units * storeSize;
-      const current = parseFloat(Store.inventory[id]) || 0;
-      Store.inventory[id] = current + addBase;
-      changed++;
-    }
-  });
-  if (changed === 0) { alert('Nessun valore da aggiungere.'); return; }
-  
-  Store.commit();
-  buildSpesaFattaRows();
-  alert('Dispensa aggiornata (' + changed + ' prodotti).');
-
-  // Chiudi la sezione per feedback visivo
-  const body = document.getElementById('body-spesa-fatta');
-  const chev = document.getElementById('chev-spesa-fatta');
-  if (body) body.classList.remove('open');
-  if (chev) chev.style.transform = '';
-}
-
-var selectedRecipesState = new Set();
-
-function buildRecipeBtns() {
-  buildCucinatoUI();
-}
-
-function buildCucinatoUI() {
-  // ultima spesa display
-  const saved = loadSaved();
-  const ultimaNum = saved['_ultima_spesa'] || null;
-  const ultimaR = ultimaNum ? recipeIngredients.find(function(r){ return r.num === ultimaNum; }) : null;
-  document.getElementById('ultima-spesa-text').textContent = ultimaR ? 'R' + ultimaR.num + ' · ' + ultimaR.name : 'Non impostata';
-
-  // ultima spesa edit grid
-  const grid = document.getElementById('ultima-spesa-grid');
-  grid.innerHTML = '';
-  recipeIngredients.forEach(function(r) {
-    const btn = document.createElement('button');
-    btn.className = 'recipe-btn' + (ultimaNum === r.num ? ' selected' : '');
-    btn.style.cssText = ultimaNum === r.num ? 'background:#e8f2eb;border-color:var(--accent2);color:var(--accent2)' : '';
-    btn.innerHTML = '<span class="rnum">' + r.num + '</span>' + r.name;
-    btn.onclick = function() { setUltimaSpesa(r.num); };
-    grid.appendChild(btn);
-  });
-
-  // checkboxes grid
-  buildCheckGrid();
-}
-
-function setUltimaSpesa(num) {
-  Store.inventory['_ultima_spesa'] = num;
-  Store.persist();
-  
-  const r = recipeIngredients.find(function(item){ return item.num === num; });
-  alert('Impostata come ultima ricetta: R' + num + ' - ' + r.name);
-
-  // Chiudi la sezione
-  const edit = document.getElementById('ultima-spesa-edit');
-  if (edit) edit.style.display = 'none';
-  document.querySelector('.ultima-change-btn').textContent = 'Cambia';
-
-  const body = document.getElementById('body-cucinato');
-  const chev = document.getElementById('chev-cucinato');
-  if (body) body.classList.remove('open');
-  if (chev) chev.style.transform = '';
-
-  buildCucinatoUI();
-}
-
-function toggleUltimaEdit() {
-  const edit = document.getElementById('ultima-spesa-edit');
-  const isOpen = edit.style.display !== 'none';
-  edit.style.display = isOpen ? 'none' : 'block';
-  document.querySelector('.ultima-change-btn').textContent = isOpen ? 'Cambia' : 'Chiudi';
-}
-
-function buildCheckGrid() {
-  const grid = document.getElementById('recipe-check-grid');
-  grid.innerHTML = '';
-  recipeIngredients.forEach(function(r) {
-    const btn = document.createElement('button');
-    btn.className = 'recipe-check-btn' + (selectedRecipesState.has(r.num) ? ' selected' : '');
-    btn.id = 'chk-' + r.num;
-    btn.innerHTML = '<span class="rnum">' + r.num + '</span>' + r.name;
-    btn.onclick = function() { toggleRecipeCheck(r.num); };
-    grid.appendChild(btn);
-  });
-  updatePreview();
-}
-
-function toggleRecipeCheck(num) {
-  if (selectedRecipesState.has(num)) {
-    selectedRecipesState.delete(num);
-  } else {
-    selectedRecipesState.add(num);
-  }
-  const btn = document.getElementById('chk-' + num);
-  if (btn) btn.classList.toggle('selected', selectedRecipesState.has(num));
-  updatePreview();
-}
-
-function getSelectedRecipes() {
-  // Trasforma il Set in array per preservare l'ordine di clic
-  const selectedNums = Array.from(selectedRecipesState);
-  return selectedNums.map(function(num) {
-    return recipeIngredients.find(function(r) { return r.num === num; });
-  }).filter(Boolean);
-}
-
-let isCucinatoEditable = false;
-
-function toggleModificaCucinato() {
-  isCucinatoEditable = !isCucinatoEditable;
-  const btn = document.getElementById('btn-modifica-cucinato');
-  if (btn) {
-    btn.textContent = isCucinatoEditable ? '❌ Annulla' : '✏️ Modifica';
-  }
-  updatePreview();
-}
-
-function updatePreview() {
-  const selected = getSelectedRecipes();
-  const preview = document.getElementById('cucinato-preview');
-  if (selected.length === 0) { preview.style.display = 'none'; return; }
-
-  // aggregate ingredients
-  const totals = {};
-  selected.forEach(function(r) {
-    const activeIngs = getActiveRecipeLogicIngredients(r.num);
-    activeIngs.forEach(function(ing) {
-      totals[ing.id] = (totals[ing.id] || 0) + ing.amt;
-    });
-    // Consumo colazione (250g per ricetta/giorno)
-    totals['latte_soia'] = (totals['latte_soia'] || 0) + 250;
-  });
-
-  const rows = document.getElementById('cucinato-preview-rows');
-  rows.innerHTML = '';
-  Object.keys(totals).forEach(function(id) {
-    const item = getItem(id);
-    const div = document.createElement('div');
-    div.className = 'preview-row';
-    
-    let amtDisplay = '- ' + fmtAmt(id, totals[id]);
-    
-    if (isCucinatoEditable) {
-       const unit = (item && item.suffix) ? item.suffix : 'g';
-       amtDisplay = `<input type="number" class="spesa-row-input cucinato-edit-input" data-id="${id}" value="${totals[id]}" style="width:60px; padding:4px; text-align:right;"> <span style="font-size:0.75rem;color:var(--muted)">${unit}</span>`;
-    }
-
-    div.innerHTML =
-      '<span class="preview-row-name">' + (item ? item.name : id) + '</span>' +
-      '<span class="preview-row-amt" style="display:flex;align-items:center;gap:4px">' + amtDisplay + '</span>';
-    rows.appendChild(div);
-  });
-  preview.style.display = 'block';
-}
-
-function confermaCucinato() {
-  const selected = getSelectedRecipes();
-  if (selected.length === 0) { alert('Seleziona almeno una ricetta.'); return; }
-
-  const totalsToSubtract = {};
-  
-  if (isCucinatoEditable) {
-    const inputs = document.querySelectorAll('.cucinato-edit-input');
-    inputs.forEach(input => {
-      const val = parseFloat(input.value) || 0;
-      if (val > 0) totalsToSubtract[input.dataset.id] = val;
-    });
-  } else {
-    selected.forEach(function(r) {
-      const activeIngs = getActiveRecipeLogicIngredients(r.num);
-    activeIngs.forEach(function(ing) {
-        totalsToSubtract[ing.id] = (totalsToSubtract[ing.id] || 0) + ing.amt;
-      });
-      // Consumo colazione (250g per ricetta/giorno)
-      totalsToSubtract['latte_soia'] = (totalsToSubtract['latte_soia'] || 0) + 250;
-    });
-  }
-
-  Object.keys(totalsToSubtract).forEach(function(id) {
-    const current = parseFloat(Store.inventory[id]) || 0;
-    Store.inventory[id] = Math.max(0, current - totalsToSubtract[id]);
-  });
-
-  // aggiorna ultima spesa all'ultima ricetta selezionata
-  const lastNum = selected[selected.length - 1].num;
-  Store.inventory['_ultima_spesa'] = lastNum;
-
-  Store.commit();
-  
-  // Reset stato logico
-  selectedRecipesState.clear();
-  isCucinatoEditable = false;
-  const btn = document.getElementById('btn-modifica-cucinato');
-  if (btn) btn.textContent = '✏️ Modifica';
-  
-  buildCucinatoUI();
-  updatePreview();
-  
-  alert('Scalate ' + selected.length + ' ricett' + (selected.length === 1 ? 'a' : 'e') + ' dalla dispensa.');
-
-  // Chiudi la sezione per feedback visivo
-  const body = document.getElementById('body-cucinato');
-  const chev = document.getElementById('chev-cucinato');
-  if (body) body.classList.remove('open');
-  if (chev) chev.style.transform = '';
-}
-
-// ==================== SINCRONIZZAZIONE ====================
-function exportSyncData() {
-  const data = {
-    inventory: Store.inventory,
-    customs: Store.customs,
-    v: 1
-  };
-  // encodeURIComponent gestisce correttamente i caratteri speciali prima di btoa
-  const code = btoa(encodeURIComponent(JSON.stringify(data)));
-  const area = document.getElementById('sync-area');
-  area.value = code;
-  
-  if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(code).then(() => {
-      alert('Codice copiato negli appunti! Invialo all\'altro dispositivo e incollalo lì.');
-    }).catch(() => {
-      fallbackCopy(area);
-    });
-  } else {
-    fallbackCopy(area);
-  }
-}
-
-function fallbackCopy(area) {
-  area.select();
-  area.setSelectionRange(0, 99999);
+function leggiJSON(chiave, predefinito) {
   try {
-    document.execCommand('copy');
-    alert('Codice copiato negli appunti! Invialo all\'altro dispositivo e incollalo lì.');
-  } catch (err) {
-    alert('Codice generato! Copialo manualmente dall\'area di testo.');
+    const v = JSON.parse(localStorage.getItem(chiave));
+    return v === null ? predefinito : v;
+  } catch (e) {
+    return predefinito;
   }
 }
+
+function scriviJSON(chiave, valore) {
+  localStorage.setItem(chiave, JSON.stringify(valore));
+}
+
+// ==================== CATALOGO ====================
+let catalogo = null;
+
+async function caricaCatalogo() {
+  try {
+    const r = await fetch('ricette.json');
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const dati = await r.json();
+    if (dati.versione !== 1) throw new Error('versione ' + dati.versione);
+    catalogo = preparaCatalogo(dati);
+  } catch (e) {
+    catalogo = null;
+  }
+  return catalogo;
+}
+
+function preparaCatalogo(dati) {
+  const prodottiPerId = {};
+  dati.prodotti.forEach(p => { prodottiPerId[p.id] = p; });
+  const ricettePerId = {};
+  dati.ricette.forEach(r => { ricettePerId[r.id] = r; });
+  return { prodotti: dati.prodotti, ricette: dati.ricette, prodottiPerId, ricettePerId };
+}
+
+function prodottoPerNome(nome) {
+  return catalogo ? catalogo.prodotti.find(p => p.nome === nome) : undefined;
+}
+
+// ==================== NUMERI ====================
+const arrotonda1 = x => Math.round(x * 10) / 10;
+const arrotonda6 = x => Math.round(x * 1e6) / 1e6;
+
+// ==================== PIANO ====================
+// {porzioni: {idRicetta: n}, ogniGiorno: [{prodotto, quantita}]}
+// porzioni: solo quelle diverse dalla ricetta. ogniGiorno: assente finché non si cambia.
+
+function ogniGiornoIniziale() {
+  return [['Latte di soia', 250], ['Frutta', 2]]
+    .map(([nome, quantita]) => { const p = prodottoPerNome(nome); return p ? { prodotto: p.id, quantita } : null; })
+    .filter(Boolean);
+}
+
+function leggiPiano() {
+  const p = leggiJSON(CHIAVI.piano, {}) || {};
+  return {
+    porzioni: (p.porzioni && typeof p.porzioni === 'object') ? p.porzioni : {},
+    ogniGiorno: Array.isArray(p.ogniGiorno)
+      ? p.ogniGiorno.filter(x => x && typeof x.prodotto === 'string' && typeof x.quantita === 'number')
+      : ogniGiornoIniziale()
+  };
+}
+
+function scriviPiano(piano) {
+  scriviJSON(CHIAVI.piano, piano);
+}
+
+function porzioniNelPiano(piano, ricetta) {
+  const v = piano.porzioni[ricetta.id];
+  return typeof v === 'number' ? v : ricetta.porzioni;
+}
+
+function impostaPorzioni(ricetta, valore) {
+  const piano = leggiPiano();
+  const v = Math.max(0, arrotonda1(valore));
+  if (v === ricetta.porzioni) delete piano.porzioni[ricetta.id];
+  else piano.porzioni[ricetta.id] = v;
+  scriviPiano(piano);
+}
+
+function piattiDelPiano(piano) {
+  return catalogo.ricette
+    .filter(r => r.rotazione)
+    .map(r => ({ ricetta: r, porzioni: porzioniNelPiano(piano, r) }));
+}
+
+// Una ricetta da 2 porzioni copre pranzo e cena: un giorno.
+const giorniRicetta = ricetta => ricetta.porzioni / 2;
+
+function giorniDelPiano(piano) {
+  return piattiDelPiano(piano)
+    .filter(x => x.porzioni > 0)
+    .reduce((tot, x) => tot + giorniRicetta(x.ricetta), 0);
+}
+
+const kcalAPasto = (ricetta, porzioni) => ricetta.kcal * porzioni / ricetta.porzioni;
+
+// ==================== INGREDIENTI ====================
+// Il prodotto da contare per un ingrediente, oppure null se non si conta in dispensa.
+function prodottoContato(ing) {
+  if (!ing.prodotto || ing.quantita === null || ing.facoltativo) return null;
+  const p = catalogo.prodottiPerId[ing.prodotto];
+  if (!p || !p.siConta || ing.unita !== p.unita) return null;
+  return p;
+}
+
+function unitaDiversa(ing) {
+  const p = ing.prodotto && catalogo.prodottiPerId[ing.prodotto];
+  return !!(p && p.siConta && ing.quantita !== null && ing.unita !== p.unita);
+}
+
+function ogniGiornoContato(piano) {
+  return piano.ogniGiorno.filter(x => {
+    const p = catalogo.prodottiPerId[x.prodotto];
+    return p && p.siConta && typeof x.quantita === 'number';
+  });
+}
+
+// {quantita: {idProdotto: n}, serve: Set di prodotti senza quantità usati dal piano}
+function fabbisogno(piano) {
+  const quantita = {};
+  const serve = new Set();
+  const aggiungi = (id, n) => { quantita[id] = (quantita[id] || 0) + n; };
+  piattiDelPiano(piano).filter(x => x.porzioni > 0).forEach(({ ricetta, porzioni }) => {
+    ricetta.ingredienti.forEach(ing => {
+      const p = prodottoContato(ing);
+      if (p) { aggiungi(p.id, ing.quantita * porzioni); return; }
+      const q = ing.prodotto && catalogo.prodottiPerId[ing.prodotto];
+      if (q && !q.siConta && !ing.facoltativo) serve.add(q.id);
+    });
+  });
+  const giorni = giorniDelPiano(piano);
+  ogniGiornoContato(piano).forEach(x => aggiungi(x.prodotto, x.quantita * giorni));
+  return { quantita, serve };
+}
+
+// Cosa toglie "Cucinata": gli ingredienti alle porzioni della scheda e i giorni di "Ogni giorno".
+function consumoCucinata(piano, ricetta, porzioni) {
+  const consumo = {};
+  const aggiungi = (id, n) => { consumo[id] = (consumo[id] || 0) + n; };
+  ricetta.ingredienti.forEach(ing => {
+    const p = prodottoContato(ing);
+    if (p) aggiungi(p.id, ing.quantita * porzioni);
+  });
+  ogniGiornoContato(piano).forEach(x => aggiungi(x.prodotto, x.quantita * giorniRicetta(ricetta)));
+  return consumo;
+}
+
+// ==================== DISPENSA ====================
+// {quantita: {idProdotto: n | true/false, "custom_<id>": n}, note}
+// Prodotti con siConta: numero nell'unità del prodotto. Gli altri: manca solo se false.
+
+function leggiDispensa() {
+  const d = leggiJSON(CHIAVI.dispensa, null);
+  return {
+    quantita: (d && d.quantita && typeof d.quantita === 'object') ? d.quantita : {},
+    note: (d && typeof d.note === 'string') ? d.note : ''
+  };
+}
+
+function quantitaIn(dispensa, id) {
+  const v = dispensa.quantita[id];
+  return typeof v === 'number' ? v : 0;
+}
+
+const manca = (dispensa, id) => dispensa.quantita[id] === false;
+
+const MAPPA_V1 = {
+  tofu: 'Tofu', patate: 'Patate', quinoa: 'Quinoa', passata: 'Passata di pomodoro',
+  broccoli: 'Broccoli surgelati', minestrone: 'Minestrone surgelato light',
+  lenticchie: 'Lenticchie secche', ceci: 'Ceci secchi', fagioli: 'Fagioli secchi',
+  pasta: 'Pasta corta', couscous: 'Cous cous', farro: 'Farro perlato', riso: 'Riso',
+  polenta: 'Polenta istantanea',
+  olio: 'Olio extravergine', latte_soia: 'Latte di soia' // da g a ml 1:1, come faceva l'app
+};
+
+function migraInventarioV1(inventory, cat) {
+  const perNome = {};
+  cat.prodotti.forEach(p => { perNome[p.nome] = p; });
+  const quantita = {};
+  Object.keys(inventory).forEach(k => {
+    const v = inventory[k];
+    if (typeof v !== 'number') return;
+    if (k.startsWith('custom_')) { quantita[k] = v; return; }
+    const p = MAPPA_V1[k] && perNome[MAPPA_V1[k]];
+    if (p && p.siConta) quantita[p.id] = v;
+  });
+  return { quantita, note: typeof inventory._notes === 'string' ? inventory._notes : '' };
+}
+
+// La dispensa v2 nasce solo da una migrazione riuscita, o vuota se non c'è niente di vecchio.
+// false: serve migrare ma il catalogo non c'è, quindi non si deve scrivere niente.
+function assicuraMigrazione() {
+  if (localStorage.getItem(CHIAVI.dispensa) !== null) return true;
+  const v1 = leggiJSON(CHIAVI.v1, null);
+  if (v1 && typeof v1 === 'object' && Object.keys(v1).length > 0) {
+    if (!catalogo) return false;
+    scriviJSON(CHIAVI.dispensa, migraInventarioV1(v1, catalogo));
+  } else {
+    scriviJSON(CHIAVI.dispensa, { quantita: {}, note: '' });
+  }
+  return true;
+}
+
+const MSG_SENZA_CATALOGO = 'Ricette non disponibili: apri l\'app una volta con la rete.';
+
+// Ogni scrittura della dispensa passa da qui. Restituisce false se ha dovuto rifiutare.
+function scriviDispensa(modifica) {
+  if (!assicuraMigrazione()) { alert(MSG_SENZA_CATALOGO); return false; }
+  const d = leggiDispensa();
+  modifica(d);
+  scriviJSON(CHIAVI.dispensa, d);
+  return true;
+}
+
+function applicaConsumo(dispensa, consumo) {
+  Object.keys(consumo).forEach(id => {
+    dispensa.quantita[id] = Math.max(0, arrotonda6(quantitaIn(dispensa, id) - consumo[id]));
+  });
+}
+
+// Passo di −/+ in confezioni, come la descrizione di "Tipo confezione" su Notion.
+const passoConfezioni = p => ['panetto', 'lattina', 'pz'].includes(p.tipoConfezione) ? 1 : 0.25;
+
+// ==================== PRODOTTI EXTRA ====================
+// [{id, name, unit, storeSize, need, category}]; la quantità sta nella dispensa come "custom_<id>".
+
+function leggiExtra() {
+  const e = leggiJSON(CHIAVI.extra, []);
+  return Array.isArray(e) ? e : [];
+}
+
+// Scrive lista degli extra e dispensa insieme, o nessuna delle due.
+function salvaExtraEDispensa(modificaExtra, modificaDispensa) {
+  if (!assicuraMigrazione()) { alert(MSG_SENZA_CATALOGO); return false; }
+  const extra = leggiExtra();
+  const d = leggiDispensa();
+  modificaExtra(extra);
+  modificaDispensa(d);
+  scriviJSON(CHIAVI.extra, extra);
+  scriviJSON(CHIAVI.dispensa, d);
+  return true;
+}
+
+// ==================== LISTA DELLA SPESA ====================
+const PLURALI = { pacco: 'pacchi', bottiglia: 'bottiglie', vasetto: 'vasetti', lattina: 'lattine', panetto: 'panetti', pz: 'pz' };
+
+function testoConfezioni(p, n) {
+  const tipo = p.tipoConfezione || 'pz';
+  if (tipo === 'pz' && p.confezione === 1) return n + ' pz';
+  return n + ' ' + (n === 1 ? tipo : (PLURALI[tipo] || tipo)) + ' da ' + p.confezione + ' ' + p.unita;
+}
+
+function fmtNumero(n) {
+  return arrotonda1(n).toLocaleString('it-IT');
+}
+
+// Righe da comprare: {chiave, nome, reparto, tipo: 'conta'|'manca'|'extra', confezioni, aggiunta, testo}
+// "aggiunta" è quanto entra in dispensa con "Spesa fatta".
+function listaSpesa(piano, dispensa, extra) {
+  const righe = [];
+  const fab = fabbisogno(piano);
+  Object.keys(fab.quantita).forEach(id => {
+    const p = catalogo.prodottiPerId[id];
+    const mancante = arrotonda6(fab.quantita[id] - quantitaIn(dispensa, id));
+    if (mancante <= 0) return;
+    if (p.confezione) {
+      const n = Math.ceil(mancante / p.confezione);
+      righe.push({ chiave: id, nome: p.nome, reparto: p.reparto, tipo: 'conta', confezioni: n,
+                   aggiunta: n * p.confezione, testo: testoConfezioni(p, n) });
+    } else {
+      righe.push({ chiave: id, nome: p.nome, reparto: p.reparto, tipo: 'conta', confezioni: null,
+                   aggiunta: mancante, testo: fmtNumero(mancante) + ' ' + p.unita });
+    }
+  });
+  fab.serve.forEach(id => {
+    if (!manca(dispensa, id)) return;
+    const p = catalogo.prodottiPerId[id];
+    righe.push({ chiave: id, nome: p.nome, reparto: p.reparto, tipo: 'manca', testo: 'manca' });
+  });
+  extra.forEach(c => {
+    const chiave = 'custom_' + c.id;
+    const mancante = arrotonda6((c.need || 0) - quantitaIn(dispensa, chiave));
+    if (mancante <= 0) return;
+    const conf = c.storeSize || 1;
+    const n = Math.ceil(mancante / conf);
+    righe.push({ chiave, nome: c.name, reparto: c.category || '➕ Extra', tipo: 'extra', confezioni: n,
+                 aggiunta: n * conf, testo: n + ' × ' + conf + ' ' + (c.unit || 'pz') });
+  });
+  return righe;
+}
+
+function spesaFatta(righe) {
+  return scriviDispensa(d => {
+    righe.forEach(r => {
+      if (r.tipo === 'manca') d.quantita[r.chiave] = true;
+      else d.quantita[r.chiave] = arrotonda6(quantitaIn(d, r.chiave) + r.aggiunta);
+    });
+  });
+}
+
+// ==================== IMPORT / EXPORT ====================
+// Codici v2: prefisso MP2_ (copia) o MP2D_ (Telegram, compresso). L'app v11 li rifiuta perché
+// "_" non è base64. Si leggono anche i codici vecchi: base64 semplice e DEFLATE_.
 
 async function compressToBase64(dataObj) {
   const jsonStr = JSON.stringify(dataObj);
@@ -1423,69 +327,667 @@ async function compressToBase64(dataObj) {
   for (let i = 0; i < bytes.byteLength; i++) {
     binary += String.fromCharCode(bytes[i]);
   }
-  return 'DEFLATE_' + btoa(binary);
+  return btoa(binary);
 }
 
-async function decompressFromBase64(str) {
-  if (str.startsWith('DEFLATE_')) {
-    const b64 = str.substring(8);
-    const binary = atob(b64);
-    const bytes = new Uint8Array(binary.length);
-    for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
-    const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate'));
-    const text = await new Response(stream).text();
-    return JSON.parse(text);
-  } else {
-    return JSON.parse(decodeURIComponent(atob(str)));
-  }
+async function decompressFromBase64(b64) {
+  const binary = atob(b64);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate'));
+  const text = await new Response(stream).text();
+  return JSON.parse(text);
 }
 
-async function importSyncData() {
-  const area = document.getElementById('sync-area');
-  const code = area.value.trim();
-  if (!code) { alert('Incolla prima un codice di sincronizzazione.'); return; }
-  
+async function decodificaCodice(codice) {
+  if (codice.startsWith('MP2D_')) return decompressFromBase64(codice.substring(5));
+  if (codice.startsWith('MP2_')) return JSON.parse(decodeURIComponent(atob(codice.substring(4))));
+  if (codice.startsWith('DEFLATE_')) return decompressFromBase64(codice.substring(8));
+  const testo = atob(codice);
   try {
-    const data = await decompressFromBase64(code);
-    if (!confirm('Importando questi dati sovrascriverai la dispensa attuale. Continuare?')) return;
-    
-    Store.inventory = data.inventory || {};
-    Store.customs = data.customs || [];
-    Store.commit();
-    
-    area.value = '';
-    alert('Dati importati con successo!');
-  } catch (err) {
-    alert('Codice non valido o corrotto. Assicurati di aver copiato il codice corretto.');
+    return JSON.parse(decodeURIComponent(testo));
+  } catch (e) {
+    return JSON.parse(testo); // codici delle prime versioni: base64 del JSON, senza encodeURIComponent
   }
 }
 
-async function backupToTelegram(type) {
-  if (type !== 'mealplan') return;
-  const data = {
-    inventory: Store.inventory,
-    customs: Store.customs,
-    v: 1
-  };
-  const code = await compressToBase64(data);
-  const text = `/backup_mealplan ${code}`;
-  const url = `https://t.me/botchecontaimessaggibot?text=${encodeURIComponent(text)}`;
-  window.open(url, '_blank');
+function tipoCodice(dati) {
+  if (!dati || typeof dati !== 'object') return null;
+  if (dati.v === 2 && dati.dispensa && typeof dati.dispensa === 'object') return 'v2';
+  if (dati.v !== 2 && dati.inventory && typeof dati.inventory === 'object') return 'v1';
+  return null;
 }
 
-// Inizializzazione al caricamento della pagina
-window.addEventListener('DOMContentLoaded', () => {
+// null se la migrazione è ancora da fare e manca il catalogo: l'export sarebbe vuoto.
+function datiExport() {
+  if (!assicuraMigrazione()) return null;
+  return { v: 2, piano: leggiJSON(CHIAVI.piano, {}), dispensa: leggiDispensa(), customs: leggiExtra() };
+}
 
-  isBulkMode = localStorage.getItem('mealplan_bulk_v1') === 'true';
-  const toggleInput = document.getElementById('bulk-toggle');
-  if (toggleInput) toggleInput.checked = isBulkMode;
-  if (isBulkMode) toggleBulkMode(true);
-  
-  renderRecipes();
-  applyBulkToShopData();
-  renderSummaryTable();
-  buildShopTable();
+const codiceCopia = dati => 'MP2_' + btoa(encodeURIComponent(JSON.stringify(dati)));
+const codiceTelegram = async dati => 'MP2D_' + await compressToBase64(dati);
 
+// Restituisce un messaggio per l'utente. chiediConferma è una funzione (di solito confirm).
+async function importaCodice(codice, chiediConferma) {
+  let dati;
+  try {
+    dati = await decodificaCodice(codice.trim());
+  } catch (e) {
+    return 'Codice non valido.';
+  }
+  const tipo = tipoCodice(dati);
+  if (!tipo) return 'Codice non valido: non è un backup del piano pasti.';
+  if (tipo === 'v1' && !catalogo) return MSG_SENZA_CATALOGO;
+  if (!assicuraMigrazione()) return MSG_SENZA_CATALOGO;
+  if (!chiediConferma('Importando questi dati sovrascriverai dispensa e prodotti extra' +
+                      (tipo === 'v2' ? ' e il piano' : '') + '. Continuare?')) return null;
+  const customs = Array.isArray(dati.customs) ? dati.customs : [];
+  if (tipo === 'v2') {
+    const d = dati.dispensa;
+    scriviJSON(CHIAVI.piano, (dati.piano && typeof dati.piano === 'object') ? dati.piano : {});
+    scriviJSON(CHIAVI.dispensa, {
+      quantita: (d.quantita && typeof d.quantita === 'object') ? d.quantita : {},
+      note: typeof d.note === 'string' ? d.note : ''
+    });
+  } else {
+    scriviJSON(CHIAVI.dispensa, migraInventarioV1(dati.inventory, catalogo));
+  }
+  scriviJSON(CHIAVI.extra, customs);
+  scriviJSON(CHIAVI.spesa, []); // le spunte della lista valevano per la dispensa di prima
+  return 'Dati importati.';
+}
+
+// ==================== INTERFACCIA: COMUNE ====================
+function esc(s) {
+  return String(s === null || s === undefined ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+let schedaAttiva = 'ricette';
+
+function mostraScheda(nome) {
+  schedaAttiva = nome;
+  document.querySelectorAll('.section').forEach(s => s.classList.toggle('active', s.id === 'tab-' + nome));
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === nome));
+  disegna();
+}
+
+function disegna() {
+  if (!catalogo) return;
+  if (schedaAttiva === 'ricette') disegnaRicette();
+  if (schedaAttiva === 'piano' && typeof disegnaPiano === 'function') disegnaPiano();
+  if (schedaAttiva === 'spesa' && typeof disegnaSpesa === 'function') disegnaSpesa();
+}
+
+// Overlay (scheda ricetta, menu): il tasto indietro del telefono li chiude.
+function apriOverlay(id) {
+  document.querySelectorAll('.overlay').forEach(o => { o.hidden = o.id !== id; });
+  document.body.classList.add('con-overlay');
+  if (!history.state || !history.state.overlay) history.pushState({ overlay: id }, '');
+  else history.replaceState({ overlay: id }, '');
+  if (id === 'menu' && typeof disegnaMenu === 'function') disegnaMenu();
+}
+
+function chiudiOverlay() {
+  if (history.state && history.state.overlay) history.back();
+  else nascondiOverlay();
+}
+
+function nascondiOverlay() {
+  document.querySelectorAll('.overlay').forEach(o => { o.hidden = true; });
+  document.body.classList.remove('con-overlay');
+  ricettaAperta = null;
+  rilasciaSchermo();
+  disegna();
+}
+
+// Dopo un ricaricamento con un pannello aperto lo stato resta nella cronologia, ma il pannello no.
+if (history.state && history.state.overlay) history.replaceState(null, '');
+
+window.addEventListener('popstate', () => {
+  if (!history.state || !history.state.overlay) nascondiOverlay();
+});
+
+// ==================== SCHEDA RICETTE ====================
+function rigaRicetta(r) {
+  return '<button class="riga-ricetta" onclick="apriRicetta(\'' + esc(r.id) + '\')">' +
+    '<span class="riga-ricetta-testo">' +
+      '<span class="recipe-title">' + esc(r.nome) + '</span>' +
+      (r.provata ? '' : ' <span class="badge badge-proteina">da provare</span>') +
+      (r.descrizione ? '<span class="riga-ricetta-desc">' + esc(r.descrizione) + '</span>' : '') +
+    '</span>' +
+    '<span class="recipe-kcal">' + esc(r.kcal) + '</span>' +
+  '</button>';
+}
+
+function disegnaRicette() {
+  const inRotazione = catalogo.ricette.filter(r => r.rotazione);
+  const altre = catalogo.ricette.filter(r => !r.rotazione);
+  document.getElementById('tab-ricette').innerHTML =
+    '<div class="shop-section-title">In rotazione</div>' + inRotazione.map(rigaRicetta).join('') +
+    (altre.length ? '<div class="shop-section-title">Altre ricette</div>' + altre.map(rigaRicetta).join('') : '');
+}
+
+// ==================== SCHEDA PIANO ====================
+const stepper = (azioneMeno, azionePiu, valore) =>
+  '<div class="stepper">' +
+    '<button class="spesa-step-btn" onclick="' + azioneMeno + '">−</button>' +
+    '<span class="stepper-val">' + valore + '</span>' +
+    '<button class="spesa-step-btn" onclick="' + azionePiu + '">+</button>' +
+  '</div>';
+
+const passoOgniGiorno = p => p.unita === 'pz' ? 1 : 50;
+
+function disegnaPiano() {
+  const piano = leggiPiano();
+  const piatti = piattiDelPiano(piano).map(({ ricetta, porzioni }) => {
+    const id = esc(ricetta.id);
+    return '<div class="riga-piano' + (porzioni > 0 ? '' : ' saltato') + '">' +
+      '<div class="riga-piano-testo" onclick="apriRicetta(\'' + id + '\')">' +
+        '<div class="recipe-title">' + esc(ricetta.nome) + '</div>' +
+        '<div class="riga-piano-kcal">' + Math.round(kcalAPasto(ricetta, porzioni)) + ' kcal a pasto</div>' +
+      '</div>' +
+      stepper('cambiaPorzioniPiano(\'' + id + '\', -0.1)', 'cambiaPorzioniPiano(\'' + id + '\', 0.1)', fmtNumero(porzioni)) +
+    '</div>';
+  }).join('');
+
+  const ogniGiorno = piano.ogniGiorno.map((x, i) => {
+    const p = catalogo.prodottiPerId[x.prodotto];
+    if (!p) return '';
+    return '<div class="riga-piano">' +
+      '<div class="riga-piano-testo"><div class="recipe-title">' + esc(p.nome) + '</div>' +
+        '<div class="riga-piano-kcal">' + fmtNumero(x.quantita) + ' ' + esc(p.unita) + ' al giorno</div></div>' +
+      stepper('cambiaOgniGiorno(' + i + ', -1)', 'cambiaOgniGiorno(' + i + ', 1)', fmtNumero(x.quantita)) +
+      '<button class="delete-btn" onclick="togliOgniGiorno(' + i + ')" aria-label="Togli">✕</button>' +
+    '</div>';
+  }).join('');
+
+  const giaUsati = new Set(piano.ogniGiorno.map(x => x.prodotto));
+  const scelta = catalogo.prodotti.filter(p => p.siConta && !giaUsati.has(p.id))
+    .map(p => '<option value="' + esc(p.id) + '">' + esc(p.nome) + '</option>').join('');
+
+  document.getElementById('tab-piano').innerHTML =
+    '<div class="piano-giorni">' + fmtNumero(giorniDelPiano(piano)) + ' giorni</div>' +
+    piatti +
+    '<div class="shop-section-title">Ogni giorno</div>' +
+    ogniGiorno +
+    '<div class="aggiungi-riga"><select class="custom-input" id="ogni-giorno-nuovo">' + scelta + '</select>' +
+      '<button class="spesa-step-btn" onclick="aggiungiOgniGiorno()" aria-label="Aggiungi">+</button></div>';
+}
+
+function cambiaPorzioniPiano(id, delta) {
+  const ricetta = catalogo.ricettePerId[id];
+  impostaPorzioni(ricetta, porzioniNelPiano(leggiPiano(), ricetta) + delta);
+  disegnaPiano();
+}
+
+function cambiaOgniGiorno(i, verso) {
+  const piano = leggiPiano();
+  const x = piano.ogniGiorno[i];
+  const p = catalogo.prodottiPerId[x.prodotto];
+  x.quantita = Math.max(0, arrotonda1(x.quantita + verso * passoOgniGiorno(p)));
+  scriviPiano(piano);
+  disegnaPiano();
+}
+
+function togliOgniGiorno(i) {
+  const piano = leggiPiano();
+  piano.ogniGiorno.splice(i, 1);
+  scriviPiano(piano);
+  disegnaPiano();
+}
+
+function aggiungiOgniGiorno() {
+  const id = document.getElementById('ogni-giorno-nuovo').value;
+  const p = catalogo.prodottiPerId[id];
+  if (!p || !p.siConta) return;
+  const piano = leggiPiano();
+  piano.ogniGiorno.push({ prodotto: id, quantita: passoOgniGiorno(p) });
+  scriviPiano(piano);
+  disegnaPiano();
+}
+
+// ==================== SCHEDA SPESA ====================
+let tuttaLaDispensa = false;
+
+function leggiSpuntateSpesa() {
+  const s = leggiJSON(CHIAVI.spesa, []);
+  return new Set(Array.isArray(s) ? s : []);
+}
+
+function spuntaSpesa(chiave) {
+  const s = leggiSpuntateSpesa();
+  if (s.has(chiave)) s.delete(chiave); else s.add(chiave);
+  scriviJSON(CHIAVI.spesa, [...s]);
+  disegnaSpesa();
+}
+
+const fmt2 = n => (Math.round(n * 100) / 100).toLocaleString('it-IT');
+
+function testoInDispensa(p, q) {
+  if (!p.confezione) return fmt2(q) + ' ' + p.unita;
+  const n = q / p.confezione;
+  const tipo = p.tipoConfezione || 'pz';
+  if (tipo === 'pz' && p.confezione === 1) return fmt2(q) + ' pz';
+  return fmt2(n) + ' ' + (n === 1 ? tipo : (PLURALI[tipo] || tipo)) + ' (' + fmt2(q) + ' ' + p.unita + ')';
+}
+
+function rigaDispensaProdotto(p, dispensa) {
+  const id = esc(p.id);
+  if (!p.siConta) {
+    const m = manca(dispensa, p.id);
+    return '<div class="riga-dispensa"><div class="riga-dispensa-nome">' + esc(p.nome) + '</div>' +
+      '<button class="interruttore' + (m ? ' manca' : '') + '" onclick="cambiaCeManca(\'' + id + '\')">' +
+      (m ? 'manca' : 'c\'è') + '</button></div>';
+  }
+  return '<div class="riga-dispensa"><div class="riga-dispensa-nome">' + esc(p.nome) +
+      '<div class="riga-piano-kcal">' + esc(testoInDispensa(p, quantitaIn(dispensa, p.id))) + '</div></div>' +
+    stepper('correggiDispensa(\'' + id + '\', -1)', 'correggiDispensa(\'' + id + '\', 1)', '') +
+  '</div>';
+}
+
+const passoExtra = c => ['g', 'ml', 'kg', 'L'].includes(c.unit) ? (c.storeSize || 1) / 4 : 1;
+
+function rigaDispensaExtra(c, dispensa) {
+  const chiave = 'custom_' + c.id;
+  return '<div class="riga-dispensa"><div class="riga-dispensa-nome">' + esc(c.name) +
+      '<div class="riga-piano-kcal">' + fmt2(quantitaIn(dispensa, chiave)) + ' ' + esc(c.unit || 'pz') + '</div></div>' +
+    stepper('correggiExtra(' + Number(c.id) + ', -1)', 'correggiExtra(' + Number(c.id) + ', 1)', '') +
+  '</div>';
+}
+
+function perReparto(righe, reparto) {
+  const gruppi = {};
+  righe.forEach(r => { (gruppi[reparto(r)] = gruppi[reparto(r)] || []).push(r); });
+  return Object.keys(gruppi).sort((a, b) => a.localeCompare(b, 'it')).map(k => [k, gruppi[k]]);
+}
+
+function disegnaSpesa() {
+  const piano = leggiPiano();
+  const dispensa = leggiDispensa();
+  const extra = leggiExtra();
+  const righe = listaSpesa(piano, dispensa, extra);
+  // Una spunta vale solo finché la sua riga è in lista: se la riga sparisce senza "Spesa fatta",
+  // tornando non deve essere già spuntata.
+  const inLista = new Set(righe.map(r => r.chiave));
+  const salvate = leggiSpuntateSpesa();
+  const spuntate = new Set([...salvate].filter(k => inLista.has(k)));
+  if (spuntate.size !== salvate.size) scriviJSON(CHIAVI.spesa, [...spuntate]);
+
+  const lista = righe.length
+    ? perReparto(righe, r => r.reparto).map(([reparto, rr]) =>
+        '<div class="shop-section-title">' + esc(reparto) + '</div>' +
+        rr.map(r => {
+          const fatto = spuntate.has(r.chiave);
+          return '<div class="spuntabile' + (fatto ? ' fatto' : '') + '" onclick="spuntaSpesa(\'' + esc(r.chiave) + '\')">' +
+            '<span class="spunta-box">' + (fatto ? '✓' : '') + '</span>' +
+            '<span class="spunta-testo ing-riga"><span>' + esc(r.nome) + '</span>' +
+            (r.tipo === 'manca'
+              ? '</span><button class="interruttore manca" onclick="event.stopPropagation(); cambiaCeManca(\'' +
+                esc(r.chiave) + '\')">manca</button></div>'
+              : '<span class="ing-qta">' + esc(r.testo) + '</span></span></div>');
+        }).join('')).join('') +
+      '<button class="confirm-btn" onclick="confermaSpesaFatta()">Spesa fatta</button>'
+    : '<div class="info-note">Niente da comprare.</div>';
+
+  // Dispensa: i prodotti del piano; con "Tutta la dispensa" anche gli altri e gli extra.
+  const fab = fabbisogno(piano);
+  const delPiano = new Set([...Object.keys(fab.quantita), ...fab.serve]);
+  const prodotti = catalogo.prodotti.filter(p => tuttaLaDispensa || delPiano.has(p.id));
+  const dispensaHtml = perReparto(prodotti, p => p.reparto).map(([reparto, pp]) =>
+      '<div class="dispensa-reparto">' + esc(reparto) + '</div>' + pp.map(p => rigaDispensaProdotto(p, dispensa)).join('')).join('') +
+    (tuttaLaDispensa && extra.length
+      ? '<div class="dispensa-reparto">Prodotti extra</div>' + extra.map(c => rigaDispensaExtra(c, dispensa)).join('') : '');
+
+  document.getElementById('tab-spesa').innerHTML =
+    lista +
+    '<div class="shop-section-title titolo-dispensa">Dispensa</div>' +
+    dispensaHtml +
+    '<button class="cancel-btn" onclick="tuttaLaDispensa = !tuttaLaDispensa; disegnaSpesa()">' +
+      (tuttaLaDispensa ? 'Solo i prodotti del piano' : 'Tutta la dispensa') + '</button>' +
+    '<div class="shop-section-title">Note</div>' +
+    '<textarea id="spesa-note" class="spesa-note-area" oninput="salvaNote(this.value)"></textarea>';
+  document.getElementById('spesa-note').value = dispensa.note;
+}
+
+function confermaSpesaFatta() {
+  const spuntate = leggiSpuntateSpesa();
+  const righe = listaSpesa(leggiPiano(), leggiDispensa(), leggiExtra()).filter(r => spuntate.has(r.chiave));
+  if (!righe.length) { alert('Spunta quello che hai comprato.'); return; }
+  if (!confirm('Aggiungere alla dispensa ' + righe.length + (righe.length === 1 ? ' prodotto?' : ' prodotti?'))) return;
+  if (!spesaFatta(righe)) return;
+  scriviJSON(CHIAVI.spesa, []);
+  disegnaSpesa();
+}
+
+function correggiDispensa(id, verso) {
+  const p = catalogo.prodottiPerId[id];
+  // Senza confezione su Notion si corregge nell'unità del prodotto.
+  const passo = p.confezione ? passoConfezioni(p) * p.confezione : passoOgniGiorno(p);
+  scriviDispensa(d => {
+    d.quantita[id] = Math.max(0, arrotonda6(quantitaIn(d, id) + verso * passo));
+  });
+  disegnaSpesa();
+}
+
+function cambiaCeManca(id) {
+  scriviDispensa(d => { d.quantita[id] = manca(d, id); });
+  disegnaSpesa();
+}
+
+function correggiExtra(idExtra, verso) {
+  const c = leggiExtra().find(x => x.id === idExtra);
+  if (!c) return;
+  const chiave = 'custom_' + idExtra;
+  scriviDispensa(d => {
+    d.quantita[chiave] = Math.max(0, arrotonda6(quantitaIn(d, chiave) + verso * passoExtra(c)));
+  });
+  disegnaSpesa();
+}
+
+// Si salva a ogni tasto: con un ritardo, un −/+ nel frattempo ridisegnerebbe il testo vecchio.
+function salvaNote(testo) {
+  scriviDispensa(d => { d.note = testo; });
+}
+
+// ==================== MENU ====================
+let extraInModifica = null;
+
+function disegnaMenu() {
+  const extra = leggiExtra();
+  const dispensa = leggiDispensa();
+  // Le categorie del modulo di prima, più quelle già usate
+  const categorie = [...new Set(['🧊 Frigo / Freezer', '🌾 Secchi', '🫙 Liquidi', '➕ Extra',
+    ...extra.map(c => c.category).filter(Boolean)])];
+  const lista = extra.map(c =>
+    '<div class="riga-dispensa"><div class="riga-dispensa-nome">' + esc(c.name) +
+      '<div class="riga-piano-kcal">' + esc(c.category || '➕ Extra') + ' · scorta ' + fmt2(c.need || 0) + ' ' + esc(c.unit || 'pz') +
+      ' · in casa ' + fmt2(quantitaIn(dispensa, 'custom_' + c.id)) + '</div></div>' +
+      '<button class="delete-btn" onclick="modificaExtra(' + Number(c.id) + ')" aria-label="Modifica">✎</button></div>').join('');
+
+  document.getElementById('menu-corpo').innerHTML =
+    '<a class="confirm-btn link-btn" href="workout.html">Allenamenti 🏋️</a>' +
+
+    '<div class="shop-section-title titolo-menu">Backup</div>' +
+    '<textarea id="sync-area" class="spesa-note-area" placeholder="Codice"></textarea>' +
+    '<div class="due-pulsanti">' +
+      '<button class="cancel-btn" onclick="esportaCodice()">Copia codice</button>' +
+      '<button class="cancel-btn" onclick="importaDaArea()">Importa</button>' +
+    '</div>' +
+    '<button class="confirm-btn telegram-btn" onclick="backupTelegram()">Backup Telegram 🤖</button>' +
+
+    '<div class="shop-section-title titolo-menu">Prodotti extra</div>' +
+    lista +
+    '<div class="custom-form" id="form-extra">' +
+      '<div class="custom-field"><label class="custom-label">Nome</label>' +
+        '<input class="custom-input" id="cf-nome" type="text"></div>' +
+      '<div class="custom-field"><label class="custom-label">Categoria</label>' +
+        '<input class="custom-input" id="cf-categoria" type="text" list="cf-categorie">' +
+        '<datalist id="cf-categorie">' + categorie.map(c => '<option value="' + esc(c) + '">').join('') + '</datalist></div>' +
+      '<div class="custom-form-row">' +
+        '<div class="custom-field"><label class="custom-label">Unità</label>' +
+          '<input class="custom-input" id="cf-unita" type="text" list="cf-unita-lista" placeholder="g">' +
+          '<datalist id="cf-unita-lista">' + ['g', 'ml', 'pz', 'barattolo', 'confezioni', 'rotoli'].map(u => '<option value="' + u + '">').join('') + '</datalist></div>' +
+        '<div class="custom-field"><label class="custom-label">Confezione</label>' +
+          '<input class="custom-input" id="cf-confezione" type="number" min="0" step="any"></div>' +
+      '</div>' +
+      '<div class="custom-form-row">' +
+        '<div class="custom-field"><label class="custom-label">Scorta minima</label>' +
+          '<input class="custom-input" id="cf-scorta" type="number" min="0" step="any"></div>' +
+        '<div class="custom-field"><label class="custom-label">In casa</label>' +
+          '<input class="custom-input" id="cf-in-casa" type="number" min="0" step="any"></div>' +
+      '</div>' +
+      '<button class="confirm-btn" onclick="salvaFormExtra()">' + (extraInModifica ? 'Salva' : 'Aggiungi') + '</button>' +
+      (extraInModifica
+        ? '<button class="cancel-btn" onclick="extraInModifica = null; disegnaMenu()">Annulla</button>' +
+          '<button class="reset-btn" onclick="eliminaExtra()">Elimina</button>'
+        : '') +
+    '</div>';
+
+  if (extraInModifica) {
+    const c = extra.find(x => x.id === extraInModifica);
+    if (c) {
+      document.getElementById('cf-nome').value = c.name || '';
+      document.getElementById('cf-categoria').value = c.category || '';
+      document.getElementById('cf-unita').value = c.unit || '';
+      document.getElementById('cf-confezione').value = c.storeSize || '';
+      document.getElementById('cf-scorta').value = c.need || 0;
+      document.getElementById('cf-in-casa').value = quantitaIn(dispensa, 'custom_' + c.id);
+    }
+  }
+}
+
+function modificaExtra(id) {
+  extraInModifica = id;
+  disegnaMenu();
+  document.getElementById('form-extra').scrollIntoView({ behavior: 'smooth' });
+}
+
+function salvaFormExtra() {
+  const val = id => document.getElementById(id).value.trim();
+  const num = id => parseFloat(val(id).replace(',', '.'));
+  const nome = val('cf-nome');
+  if (!nome) { alert('Inserisci il nome del prodotto.'); return; }
+  const id = extraInModifica || Date.now();
+  const voce = {
+    id, name: nome, unit: val('cf-unita') || 'pz',
+    storeSize: num('cf-confezione') > 0 ? num('cf-confezione') : 1,
+    need: num('cf-scorta') >= 0 ? num('cf-scorta') : 0,
+    category: val('cf-categoria') || '➕ Extra'
+  };
+  const inCasa = num('cf-in-casa') >= 0 ? num('cf-in-casa') : 0;
+  const ok = salvaExtraEDispensa(
+    extra => {
+      const i = extra.findIndex(x => x.id === id);
+      if (i >= 0) extra[i] = voce; else extra.push(voce);
+    },
+    d => { d.quantita['custom_' + id] = inCasa; }
+  );
+  if (ok) { extraInModifica = null; disegnaMenu(); }
+}
+
+function eliminaExtra() {
+  const id = extraInModifica;
+  if (!id || !confirm('Eliminare questo prodotto?')) return;
+  const ok = salvaExtraEDispensa(
+    extra => { const i = extra.findIndex(x => x.id === id); if (i >= 0) extra.splice(i, 1); },
+    d => { delete d.quantita['custom_' + id]; }
+  );
+  if (ok) { extraInModifica = null; disegnaMenu(); }
+}
+
+function esportaCodice() {
+  const dati = datiExport();
+  if (!dati) { alert(MSG_SENZA_CATALOGO); return; }
+  const codice = codiceCopia(dati);
+  const area = document.getElementById('sync-area');
+  area.value = codice;
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(codice)
+      .then(() => alert('Codice copiato negli appunti.'))
+      .catch(() => fallbackCopy(area));
+  } else {
+    fallbackCopy(area);
+  }
+}
+
+function fallbackCopy(area) {
+  area.select();
+  area.setSelectionRange(0, 999999);
+  try {
+    document.execCommand('copy');
+    alert('Codice copiato negli appunti.');
+  } catch (err) {
+    alert('Codice pronto: copialo dal riquadro.');
+  }
+}
+
+async function importaDaArea() {
+  const area = document.getElementById('sync-area');
+  if (!area.value.trim()) { alert('Incolla prima un codice.'); return; }
+  const esito = await importaCodice(area.value, msg => confirm(msg));
+  if (esito === null) return;
+  alert(esito);
+  if (esito === 'Dati importati.') { area.value = ''; disegnaMenu(); }
+}
+
+async function backupTelegram() {
+  const dati = datiExport();
+  if (!dati) { alert(MSG_SENZA_CATALOGO); return; }
+  const codice = await codiceTelegram(dati);
+  const testo = '/backup_mealplan ' + codice;
+  window.open('https://t.me/botchecontaimessaggibot?text=' + encodeURIComponent(testo), '_blank');
+}
+
+// ==================== SCHEDA RICETTA ====================
+let ricettaAperta = null; // {ricetta, porzioni}
+
+const UNITA_PLURALI = { cucchiaino: 'cucchiaini', spicchio: 'spicchi' };
+
+function testoQuantita(ing, porzioni) {
+  if (ing.quantita === null) return esc(ing.unita || 'q.b.');
+  const n = arrotonda1(ing.quantita * porzioni);
+  const unita = n !== 1 && UNITA_PLURALI[ing.unita] ? UNITA_PLURALI[ing.unita] : ing.unita;
+  return fmtNumero(n) + ' ' + esc(unita);
+}
+
+function inPiano(ricetta) {
+  return ricetta.rotazione && porzioniNelPiano(leggiPiano(), ricetta) > 0;
+}
+
+function apriRicetta(id) {
+  const ricetta = catalogo.ricettePerId[id];
+  if (!ricetta) return;
+  const porzioni = inPiano(ricetta) ? porzioniNelPiano(leggiPiano(), ricetta) : ricetta.porzioni;
+  ricettaAperta = { ricetta, porzioni };
+  apriOverlay('scheda');
+  disegnaRicetta();
+  tieniSchermoAcceso();
+}
+
+function leggiSpunte(id) {
+  const tutte = leggiJSON(CHIAVI.cucina, {}) || {};
+  const s = tutte[id] || {};
+  return { ing: Array.isArray(s.ing) ? s.ing : [], passi: Array.isArray(s.passi) ? s.passi : [] };
+}
+
+function spunta(tipo, indice) {
+  const id = ricettaAperta.ricetta.id;
+  const tutte = leggiJSON(CHIAVI.cucina, {}) || {};
+  const s = leggiSpunte(id);
+  const lista = s[tipo];
+  const pos = lista.indexOf(indice);
+  if (pos >= 0) lista.splice(pos, 1); else lista.push(indice);
+  tutte[id] = s;
+  scriviJSON(CHIAVI.cucina, tutte);
+  disegnaRicetta();
+}
+
+function azzeraSpunte(id) {
+  const tutte = leggiJSON(CHIAVI.cucina, {}) || {};
+  delete tutte[id];
+  scriviJSON(CHIAVI.cucina, tutte);
+}
+
+function cambiaPorzioniScheda(delta) {
+  ricettaAperta.porzioni = Math.max(0.1, arrotonda1(ricettaAperta.porzioni + delta));
+  disegnaRicetta();
+}
+
+function disegnaRicetta() {
+  const { ricetta, porzioni } = ricettaAperta;
+  const s = leggiSpunte(ricetta.id);
+  document.getElementById('scheda-titolo').textContent = ricetta.nome;
+
+  const ingredienti = ricetta.ingredienti.map((ing, i) => {
+    const fatto = s.ing.includes(i);
+    return '<li class="spuntabile' + (fatto ? ' fatto' : '') + '" onclick="spunta(\'ing\', ' + i + ')">' +
+      '<span class="spunta-box">' + (fatto ? '✓' : '') + '</span>' +
+      '<span class="spunta-testo">' +
+        '<span class="ing-riga"><span>' + esc(ing.nome) +
+          (ing.facoltativo ? ' <span class="ing-facolt">facoltativo</span>' : '') +
+          (unitaDiversa(ing) ? ' <span class="ing-avviso" title="Unità diversa dal prodotto: non conta in dispensa">⚠</span>' : '') +
+        '</span><span class="ing-qta">' + testoQuantita(ing, porzioni) + '</span></span>' +
+        (ing.nota ? '<span class="ing-nota">' + esc(ing.nota) + '</span>' : '') +
+      '</span></li>';
+  }).join('');
+
+  const passi = ricetta.passi.map((p, i) => {
+    const fatto = s.passi.includes(i);
+    const sotto = Array.isArray(p.sotto) && p.sotto.length
+      ? '<ul class="sotto-punti">' + p.sotto.map(x => '<li>' + esc(x) + '</li>').join('') + '</ul>' : '';
+    return '<li class="spuntabile' + (fatto ? ' fatto' : '') + '" onclick="spunta(\'passi\', ' + i + ')">' +
+      '<span class="spunta-box">' + (fatto ? '✓' : (i + 1)) + '</span>' +
+      '<span class="spunta-testo">' + esc(p.testo) + sotto + '</span></li>';
+  }).join('');
+
+  const note = ricetta.note.length
+    ? '<div class="section-label">Note</div><ul class="note-ricetta">' +
+      ricetta.note.map(n => '<li>' + esc(n.testo) +
+        (Array.isArray(n.sotto) && n.sotto.length ? '<ul class="sotto-punti">' + n.sotto.map(x => '<li>' + esc(x) + '</li>').join('') + '</ul>' : '') +
+      '</li>').join('') + '</ul>'
+    : '';
+
+  const fuoriPiano = !inPiano(ricetta);
+  document.getElementById('scheda-corpo').innerHTML =
+    '<div class="scheda-meta">' + esc(ricetta.kcal) + ' kcal · ' + esc(ricetta.proteine) + ' g proteine a porzione' +
+      (ricetta.provata ? '' : ' · <span class="badge badge-proteina">da provare</span>') + '</div>' +
+    (ricetta.descrizione ? '<p class="prep-text">' + esc(ricetta.descrizione) + '</p>' : '') +
+    '<div class="porzioni-riga"><span>Porzioni</span>' +
+      '<div class="stepper">' +
+        '<button class="spesa-step-btn" onclick="cambiaPorzioniScheda(-0.1)">−</button>' +
+        '<span class="stepper-val" id="scheda-porzioni">' + fmtNumero(porzioni) + '</span>' +
+        '<button class="spesa-step-btn" onclick="cambiaPorzioniScheda(0.1)">+</button>' +
+      '</div></div>' +
+    '<div class="section-label">Ingredienti</div><ul class="lista-spunte">' + ingredienti + '</ul>' +
+    '<div class="section-label">Procedimento</div><ol class="lista-spunte">' + passi + '</ol>' +
+    note +
+    '<button class="confirm-btn" onclick="cucinata()">' + (fuoriPiano ? 'Cucinata fuori piano' : 'Cucinata') + '</button>';
+}
+
+function cucinata() {
+  const { ricetta, porzioni } = ricettaAperta;
+  if (!confirm('Togliere dalla dispensa ' + ricetta.nome + ' per ' + fmtNumero(porzioni) + ' porzioni?')) return;
+  const consumo = consumoCucinata(leggiPiano(), ricetta, porzioni);
+  if (!scriviDispensa(d => applicaConsumo(d, consumo))) return;
+  azzeraSpunte(ricetta.id);
+  chiudiOverlay();
+}
+
+// Schermo sempre acceso mentre la scheda ricetta è aperta.
+let bloccoSchermo = null;
+
+async function tieniSchermoAcceso() {
+  if (!('wakeLock' in navigator) || !ricettaAperta || bloccoSchermo) return;
+  try {
+    bloccoSchermo = await navigator.wakeLock.request('screen');
+    bloccoSchermo.addEventListener('release', () => { bloccoSchermo = null; });
+  } catch (e) {
+    bloccoSchermo = null;
+  }
+}
+
+function rilasciaSchermo() {
+  if (bloccoSchermo) bloccoSchermo.release().catch(() => {});
+  bloccoSchermo = null;
+}
+
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') tieniSchermoAcceso();
+});
+
+// ==================== AVVIO ====================
+window.addEventListener('DOMContentLoaded', async () => {
+  await caricaCatalogo();
+  const avviso = document.getElementById('avviso-catalogo');
+  if (!catalogo) {
+    avviso.textContent = MSG_SENZA_CATALOGO;
+    avviso.hidden = false;
+    return;
+  }
+  assicuraMigrazione();
+  disegna();
 });
 
 // Registrazione Service Worker per PWA
@@ -1493,8 +995,6 @@ if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('sw.js')
       .then(reg => {
-        console.log('Service Worker registrato!', reg);
-        
         // Controlla aggiornamenti all'avvio
         reg.update();
 
@@ -1508,7 +1008,7 @@ if ('serviceWorker' in navigator) {
           };
         };
       })
-      .catch(err => console.error('Errore registrazione SW:', err));
+      .catch(() => {});
   });
 
   // Gestione del cambio del service worker attivo

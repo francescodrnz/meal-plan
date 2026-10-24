@@ -17,12 +17,14 @@ manca in `TODO.md`.
 - **Hosting:** GitHub Pages dal branch `main`, cartella radice. Un push su
   `main` è un rilascio.
 - **Dati solo sul dispositivo**, in `localStorage`, senza server. Le chiavi
-  sono `mealplan_shop_v1` (dispensa), `mealplan_custom_v1` (prodotti extra),
-  `mealplan_bulk_v1`, `workout_sessions`, `workout_active` e
-  `body_weight_log`. Per spostare i dati da un dispositivo all'altro si usano
+  sono `mealplan_piano_v2`, `mealplan_dispensa_v2`, `mealplan_custom_v1`
+  (prodotti extra), `mealplan_cucina_v2`, `mealplan_spesa_v2`,
+  `workout_sessions`, `workout_active` e `body_weight_log`; le vecchie
+  `mealplan_shop_v1` (letta solo per migrare) e `mealplan_bulk_v1` restano e
+  non si cancellano. Per spostare i dati da un dispositivo all'altro si usano
   i codici di import/export.
 - **Ricette su Notion** (decisione 0001): una GitHub Action le copia ogni
-  notte in `ricette.json`, che l'app non legge ancora. Per scrivere su Notion
+  notte in `ricette.json`, che l'app legge all'avvio. Per scrivere su Notion
   si usa il connettore MCP; per leggere, e per lanciare lo script in locale,
   il token in sola lettura in `.env` nella radice (ignorato da git; su GitHub
   è il secret `NOTION_TOKEN`). Il valore del token non va mai in un file
@@ -31,7 +33,8 @@ manca in `TODO.md`.
 ## Regole vincolanti
 
 - **Cache del service worker:** `sw.js` serve tutto con la strategia
-  cache-first tranne le pagine HTML. Quindi **ogni modifica** a un file in
+  cache-first tranne le pagine HTML e `ricette.json` (network-first, fuori da
+  `ASSETS` perché lo cambia il bot ogni notte). Quindi **ogni modifica** a un file in
   `ASSETS` richiede di aumentare `CACHE_NAME` (`mealplan-vN` → `vN+1`),
   altrimenti i telefoni continuano a usare la versione vecchia. Anche un
   file nuovo da servire va aggiunto ad `ASSETS`.
