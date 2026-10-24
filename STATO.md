@@ -4,8 +4,8 @@ Aggiornato il 2026-10-24.
 
 App pubblicata su GitHub Pages da `main`
 (https://francescodrnz.github.io/meal-plan/). Cache del service worker:
-`mealplan-v15`, con l'interfaccia nuova del piano pasti; da controllare che
-sia arrivata sul telefono.
+`mealplan-v16`. L'interfaccia nuova del piano pasti e il backup `MP2D_` col
+bot Telegram sono stati provati sul telefono.
 
 - **Piano pasti** (`index.html`, `script.js`, `piano.css`): grafica e flussi
   del mockup della decisione 0001 (`decisioni/0001-mockup.html`). Schede
@@ -17,15 +17,18 @@ sia arrivata sul telefono.
   e codici `MP2_` / `MP2D_` invariati. Provato in locale con Playwright a 390 px, chiaro e scuro,
   compreso l'aggiornamento dalla v12 con dati e codici vecchi.
 - **Allenamenti** (`workout.html`): sessioni, peso corporeo e grafici con
-  Chart.js; invariato, usa ancora `style.css`.
+  Chart.js; `style.css` ora contiene solo le sue classi.
 - **Service worker:** pagine e `ricette.json` network-first (decisione
   0002), il resto cache-first; all'installazione scarica con
   `cache: 'reload'`.
 - **Notion** (decisione 0001): 33 ricette, 10 in rotazione, tutte con
-  l'icona emoji, e 62 prodotti.
+  l'icona emoji, e 62 prodotti. Le quantità nelle pagine sono per le
+  porzioni base: "Porzioni da fare" non è più usata, restano da cancellare a
+  mano la proprietà, le due colonne che ne dipendono e la vista "Lista
+  spesa". In "Standard ricette" curcuma, paprika dolce e alloro sono segnate
+  come da comprare.
 - **`ricette.json`:** lo genera ogni notte la GitHub Action "ricette da
   notion" (ora anche con `icona`); il bot committa su `main` solo se il file
   cambia.
 
-Prossimo passo: controllare l'interfaccia nuova sul telefono e provare il
-backup `MP2D_` col bot Telegram vero (prima voce di `TODO.md`).
+Prossimo passo: la pulizia a mano su Notion (unica voce di `TODO.md`).

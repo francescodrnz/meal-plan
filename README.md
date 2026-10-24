@@ -163,6 +163,8 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
 - 2026-10-24: `ricette.json` con le icone: 33 ricette su 33 hanno l'emoji.
 - 2026-10-24: piano standard (10 piatti a 2 porzioni) = 10 giorni; fabbisogno
   di esempio: ceci secchi 1670 g (4 pacchi), latte di soia 2750 ml.
+- 2026-10-24: `style.css` da 409 a 144 righe (solo le classi degli
+  allenamenti); cache `mealplan-v16`.
 
 ## Limiti e comportamenti noti
 
@@ -197,6 +199,10 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
   poi la vista, poi Procedimento e Note con `insert_content`. Due
   ordinamenti vanno in un solo `SORT BY "Facoltativo" ASC, "Tipo" ASC`: con
   due `SORT BY` resta solo l'ultimo.
+- **Il connettore MCP non legge le formule** (`formulaCode` non supportato) e
+  non cancella le viste: le formule si leggono con il token, da
+  `GET /v1/data_sources/<id>` (`properties.<nome>.formula.expression`);
+  viste e colonne si cancellano a mano da Notion.
 - Le 10 ricette portate dall'app su Notion hanno l'acqua stimata a tavolino
   e i legumi passati in pentola a pressione: alla prima volta che si
   cucinano, le dosi d'acqua vanno controllate.
