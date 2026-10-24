@@ -209,6 +209,15 @@
       "siConta": true
     },
     {
+      "id": "403d208f-0d59-8178-a894-fafc0d0dc2b5",
+      "nome": "Frutta",
+      "reparto": "Frutta e verdura",
+      "unita": "pz",
+      "confezione": 1,
+      "tipoConfezione": "pz",
+      "siConta": true
+    },
+    {
       "id": "402d208f-0d59-81d6-a151-e26d8ea8a422",
       "nome": "Garam masala",
       "reparto": "Spezie",
