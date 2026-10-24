@@ -214,9 +214,14 @@ def main():
                 "nota": campo(i, "Nota"),
             })
         passi, note = corpo_ricetta(r, nome)
+        icona = r.get("icon") or {}
+        icona = icona.get("emoji") if icona.get("type") == "emoji" else None
+        if icona is None:
+            avvisa(f"{nome}: senza icona emoji")
         ricette.append({
             "id": r["id"],
             "nome": nome,
+            "icona": icona,
             "rotazione": campo(r, "In rotazione"),
             "provata": campo(r, "Provata"),
             "porzioni": campo(r, "Porzioni"),

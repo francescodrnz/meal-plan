@@ -10,32 +10,54 @@ Funziona offline e tiene i dati solo sul dispositivo.
 
 ## Com'è fatto
 
-File tutti nella radice, serviti da GitHub Pages senza build. `style.css`,
-`sw.js`, `manifest.json` e le icone sono condivisi fra le due pagine.
+File tutti nella radice, serviti da GitHub Pages senza build. `sw.js`,
+`manifest.json` e le icone sono condivisi fra le due pagine; la grafica no:
+`piano.css` è del piano pasti, `style.css` degli allenamenti.
 
-**Piano pasti** (`index.html` + `script.js`). Legge le ricette da
-`ricette.json` (generato da Notion); niente ricette scritte nel codice.
-- Schede Ricette (tutte le ricette: prima quelle in rotazione, poi le altre),
-  Piano e Spesa. Menu (☰): Allenamenti, Backup, Prodotti extra.
-- **Piano** = le ricette in rotazione, ciascuna con le sue porzioni (passi di
-  0,1, a 0 il piatto è saltato). Kcal a pasto = `kcal × porzioni /
-  ricetta.porzioni`. Giorni = somma di `ricetta.porzioni / 2` sui piatti non
-  saltati. "Ogni giorno" (di partenza latte di soia 250 ml e frutta 2 pz)
-  si moltiplica per i giorni; ammette solo prodotti con `siConta`.
+**Piano pasti** (`index.html` + `script.js` + `piano.css`). Legge le ricette
+da `ricette.json` (generato da Notion); niente ricette scritte nel codice.
+Grafica e flussi sono quelli del mockup `decisioni/0001-mockup.html`.
+- Header col titolo della scheda e ⋮ (menu dal basso: Backup, Prodotti extra,
+  Allenamenti); schede Ricette, Piano, Spesa in basso, la scheda attiva in
+  `location.hash`. Il badge su Spesa conta le righe ancora da prendere.
+  Ricette: prima quelle in rotazione, poi le altre, con l'emoji dell'icona
+  della pagina Notion (🍽️ se manca).
+- In `script.js` la logica (piano, fabbisogno, dispensa, lista, migrazione,
+  import/export) sta sopra; l'interfaccia sotto, con i pulsanti che dicono
+  cosa fanno in `data-azione` e un solo gestore di click (`AZIONI`). Pagine a
+  tutto schermo (scheda ricetta, Backup, Prodotti extra) e fogli dal basso
+  passano dalla cronologia: il tasto indietro li chiude.
+- **Piano** = la rotazione di Notion più le modifiche (decisione 0005): ogni
+  piatto con le sue porzioni (passi di 0,1); a 0 esce dal piano e torna in
+  "+ Aggiungi piatto", che offre anche le ricette fuori rotazione
+  (`aggiunte`). Kcal a pasto = `kcal × porzioni / ricetta.porzioni`. Giorni =
+  somma di `ricetta.porzioni / 2` sui piatti del piano. "Ogni giorno" (di
+  partenza latte di soia 250 ml e frutta 2 pz) si moltiplica per i giorni;
+  ammette solo prodotti con `siConta`, e a 0 la riga si toglie.
 - **Fabbisogno**: `quantita × porzioni` degli ingredienti che contano (con
   prodotto e quantità, non facoltativi, prodotto con `siConta` e stessa unità
   del prodotto; con unità diversa l'ingrediente si salta e la scheda lo
   segna ⚠) più "Ogni giorno".
-- **Spesa**: lista = fabbisogno meno dispensa, arrotondata a confezioni e
-  divisa per reparto; i prodotti senza `siConta` compaiono solo se segnati
-  "manca"; gli extra quando sono sotto la scorta minima. "Spesa fatta"
-  aggiunge le righe spuntate. Sotto c'è la dispensa stimata con −/+ (a
-  quarti per pacco, bottiglia e vasetto; interi per panetto, lattina e pz)
-  e l'interruttore c'è/manca.
-- **Scheda ricetta**: porzioni locali (non toccano il piano), quantità
-  scalate, spunte di ingredienti e passi, schermo acceso (Wake Lock).
-  "Cucinata" (o "Cucinata fuori piano") toglie gli ingredienti e
-  `ricetta.porzioni / 2` giorni di "Ogni giorno".
+- **Spesa**: lista = fabbisogno meno dispensa, arrotondata a confezioni; i
+  prodotti senza `siConta` compaiono solo se segnati "manca"; gli extra
+  quando sono sotto la scorta minima; più le cose scritte a mano.
+  - "A casa": da comprare (servono, compra, −/+ della dispensa), ce l'hai
+    già, spezie e cose di casa (c'è/manca), "Tutta la dispensa" a
+    scomparsa, le note solo se ce ne sono.
+  - "Al super" (si apre lì se c'è già qualcosa spuntato): barra di
+    avanzamento, righe per reparto nell'ordine di `ORDINE_REPARTI`, "Nel
+    carrello", "Aggiungi altro". "Spesa fatta, metti in dispensa" aggiunge
+    le righe spuntate e toglie le cose a mano spuntate.
+  - Il −/+ della dispensa va al multiplo successivo del passo (`aPasso`): a
+    quarti per pacco, bottiglia e vasetto, interi per panetto, lattina e pz.
+- **Scheda ricetta**: per un piatto del piano le porzioni sono quelle del
+  piano (cambiarle qui le cambia lì); fuori piano valgono solo nella scheda.
+  Quantità scalate, spunte di ingredienti e passi (il primo non fatto è
+  evidenziato; il pezzo prima del primo punto è il titolo del passo),
+  schermo acceso (Wake Lock). Nel piano: "Cucinata" e "Togli dal piano";
+  fuori: "Aggiungi al piano" e "Cucinata fuori piano". "Cucinata" toglie gli
+  ingredienti e `ricetta.porzioni / 2` giorni di "Ogni giorno", e il piatto
+  resta nel piano.
 - **Migrazione** dalla dispensa vecchia (`mealplan_shop_v1`, grammi per id):
   `migraInventarioV1` la traduce per nome di prodotto Notion (`MAPPA_V1`,
   olio e latte da g a ml 1:1). Tutte le scritture passano da
@@ -79,7 +101,8 @@ all'avvio.
   - prodotto: `id`, `nome`, `reparto`, `unita`, `confezione`,
     `tipoConfezione`, `siConta`. Unità e confezione sono `null` per i
     prodotti che si segnano solo come presenti (spezie, aglio, limone…).
-  - ricetta: `id`, `nome`, `rotazione`, `provata`, `porzioni`, `kcal`,
+  - ricetta: `id`, `nome`, `icona` (emoji della pagina, o `null`),
+    `rotazione`, `provata`, `porzioni`, `kcal`,
     `proteine`, `base`, `descrizione`, `ingredienti`, `passi`, `note`.
   - ingrediente: `nome`, `quantita` **per porzione** (`null` se `q.b.`),
     `unita`, `prodotto` (id, `null` per l'acqua), `tipo`, `facoltativo`,
@@ -91,11 +114,12 @@ all'avvio.
 
 | Chiave | Pagina | Contenuto |
 |---|---|---|
-| `mealplan_piano_v2` | piano pasti | `{porzioni: {idRicetta: n}, ogniGiorno: [{prodotto, quantita}]}`; porzioni solo se diverse dalla ricetta |
+| `mealplan_piano_v2` | piano pasti | `{porzioni: {idRicetta: n}, aggiunte: [idRicetta], ogniGiorno: [{prodotto, quantita}]}`; porzioni solo se diverse dalla ricetta, 0 = tolta; `aggiunte` può mancare |
 | `mealplan_dispensa_v2` | piano pasti | `{quantita: {idProdotto: n o true/false, "custom_<id>": n}, note}`; senza `siConta` manca solo se `false` |
 | `mealplan_custom_v1` | piano pasti | prodotti extra `[{id, name, unit, storeSize, need, category}]` |
 | `mealplan_cucina_v2` | piano pasti | spunte della scheda ricetta, fino a "Cucinata" |
 | `mealplan_spesa_v2` | piano pasti | righe spuntate della lista, fino a "Spesa fatta" |
+| `mealplan_altro_v1` | piano pasti | cose scritte a mano nella lista `[{chiave, nome}]`, fino a "Spesa fatta"; non vanno nel backup |
 | `mealplan_shop_v1` | piano pasti | dispensa vecchia: si legge solo per migrare, mai scritta |
 | `mealplan_bulk_v1` | piano pasti | vecchia modalità Bulk: non più usata, non cancellata |
 | `workout_sessions` | allenamenti | storico delle sessioni |
@@ -135,10 +159,18 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
 - 2026-10-23: lo script `ricette.py` ci mette circa 25 s.
 - 2026-10-24: `ricette.json` da Notion: 33 ricette (10 in rotazione), 62
   prodotti, 184 KB.
+- 2026-10-24: `ricette.json` con le icone: 33 ricette su 33 hanno l'emoji.
 - 2026-10-24: piano standard (10 piatti a 2 porzioni) = 10 giorni; fabbisogno
   di esempio: ceci secchi 1670 g (4 pacchi), latte di soia 2750 ml.
 
 ## Limiti e comportamenti noti
+
+- **Un piatto tolto a mano resta tolto**: le sue porzioni a 0 restano anche
+  se su Notion lo togli e lo rimetti in rotazione. Si rimette da "Aggiungi
+  piatto".
+- **Le porzioni della scheda ricetta, per un piatto del piano, sono quelle
+  del piano**: cucinarne di più una volta cambia il piano, finché non le
+  rimetti.
 
 - **Un aggiornamento non arriva se non aumenti `CACHE_NAME`**: tutto tranne
   le pagine HTML e `ricette.json` è cache-first, e una pagina nuova con JS o
@@ -169,6 +201,13 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
   cucinano, le dosi d'acqua vanno controllate.
 
 ## Comandi utili
+
+Prove senza Chrome collegato: Playwright in un venv (`pip install
+playwright`), con il browser scaricato in una cartella temporanea:
+`PLAYWRIGHT_BROWSERS_PATH=<cartella> python -m playwright install chromium`
+(circa 120 MB). Con `color_scheme='dark'` nel contesto si prova il tema
+scuro; per provare un aggiornamento del SW si serve una cartella con un link
+`meal-plan` che prima punta a `git archive HEAD` estratto e poi al repo.
 
 ```sh
 python3 -m http.server 8000   # dalla radice, poi http://localhost:8000
@@ -204,4 +243,6 @@ verso la rete hanno l'icona ⚙.
 - [0003](decisioni/0003-accesso-a-notion.md) — token Notion in sola lettura
   in `.env` per leggere, connettore MCP per scrivere.
 - [0004](decisioni/0004-ricette-tutte-piano-rotazione.md) — la scheda Ricette
-  mostra tutte le ricette; il piano resta la rotazione.
+  mostra tutte le ricette.
+- [0005](decisioni/0005-piano-modificabile.md) — il piano è la rotazione più
+  le modifiche fatte dal telefono (`aggiunte`, porzioni a 0).

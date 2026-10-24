@@ -1,9 +1,10 @@
-const CACHE_NAME = 'mealplan-v12'; // Incrementato per forzare l'aggiornamento
+const CACHE_NAME = 'mealplan-v13'; // Incrementato per forzare l'aggiornamento
 const ASSETS = [
   'index.html',
   'manifest.json',
   'icon-192.png',
   'icon-512.png',
+  'piano.css',
   'script.js',
   'style.css',
   'workout.html'

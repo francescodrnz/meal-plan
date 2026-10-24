@@ -8,12 +8,20 @@ CONVENZIONI.md, idee non urgenti in BACKLOG.md.
 
 In quest'ordine: ogni passo serve al successivo.
 
-- [S] Sul telefono, dopo il rilascio del rework: l'app passa da sola alle
-  schede Ricette/Piano/Spesa e la dispensa risulta migrata. Poi provare un
+- [S] Sul telefono, dopo il rilascio (cache `mealplan-v13`): l'app passa da
+  sola all'interfaccia nuova (schede in basso, emoji), il piano e la
+  dispensa di prima ci sono ancora, "Aggiungi piatto" e "Al super"
+  funzionano a portata di pollice. Poi provare un
   backup Telegram (`MP2D_`): il bot lo salva e, restituito, si importa. Se
   il bot scarta il prefisso, si sistema il bot o si cambia prefisso.
 - [S] Dopo il rework: togliere da Notion "Porzioni da fare", la vista
   "Lista spesa" e la sezione "Come si usa" di "Standard ricette".
+
+## Pulizia
+
+- [S] `style.css` ha ancora le classi del piano pasti vecchio, che ora usa
+  `piano.css`: togliere quelle che `workout.html` non usa, provare la pagina
+  degli allenamenti e aumentare `CACHE_NAME`.
 
 ## Notion
 

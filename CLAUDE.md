@@ -19,6 +19,7 @@ manca in `TODO.md`.
 - **Dati solo sul dispositivo**, in `localStorage`, senza server. Le chiavi
   sono `mealplan_piano_v2`, `mealplan_dispensa_v2`, `mealplan_custom_v1`
   (prodotti extra), `mealplan_cucina_v2`, `mealplan_spesa_v2`,
+  `mealplan_altro_v1`,
   `workout_sessions`, `workout_active` e `body_weight_log`; le vecchie
   `mealplan_shop_v1` (letta solo per migrare) e `mealplan_bulk_v1` restano e
   non si cancellano. Per spostare i dati da un dispositivo all'altro si usano
