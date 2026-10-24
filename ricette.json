@@ -20,6 +20,15 @@
       "siConta": false
     },
     {
+      "id": "402d208f-0d59-814d-93d1-c4c2ef07b72c",
+      "nome": "Alloro",
+      "reparto": "Spezie",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
       "id": "402d208f-0d59-81a5-b4e9-fa6e0d8b834c",
       "nome": "Amido di mais",
       "reparto": "Altro",
@@ -146,6 +155,15 @@
       "siConta": false
     },
     {
+      "id": "402d208f-0d59-8186-b6e2-ef6ead4db2b8",
+      "nome": "Curcuma",
+      "reparto": "Spezie",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
       "id": "402d208f-0d59-8109-b3a5-c263c1bd10e1",
       "nome": "Curry giallo",
       "reparto": "Spezie",
@@ -176,6 +194,15 @@
       "id": "402d208f-0d59-81d2-b0f1-f41b7b757748",
       "nome": "Fagioli secchi",
       "reparto": "Legumi",
+      "unita": "g",
+      "confezione": 500,
+      "tipoConfezione": "pacco",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-8190-bc62-f0eced18deae",
+      "nome": "Farro perlato",
+      "reparto": "Pasta riso e cereali",
       "unita": "g",
       "confezione": 500,
       "tipoConfezione": "pacco",
@@ -281,6 +308,15 @@
       "siConta": false
     },
     {
+      "id": "402d208f-0d59-81e3-84e7-d1b68ff10600",
+      "nome": "Paprika",
+      "reparto": "Spezie",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false
+    },
+    {
       "id": "402d208f-0d59-81e4-a72b-fdc0ce3b0e5c",
       "nome": "Paprika affumicata",
       "reparto": "Spezie",
@@ -290,11 +326,29 @@
       "siConta": false
     },
     {
+      "id": "402d208f-0d59-8175-a9a7-d4539b6a92ae",
+      "nome": "Passata di pomodoro",
+      "reparto": "Conserve",
+      "unita": "g",
+      "confezione": 700,
+      "tipoConfezione": "bottiglia",
+      "siConta": true
+    },
+    {
       "id": "402d208f-0d59-81b4-ae78-c089b1b0a9a3",
       "nome": "Pasta corta",
       "reparto": "Pasta riso e cereali",
       "unita": "g",
       "confezione": 500,
+      "tipoConfezione": "pacco",
+      "siConta": true
+    },
+    {
+      "id": "402d208f-0d59-81a4-ba09-e9acd7d7ab72",
+      "nome": "Patate",
+      "reparto": "Frutta e verdura",
+      "unita": "g",
+      "confezione": 1500,
       "tipoConfezione": "pacco",
       "siConta": true
     },
@@ -628,10 +682,10 @@
           "testo": "Tofu. Mentre il riso cuoce, tampona il tofu con carta da cucina, schiaccialo per far uscire l'acqua e sbriciolalo a pezzi irregolari."
         },
         {
-          "testo": "Carbon steel. Scalda la padella vuota a fuoco medio-alto per 2-3 minuti, poi aggiungi l'olio e aspetta che diventi luccicante. Versa il tofu e non toccarlo per 3-4 minuti, finché si stacca da solo. Poi giralo e cuoci finché è dorato e asciutto, circa 8 minuti in tutto.",
-          "sotto": [
-            "Fagioli e miso. Sciogli il miso in 2 cucchiai d'acqua. Aggiungi in padella i fagioli scolati e il miso sciolto, e scalda per 3 minuti a fiamma bassa. Schiaccia una parte dei fagioli con la spatola, così il ripieno lega."
-          ]
+          "testo": "Carbon steel. Scalda la padella vuota a fuoco medio-alto per 2-3 minuti, poi aggiungi l'olio e aspetta che diventi luccicante. Versa il tofu e non toccarlo per 3-4 minuti, finché si stacca da solo. Poi giralo e cuoci finché è dorato e asciutto, circa 8 minuti in tutto."
+        },
+        {
+          "testo": "Fagioli e miso. Sciogli il miso in 2 cucchiai d'acqua. Aggiungi in padella i fagioli scolati e il miso sciolto, e scalda per 3 minuti a fiamma bassa. Schiaccia una parte dei fagioli con la spatola, così il ripieno lega."
         },
         {
           "testo": "Spezie. Abbassa la fiamma, aggiungi tutte le spezie e mescola per 30 secondi."
@@ -834,6 +888,112 @@
       ]
     },
     {
+      "id": "402d208f-0d59-81a5-90c9-c7a08d838723",
+      "nome": "Cous cous e ceci croccanti",
+      "rotazione": true,
+      "provata": true,
+      "porzioni": 2,
+      "kcal": 1123,
+      "proteine": 55,
+      "base": [
+        "Couscous"
+      ],
+      "descrizione": "Ceci in pressione, poi al forno con broccoli e paprika finché sono croccanti. Cous cous a parte.",
+      "ingredienti": [
+        {
+          "nome": "Ceci secchi",
+          "quantita": 205,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi, ammollati 12 ore e scolati"
+        },
+        {
+          "nome": "Cous cous",
+          "quantita": 75,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e0-942d-eb2ed78c30e4",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A parte, in ciotola"
+        },
+        {
+          "nome": "Broccoli surgelati",
+          "quantita": 200,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8109-b504-ff18310acf08",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "In teglia con i ceci"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 8,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In teglia"
+        },
+        {
+          "nome": "Paprika",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-81e3-84e7-d1b68ff10600",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In teglia"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 475,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Quasi tutta per i ceci in pressione; per il cous cous tanta quanto il suo peso, bollente e salata"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Ceci. Metti in pentola a pressione i ceci scolati con l'acqua per i ceci e un pizzico di sale. Dal fischio cuoci 20 minuti a fiamma bassa, poi sfiata. Se non sono morbidi, altri 5 minuti. Scolali e asciugali bene con un canovaccio."
+        },
+        {
+          "testo": "Forno. Accendi il forno a 200°C. Metti ceci e broccoli ancora surgelati in teglia con l'olio, paprika e sale, mescola e cuoci 30 minuti."
+        },
+        {
+          "testo": "Cous cous. Mentre cuociono, metti il cous cous in una ciotola, versaci sopra l'acqua bollente salata, copri e lascia riposare 5 minuti. Sgrana con la forchetta."
+        },
+        {
+          "testo": "Impiattamento. Unisci cous cous, ceci e broccoli."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1123 kcal e 55 g di proteine."
+        },
+        {
+          "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
+        },
+        {
+          "testo": "Croccanti: i ceci devono essere asciutti e stare in un solo strato. Se si sovrappongono, restano morbidi."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni. I ceci si ammorbidiscono."
+        }
+      ]
+    },
+    {
       "id": "402d208f-0d59-8118-a4bb-c897a6d63a4a",
       "nome": "Curry di ceci e cavolfiore con riso",
       "rotazione": false,
@@ -1023,6 +1183,242 @@
             "Hot chilly → cayenna macinata, stessa dose.",
             "Garam masala → un pizzico di mix korma, oppure ometti."
           ]
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-8194-9914-e83703890c82",
+      "nome": "Dahl di lenticchie con cous cous",
+      "rotazione": true,
+      "provata": true,
+      "porzioni": 2,
+      "kcal": 1085,
+      "proteine": 60,
+      "base": [
+        "Couscous"
+      ],
+      "descrizione": "Lenticchie in pressione, broccoli dopo, latte di soia e spezie a fuoco spento. Cous cous a parte.",
+      "ingredienti": [
+        {
+          "nome": "Lenticchie secche",
+          "quantita": 160,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Marroni o verdi, sciacquate"
+        },
+        {
+          "nome": "Cous cous",
+          "quantita": 92.5,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e0-942d-eb2ed78c30e4",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A parte, in ciotola"
+        },
+        {
+          "nome": "Broccoli surgelati",
+          "quantita": 200,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8109-b504-ff18310acf08",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Dopo la pressione"
+        },
+        {
+          "nome": "Latte di soia",
+          "quantita": 75,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81e5-b08e-dc53316776df",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A fuoco spento, fa da panna"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 14,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "A fuoco spento, con il latte di soia"
+        },
+        {
+          "nome": "Curcuma",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8186-b6e2-ef6ead4db2b8",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "A fuoco spento"
+        },
+        {
+          "nome": "Cumino",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8190-9dbb-f47f5c9185ae",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "A fuoco spento"
+        },
+        {
+          "nome": "Pepe",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-815b-8c33-f63352af7917",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "A fuoco spento"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 540,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Quasi tutta per le lenticchie in pressione; per il cous cous tanta quanto il suo peso, bollente e salata"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Lenticchie. Metti in pentola a pressione le lenticchie sciacquate con l'acqua per le lenticchie. Gratta bene il fondo. Dal fischio cuoci 10 minuti a fiamma bassa, poi sfiata."
+        },
+        {
+          "testo": "Broccoli. Apri e aggiungi i broccoli ancora surgelati. Fai sobbollire senza coperchio 5-6 minuti, mescolando, finché sono teneri e il dahl si addensa."
+        },
+        {
+          "testo": "\"Panna\" e spezie. A fuoco spento aggiungi il latte di soia, l'olio, curcuma, cumino e pepe. Mescola e aggiusta di sale."
+        },
+        {
+          "testo": "Cous cous. Mentre il dahl cuoce, metti il cous cous in una ciotola, versaci sopra l'acqua bollente salata, copri e lascia riposare 5 minuti. Sgrana con la forchetta."
+        },
+        {
+          "testo": "Impiattamento. Cous cous nel piatto e dahl sopra."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1085 kcal e 60 g di proteine."
+        },
+        {
+          "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
+        },
+        {
+          "testo": "Consistenza: se il dahl è troppo denso, allungalo con un po' d'acqua calda."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni, con il cous cous a parte."
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-8126-982a-dd7f73615f12",
+      "nome": "Fagioli con polenta",
+      "rotazione": true,
+      "provata": true,
+      "porzioni": 2,
+      "kcal": 1052,
+      "proteine": 58,
+      "base": [
+        "Altro"
+      ],
+      "descrizione": "Fagioli in pressione; nel loro brodo cuociono prima i broccoli e poi la polenta. Una pentola.",
+      "ingredienti": [
+        {
+          "nome": "Fagioli secchi",
+          "quantita": 230,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi, ammollati 8-12 ore e scolati. Borlotti o cannellini"
+        },
+        {
+          "nome": "Polenta istantanea",
+          "quantita": 70,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-810e-aba7-d88eb8df00cb",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A pioggia nel brodo dei fagioli"
+        },
+        {
+          "nome": "Broccoli surgelati",
+          "quantita": 200,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8109-b504-ff18310acf08",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Nel brodo dei fagioli"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 11,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "A crudo"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Nel brodo prima della polenta"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 700,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "In pressione; il brodo che resta cuoce broccoli e polenta"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Fagioli. Metti in pentola a pressione i fagioli scolati con l'acqua. Dal fischio cuoci 15 minuti a fiamma bassa, poi sfiata. Se non sono morbidi, altri 5 minuti."
+        },
+        {
+          "testo": "Broccoli. Togli i fagioli con la schiumarola e tienili da parte. Porta il brodo a bollore, cuoci i broccoli 5 minuti e toglili anche loro."
+        },
+        {
+          "testo": "Polenta. Il brodo rimasto deve essere circa quattro volte il peso della polenta: se è poco, aggiungi acqua calda. Salalo, versa la polenta a pioggia mescolando con la frusta e cuoci 5 minuti mescolando spesso."
+        },
+        {
+          "testo": "Impiattamento. Polenta nel piatto, fagioli e broccoli sopra, l'olio a crudo."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1052 kcal e 58 g di proteine."
+        },
+        {
+          "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
+        },
+        {
+          "testo": "Fagioli e fasina: la pentola a pressione li rende sicuri. In una pentola normale servono 10 minuti di bollitura vivace prima di abbassare il fuoco, anche per cannellini e borlotti."
+        },
+        {
+          "testo": "Sale: va messo nel brodo prima della polenta."
+        },
+        {
+          "testo": "Conservazione: in frigo 2-3 giorni. La polenta si rapprende: il giorno dopo tagliala a fette e scaldala nella carbon steel con un filo d'olio."
         }
       ]
     },
@@ -1889,6 +2285,230 @@
         },
         {
           "testo": "Conservazione: in frigo 3 giorni. Il miglio continua ad assorbire liquido: allungala con acqua quando la scaldi."
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-81e1-bc67-f9a52f4da9b4",
+      "nome": "Minestrone con farro e fagioli",
+      "rotazione": true,
+      "provata": true,
+      "porzioni": 2,
+      "kcal": 1077,
+      "proteine": 58,
+      "base": [
+        "Altro"
+      ],
+      "descrizione": "Fagioli in pressione, poi minestrone surgelato e farro nella stessa pentola. Olio a crudo.",
+      "ingredienti": [
+        {
+          "nome": "Fagioli secchi",
+          "quantita": 215,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi, ammollati 8-12 ore e scolati. Borlotti o cannellini"
+        },
+        {
+          "nome": "Farro perlato",
+          "quantita": 80,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8190-bc62-f0eced18deae",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sciacquato, seconda pressione"
+        },
+        {
+          "nome": "Minestrone surgelato light",
+          "quantita": 250,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8192-bfa6-c301d09b4399",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Anche ancora surgelato, seconda pressione"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 11,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "A crudo"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 800,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Tre quarti per i fagioli in pressione, il resto con farro e minestrone"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Fagioli. Metti in pentola a pressione i fagioli scolati con l'acqua per i fagioli. Dal fischio cuoci 15 minuti a fiamma bassa, poi sfiata."
+        },
+        {
+          "testo": "Minestrone e farro. Controlla i fagioli: se non sono morbidi, altri 5 minuti in pressione. Aggiungi il minestrone (anche ancora surgelato), il farro sciacquato, il sale e il resto dell'acqua. Gratta bene il fondo."
+        },
+        {
+          "testo": "Seconda pressione. Richiudi e dal fischio cuoci 10 minuti a fiamma bassa, poi spegni e lascia scendere la pressione da sola (circa 10 minuti)."
+        },
+        {
+          "testo": "Impiattamento. Assaggia il farro: se è ancora duro, qualche minuto a pentola aperta. Aggiusta di sale e completa con l'olio a crudo nel piatto."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1077 kcal e 58 g di proteine."
+        },
+        {
+          "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
+        },
+        {
+          "testo": "Fagioli e fasina: la pentola a pressione li rende sicuri. In una pentola normale servono 10 minuti di bollitura vivace prima di abbassare il fuoco, anche per cannellini e borlotti."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni. Il farro continua ad assorbire: allunga con acqua quando la scaldi."
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-81e9-bee6-c17cfea0b168",
+      "nome": "Pasta al forno ignorante",
+      "rotazione": true,
+      "provata": true,
+      "porzioni": 2,
+      "kcal": 1099,
+      "proteine": 58,
+      "base": [
+        "Pasta"
+      ],
+      "descrizione": "Lenticchie in pressione, poi in teglia con pasta cruda, broccoli, passata e una \"panna\" di latte di soia e olio.",
+      "ingredienti": [
+        {
+          "nome": "Pasta corta",
+          "quantita": 80,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81b4-ae78-c089b1b0a9a3",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Cruda, in teglia"
+        },
+        {
+          "nome": "Lenticchie secche",
+          "quantita": 142.5,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Marroni o verdi, sciacquate"
+        },
+        {
+          "nome": "Broccoli surgelati",
+          "quantita": 200,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8109-b504-ff18310acf08",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "In teglia, ancora surgelati"
+        },
+        {
+          "nome": "Passata di pomodoro",
+          "quantita": 350,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8175-a9a7-d4539b6a92ae",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "In teglia"
+        },
+        {
+          "nome": "Latte di soia",
+          "quantita": 50,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81e5-b08e-dc53316776df",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Mescolato con l'olio, fa da panna"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 16,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Mescolato con il latte di soia"
+        },
+        {
+          "nome": "Origano",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-81c7-b64a-c8ed6b492b9e",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In teglia"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 400,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Per le lenticchie in pressione; in teglia altra acqua quanto basta per coprire la pasta a filo"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Lenticchie. Metti in pentola a pressione le lenticchie sciacquate con l'acqua per le lenticchie. Dal fischio cuoci 8 minuti a fiamma bassa, poi sfiata e scolale: finiscono di cuocere in forno."
+        },
+        {
+          "testo": "\"Panna\". Mescola il latte di soia con l'olio."
+        },
+        {
+          "testo": "Teglia. Accendi il forno a 200°C. In una teglia alta metti la pasta cruda, le lenticchie, i broccoli ancora surgelati, la passata, la \"panna\", sale e origano. Aggiungi acqua fino a coprire la pasta a filo e mescola."
+        },
+        {
+          "testo": "Forno coperto. Copri ermeticamente con l'alluminio e cuoci 30 minuti."
+        },
+        {
+          "testo": "Grill. Togli l'alluminio e passa sotto il grill per altri 15 minuti."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1099 kcal e 58 g di proteine."
+        },
+        {
+          "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
+        },
+        {
+          "testo": "Alluminio: deve chiudere bene la teglia, altrimenti la pasta in superficie resta cruda."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni."
         }
       ]
     },
@@ -2795,6 +3415,97 @@
       ]
     },
     {
+      "id": "402d208f-0d59-8169-81e5-d3d9f7d7ef83",
+      "nome": "Pasta, lenticchie e broccoli",
+      "rotazione": true,
+      "provata": true,
+      "porzioni": 2,
+      "kcal": 1083,
+      "proteine": 61,
+      "base": [
+        "Pasta"
+      ],
+      "descrizione": "Lenticchie in pressione, poi pasta e broccoli cotti nel loro brodo. Olio a crudo. Una pentola.",
+      "ingredienti": [
+        {
+          "nome": "Lenticchie secche",
+          "quantita": 175,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Marroni o verdi, sciacquate"
+        },
+        {
+          "nome": "Pasta corta",
+          "quantita": 90,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81b4-ae78-c089b1b0a9a3",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Dopo la pressione, cotta nel brodo"
+        },
+        {
+          "nome": "Broccoli surgelati",
+          "quantita": 200,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8109-b504-ff18310acf08",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Con la pasta"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 14,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "A crudo"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Dopo la pressione"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 700,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "In pressione; poi calda se la pasta si asciuga"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Lenticchie. Metti in pentola a pressione le lenticchie sciacquate con l'acqua, senza sale. Dal fischio cuoci 10 minuti a fiamma bassa, poi sfiata."
+        },
+        {
+          "testo": "Pasta e broccoli. Porta a bollore a pentola aperta, sala e aggiungi la pasta e i broccoli ancora surgelati. Cuoci mescolando spesso; se si asciuga, aggiungi acqua calda poca alla volta. Conta 2-3 minuti in più rispetto alla confezione."
+        },
+        {
+          "testo": "Impiattamento. Aggiusta di sale e completa con l'olio a crudo nel piatto."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1083 kcal e 61 g di proteine."
+        },
+        {
+          "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
+        },
+        {
+          "testo": "Conservazione: in frigo 2-3 giorni. La pasta si gonfia: scaldala con acqua."
+        }
+      ]
+    },
+    {
       "id": "402d208f-0d59-81a9-851a-faa1de3ff0ba",
       "nome": "Polenta incatenata (fagioli e cavolo nero)",
       "rotazione": false,
@@ -2960,6 +3671,221 @@
         },
         {
           "testo": "Conservazione: in frigo 2-3 giorni. Si rapprende: il giorno dopo tagliala a fette e scaldala nella carbon steel con un filo d'olio, oppure scaldala in pentola con un po' d'acqua mescolando."
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-81bb-a2c4-f55429e068aa",
+      "nome": "Quinoa e ceci",
+      "rotazione": true,
+      "provata": true,
+      "porzioni": 2,
+      "kcal": 1100,
+      "proteine": 55,
+      "base": [
+        "Altro"
+      ],
+      "descrizione": "Ceci in pressione e broccoli nel loro brodo, quinoa a parte. Si unisce tutto con olio a crudo.",
+      "ingredienti": [
+        {
+          "nome": "Quinoa",
+          "quantita": 75,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-816f-9140-d92336127e88",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sciacquata, cotta a parte"
+        },
+        {
+          "nome": "Ceci secchi",
+          "quantita": 200,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi, ammollati 12 ore e scolati"
+        },
+        {
+          "nome": "Broccoli surgelati",
+          "quantita": 200,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8109-b504-ff18310acf08",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Nel brodo dei ceci"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 8,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "A crudo"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 550,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Circa tre quarti per i ceci in pressione, il resto per la quinoa (il doppio del suo peso)"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Ceci. Metti in pentola a pressione i ceci scolati con l'acqua per i ceci e un pizzico di sale. Dal fischio cuoci 20 minuti a fiamma bassa, poi sfiata."
+        },
+        {
+          "testo": "Broccoli. Controlla i ceci: se non sono morbidi, altri 5 minuti in pressione. Porta il brodo a bollore a pentola aperta, aggiungi i broccoli ancora surgelati e cuocili 5 minuti. Scola ceci e broccoli."
+        },
+        {
+          "testo": "Quinoa. Mentre i ceci cuociono, sciacqua bene la quinoa in un colino e cuocila in un pentolino con l'acqua per la quinoa e un pizzico di sale, coperta e a fuoco basso, finché assorbe tutto il liquido (circa 15 minuti)."
+        },
+        {
+          "testo": "Impiattamento. Unisci quinoa, ceci e broccoli e condisci con l'olio a crudo, sale e spezie a piacere."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1100 kcal e 55 g di proteine."
+        },
+        {
+          "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
+        },
+        {
+          "testo": "Quinoa: sciacquala bene, altrimenti sa di amaro."
+        },
+        {
+          "testo": "Spezie: a piacere, per esempio cumino o paprika."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni."
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-81ed-9211-d9597b9d402a",
+      "nome": "Riso al forno con ceci",
+      "rotazione": true,
+      "provata": true,
+      "porzioni": 2,
+      "kcal": 1135,
+      "proteine": 55,
+      "base": [
+        "Riso"
+      ],
+      "descrizione": "Ceci in pressione, poi in teglia con riso integrale crudo, broccoli e passata. Forno coperto.",
+      "ingredienti": [
+        {
+          "nome": "Riso integrale",
+          "quantita": 40,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Crudo, in teglia"
+        },
+        {
+          "nome": "Ceci secchi",
+          "quantita": 215,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi, ammollati 12 ore e scolati"
+        },
+        {
+          "nome": "Broccoli surgelati",
+          "quantita": 200,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8109-b504-ff18310acf08",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "In teglia, ancora surgelati"
+        },
+        {
+          "nome": "Passata di pomodoro",
+          "quantita": 350,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8175-a9a7-d4539b6a92ae",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "In teglia"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 8,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In teglia"
+        },
+        {
+          "nome": "Paprika",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-81e3-84e7-d1b68ff10600",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In teglia"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 400,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Per i ceci in pressione; in teglia altra acqua quanto basta per coprire il riso a filo"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Ceci. Metti in pentola a pressione i ceci scolati con l'acqua per i ceci e un pizzico di sale. Dal fischio cuoci 20 minuti a fiamma bassa, poi sfiata. Se non sono morbidi, altri 5 minuti. Scolali."
+        },
+        {
+          "testo": "Teglia. Accendi il forno a 200°C. In una teglia alta metti il riso crudo, i ceci, i broccoli ancora surgelati, la passata, l'olio, sale e paprika. Aggiungi acqua fino a coprire il riso a filo e mescola."
+        },
+        {
+          "testo": "Forno coperto. Copri bene con l'alluminio e cuoci 35 minuti."
+        },
+        {
+          "testo": "Forno scoperto. Togli l'alluminio e cuoci altri 10 minuti."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1135 kcal e 55 g di proteine."
+        },
+        {
+          "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
+        },
+        {
+          "testo": "Alluminio: deve chiudere bene la teglia, altrimenti il riso in superficie resta crudo."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni."
         }
       ]
     },
@@ -4110,6 +5036,97 @@
       ]
     },
     {
+      "id": "402d208f-0d59-81c1-8c0e-e83c69353a1f",
+      "nome": "Teglia tofu e patate",
+      "rotazione": true,
+      "provata": true,
+      "porzioni": 2,
+      "kcal": 1098,
+      "proteine": 54,
+      "base": [
+        "Altro"
+      ],
+      "descrizione": "Tofu, patate e broccoli in teglia con olio e rosmarino. Forno, zero interventi.",
+      "ingredienti": [
+        {
+          "nome": "Tofu",
+          "quantita": 270,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81bc-8c8c-f0ee0ae6a8d6",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A cubetti"
+        },
+        {
+          "nome": "Patate",
+          "quantita": 650,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81a4-ba09-e9acd7d7ab72",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A cubetti"
+        },
+        {
+          "nome": "Broccoli surgelati",
+          "quantita": 200,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8109-b504-ff18310acf08",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "In teglia, ancora surgelati"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 22,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In teglia"
+        },
+        {
+          "nome": "Rosmarino",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-81ec-b192-d95dca5dedb3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In teglia"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": ""
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Taglio. Accendi il forno a 200°C. Tampona il tofu con carta da cucina e taglialo a cubetti. Taglia a cubetti anche le patate."
+        },
+        {
+          "testo": "Teglia. Metti tofu, patate e broccoli ancora surgelati in teglia. Versa l'olio, aggiungi sale e rosmarino e mescola bene finché tutto è unto."
+        },
+        {
+          "testo": "Forno. Cuoci 40 minuti, senza toccare niente."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1098 kcal e 54 g di proteine."
+        },
+        {
+          "testo": "Tofu: un panetto e mezzo a porzione, quindi tre panetti per due porzioni."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni."
+        }
+      ]
+    },
+    {
       "id": "402d208f-0d59-81c4-a2b6-c2d7f60476b5",
       "nome": "Tofu in sugo piccante con spinaci e cous cous",
       "rotazione": false,
@@ -4285,6 +5302,118 @@
             "Cumino in semi → mezzo cucchiaino di mix quesadilla a porzione.",
             "Hot chilly → cayenna macinata, stessa dose."
           ]
+        }
+      ]
+    },
+    {
+      "id": "402d208f-0d59-812a-a6e7-c004cbea5b8e",
+      "nome": "Zuppa di ceci e farro",
+      "rotazione": true,
+      "provata": true,
+      "porzioni": 2,
+      "kcal": 1120,
+      "proteine": 55,
+      "base": [
+        "Altro"
+      ],
+      "descrizione": "Ceci in pressione, poi farro e broccoli nel loro brodo con rosmarino e alloro.",
+      "ingredienti": [
+        {
+          "nome": "Ceci secchi",
+          "quantita": 215,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi, ammollati 12 ore e scolati"
+        },
+        {
+          "nome": "Farro perlato",
+          "quantita": 65,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8190-bc62-f0eced18deae",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sciacquato, seconda pressione"
+        },
+        {
+          "nome": "Broccoli surgelati",
+          "quantita": 200,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8109-b504-ff18310acf08",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Seconda pressione"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 11,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "A crudo"
+        },
+        {
+          "nome": "Rosmarino",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-81ec-b192-d95dca5dedb3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Seconda pressione"
+        },
+        {
+          "nome": "Alloro",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-814d-93d1-c4c2ef07b72c",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "1-2 foglie, da togliere alla fine"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": ""
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 800,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Tre quarti per i ceci in pressione, il resto con farro e broccoli"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Ceci. Metti in pentola a pressione i ceci scolati con l'acqua per i ceci e un pizzico di sale. Dal fischio cuoci 20 minuti a fiamma bassa, poi sfiata."
+        },
+        {
+          "testo": "Farro e broccoli. Controlla i ceci: se non sono morbidi, altri 5 minuti in pressione. Aggiungi il farro sciacquato, i broccoli ancora surgelati, rosmarino, alloro, sale e il resto dell'acqua. Gratta bene il fondo."
+        },
+        {
+          "testo": "Seconda pressione. Richiudi e dal fischio cuoci 10 minuti a fiamma bassa, poi spegni e lascia scendere la pressione da sola (circa 10 minuti)."
+        },
+        {
+          "testo": "Impiattamento. Togli l'alloro, aggiusta di sale e completa con l'olio a crudo nel piatto."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1120 kcal e 55 g di proteine."
+        },
+        {
+          "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni. Il farro continua ad assorbire: allunga con acqua quando la scaldi."
         }
       ]
     },
