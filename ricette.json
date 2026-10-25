@@ -421,7 +421,7 @@
       "reparto": "Frutta e verdura",
       "unita": "pz",
       "confezione": 25,
-      "tipoConfezione": "pacco",
+      "tipoConfezione": "pz",
       "siConta": true
     },
     {
