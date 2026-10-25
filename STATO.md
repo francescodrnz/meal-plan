@@ -4,9 +4,9 @@ Aggiornato il 2026-10-25.
 
 App pubblicata su GitHub Pages da `main`
 (https://francescodrnz.github.io/meal-plan/). Cache del service worker:
-`mealplan-v17`. L'interfaccia nuova del piano pasti e il backup `MP2D_` col
-bot Telegram sono stati provati sul telefono; i valori nutrizionali solo in
-locale con Playwright.
+`mealplan-v18`. L'interfaccia nuova del piano pasti e il backup `MP2D_` col
+bot Telegram sono stati provati sul telefono; i valori nutrizionali e il
+contorno rosso solo in locale con Playwright.
 
 - **Piano pasti** (`index.html`, `script.js`, `piano.css`): grafica e flussi
   del mockup della decisione 0001 (`decisioni/0001-mockup.html`). Schede
@@ -17,7 +17,8 @@ locale con Playwright.
   reparto) / "Al super" con "Aggiungi altro". Dispensa stimata, migrazione
   e codici `MP2_` / `MP2D_` invariati. Kcal, proteine, carboidrati e grassi
   a porzione calcolati dai valori dei prodotti (decisione 0007), con i
-  numeri scritti a mano solo come ripiego. Provato in locale con Playwright a 390 px, chiaro e scuro,
+  numeri scritti a mano solo come ripiego. Contorno rosso sulle ricette
+  per cui la dispensa non basta (decisione 0008). Provato in locale con Playwright a 390 px, chiaro e scuro,
   compreso l'aggiornamento dalla v12 con dati e codici vecchi.
 - **Allenamenti** (`workout.html`): sessioni, peso corporeo e grafici con
   Chart.js; `style.css` ora contiene solo le sue classi.
@@ -35,5 +36,6 @@ locale con Playwright.
   notion" (con `icona` e i valori nutrizionali dei prodotti); il bot committa su `main` solo se il file
   cambia.
 
-Prossimo passo: guardare sul telefono i valori calcolati e, se convincono,
+Prossimo passo: guardare sul telefono i valori calcolati e il contorno
+rosso e, se convincono,
 la pulizia a mano su Notion (le due voci di `TODO.md`).

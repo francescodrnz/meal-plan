@@ -14,3 +14,4 @@ Modello in `0000-modello.md`. Le regole stanno in `../CONVENZIONI.md`.
 | 0005 | Piano modificabile: la rotazione più le modifiche | decisa | app |
 | 0006 | Scheda Ricette raggruppata come il piano | decisa | app |
 | 0007 | Kcal e macro calcolati dai prodotti | decisa | trasversale |
+| 0008 | Contorno rosso: quando la dispensa non basta per una ricetta | decisa | app |

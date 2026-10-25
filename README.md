@@ -23,6 +23,11 @@ Grafica e flussi sono quelli del mockup `decisioni/0001-mockup.html`.
   Ricette: "Nel piano" (gli stessi piatti della scheda Piano, decisione
   0006), poi le altre, con l'emoji dell'icona della pagina Notion (🍽️ se
   manca).
+- **Contorno rosso** (decisione 0008) sulle righe di Ricette, Piano e
+  "Aggiungi piatto" se la dispensa non basta (`bastaLaDispensa`): ogni
+  ricetta da sola, alle porzioni del piano o, fuori piano, a quelle base;
+  conta i prodotti di `ingredientiContati` (come il fabbisogno, senza "Ogni
+  giorno") e le cose di casa non facoltative segnate "manca".
 - In `script.js` la logica (piano, fabbisogno, dispensa, lista, migrazione,
   import/export) sta sopra; l'interfaccia sotto, con i pulsanti che dicono
   cosa fanno in `data-azione` e un solo gestore di click (`AZIONI`). Pagine a
@@ -191,6 +196,10 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
   del piano**: cucinarne di più una volta cambia il piano, finché non le
   rimetti.
 
+- **Il contorno rosso guarda una ricetta alla volta**: due piatti che
+  insieme finiscono un prodotto restano senza contorno; quanto manca per
+  tutto il piano lo dice la Spesa. Con la dispensa vuota è quasi tutto
+  rosso, e il contorno non dice cosa manca.
 - **Un aggiornamento non arriva se non aumenti `CACHE_NAME`**: tutto tranne
   le pagine HTML e `ricette.json` è cache-first, e una pagina nuova con JS o
   CSS vecchi può rompersi. Per un attimo, all'aggiornamento, l'HTML nuovo
@@ -283,3 +292,5 @@ verso la rete hanno l'icona ⚙.
 - [0007](decisioni/0007-kcal-e-macro-calcolati-dai-prodotti.md) — kcal e
   macro calcolati dai valori dei prodotti; i numeri a mano solo come
   ripiego.
+- [0008](decisioni/0008-contorno-rosso-dispensa.md) — contorno rosso:
+  ogni ricetta da sola contro la dispensa, alle porzioni del piano.

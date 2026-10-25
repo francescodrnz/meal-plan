@@ -12,6 +12,7 @@
   --green: #3a6b4a;
   --green-soft: #e3ece4;
   --warn: #c87820;
+  --rosso: #c0392b;
   --pill: #f0ebe0;
   --shadow: 0 2px 12px rgba(26, 22, 16, .08);
   --display: 'Syne', 'Avenir Next', system-ui, sans-serif;
@@ -22,7 +23,7 @@
   :root {
     --bg: #0f0d0a; --card: #1a1610; --line: #2d2820; --ink: #f5f0e8; --muted: #a89e8e;
     --accent: #e07440; --accent-ink: #1a1610; --accent-soft: #3a2216;
-    --green: #7fb98f; --green-soft: #1a2a1f; --pill: #2d2820; --warn: #e0a050;
+    --green: #7fb98f; --green-soft: #1a2a1f; --pill: #2d2820; --warn: #e0a050; --rosso: #e5534b;
     --shadow: 0 4px 16px rgba(0, 0, 0, .35);
     color-scheme: dark;
   }
@@ -139,6 +140,7 @@ textarea.field { min-height: 90px; resize: vertical; }
 .rec .emo { font-size: 28px; text-align: center; }
 .rec .name { font-weight: 600; line-height: 1.25; }
 .rec .meta { font-size: 13px; color: var(--muted); }
+.rec.non-basta, .plan-row.non-basta { border-color: var(--rosso); box-shadow: 0 0 0 1px var(--rosso); }
 .pill { font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 99px; background: var(--pill); color: var(--muted); white-space: nowrap; }
 .pill.in { background: var(--green-soft); color: var(--green); }
 .da-provare { color: var(--warn); font-weight: 600; }

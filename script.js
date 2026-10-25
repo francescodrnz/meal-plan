@@ -214,16 +214,33 @@ function usiCoseDiCasa(piano) {
   return usi;
 }
 
-// Cosa toglie "Cucinata": gli ingredienti alle porzioni della scheda e i giorni di "Ogni giorno".
-function consumoCucinata(piano, ricetta, porzioni) {
-  const consumo = {};
-  const aggiungi = (id, n) => { consumo[id] = (consumo[id] || 0) + n; };
+// {idProdotto: n}: quanto serve dei prodotti contati per una ricetta a quelle porzioni.
+function ingredientiContati(ricetta, porzioni) {
+  const serve = {};
   ricetta.ingredienti.forEach(ing => {
     const p = prodottoContato(ing);
-    if (p) aggiungi(p.id, ing.quantita * porzioni);
+    if (p) serve[p.id] = (serve[p.id] || 0) + ing.quantita * porzioni;
   });
+  return serve;
+}
+
+// Cosa toglie "Cucinata": gli ingredienti alle porzioni della scheda e i giorni di "Ogni giorno".
+function consumoCucinata(piano, ricetta, porzioni) {
+  const consumo = ingredientiContati(ricetta, porzioni);
+  const aggiungi = (id, n) => { consumo[id] = (consumo[id] || 0) + n; };
   ogniGiornoContato(piano).forEach(x => aggiungi(x.prodotto, x.quantita * giorniRicetta(ricetta)));
   return consumo;
+}
+
+// Se con la dispensa di adesso la ricetta si cucina a quelle porzioni: ogni ricetta da sola,
+// senza "Ogni giorno"; le cose di casa contano solo se segnate "manca".
+function bastaLaDispensa(ricetta, porzioni, dispensa) {
+  const serve = ingredientiContati(ricetta, porzioni);
+  if (Object.keys(serve).some(id => arrotonda6(serve[id]) > arrotonda6(quantitaIn(dispensa, id)))) return false;
+  return !ricetta.ingredienti.some(ing => {
+    const p = ing.prodotto && catalogo.prodottiPerId[ing.prodotto];
+    return p && !p.siConta && !ing.facoltativo && manca(dispensa, p.id);
+  });
 }
 
 // ==================== DISPENSA ====================
@@ -648,13 +665,14 @@ function menu() {
 }
 
 // ==================== SCHEDA RICETTE ====================
-function rigaRicetta(r, nelPiano, azione) {
+function rigaRicetta(r, nelPiano, azione, dispensa) {
   const porzioni = nelPiano.get(r.id);
   const etichetta = porzioni !== undefined
     ? '<span class="pill in num">nel piano · ' + fmtNumero(porzioni) + '</span>'
     : (azione === 'scegli-piatto' ? '<span class="pill num">' + fmtNumero(r.porzioni) + '</span>'
       : (r.base && r.base.length ? '<span class="pill">' + esc(r.base.join(', ')) + '</span>' : '<span></span>'));
-  return '<button class="rec" data-azione="' + azione + '" ' + attr('id', r.id) + '>' +
+  const basta = bastaLaDispensa(r, porzioni !== undefined ? porzioni : r.porzioni, dispensa);
+  return '<button class="rec' + (basta ? '' : ' non-basta') + '" data-azione="' + azione + '" ' + attr('id', r.id) + '>' +
     '<span class="emo">' + esc(icona(r)) + '</span>' +
     '<span><div class="name">' + esc(r.nome) + '</div>' +
       '<div class="meta num">' + kcalTesto(r.nutrizione.kcal) + ' kcal · ' + grammiTesto(r.nutrizione.proteine) + ' g proteine' +
@@ -662,19 +680,20 @@ function rigaRicetta(r, nelPiano, azione) {
     etichetta + '</button>';
 }
 
-function gruppoRicette(titolo, ricette, nelPiano, azione) {
+function gruppoRicette(titolo, ricette, nelPiano, azione, dispensa) {
   if (!ricette.length) return '';
   return '<div><h2 class="sec-title">' + titolo + ' <span class="num">' + ricette.length + '</span></h2>' +
-    '<div class="rec-list">' + ricette.map(r => rigaRicetta(r, nelPiano, azione)).join('') + '</div></div>';
+    '<div class="rec-list">' + ricette.map(r => rigaRicetta(r, nelPiano, azione, dispensa)).join('') + '</div></div>';
 }
 
 // Gruppi come la scheda Piano (decisione 0006): la casella di Notion conta solo come partenza del piano.
 function disegnaRicette() {
   const piatti = piattiDelPiano(leggiPiano());
   const nelPiano = new Map(piatti.map(x => [x.ricetta.id, x.porzioni]));
+  const dispensa = leggiDispensa();
   $('v-ricette').innerHTML =
-    gruppoRicette('Nel piano', piatti.map(x => x.ricetta), nelPiano, 'apri') +
-    gruppoRicette('Altre ricette', catalogo.ricette.filter(r => !nelPiano.has(r.id)), nelPiano, 'apri');
+    gruppoRicette('Nel piano', piatti.map(x => x.ricetta), nelPiano, 'apri', dispensa) +
+    gruppoRicette('Altre ricette', catalogo.ricette.filter(r => !nelPiano.has(r.id)), nelPiano, 'apri', dispensa);
 }
 
 // ==================== SCHEDA PIANO ====================
@@ -685,9 +704,10 @@ function disegnaPiano() {
   const piatti = piattiDelPiano(piano);
   const giorni = giorniDelPiano(piano);
   const porzioni = piatti.reduce((tot, x) => tot + x.porzioni, 0);
+  const dispensa = leggiDispensa();
 
   const righe = piatti.map(({ ricetta, porzioni }) =>
-    '<div class="plan-row"><div class="emo">' + esc(icona(ricetta)) + '</div>' +
+    '<div class="plan-row' + (bastaLaDispensa(ricetta, porzioni, dispensa) ? '' : ' non-basta') + '"><div class="emo">' + esc(icona(ricetta)) + '</div>' +
       '<button class="info" data-azione="apri" ' + attr('id', ricetta.id) + '>' +
         '<div class="name">' + esc(ricetta.nome) + '</div>' +
         '<div class="sub num">≈ ' + kcalTonde(ricetta, porzioni) + ' kcal a pasto</div></button>' +
@@ -725,9 +745,10 @@ function cambiaPorzioniPiano(id, verso) {
 function foglioAggiungiPiatto() {
   const nelPiano = mappaPiano(leggiPiano());
   const fuori = catalogo.ricette.filter(r => !nelPiano.has(r.id));
+  const dispensa = leggiDispensa();
   const html =
-    gruppoRicette('Dalla rotazione', fuori.filter(r => r.rotazione), nelPiano, 'scegli-piatto') +
-    gruppoRicette('Altre ricette', fuori.filter(r => !r.rotazione), nelPiano, 'scegli-piatto');
+    gruppoRicette('Dalla rotazione', fuori.filter(r => r.rotazione), nelPiano, 'scegli-piatto', dispensa) +
+    gruppoRicette('Altre ricette', fuori.filter(r => !r.rotazione), nelPiano, 'scegli-piatto', dispensa);
   apriFoglio('<h3>Aggiungi al piano</h3>' + (html || '<div class="empty">Sono già tutte nel piano.</div>'));
 }
 
