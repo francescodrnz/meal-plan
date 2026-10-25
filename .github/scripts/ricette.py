@@ -130,6 +130,12 @@ def campo(pagina, nome):
     return valore  # number, checkbox
 
 
+def numero(pagina, nome):
+    """Un numero, o None anche se la proprietà non c'è (tolta o rinominata su Notion)."""
+    prop = pagina["properties"].get(nome)
+    return prop.get("number") if prop and prop["type"] == "number" else None
+
+
 def testo_blocco(blocco):
     return testo(blocco.get(blocco["type"], {}).get("rich_text", []))
 
@@ -178,6 +184,11 @@ def main():
             "confezione": campo(p, "Confezione"),
             "tipoConfezione": campo(p, "Tipo confezione"),
             "siConta": campo(p, "Si conta in dispensa"),
+            "kcal": numero(p, "Kcal/100"),
+            "proteine": numero(p, "Proteine/100 (g)"),
+            "carboidrati": numero(p, "Carboidrati/100 (g)"),
+            "grassi": numero(p, "Grassi/100 (g)"),
+            "pesoPezzo": numero(p, "Peso pezzo (g)"),
         }
         for p in tutte_le_righe(DS_PRODOTTI)
     ]
@@ -225,8 +236,8 @@ def main():
             "rotazione": campo(r, "In rotazione"),
             "provata": campo(r, "Provata"),
             "porzioni": campo(r, "Porzioni"),
-            "kcal": campo(r, "Kcal/porzione"),
-            "proteine": campo(r, "Proteine/porzione (g)"),
+            "kcal": numero(r, "Kcal/porzione"),
+            "proteine": numero(r, "Proteine/porzione (g)"),
             "base": campo(r, "Base"),
             "descrizione": campo(r, "Note"),
             "ingredienti": lista,

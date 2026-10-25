@@ -31,10 +31,19 @@ Grafica e flussi sono quelli del mockup `decisioni/0001-mockup.html`.
 - **Piano** = la rotazione di Notion più le modifiche (decisione 0005): ogni
   piatto con le sue porzioni (passi di 0,1); a 0 esce dal piano e torna in
   "+ Aggiungi piatto", che offre anche le ricette fuori rotazione
-  (`aggiunte`). Kcal a pasto = `kcal × porzioni / ricetta.porzioni`. Giorni =
+  (`aggiunte`). Kcal a pasto = `kcal a porzione × porzioni / ricetta.porzioni`. Giorni =
   somma di `ricetta.porzioni / 2` sui piatti del piano. "Ogni giorno" (di
   partenza latte di soia 250 ml e frutta 2 pz) si moltiplica per i giorni;
   ammette solo prodotti con `siConta`, e a 0 la riga si toglie.
+- **Valori nutrizionali** (decisione 0007): kcal, proteine, carboidrati e
+  grassi a porzione li calcola `calcolaNutrizione` al caricamento
+  (`ricetta.nutrizione`): somma degli ingredienti di `grammi × valore / 100`
+  del prodotto. Grammi: g e ml 1:1, cucchiaino 5, cucchiaio 15, pz e
+  spicchio × `pesoPezzo`. Non contano spezie (reparto), q.b., facoltativi e
+  ingredienti senza prodotto (l'acqua). Se a un ingrediente mancano i
+  valori, si ripiega su `kcal` e `proteine` scritti a mano sulla ricetta e la
+  scheda lo segnala con ⚠. La scheda ricetta li mostra in quattro riquadri;
+  lista e Piano usano kcal e proteine.
 - **Fabbisogno**: `quantita × porzioni` degli ingredienti che contano (con
   prodotto e quantità, non facoltativi, prodotto con `siConta` e stessa unità
   del prodotto; con unità diversa l'ingrediente si salta e la scheda lo
@@ -100,11 +109,14 @@ all'avvio.
 - Formato: `{versione: 1, prodotti, ricette}`, ordinati per nome, senza data
   di generazione, così un giro senza modifiche dà un file identico.
   - prodotto: `id`, `nome`, `reparto`, `unita`, `confezione`,
-    `tipoConfezione`, `siConta`. Unità e confezione sono `null` per i
-    prodotti che si segnano solo come presenti (spezie, aglio, limone…).
+    `tipoConfezione`, `siConta`, `kcal`, `proteine`, `carboidrati`,
+    `grassi` (per 100 g, o 100 ml se il prodotto è in ml), `pesoPezzo` (g).
+    Unità e confezione sono `null` per i prodotti che si segnano solo come
+    presenti (spezie, aglio, limone…); i valori nutrizionali sono `null`
+    dove su Notion sono vuoti (le spezie).
   - ricetta: `id`, `nome`, `icona` (emoji della pagina, o `null`),
-    `rotazione`, `provata`, `porzioni`, `kcal`,
-    `proteine`, `base`, `descrizione`, `ingredienti`, `passi`, `note`.
+    `rotazione`, `provata`, `porzioni`, `kcal` e `proteine` (scritti a mano,
+    solo ripiego; `null` se su Notion non ci sono più), `base`, `descrizione`, `ingredienti`, `passi`, `note`.
   - ingrediente: `nome`, `quantita` **per porzione** (`null` se `q.b.`),
     `unita`, `prodotto` (id, `null` per l'acqua), `tipo`, `facoltativo`,
     `nota`.
@@ -164,7 +176,11 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
 - 2026-10-24: piano standard (10 piatti a 2 porzioni) = 10 giorni; fabbisogno
   di esempio: ceci secchi 1670 g (4 pacchi), latte di soia 2750 ml.
 - 2026-10-24: `style.css` da 409 a 144 righe (solo le classi degli
-  allenamenti); cache `mealplan-v16`.
+  allenamenti).
+- 2026-10-25: valori nutrizionali su 44 prodotti (non sulle 18 spezie);
+  33 ricette su 33 calcolate per intero, 958–1206 kcal a porzione, da −8% a
+  +11% rispetto ai valori a mano. Cache `mealplan-v17`; lo script ci mette
+  circa 33 s.
 
 ## Limiti e comportamenti noti
 
@@ -179,6 +195,11 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
   le pagine HTML e `ricette.json` è cache-first, e una pagina nuova con JS o
   CSS vecchi può rompersi. Per un attimo, all'aggiornamento, l'HTML nuovo
   gira con il JS vecchio: il ricaricamento su `controllerchange` lo sistema.
+- **I valori nutrizionali sono tipici**, da tabelle standard (carboidrati
+  come in etichetta UE, senza fibre), non quelli dei prodotti comprati: si
+  correggono su Notion dall'etichetta. Il prodotto è quello come si compra
+  (legumi e cereali secchi). Pesi per pezzo stimati (cipolla 110 g,
+  tortilla 60 g, spicchio d'aglio 5 g…).
 - **La dispensa è una stima**: la tengono aggiornata "Spesa fatta",
   "Cucinata" e i −/+. Gli ingredienti facoltativi non contano.
 - **Nomi e id dei prodotti su Notion**: la migrazione cerca i prodotti per
@@ -212,7 +233,9 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
 Prove senza Chrome collegato: Playwright con `uv run --with playwright
 python …` (o in un venv), con il browser scaricato in una cartella temporanea:
 `PLAYWRIGHT_BROWSERS_PATH=<cartella> python -m playwright install chromium`
-(circa 120 MB). Al primo avvio la pagina si ricarica da sola quando il SW si
+(circa 120 MB; per `launch()` senza finestra serve anche
+`chromium-headless-shell`, che si installa allo stesso modo). Le schede si
+cambiano cliccando `[data-scheda=piano]` (cambiare solo l'hash non basta). Al primo avvio la pagina si ricarica da sola quando il SW si
 installa: aspettare un paio di secondi prima di toccarla. Se la porta 8000 è
 già occupata (risponde 404 a tutto), usarne un'altra. Con `color_scheme='dark'` nel contesto si prova il tema
 scuro; per provare un aggiornamento del SW si serve una cartella con un link
@@ -257,3 +280,6 @@ verso la rete hanno l'icona ⚙.
   le modifiche fatte dal telefono (`aggiunte`, porzioni a 0).
 - [0006](decisioni/0006-ricette-raggruppate-come-il-piano.md) — la scheda
   Ricette raggruppa per "Nel piano", non per la casella di Notion.
+- [0007](decisioni/0007-kcal-e-macro-calcolati-dai-prodotti.md) — kcal e
+  macro calcolati dai valori dei prodotti; i numeri a mano solo come
+  ripiego.

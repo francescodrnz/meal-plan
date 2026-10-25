@@ -44,7 +44,10 @@ function preparaCatalogo(dati) {
   const prodottiPerId = {};
   dati.prodotti.forEach(p => { prodottiPerId[p.id] = p; });
   const ricettePerId = {};
-  dati.ricette.forEach(r => { ricettePerId[r.id] = r; });
+  dati.ricette.forEach(r => {
+    ricettePerId[r.id] = r;
+    r.nutrizione = calcolaNutrizione(r, prodottiPerId);
+  });
   return { prodotti: dati.prodotti, ricette: dati.ricette, prodottiPerId, ricettePerId };
 }
 
@@ -129,7 +132,35 @@ function giorniDelPiano(piano) {
     .reduce((tot, x) => tot + giorniRicetta(x.ricetta), 0);
 }
 
-const kcalAPasto = (ricetta, porzioni) => ricetta.kcal * porzioni / ricetta.porzioni;
+const kcalAPasto = (ricetta, porzioni) => typeof ricetta.nutrizione.kcal === 'number'
+  ? ricetta.nutrizione.kcal * porzioni / ricetta.porzioni : null;
+
+// ==================== VALORI NUTRIZIONALI ====================
+// Valori dei prodotti per 100 g o 100 ml; pz e spicchio pesano pesoPezzo.
+const GRAMMI_PER_UNITA = { g: 1, ml: 1, cucchiaino: 5, cucchiaio: 15 };
+const MACRO = ['kcal', 'proteine', 'carboidrati', 'grassi'];
+
+function grammiIngrediente(ing, p) {
+  if (GRAMMI_PER_UNITA[ing.unita]) return ing.quantita * GRAMMI_PER_UNITA[ing.unita];
+  if ((ing.unita === 'pz' || ing.unita === 'spicchio') && p.pesoPezzo) return ing.quantita * p.pesoPezzo;
+  return null;
+}
+
+// A porzione, dalle quantità degli ingredienti; spezie, q.b. e facoltativi non contano.
+// Se a un ingrediente mancano i valori si ripiega su kcal e proteine scritti a mano su Notion.
+function calcolaNutrizione(ricetta, prodottiPerId) {
+  const tot = { kcal: 0, proteine: 0, carboidrati: 0, grassi: 0 };
+  const mancanti = [];
+  ricetta.ingredienti.forEach(ing => {
+    const p = ing.prodotto && prodottiPerId[ing.prodotto];
+    if (!p || ing.quantita === null || ing.facoltativo || p.reparto === 'Spezie') return;
+    const grammi = grammiIngrediente(ing, p);
+    if (grammi === null || typeof p.kcal !== 'number') { mancanti.push(ing.nome); return; }
+    MACRO.forEach(k => { tot[k] += grammi * (p[k] || 0) / 100; });
+  });
+  if (!mancanti.length) return Object.assign(tot, { calcolata: true, mancanti });
+  return { kcal: ricetta.kcal, proteine: ricetta.proteine, carboidrati: null, grassi: null, calcolata: false, mancanti };
+}
 
 // ==================== INGREDIENTI ====================
 // Il prodotto da contare per un ingrediente, oppure null se non si conta in dispensa.
@@ -501,7 +532,21 @@ const $ = id => document.getElementById(id);
 const attr = (nome, valore) => 'data-' + nome + '="' + esc(valore) + '"';
 const icona = r => r.icona || '🍽️';
 const testoGiorni = n => fmtNumero(n) + (n === 1 ? ' giorno' : ' giorni');
-const kcalTonde = (ricetta, porzioni) => Math.round(kcalAPasto(ricetta, porzioni) / 10) * 10;
+const tondo = (n, passo) => typeof n === 'number' ? String(Math.round(n / passo) * passo) : '?';
+const kcalTesto = n => tondo(n, 10);
+const grammiTesto = n => tondo(n, 1);
+const kcalTonde = (ricetta, porzioni) => kcalTesto(kcalAPasto(ricetta, porzioni));
+
+function riquadroNutrizione(n) {
+  const voce = (valore, etichetta) => '<div><b class="num">' + valore + '</b><span>' + etichetta + '</span></div>';
+  const valori = n.calcolata
+    ? voce(kcalTesto(n.kcal), 'kcal') + voce(grammiTesto(n.proteine) + ' g', 'proteine') +
+      voce(grammiTesto(n.carboidrati) + ' g', 'carboidrati') + voce(grammiTesto(n.grassi) + ' g', 'grassi')
+    : voce(kcalTesto(n.kcal), 'kcal') + voce(grammiTesto(n.proteine) + ' g', 'proteine');
+  return '<div class="macro">' + valori + '</div>' +
+    (n.calcolata ? '' : '<div class="macro-nota"><span class="warn">⚠</span> Scritti a mano: mancano i valori di ' +
+      esc(n.mancanti.join(', ')) + '</div>');
+}
 const mappaPiano = piano => new Map(piattiDelPiano(piano).map(x => [x.ricetta.id, x.porzioni]));
 
 function stepper(azione, attributi, valore) {
@@ -612,7 +657,7 @@ function rigaRicetta(r, nelPiano, azione) {
   return '<button class="rec" data-azione="' + azione + '" ' + attr('id', r.id) + '>' +
     '<span class="emo">' + esc(icona(r)) + '</span>' +
     '<span><div class="name">' + esc(r.nome) + '</div>' +
-      '<div class="meta num">' + esc(r.kcal) + ' kcal · ' + esc(r.proteine) + ' g proteine' +
+      '<div class="meta num">' + kcalTesto(r.nutrizione.kcal) + ' kcal · ' + grammiTesto(r.nutrizione.proteine) + ' g proteine' +
       (r.provata ? '' : ' · <span class="da-provare">da provare</span>') + '</div></span>' +
     etichetta + '</button>';
 }
@@ -1199,8 +1244,8 @@ function disegnaRicetta() {
 
   $('scheda-corpo').innerHTML =
     '<div class="rhero"><span class="emo">' + esc(icona(ricetta)) + '</span><h2>' + esc(ricetta.nome) + '</h2>' +
-      '<div class="meta num">' + esc(ricetta.kcal) + ' kcal e ' + esc(ricetta.proteine) + ' g di proteine a porzione' +
-        (ricetta.provata ? '' : ' · <span class="da-provare">da provare</span>') + '</div>' +
+      (ricetta.provata ? '' : '<div class="meta"><span class="da-provare">da provare</span></div>') +
+      '<div class="meta">A porzione</div>' + riquadroNutrizione(ricetta.nutrizione) +
       (ricetta.descrizione ? '<p class="desc">' + esc(ricetta.descrizione) + '</p>' : '') + '</div>' +
     '<div class="porz-bar"><span class="lbl"><b class="num">' + fmtNumero(porzioni) + ' porzioni</b>' +
         '<span class="num">≈ ' + kcalTonde(ricetta, porzioni) + ' kcal a pasto</span></span>' +

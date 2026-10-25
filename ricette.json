@@ -8,7 +8,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": 140,
+      "proteine": 6.4,
+      "carboidrati": 30,
+      "grassi": 0.5,
+      "pesoPezzo": 5
     },
     {
       "id": "402d208f-0d59-81ea-b851-cf99d3fbd91b",
@@ -17,7 +22,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-814d-93d1-c4c2ef07b72c",
@@ -26,7 +36,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81a5-b4e9-fa6e0d8b834c",
@@ -35,7 +50,12 @@
       "unita": "g",
       "confezione": 250,
       "tipoConfezione": "pacco",
-      "siConta": true
+      "siConta": true,
+      "kcal": 350,
+      "proteine": 0.3,
+      "carboidrati": 87,
+      "grassi": 0.1,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-8109-b504-ff18310acf08",
@@ -44,7 +64,12 @@
       "unita": "g",
       "confezione": 750,
       "tipoConfezione": "pacco",
-      "siConta": true
+      "siConta": true,
+      "kcal": 30,
+      "proteine": 3,
+      "carboidrati": 3,
+      "grassi": 0.4,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-818f-a183-dcce8bb62267",
@@ -53,7 +78,12 @@
       "unita": "g",
       "confezione": 350,
       "tipoConfezione": "vasetto",
-      "siConta": true
+      "siConta": true,
+      "kcal": 600,
+      "proteine": 25,
+      "carboidrati": 13,
+      "grassi": 50,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-818f-a2ee-ccf4fa578e12",
@@ -62,7 +92,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81e8-82d1-eee6be4b7781",
@@ -71,7 +106,12 @@
       "unita": "g",
       "confezione": 100,
       "tipoConfezione": "vasetto",
-      "siConta": true
+      "siConta": true,
+      "kcal": 25,
+      "proteine": 2.4,
+      "carboidrati": 1.7,
+      "grassi": 0.9,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81a2-adca-c62ad70404c5",
@@ -80,7 +120,12 @@
       "unita": "pz",
       "confezione": 1,
       "tipoConfezione": "pz",
-      "siConta": true
+      "siConta": true,
+      "kcal": 35,
+      "proteine": 0.9,
+      "carboidrati": 7.6,
+      "grassi": 0.2,
+      "pesoPezzo": 80
     },
     {
       "id": "402d208f-0d59-8141-ae86-cec1215c4550",
@@ -89,7 +134,12 @@
       "unita": "g",
       "confezione": 800,
       "tipoConfezione": "pz",
-      "siConta": true
+      "siConta": true,
+      "kcal": 25,
+      "proteine": 1.9,
+      "carboidrati": 3,
+      "grassi": 0.3,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-817d-96b6-f346f78fc856",
@@ -98,7 +148,12 @@
       "unita": "g",
       "confezione": 300,
       "tipoConfezione": "pz",
-      "siConta": true
+      "siConta": true,
+      "kcal": 35,
+      "proteine": 3,
+      "carboidrati": 4,
+      "grassi": 0.6,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
@@ -107,7 +162,12 @@
       "unita": "g",
       "confezione": 500,
       "tipoConfezione": "pacco",
-      "siConta": true
+      "siConta": true,
+      "kcal": 340,
+      "proteine": 20,
+      "carboidrati": 47,
+      "grassi": 6,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-8134-a549-c8270478c000",
@@ -116,7 +176,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": 40,
+      "proteine": 1.1,
+      "carboidrati": 8,
+      "grassi": 0.1,
+      "pesoPezzo": 110
     },
     {
       "id": "402d208f-0d59-81d9-b6a2-fe8f6f10c0a4",
@@ -125,7 +190,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-8101-995d-e828474878a5",
@@ -134,16 +204,26 @@
       "unita": "g",
       "confezione": 130,
       "tipoConfezione": "vasetto",
-      "siConta": true
+      "siConta": true,
+      "kcal": 90,
+      "proteine": 4.5,
+      "carboidrati": 15,
+      "grassi": 0.5,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81e0-942d-eb2ed78c30e4",
       "nome": "Cous cous",
       "reparto": "Pasta riso e cereali",
       "unita": "g",
-      "confezione": 500,
+      "confezione": 1000,
       "tipoConfezione": "pacco",
-      "siConta": true
+      "siConta": true,
+      "kcal": 360,
+      "proteine": 12.5,
+      "carboidrati": 72,
+      "grassi": 1.5,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-8190-9dbb-f47f5c9185ae",
@@ -152,7 +232,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-8186-b6e2-ef6ead4db2b8",
@@ -161,7 +246,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-8109-b3a5-c263c1bd10e1",
@@ -170,7 +260,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81b3-ac52-d96beeab1a3c",
@@ -179,7 +274,12 @@
       "unita": "pz",
       "confezione": 25,
       "tipoConfezione": "pacco",
-      "siConta": true
+      "siConta": true,
+      "kcal": 280,
+      "proteine": 2.5,
+      "carboidrati": 66,
+      "grassi": 0.4,
+      "pesoPezzo": 8
     },
     {
       "id": "402d208f-0d59-8100-81da-d2d890a6a21f",
@@ -188,7 +288,12 @@
       "unita": "g",
       "confezione": 240,
       "tipoConfezione": "lattina",
-      "siConta": true
+      "siConta": true,
+      "kcal": 100,
+      "proteine": 7,
+      "carboidrati": 13,
+      "grassi": 0.5,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81d2-b0f1-f41b7b757748",
@@ -197,7 +302,12 @@
       "unita": "g",
       "confezione": 500,
       "tipoConfezione": "pacco",
-      "siConta": true
+      "siConta": true,
+      "kcal": 330,
+      "proteine": 22,
+      "carboidrati": 48,
+      "grassi": 1.5,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-8190-bc62-f0eced18deae",
@@ -206,7 +316,12 @@
       "unita": "g",
       "confezione": 500,
       "tipoConfezione": "pacco",
-      "siConta": true
+      "siConta": true,
+      "kcal": 340,
+      "proteine": 13,
+      "carboidrati": 67,
+      "grassi": 2.5,
+      "pesoPezzo": null
     },
     {
       "id": "403d208f-0d59-8178-a894-fafc0d0dc2b5",
@@ -215,7 +330,12 @@
       "unita": "pz",
       "confezione": 1,
       "tipoConfezione": "pz",
-      "siConta": true
+      "siConta": true,
+      "kcal": 52,
+      "proteine": 0.3,
+      "carboidrati": 12,
+      "grassi": 0.2,
+      "pesoPezzo": 150
     },
     {
       "id": "402d208f-0d59-81d6-a151-e26d8ea8a422",
@@ -224,7 +344,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81e5-b08e-dc53316776df",
@@ -233,7 +358,12 @@
       "unita": "ml",
       "confezione": 1000,
       "tipoConfezione": "bottiglia",
-      "siConta": true
+      "siConta": true,
+      "kcal": 39,
+      "proteine": 3,
+      "carboidrati": 2.5,
+      "grassi": 1.8,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-8105-a243-d0332e52caf5",
@@ -242,7 +372,12 @@
       "unita": "g",
       "confezione": 500,
       "tipoConfezione": "pacco",
-      "siConta": true
+      "siConta": true,
+      "kcal": 330,
+      "proteine": 24,
+      "carboidrati": 49,
+      "grassi": 1.5,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-819d-a3b6-ebc3ec4e6b17",
@@ -251,7 +386,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": 30,
+      "proteine": 1,
+      "carboidrati": 3,
+      "grassi": 0.3,
+      "pesoPezzo": 50
     },
     {
       "id": "402d208f-0d59-810e-af65-de60a0d85352",
@@ -260,7 +400,12 @@
       "unita": "g",
       "confezione": 500,
       "tipoConfezione": "pacco",
-      "siConta": true
+      "siConta": true,
+      "kcal": 360,
+      "proteine": 11,
+      "carboidrati": 73,
+      "grassi": 4,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-8192-bfa6-c301d09b4399",
@@ -269,7 +414,12 @@
       "unita": "g",
       "confezione": 700,
       "tipoConfezione": "pacco",
-      "siConta": true
+      "siConta": true,
+      "kcal": 30,
+      "proteine": 1.8,
+      "carboidrati": 4.5,
+      "grassi": 0.3,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81f3-bd02-dadf890f0083",
@@ -278,7 +428,12 @@
       "unita": "g",
       "confezione": 300,
       "tipoConfezione": "vasetto",
-      "siConta": true
+      "siConta": true,
+      "kcal": 200,
+      "proteine": 12,
+      "carboidrati": 26,
+      "grassi": 6,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-8120-ac30-ca36508e09b4",
@@ -287,7 +442,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-8172-80f1-c191f25b4593",
@@ -296,7 +456,12 @@
       "unita": "ml",
       "confezione": 1000,
       "tipoConfezione": "bottiglia",
-      "siConta": true
+      "siConta": true,
+      "kcal": 830,
+      "proteine": 0,
+      "carboidrati": 0,
+      "grassi": 92,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81dd-a7db-e985866a49f9",
@@ -305,7 +470,12 @@
       "unita": "ml",
       "confezione": 1000,
       "tipoConfezione": "bottiglia",
-      "siConta": true
+      "siConta": true,
+      "kcal": 825,
+      "proteine": 0,
+      "carboidrati": 0,
+      "grassi": 91.6,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81c7-b64a-c8ed6b492b9e",
@@ -314,7 +484,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81e3-84e7-d1b68ff10600",
@@ -323,7 +498,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81e4-a72b-fdc0ce3b0e5c",
@@ -332,7 +512,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-8175-a9a7-d4539b6a92ae",
@@ -341,7 +526,12 @@
       "unita": "g",
       "confezione": 700,
       "tipoConfezione": "bottiglia",
-      "siConta": true
+      "siConta": true,
+      "kcal": 30,
+      "proteine": 1.3,
+      "carboidrati": 4.8,
+      "grassi": 0.2,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81b4-ae78-c089b1b0a9a3",
@@ -350,7 +540,12 @@
       "unita": "g",
       "confezione": 500,
       "tipoConfezione": "pacco",
-      "siConta": true
+      "siConta": true,
+      "kcal": 355,
+      "proteine": 13,
+      "carboidrati": 71,
+      "grassi": 1.5,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81a4-ba09-e9acd7d7ab72",
@@ -359,7 +554,12 @@
       "unita": "g",
       "confezione": 1500,
       "tipoConfezione": "pacco",
-      "siConta": true
+      "siConta": true,
+      "kcal": 77,
+      "proteine": 2,
+      "carboidrati": 17,
+      "grassi": 0.1,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-815b-8c33-f63352af7917",
@@ -368,7 +568,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81a8-9dc3-df2f875c837c",
@@ -377,7 +582,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-817a-beda-dbe6828c2637",
@@ -386,7 +596,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81e0-ae9d-cc3c5968a68a",
@@ -395,7 +610,12 @@
       "unita": "g",
       "confezione": 450,
       "tipoConfezione": "pacco",
-      "siConta": true
+      "siConta": true,
+      "kcal": 70,
+      "proteine": 5.5,
+      "carboidrati": 9.5,
+      "grassi": 0.4,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-810e-aba7-d88eb8df00cb",
@@ -404,7 +624,12 @@
       "unita": "g",
       "confezione": 500,
       "tipoConfezione": "pacco",
-      "siConta": true
+      "siConta": true,
+      "kcal": 355,
+      "proteine": 8,
+      "carboidrati": 77,
+      "grassi": 1.5,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-8198-902d-d5176f398977",
@@ -413,7 +638,12 @@
       "unita": "g",
       "confezione": 400,
       "tipoConfezione": "lattina",
-      "siConta": true
+      "siConta": true,
+      "kcal": 25,
+      "proteine": 1.2,
+      "carboidrati": 4,
+      "grassi": 0.2,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81c4-a4d4-c1f7573de34b",
@@ -422,7 +652,12 @@
       "unita": "pz",
       "confezione": 25,
       "tipoConfezione": "pz",
-      "siConta": true
+      "siConta": true,
+      "kcal": 20,
+      "proteine": 0.9,
+      "carboidrati": 3.2,
+      "grassi": 0.2,
+      "pesoPezzo": 15
     },
     {
       "id": "402d208f-0d59-818f-bd2c-c038dde85e11",
@@ -431,16 +666,26 @@
       "unita": "pz",
       "confezione": 1,
       "tipoConfezione": "pz",
-      "siConta": true
+      "siConta": true,
+      "kcal": 30,
+      "proteine": 1.5,
+      "carboidrati": 6,
+      "grassi": 0.3,
+      "pesoPezzo": 90
     },
     {
       "id": "402d208f-0d59-816f-9140-d92336127e88",
       "nome": "Quinoa",
       "reparto": "Pasta riso e cereali",
       "unita": "g",
-      "confezione": 500,
+      "confezione": 400,
       "tipoConfezione": "pacco",
-      "siConta": true
+      "siConta": true,
+      "kcal": 370,
+      "proteine": 14,
+      "carboidrati": 64,
+      "grassi": 6,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81af-8be6-ed073849172d",
@@ -449,7 +694,12 @@
       "unita": "g",
       "confezione": 1000,
       "tipoConfezione": "pacco",
-      "siConta": true
+      "siConta": true,
+      "kcal": 355,
+      "proteine": 7,
+      "carboidrati": 79,
+      "grassi": 0.6,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81ec-b192-d95dca5dedb3",
@@ -458,7 +708,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-8121-ac25-e755fe5a25f3",
@@ -467,7 +722,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-8155-88e2-e8bdf5a33fb5",
@@ -476,7 +736,12 @@
       "unita": "ml",
       "confezione": 250,
       "tipoConfezione": "bottiglia",
-      "siConta": true
+      "siConta": true,
+      "kcal": 70,
+      "proteine": 9,
+      "carboidrati": 5,
+      "grassi": 0,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-8176-96cb-fd20d3e5366e",
@@ -485,7 +750,12 @@
       "unita": "g",
       "confezione": 500,
       "tipoConfezione": "pacco",
-      "siConta": true
+      "siConta": true,
+      "kcal": 355,
+      "proteine": 13,
+      "carboidrati": 71,
+      "grassi": 1.5,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-8108-8344-d09266b39e1b",
@@ -494,7 +764,12 @@
       "unita": "g",
       "confezione": 750,
       "tipoConfezione": "pacco",
-      "siConta": true
+      "siConta": true,
+      "kcal": 25,
+      "proteine": 3,
+      "carboidrati": 1,
+      "grassi": 0.5,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81cb-8317-c0561439981c",
@@ -503,7 +778,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": 12,
+      "proteine": 1.3,
+      "carboidrati": 0.8,
+      "grassi": 0.8,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81bc-8c8c-f0ee0ae6a8d6",
@@ -512,7 +792,12 @@
       "unita": "g",
       "confezione": 180,
       "tipoConfezione": "panetto",
-      "siConta": true
+      "siConta": true,
+      "kcal": 140,
+      "proteine": 14,
+      "carboidrati": 1.5,
+      "grassi": 8,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-812f-80cb-db66a3e565f2",
@@ -521,7 +806,12 @@
       "unita": "pz",
       "confezione": 6,
       "tipoConfezione": "pacco",
-      "siConta": true
+      "siConta": true,
+      "kcal": 310,
+      "proteine": 8.5,
+      "carboidrati": 50,
+      "grassi": 7.5,
+      "pesoPezzo": 60
     },
     {
       "id": "402d208f-0d59-8103-a2b4-f176b039d57c",
@@ -530,7 +820,12 @@
       "unita": "g",
       "confezione": 1000,
       "tipoConfezione": "pz",
-      "siConta": true
+      "siConta": true,
+      "kcal": 25,
+      "proteine": 2,
+      "carboidrati": 3.5,
+      "grassi": 0.1,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-819c-aa36-ce55fb7ab135",
@@ -539,7 +834,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": 80,
+      "proteine": 1.8,
+      "carboidrati": 15,
+      "grassi": 0.8,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81e4-8de9-e263fc19129f",
@@ -548,7 +848,12 @@
       "unita": null,
       "confezione": null,
       "tipoConfezione": null,
-      "siConta": false
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-8117-857a-e47220d0612f",
@@ -557,7 +862,12 @@
       "unita": "g",
       "confezione": 1500,
       "tipoConfezione": "pz",
-      "siConta": true
+      "siConta": true,
+      "kcal": 20,
+      "proteine": 1,
+      "carboidrati": 4,
+      "grassi": 0.1,
+      "pesoPezzo": null
     }
   ],
   "ricette": [

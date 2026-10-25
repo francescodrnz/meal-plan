@@ -13,3 +13,4 @@ Modello in `0000-modello.md`. Le regole stanno in `../CONVENZIONI.md`.
 | 0004 | Ricette: si vedono tutte, il piano resta la rotazione | decisa (il piano: superata da 0005; i gruppi: da 0006) | app |
 | 0005 | Piano modificabile: la rotazione più le modifiche | decisa | app |
 | 0006 | Scheda Ricette raggruppata come il piano | decisa | app |
+| 0007 | Kcal e macro calcolati dai prodotti | decisa | trasversale |
