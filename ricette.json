@@ -310,6 +310,20 @@
       "pesoPezzo": null
     },
     {
+      "id": "406d208f-0d59-81fd-a930-c326422c45a9",
+      "nome": "Farina 00",
+      "reparto": "Altro",
+      "unita": "g",
+      "confezione": 1000,
+      "tipoConfezione": "pacco",
+      "siConta": true,
+      "kcal": 350,
+      "proteine": 11,
+      "carboidrati": 73,
+      "grassi": 1,
+      "pesoPezzo": null
+    },
+    {
       "id": "402d208f-0d59-8190-bc62-f0eced18deae",
       "nome": "Farro perlato",
       "reparto": "Pasta riso e cereali",
@@ -321,6 +335,20 @@
       "proteine": 13,
       "carboidrati": 67,
       "grassi": 2.5,
+      "pesoPezzo": null
+    },
+    {
+      "id": "406d208f-0d59-81b8-a358-cb17f863c413",
+      "nome": "Formaggio vegetale filante",
+      "reparto": "Frigo",
+      "unita": "g",
+      "confezione": 200,
+      "tipoConfezione": "pacco",
+      "siConta": true,
+      "kcal": 280,
+      "proteine": 1,
+      "carboidrati": 20,
+      "grassi": 22,
       "pesoPezzo": null
     },
     {
@@ -336,6 +364,20 @@
       "carboidrati": 12,
       "grassi": 0.2,
       "pesoPezzo": 150
+    },
+    {
+      "id": "406d208f-0d59-817d-8511-ca33cb844613",
+      "nome": "Funghi misti",
+      "reparto": "Frutta e verdura",
+      "unita": "g",
+      "confezione": 250,
+      "tipoConfezione": "pacco",
+      "siConta": true,
+      "kcal": 22,
+      "proteine": 3,
+      "carboidrati": 1,
+      "grassi": 0.3,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-81d6-a151-e26d8ea8a422",
@@ -447,6 +489,34 @@
       "proteine": null,
       "carboidrati": null,
       "grassi": null,
+      "pesoPezzo": null
+    },
+    {
+      "id": "406d208f-0d59-81ea-9131-fd63acbb94d8",
+      "nome": "Noce moscata",
+      "reparto": "Spezie",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
+    },
+    {
+      "id": "406d208f-0d59-81a3-87ed-e74a061fe54d",
+      "nome": "Noci sgusciate",
+      "reparto": "Altro",
+      "unita": "g",
+      "confezione": 200,
+      "tipoConfezione": "pacco",
+      "siConta": true,
+      "kcal": 650,
+      "proteine": 15,
+      "carboidrati": 7,
+      "grassi": 65,
       "pesoPezzo": null
     },
     {
@@ -744,6 +814,34 @@
       "pesoPezzo": null
     },
     {
+      "id": "406d208f-0d59-818f-bea2-c04e53652581",
+      "nome": "Salvia fresca",
+      "reparto": "Frutta e verdura",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
+    },
+    {
+      "id": "406d208f-0d59-8154-a9e9-f598d836ed6d",
+      "nome": "Sfoglie per lasagna",
+      "reparto": "Pasta riso e cereali",
+      "unita": "g",
+      "confezione": 500,
+      "tipoConfezione": "pacco",
+      "siConta": true,
+      "kcal": 355,
+      "proteine": 13,
+      "carboidrati": 71,
+      "grassi": 1.5,
+      "pesoPezzo": null
+    },
+    {
       "id": "402d208f-0d59-8176-96cb-fd20d3e5366e",
       "nome": "Spaghetti",
       "reparto": "Pasta riso e cereali",
@@ -825,6 +923,20 @@
       "proteine": 2,
       "carboidrati": 3.5,
       "grassi": 0.1,
+      "pesoPezzo": null
+    },
+    {
+      "id": "406d208f-0d59-8137-a302-f965fa2d4b96",
+      "nome": "Vino bianco",
+      "reparto": "Altro",
+      "unita": null,
+      "confezione": null,
+      "tipoConfezione": null,
+      "siConta": false,
+      "kcal": null,
+      "proteine": null,
+      "carboidrati": null,
+      "grassi": null,
       "pesoPezzo": null
     },
     {
@@ -1926,6 +2038,185 @@
             "Hot chilly → cayenna macinata, stessa dose.",
             "Garam masala → un pizzico di mix korma, oppure ometti."
           ]
+        }
+      ]
+    },
+    {
+      "id": "406d208f-0d59-8134-80e0-cc909f39e01b",
+      "nome": "Lasagna zucca e funghi",
+      "icona": "🎃",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 4,
+      "kcal": 925,
+      "proteine": 27,
+      "base": [
+        "Pasta"
+      ],
+      "descrizione": "Ricetta trovata in giro, salvata come riferimento. Fuori standard: al forno, senza legumi, proteine basse. Teglia 22x18 alta.",
+      "ingredienti": [
+        {
+          "nome": "Latte di soia",
+          "quantita": 250,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81e5-b08e-dc53316776df",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Besciamella"
+        },
+        {
+          "nome": "Zucca",
+          "quantita": 150,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8117-857a-e47220d0612f",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da cotta. Quasi tutta frullata nella besciamella, un po' per l'ultimo strato"
+        },
+        {
+          "nome": "Funghi misti",
+          "quantita": 150,
+          "unita": "g",
+          "prodotto": "406d208f-0d59-817d-8511-ca33cb844613",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A tocchetti, in padella"
+        },
+        {
+          "nome": "Sfoglie per lasagna",
+          "quantita": 62.5,
+          "unita": "g",
+          "prodotto": "406d208f-0d59-8154-a9e9-f598d836ed6d",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Di grano duro, secche"
+        },
+        {
+          "nome": "Noci",
+          "quantita": 15,
+          "unita": "g",
+          "prodotto": "406d208f-0d59-81a3-87ed-e74a061fe54d",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sminuzzate, tra gli strati"
+        },
+        {
+          "nome": "Salvia fresca",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "406d208f-0d59-818f-bea2-c04e53652581",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata: nei funghi, tra gli strati e in superficie"
+        },
+        {
+          "nome": "Formaggio vegetale filante",
+          "quantita": 37.5,
+          "unita": "g",
+          "prodotto": "406d208f-0d59-81b8-a358-cb17f863c413",
+          "tipo": "Da comprare",
+          "facoltativo": true,
+          "nota": "Tra gli strati. In alternativa lievito alimentare nella besciamella o tofu sbriciolato"
+        },
+        {
+          "nome": "Farina 00",
+          "quantita": 20,
+          "unita": "g",
+          "prodotto": "406d208f-0d59-81fd-a930-c326422c45a9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Besciamella"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 22,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Besciamella"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 10,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Soffritto dei funghi e filo finale"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.125,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Dorata, a cubetti nel soffritto (mezza per teglia)"
+        },
+        {
+          "nome": "Vino bianco",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "406d208f-0d59-8137-a302-f965fa2d4b96",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Una spruzzata per sfumare i funghi"
+        },
+        {
+          "nome": "Noce moscata",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "406d208f-0d59-81ea-9131-fd63acbb94d8",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Besciamella"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Besciamella e funghi"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Zucca. Se non è già cotta, cuocila al forno o al vapore e schiacciala. Tienine da parte un po' (circa un sesto) per l'ultimo strato."
+        },
+        {
+          "testo": "Besciamella. Scalda il latte di soia a fiamma vivace. Intanto, in un'altra pentola, stempera la farina nell'olio della besciamella e cuoci finché sfrigola, circa 2 minuti. Aggiungi il latte caldo poco alla volta, mescolando bene con una frusta. Unisci noce moscata e sale, porta dolcemente a bollore e cuoci 2 minuti."
+        },
+        {
+          "testo": "Besciamella alla zucca. Togli dal fuoco, aggiungi il resto della zucca e frulla con il frullatore a immersione. Lascia riposare."
+        },
+        {
+          "testo": "Funghi. Taglia la cipolla a cubetti e soffriggila brevemente in un giro d'olio caldo. Aggiungi metà della salvia tritata, i funghi a tocchetti e una presa di sale, sfuma con una spruzzata di vino bianco. Cuoci finché i funghi sono dorati e hanno perso l'acqua."
+        },
+        {
+          "testo": "Composizione. Un mestolo abbondante di besciamella sul fondo della teglia, poi uno strato di sfoglie. Prosegui a strati: besciamella, funghi, noci tritate, un po' di salvia, formaggio, sfoglie. Chiudi con besciamella, la zucca tenuta da parte, il resto della salvia e un filo d'olio."
+        },
+        {
+          "testo": "Forno. Statico a 180 °C per 35-40 minuti. Fai riposare 5 minuti prima di servire."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 925 kcal e 27 g di proteine con il formaggio, circa 820 kcal senza."
+        },
+        {
+          "testo": "Formaggio: facoltativo. Al posto suo vanno bene un paio di cucchiai di lievito alimentare nella besciamella, per il gusto, o del tofu sbriciolato tra gli strati, che alza anche le proteine."
+        },
+        {
+          "testo": "Teglia: con queste dosi la lasagna viene alta, serve una teglia profonda almeno 6-7 cm."
+        },
+        {
+          "testo": "Sfoglie: quelle secche vanno bene così, la besciamella è abbondante."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni, si può congelare a porzioni."
         }
       ]
     },
