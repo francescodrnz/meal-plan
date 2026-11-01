@@ -394,6 +394,34 @@
       "pesoPezzo": null
     },
     {
+      "id": "40ad208f-0d59-8104-947a-c314930fb691",
+      "nome": "Harissa",
+      "reparto": "Condimenti",
+      "unita": "g",
+      "confezione": 135,
+      "tipoConfezione": "vasetto",
+      "siConta": true,
+      "kcal": 120,
+      "proteine": 3,
+      "carboidrati": null,
+      "grassi": null,
+      "pesoPezzo": null
+    },
+    {
+      "id": "40ad208f-0d59-818b-9bfc-c24fb69de78b",
+      "nome": "Harissa",
+      "reparto": "Condimenti",
+      "unita": "g",
+      "confezione": 100,
+      "tipoConfezione": "vasetto",
+      "siConta": true,
+      "kcal": 120,
+      "proteine": 3,
+      "carboidrati": 7,
+      "grassi": 9,
+      "pesoPezzo": null
+    },
+    {
       "id": "402d208f-0d59-81e5-b08e-dc53316776df",
       "nome": "Latte di soia",
       "reparto": "Latte e bevande vegetali",
@@ -422,6 +450,20 @@
       "pesoPezzo": null
     },
     {
+      "id": "40ad208f-0d59-81a5-9653-e3ee64396098",
+      "nome": "Lievito alimentare",
+      "reparto": "Condimenti",
+      "unita": "g",
+      "confezione": 125,
+      "tipoConfezione": "pacco",
+      "siConta": true,
+      "kcal": 380,
+      "proteine": 50,
+      "carboidrati": 17,
+      "grassi": 4,
+      "pesoPezzo": null
+    },
+    {
       "id": "402d208f-0d59-819d-a3b6-ebc3ec4e6b17",
       "nome": "Limone",
       "reparto": "Frutta e verdura",
@@ -434,6 +476,20 @@
       "carboidrati": 3,
       "grassi": 0.3,
       "pesoPezzo": 50
+    },
+    {
+      "id": "40ad208f-0d59-81af-a345-deda5ab77c4c",
+      "nome": "Medaglioni di soia",
+      "reparto": "Legumi",
+      "unita": "g",
+      "confezione": 200,
+      "tipoConfezione": "pacco",
+      "siConta": true,
+      "kcal": 320,
+      "proteine": 51,
+      "carboidrati": 19,
+      "grassi": 0.7,
+      "pesoPezzo": null
     },
     {
       "id": "402d208f-0d59-810e-af65-de60a0d85352",
@@ -1396,6 +1452,15 @@
           "tipo": "Non si compra",
           "facoltativo": false,
           "nota": "Quasi tutta per i ceci in pressione; per il cous cous tanta quanto il suo peso, bollente e salata"
+        },
+        {
+          "nome": "Harissa",
+          "quantita": 10,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-818b-9bfc-c24fb69de78b",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "In teglia, sciolta nell'olio; può sostituire la paprika"
         }
       ],
       "passi": [
@@ -1403,7 +1468,7 @@
           "testo": "Ceci. Metti in pentola a pressione i ceci scolati con l'acqua per i ceci e un pizzico di sale. Dal fischio cuoci 20 minuti a fiamma bassa, poi sfiata. Se non sono morbidi, altri 5 minuti. Scolali e asciugali bene con un canovaccio."
         },
         {
-          "testo": "Forno. Accendi il forno a 200°C. Metti ceci e broccoli ancora surgelati in teglia con l'olio, paprika e sale, mescola e cuoci 30 minuti."
+          "testo": "Forno. Accendi il forno a 200°C. Metti ceci e broccoli ancora surgelati in teglia con l'olio, paprika (o la harissa sciolta nell'olio, se la usi) e sale, mescola e cuoci 30 minuti."
         },
         {
           "testo": "Cous cous. Mentre cuociono, metti il cous cous in una ciotola, versaci sopra l'acqua bollente salata, copri e lascia riposare 5 minuti. Sgrana con la forchetta."
@@ -1622,6 +1687,215 @@
       ]
     },
     {
+      "id": "40ad208f-0d59-8150-a62a-c11fe55e5b43",
+      "nome": "Curry di soia, zucca e spinaci con riso (pentola a pressione)",
+      "icona": "🍛",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 1015,
+      "proteine": 50,
+      "base": [
+        "Riso"
+      ],
+      "descrizione": "Medaglioni rosolati con le spezie di Zanzibar, poi riso, zucca e pomodoro in pressione. Spinaci e latte di soia alla fine.",
+      "ingredienti": [
+        {
+          "nome": "Medaglioni di soia",
+          "quantita": 50,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-81af-a345-deda5ab77c4c",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi. Bolliti 15 minuti, strizzati e rosolati"
+        },
+        {
+          "nome": "Riso",
+          "quantita": 120,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "In pressione"
+        },
+        {
+          "nome": "Zucca",
+          "quantita": 300,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8117-857a-e47220d0612f",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso pulita, a cubi, in pressione"
+        },
+        {
+          "nome": "Spinaci surgelati",
+          "quantita": 150,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8108-8344-d09266b39e1b",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Dopo la pressione"
+        },
+        {
+          "nome": "Polpa di pomodoro",
+          "quantita": 100,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8198-902d-d5176f398977",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "In pressione"
+        },
+        {
+          "nome": "Latte di soia",
+          "quantita": 150,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81e5-b08e-dc53316776df",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A fuoco spento"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Olio di semi",
+          "quantita": 25,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-8172-80f1-c191f25b4593",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Metà per rosolare i medaglioni, metà per soffritto e spezie"
+        },
+        {
+          "nome": "Salsa di soia",
+          "quantita": 15,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-8155-88e2-e8bdf5a33fb5",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Per sfumare i medaglioni rosolati"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Curry giallo",
+          "quantita": 1.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-8109-b3a5-c263c1bd10e1",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Zanzibar, nel soffritto. Se finito: 1,5 cucchiaini di mix curry"
+        },
+        {
+          "nome": "Zenzero in polvere",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81e4-8de9-e263fc19129f",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Zanzibar, nel soffritto. Se finito: mezzo cucchiaino di mix korma"
+        },
+        {
+          "nome": "Garam masala",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81d6-a151-e26d8ea8a422",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Zanzibar, a fuoco spento. Se finito: un pizzico di mix korma, o ometti"
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": 0.25,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-817a-beda-dbe6828c2637",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Hot chilly di Zanzibar, nel soffritto. Se finito: cayenna macinata"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In pressione, poi aggiusta alla fine"
+        },
+        {
+          "nome": "Limone",
+          "quantita": 0.25,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-819d-a3b6-ebc3ec4e6b17",
+          "tipo": "Da comprare",
+          "facoltativo": true,
+          "nota": "Succo, sul piatto"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 600,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Per bollire i medaglioni, poi scolata"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 280,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "In pressione"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Medaglioni. Bollili nella pentola a pressione aperta, in acqua leggermente salata, per 15 minuti. Scolali, lasciali intiepidire, strizzali bene e tagliali a pezzi."
+        },
+        {
+          "testo": "Rosolatura. Asciuga la pentola, scalda metà dell'olio e rosola i medaglioni finché sono dorati. Sfuma con la salsa di soia."
+        },
+        {
+          "testo": "Soffritto e spezie. Aggiungi il resto dell'olio, la cipolla e l'aglio. Quando la cipolla è morbida, aggiungi il curry, lo zenzero e il peperoncino se lo usi, e tostali 30 secondi mescolando."
+        },
+        {
+          "testo": "Pressione. Aggiungi il riso sciacquato, la zucca a cubi, la polpa di pomodoro, un pizzico di sale e l'acqua della pressione. Mescola bene staccando il fondo. Chiudi e dal fischio cuoci 5 minuti a fiamma bassa, poi lascia scendere la pressione da sola."
+        },
+        {
+          "testo": "Finale. Riapri, aggiungi gli spinaci ancora surgelati e cuoci 3-4 minuti a pentola aperta. Spegni, versa il latte di soia e il garam masala e mescola. Aggiusta di sale e, se c'è, un po' di limone sul piatto."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1015 kcal e 50 g di proteine."
+        },
+        {
+          "testo": "Fondo: dopo il soffritto con le spezie, gratta bene il fondo prima di chiudere. Se resta attaccato qualcosa, la pentola a pressione rischia di bruciare."
+        },
+        {
+          "testo": "Riso: quello normale da minestre o il parboiled. Il basmati in pressione si sfalda."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni. Si addensa: scaldalo con un goccio d'acqua."
+        }
+      ]
+    },
+    {
       "id": "402d208f-0d59-8194-9914-e83703890c82",
       "nome": "Dahl di lenticchie con cous cous",
       "icona": "🍛",
@@ -1825,6 +2099,15 @@
           "tipo": "Non si compra",
           "facoltativo": false,
           "nota": "In pressione; il brodo che resta cuoce broccoli e polenta"
+        },
+        {
+          "nome": "Lievito alimentare",
+          "quantita": 10,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-81a5-9653-e3ee64396098",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Mantecato nella polenta a fuoco spento"
         }
       ],
       "passi": [
@@ -1835,7 +2118,7 @@
           "testo": "Broccoli. Togli i fagioli con la schiumarola e tienili da parte. Porta il brodo a bollore, cuoci i broccoli 5 minuti e toglili anche loro."
         },
         {
-          "testo": "Polenta. Il brodo rimasto deve essere circa quattro volte il peso della polenta: se è poco, aggiungi acqua calda. Salalo, versa la polenta a pioggia mescolando con la frusta e cuoci 5 minuti mescolando spesso."
+          "testo": "Polenta. Il brodo rimasto deve essere circa quattro volte il peso della polenta: se è poco, aggiungi acqua calda. Salalo, versa la polenta a pioggia mescolando con la frusta e cuoci 5 minuti mescolando spesso. A fuoco spento, se lo usi, manteca con il lievito alimentare."
         },
         {
           "testo": "Impiattamento. Polenta nel piatto, fagioli e broccoli sopra, l'olio a crudo."
@@ -2180,6 +2463,15 @@
           "tipo": "Dispensa",
           "facoltativo": false,
           "nota": "Besciamella e funghi"
+        },
+        {
+          "nome": "Lievito alimentare",
+          "quantita": 5,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-81a5-9653-e3ee64396098",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Nella besciamella, in alternativa al formaggio vegetale"
         }
       ],
       "passi": [
@@ -2480,6 +2772,167 @@
             "Garam masala → un pizzico di mix korma a fuoco spento, oppure ometti.",
             "Non usare insieme mix curry e mix korma in dose piena: il piatto diventa un curry indiano e si perde il sapore dell'arachide."
           ]
+        }
+      ]
+    },
+    {
+      "id": "40ad208f-0d59-8132-8002-f4e1da820556",
+      "nome": "Medaglioni alla pizzaiola con spinaci e cous cous",
+      "icona": "🍅",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 1008,
+      "proteine": 51,
+      "base": [
+        "Couscous"
+      ],
+      "descrizione": "Medaglioni rosolati nel pomodoro con harissa, capperi, origano e spinaci, cous cous versato nella padella a fuoco spento. La più veloce.",
+      "ingredienti": [
+        {
+          "nome": "Medaglioni di soia",
+          "quantita": 50,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-81af-a345-deda5ab77c4c",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi. Bolliti 15 minuti, strizzati e rosolati"
+        },
+        {
+          "nome": "Cous cous",
+          "quantita": 130,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e0-942d-eb2ed78c30e4",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A fuoco spento, nella padella col sugo"
+        },
+        {
+          "nome": "Polpa di pomodoro",
+          "quantita": 250,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8198-902d-d5176f398977",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sugo"
+        },
+        {
+          "nome": "Spinaci surgelati",
+          "quantita": 150,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8108-8344-d09266b39e1b",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Nel sugo, ancora surgelati"
+        },
+        {
+          "nome": "Capperi",
+          "quantita": 10,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e8-82d1-eee6be4b7781",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sciacquati, nel sugo"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 30,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Per rosolare i medaglioni; un filo a crudo alla fine"
+        },
+        {
+          "nome": "Salsa di soia",
+          "quantita": 15,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-8155-88e2-e8bdf5a33fb5",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Per sfumare i medaglioni rosolati"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "A fettine, con i medaglioni"
+        },
+        {
+          "nome": "Origano",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-81c7-b64a-c8ed6b492b9e",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Nel sugo"
+        },
+        {
+          "nome": "Harissa",
+          "quantita": 10,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-8104-947a-c314930fb691",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Sciolta nel sugo. Più o meno a seconda di quanto la vuoi piccante"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Poco, capperi e salsa di soia sono già salati"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 600,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Per bollire i medaglioni, poi scolata"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 160,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Bollente, per il cous cous"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Medaglioni. Bollili in una padella inox alta o in pentola, in acqua leggermente salata, per 15 minuti. Scolali, lasciali intiepidire e strizzali bene."
+        },
+        {
+          "testo": "Rosolatura. Nella stessa padella asciugata scalda quasi tutto l'olio e rosola i medaglioni finché sono dorati, con l'aglio. Sfuma con la salsa di soia."
+        },
+        {
+          "testo": "Sugo. Aggiungi la polpa di pomodoro, i capperi sciacquati, l'harissa, l'origano e gli spinaci ancora surgelati. Copri e cuoci 10 minuti a fuoco medio, mescolando ogni tanto, finché gli spinaci sono sciolti e il sugo è denso."
+        },
+        {
+          "testo": "Cous cous. Aggiungi l'acqua bollente, porta a bollore e spegni. Versa il cous cous, mescola, copri e lascia riposare 5 minuti. Sgrana con la forchetta e chiudi con il filo d'olio rimasto a crudo."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1008 kcal e 51 g di proteine."
+        },
+        {
+          "testo": "Sale: capperi, harissa e salsa di soia salano già, assaggia prima di aggiungerne."
+        },
+        {
+          "testo": "Variante: qualche oliva nera nel sugo, o i medaglioni lasciati interi come fettine invece che a pezzi."
+        },
+        {
+          "testo": "Conservazione: in frigo 2-3 giorni. Il cous cous si asciuga: scaldalo con un goccio d'acqua."
         }
       ]
     },
@@ -3101,6 +3554,15 @@
           "tipo": "Non si compra",
           "facoltativo": false,
           "nota": "Per le lenticchie in pressione; in teglia altra acqua quanto basta per coprire la pasta a filo"
+        },
+        {
+          "nome": "Lievito alimentare",
+          "quantita": 10,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-81a5-9653-e3ee64396098",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Mescolato nella \"panna\" di latte di soia e olio"
         }
       ],
       "passi": [
@@ -3108,7 +3570,7 @@
           "testo": "Lenticchie. Metti in pentola a pressione le lenticchie sciacquate con l'acqua per le lenticchie. Dal fischio cuoci 8 minuti a fiamma bassa, poi sfiata e scolale: finiscono di cuocere in forno."
         },
         {
-          "testo": "\"Panna\". Mescola il latte di soia con l'olio."
+          "testo": "\"Panna\". Mescola il latte di soia con l'olio e, se lo usi, il lievito alimentare."
         },
         {
           "testo": "Teglia. Accendi il forno a 200°C. In una teglia alta metti la pasta cruda, le lenticchie, i broccoli ancora surgelati, la passata, la \"panna\", sale e origano. Aggiungi acqua fino a coprire la pasta a filo e mescola."
@@ -3483,6 +3945,15 @@
           "tipo": "Dispensa",
           "facoltativo": true,
           "nota": "Sul piatto"
+        },
+        {
+          "nome": "Lievito alimentare",
+          "quantita": 8,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-81a5-9653-e3ee64396098",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Nel piatto, al posto del parmigiano"
         }
       ],
       "passi": [
@@ -3502,7 +3973,7 @@
           "testo": "Pasta. Porta a bollore a pentola aperta, aggiungi la pasta e cuocila mescolando spesso. Se si asciuga, aggiungi acqua calda poca alla volta. Conta 2-3 minuti in più rispetto alla confezione."
         },
         {
-          "testo": "Impiattamento. Aggiusta di sale e completa con il resto dell'olio a crudo e pepe."
+          "testo": "Impiattamento. Aggiusta di sale e completa con il resto dell'olio a crudo e pepe. Se ti va, una spolverata di lievito alimentare al posto del parmigiano."
         }
       ],
       "note": [
@@ -3647,6 +4118,15 @@
           "tipo": "Dispensa",
           "facoltativo": true,
           "nota": "Sul piatto"
+        },
+        {
+          "nome": "Lievito alimentare",
+          "quantita": 8,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-81a5-9653-e3ee64396098",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Nel piatto, al posto del parmigiano"
         }
       ],
       "passi": [
@@ -3666,7 +4146,7 @@
           "testo": "Verza e pasta. Porta a bollore, aggiungi la verza a striscioline sottili e la pasta. Cuoci a pentola aperta mescolando spesso e aggiungi acqua calda poca alla volta se si asciuga. Conta 2-3 minuti in più rispetto alla confezione."
         },
         {
-          "testo": "Impiattamento. Aggiusta di sale e servi con il resto dell'olio a crudo e pepe."
+          "testo": "Impiattamento. Aggiusta di sale e servi con il resto dell'olio a crudo e pepe. Se ti va, una spolverata di lievito alimentare al posto del parmigiano."
         }
       ],
       "note": [
@@ -3829,6 +4309,15 @@
           "tipo": "Dispensa",
           "facoltativo": true,
           "nota": "Sul piatto"
+        },
+        {
+          "nome": "Lievito alimentare",
+          "quantita": 8,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-81a5-9653-e3ee64396098",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Nel piatto, al posto del parmigiano"
         }
       ],
       "passi": [
@@ -3845,7 +4334,7 @@
           "testo": "Pasta. Porta a bollore a pentola aperta, aggiungi la pasta e cuocila mescolando spesso. Se si asciuga, aggiungi acqua calda poca alla volta. Conta 2-3 minuti in più rispetto alla confezione."
         },
         {
-          "testo": "Impiattamento. Aggiusta di sale e completa con il resto dell'olio a crudo, scorza di limone grattugiata e pepe."
+          "testo": "Impiattamento. Aggiusta di sale e completa con il resto dell'olio a crudo, scorza di limone grattugiata e pepe. Se ti va, una spolverata di lievito alimentare al posto del parmigiano."
         }
       ],
       "note": [
@@ -4109,6 +4598,15 @@
           "tipo": "Non si compra",
           "facoltativo": false,
           "nota": "In pressione; poi calda se la pasta si asciuga"
+        },
+        {
+          "nome": "Lievito alimentare",
+          "quantita": 8,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-81a5-9653-e3ee64396098",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Nel piatto, al posto del parmigiano"
         }
       ],
       "passi": [
@@ -4119,7 +4617,7 @@
           "testo": "Pasta e broccoli. Porta a bollore a pentola aperta, sala e aggiungi la pasta e i broccoli ancora surgelati. Cuoci mescolando spesso; se si asciuga, aggiungi acqua calda poca alla volta. Conta 2-3 minuti in più rispetto alla confezione."
         },
         {
-          "testo": "Impiattamento. Aggiusta di sale e completa con l'olio a crudo nel piatto."
+          "testo": "Impiattamento. Aggiusta di sale e completa con l'olio a crudo nel piatto. Se ti va, una spolverata di lievito alimentare al posto del parmigiano."
         }
       ],
       "note": [
@@ -4264,6 +4762,15 @@
           "tipo": "Dispensa",
           "facoltativo": true,
           "nota": "Sul piatto"
+        },
+        {
+          "nome": "Lievito alimentare",
+          "quantita": 10,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-81a5-9653-e3ee64396098",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Mantecato nella polenta a fuoco spento"
         }
       ],
       "passi": [
@@ -4280,7 +4787,7 @@
           "testo": "Controlla il brodo. Assaggia i fagioli: se non sono morbidi, altri 5 minuti in pressione. Sala adesso, perché dopo la polenta è difficile. Il brodo deve essere abbondante: la polenta ne assorbe circa quattro volte il suo peso, quindi se ce n'è poco aggiungi acqua calda."
         },
         {
-          "testo": "Polenta. Porta a bollore a pentola aperta, versa la polenta a pioggia mescolando con la frusta, abbassa il fuoco e cuoci per il tempo della confezione mescolando spesso."
+          "testo": "Polenta. Porta a bollore a pentola aperta, versa la polenta a pioggia mescolando con la frusta, abbassa il fuoco e cuoci per il tempo della confezione mescolando spesso. A fuoco spento, se lo usi, manteca con il lievito alimentare."
         },
         {
           "testo": "Impiattamento. Servi subito con il resto dell'olio a crudo e pepe macinato."
@@ -4371,6 +4878,15 @@
           "tipo": "Non si compra",
           "facoltativo": false,
           "nota": "Circa tre quarti per i ceci in pressione, il resto per la quinoa (il doppio del suo peso)"
+        },
+        {
+          "nome": "Harissa",
+          "quantita": 10,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-818b-9bfc-c24fb69de78b",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sciolta nell'olio a crudo per condire"
         }
       ],
       "passi": [
@@ -4384,7 +4900,7 @@
           "testo": "Quinoa. Mentre i ceci cuociono, sciacqua bene la quinoa in un colino e cuocila in un pentolino con l'acqua per la quinoa e un pizzico di sale, coperta e a fuoco basso, finché assorbe tutto il liquido (circa 15 minuti)."
         },
         {
-          "testo": "Impiattamento. Unisci quinoa, ceci e broccoli e condisci con l'olio a crudo, sale e spezie a piacere."
+          "testo": "Impiattamento. Unisci quinoa, ceci e broccoli e condisci con l'olio a crudo, sale e spezie a piacere. In alternativa alle spezie, sciogli la harissa nell'olio prima di condire."
         }
       ],
       "note": [
@@ -5098,6 +5614,15 @@
           "tipo": "Dispensa",
           "facoltativo": true,
           "nota": "Sul piatto"
+        },
+        {
+          "nome": "Lievito alimentare",
+          "quantita": 8,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-81a5-9653-e3ee64396098",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Mantecatura, a fuoco spento insieme al miso"
         }
       ],
       "passi": [
@@ -5117,7 +5642,7 @@
           "testo": "Pressione. Chiudi e porta a pressione. Dal fischio cuoci 6 minuti a fiamma bassa, poi sfiata subito."
         },
         {
-          "testo": "Mantecatura. Sciogli il miso in un mestolino del liquido e rimettilo nella pentola con il resto dell'olio. Mescola con energia per un minuto: la zucca si sfalda e fa da crema. Pepe e, se serve, sale."
+          "testo": "Mantecatura. Sciogli il miso in un mestolino del liquido e rimettilo nella pentola con il resto dell'olio e, se lo usi, il lievito alimentare. Mescola con energia per un minuto: la zucca si sfalda e fa da crema. Pepe e, se serve, sale."
         }
       ],
       "note": [
@@ -5135,6 +5660,358 @@
         },
         {
           "testo": "Conservazione: in frigo 2 giorni. Si asciuga: scalda con brodo o acqua."
+        }
+      ]
+    },
+    {
+      "id": "40ad208f-0d59-81a0-910e-f90a76487e36",
+      "nome": "Soia alla piastra con riso e verza saltata",
+      "icona": "🍚",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 996,
+      "proteine": 45,
+      "base": [
+        "Riso"
+      ],
+      "descrizione": "Medaglioni bolliti e poi rosolati nella carbon steel come fettine, riso cotto nella loro acqua, tutto saltato con verza e salsa di soia.",
+      "ingredienti": [
+        {
+          "nome": "Medaglioni di soia",
+          "quantita": 50,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-81af-a345-deda5ab77c4c",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi. Bolliti 15 minuti, strizzati e rosolati"
+        },
+        {
+          "nome": "Riso",
+          "quantita": 140,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Cotto nell'acqua dei medaglioni, poi saltato"
+        },
+        {
+          "nome": "Verza",
+          "quantita": 300,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8103-a2b4-f176b039d57c",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A strisce sottili, saltata"
+        },
+        {
+          "nome": "Carota",
+          "quantita": 1,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a2-adca-c62ad70404c5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A fiammiferi, saltata con la verza"
+        },
+        {
+          "nome": "Olio di semi",
+          "quantita": 25,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-8172-80f1-c191f25b4593",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Metà per i medaglioni, metà per verza e riso"
+        },
+        {
+          "nome": "Salsa di soia",
+          "quantita": 30,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-8155-88e2-e8bdf5a33fb5",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Metà sui medaglioni rosolati, metà nel riso saltato"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, con la verza"
+        },
+        {
+          "nome": "Zenzero in polvere",
+          "quantita": 0.5,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-81e4-8de9-e263fc19129f",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Zanzibar, con la verza. Se finito: ometti"
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": 0.25,
+          "unita": "cucchiaino",
+          "prodotto": "402d208f-0d59-817a-beda-dbe6828c2637",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Hot chilly di Zanzibar, alla fine. Se finito: cayenna macinata"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Nell'acqua del riso; nel salto basta la salsa di soia"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 800,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Prima per i medaglioni, poi per il riso"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Medaglioni. Porta a bollore l'acqua salata in una pentola e cuoci i medaglioni 15 minuti. Tirali su con la schiumarola e lascia l'acqua sul fuoco."
+        },
+        {
+          "testo": "Riso. Nella stessa acqua cuoci il riso come una pasta, per i minuti indicati sulla confezione, poi scolalo. Intanto strizza bene i medaglioni."
+        },
+        {
+          "testo": "Rosolatura. Scalda la carbon steel vuota 2-3 minuti, metti metà dell'olio e quando luccica adagia i medaglioni interi. Lasciali fermi finché si staccano da soli, girali e dora l'altro lato. Sfuma con metà della salsa di soia e tienili da parte su un piatto."
+        },
+        {
+          "testo": "Verza. Nella stessa padella, col resto dell'olio, salta verza, carota, aglio e zenzero a fuoco vivace per 5-6 minuti: la verza deve restare un po' croccante."
+        },
+        {
+          "testo": "Insieme. Aggiungi il riso scolato e il resto della salsa di soia e salta un paio di minuti. Rimetti i medaglioni sopra a scaldarsi e chiudi col peperoncino se lo usi."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 996 kcal e 45 g di proteine."
+        },
+        {
+          "testo": "Padelle: pentola per bollire e carbon steel per rosolare e saltare. È l'unica delle ricette con i medaglioni che ne usa due."
+        },
+        {
+          "testo": "Riso: viene ancora meglio col riso freddo del giorno prima. In quel caso cuoci i medaglioni da soli e usa il riso avanzato."
+        },
+        {
+          "testo": "Conservazione: in frigo 2-3 giorni. Si scalda bene in padella."
+        }
+      ]
+    },
+    {
+      "id": "40ad208f-0d59-81c3-89e5-f0df73c226e4",
+      "nome": "Soia in umido con verza e polenta",
+      "icona": "🥬",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 1041,
+      "proteine": 51,
+      "base": [
+        "Altro"
+      ],
+      "descrizione": "Medaglioni rosolati e verza stufati col pomodoro a pentola coperta, poi la polenta istantanea cotta nel loro sugo. Una pentola, niente pressione.",
+      "ingredienti": [
+        {
+          "nome": "Medaglioni di soia",
+          "quantita": 50,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-81af-a345-deda5ab77c4c",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi. Bolliti 15 minuti, strizzati e rosolati"
+        },
+        {
+          "nome": "Verza",
+          "quantita": 300,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8103-a2b4-f176b039d57c",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A strisce, stufata a pentola coperta"
+        },
+        {
+          "nome": "Polenta istantanea",
+          "quantita": 140,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-810e-aba7-d88eb8df00cb",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A pioggia nel sugo, a fine stufatura"
+        },
+        {
+          "nome": "Polpa di pomodoro",
+          "quantita": 100,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8198-902d-d5176f398977",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Con la verza"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 25,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Metà per rosolare i medaglioni, metà per il soffritto"
+        },
+        {
+          "nome": "Salsa di soia",
+          "quantita": 15,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-8155-88e2-e8bdf5a33fb5",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Per sfumare i medaglioni rosolati"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Vino bianco",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "406d208f-0d59-8137-a302-f965fa2d4b96",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Un goccio per sfumare al posto della salsa di soia"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Con la verza e nell'acqua della polenta"
+        },
+        {
+          "nome": "Pepe",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-815b-8c33-f63352af7917",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sul piatto"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 600,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Per bollire i medaglioni, poi scolata"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 100,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Per stufare la verza"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 560,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Calda, per la polenta"
+        },
+        {
+          "nome": "Noce moscata",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "406d208f-0d59-81ea-9131-fd63acbb94d8",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Grattata nella stufatura"
+        },
+        {
+          "nome": "Rosmarino",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-81ec-b192-d95dca5dedb3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Nella stufatura"
+        },
+        {
+          "nome": "Peperoncino",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a8-9dc3-df2f875c837c",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Secco intero, nella stufatura e poi tolto"
+        },
+        {
+          "nome": "Lievito alimentare",
+          "quantita": 10,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-81a5-9653-e3ee64396098",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Mantecato nella polenta a fine cottura"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Medaglioni. Bollili in una pentola capiente, in acqua leggermente salata, per 15 minuti. Scolali, lasciali intiepidire e strizzali bene."
+        },
+        {
+          "testo": "Rosolatura. Asciuga la pentola, scalda metà dell'olio e rosola i medaglioni finché sono dorati. Sfuma con la salsa di soia, o col vino bianco se lo usi."
+        },
+        {
+          "testo": "Soffritto e verza. Aggiungi il resto dell'olio, la cipolla e l'aglio. Quando la cipolla è morbida, aggiungi la verza a strisce e girala un paio di minuti finché cala."
+        },
+        {
+          "testo": "Stufatura. Aggiungi la polpa di pomodoro, il rosmarino, una grattata di noce moscata, il peperoncino intero se lo usi, un pizzico di sale e l'acqua per stufare. Copri col coperchio e cuoci circa 15 minuti a fuoco medio-basso, mescolando ogni tanto, finché la verza è morbida. Se si asciuga troppo, un goccio d'acqua."
+        },
+        {
+          "testo": "Polenta. Togli il coperchio, aggiungi l'acqua calda della polenta e un pizzico di sale e porta a bollore. Versa la polenta a pioggia mescolando con la frusta o il cucchiaio di legno, e cuoci i minuti indicati sulla confezione girando spesso. Viene una polenta morbida con dentro verza e medaglioni. Fuori dal fuoco manteca col lievito alimentare, togli il peperoncino e servi col pepe."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1041 kcal e 51 g di proteine."
+        },
+        {
+          "testo": "Consistenza: se la vuoi più soda, usa un po' meno acqua per la polenta; se si rapprende troppo nel piatto, allungala con acqua calda."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni. Si rassoda: la puoi scaldare a fette in padella o sciolta con acqua in pentola."
         }
       ]
     },
@@ -5277,6 +6154,15 @@
           "tipo": "Dispensa",
           "facoltativo": true,
           "nota": "Sul piatto"
+        },
+        {
+          "nome": "Lievito alimentare",
+          "quantita": 8,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-81a5-9653-e3ee64396098",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Nel piatto, al posto del parmigiano"
         }
       ],
       "passi": [
@@ -5293,7 +6179,7 @@
           "testo": "Spaghetti. Aggiungi il tofu e l'acqua calda per gli spaghetti e porta a bollore a pentola aperta. Aggiungi gli spaghetti spezzati a metà e cuocili nel sugo mescolando spesso. Se si asciuga, aggiungi acqua calda poca alla volta. Conta 2-3 minuti in più rispetto alla confezione."
         },
         {
-          "testo": "Impiattamento. Aggiusta di sale. Tabasco o peperoncino a piacere."
+          "testo": "Impiattamento. Aggiusta di sale. Tabasco o peperoncino a piacere. Se ti va, una spolverata di lievito alimentare al posto del parmigiano."
         }
       ],
       "note": [
@@ -5473,6 +6359,397 @@
       ]
     },
     {
+      "id": "40ad208f-0d59-8150-8f36-da29ceeebc12",
+      "nome": "Spezzatino di soia e zucca con farro (pentola a pressione)",
+      "icona": "🎃",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 993,
+      "proteine": 50,
+      "base": [
+        "Altro"
+      ],
+      "descrizione": "In bianco con rosmarino e salvia: medaglioni rosolati, farro e zucca in pressione, la zucca si sfalda e fa da crema. Miso a fuoco spento.",
+      "ingredienti": [
+        {
+          "nome": "Medaglioni di soia",
+          "quantita": 50,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-81af-a345-deda5ab77c4c",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi. Bolliti 15 minuti, strizzati e rosolati"
+        },
+        {
+          "nome": "Farro perlato",
+          "quantita": 130,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8190-bc62-f0eced18deae",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tostato nel soffritto, poi in pressione"
+        },
+        {
+          "nome": "Zucca",
+          "quantita": 400,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8117-857a-e47220d0612f",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso pulita, a cubi, in pressione"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 30,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Metà per rosolare i medaglioni, metà per il soffritto"
+        },
+        {
+          "nome": "Salsa di soia",
+          "quantita": 15,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-8155-88e2-e8bdf5a33fb5",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Per sfumare i medaglioni rosolati"
+        },
+        {
+          "nome": "Miso",
+          "quantita": 12,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81f3-bd02-dadf890f0083",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "A fuoco spento, sciolto in un mestolo di sugo"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Rosmarino",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-81ec-b192-d95dca5dedb3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Soffritto"
+        },
+        {
+          "nome": "Salvia fresca",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "406d208f-0d59-818f-bea2-c04e53652581",
+          "tipo": "Da comprare",
+          "facoltativo": true,
+          "nota": "Qualche foglia nel soffritto"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Poco, il miso è già salato. Aggiusta alla fine"
+        },
+        {
+          "nome": "Pepe",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-815b-8c33-f63352af7917",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sul piatto"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 600,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Per bollire i medaglioni, poi scolata"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 400,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "In pressione"
+        },
+        {
+          "nome": "Noce moscata",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "406d208f-0d59-81ea-9131-fd63acbb94d8",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Grattata a fuoco spento, col miso"
+        },
+        {
+          "nome": "Harissa",
+          "quantita": 8,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-8104-947a-c314930fb691",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Nel soffritto, al posto di rosmarino e salvia: cambia il piatto in versione piccante"
+        },
+        {
+          "nome": "Lievito alimentare",
+          "quantita": 8,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-81a5-9653-e3ee64396098",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "A fuoco spento col miso, per mantecare"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Medaglioni. Bollili nella pentola a pressione aperta, in acqua leggermente salata, per 15 minuti. Scolali, lasciali intiepidire e strizzali bene."
+        },
+        {
+          "testo": "Rosolatura. Asciuga la pentola, scalda metà dell'olio e rosola i medaglioni finché sono dorati. Sfuma con la salsa di soia."
+        },
+        {
+          "testo": "Soffritto e farro. Aggiungi il resto dell'olio, la cipolla, l'aglio, il rosmarino e la salvia se c'è (oppure, per la versione piccante, l'harissa al posto delle erbe). Dopo un paio di minuti versa il farro sciacquato e tostalo un minuto mescolando."
+        },
+        {
+          "testo": "Pressione. Aggiungi la zucca a cubi, un pizzico di sale e l'acqua della pressione. Chiudi e dal fischio cuoci 12 minuti a fiamma bassa, poi sfiata."
+        },
+        {
+          "testo": "Miso. Riapri e mescola energicamente: la zucca si sfalda e lega tutto. Spegni, sciogli il miso (e il lievito alimentare, se lo usi) in un mestolo di sugo e rimettilo in pentola con una grattata di noce moscata. Aggiusta di sale e servi col pepe."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 993 kcal e 50 g di proteine."
+        },
+        {
+          "testo": "Farro: quello perlato, senza ammollo. Se usi il farro decorticato, porta la pressione a 18 minuti."
+        },
+        {
+          "testo": "Zucca: la delica tiene meglio la forma, la butternut si sfalda di più e fa più crema."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni. Il farro assorbe il sugo: scalda con un goccio d'acqua."
+        }
+      ]
+    },
+    {
+      "id": "40ad208f-0d59-81ad-94cb-c04a81ed6d53",
+      "nome": "Spezzatino di soia, patate e piselli (pentola a pressione)",
+      "icona": "🥔",
+      "rotazione": false,
+      "provata": false,
+      "porzioni": 2,
+      "kcal": 1015,
+      "proteine": 50,
+      "base": [
+        "Altro"
+      ],
+      "descrizione": "Medaglioni bolliti, strizzati e rosolati, poi in pressione con patate e pomodoro. Piselli a pentola aperta. Un pacco di medaglioni basta per due giri.",
+      "ingredienti": [
+        {
+          "nome": "Medaglioni di soia",
+          "quantita": 50,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-81af-a345-deda5ab77c4c",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Peso da secchi. Bolliti 15 minuti, strizzati e rosolati"
+        },
+        {
+          "nome": "Patate",
+          "quantita": 500,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81a4-ba09-e9acd7d7ab72",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A tocchi grandi, in pressione"
+        },
+        {
+          "nome": "Piselli surgelati",
+          "quantita": 150,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-81e0-ae9d-cc3c5968a68a",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Dopo la pressione, ancora surgelati"
+        },
+        {
+          "nome": "Polpa di pomodoro",
+          "quantita": 200,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8198-902d-d5176f398977",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "In pressione"
+        },
+        {
+          "nome": "Cipolla",
+          "quantita": 0.5,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-8134-a549-c8270478c000",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Tritata, soffritto"
+        },
+        {
+          "nome": "Carota",
+          "quantita": 1,
+          "unita": "pz",
+          "prodotto": "402d208f-0d59-81a2-adca-c62ad70404c5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "A rondelle, soffritto"
+        },
+        {
+          "nome": "Olio",
+          "quantita": 30,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Metà per rosolare i medaglioni, metà per il soffritto"
+        },
+        {
+          "nome": "Salsa di soia",
+          "quantita": 15,
+          "unita": "ml",
+          "prodotto": "402d208f-0d59-8155-88e2-e8bdf5a33fb5",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Per sfumare i medaglioni rosolati"
+        },
+        {
+          "nome": "Aglio",
+          "quantita": 1,
+          "unita": "spicchio",
+          "prodotto": "402d208f-0d59-81a2-b27e-ca1a7b44fdd2",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Tritato, soffritto"
+        },
+        {
+          "nome": "Rosmarino",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-81ec-b192-d95dca5dedb3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In pressione"
+        },
+        {
+          "nome": "Sale",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-8121-ac25-e755fe5a25f3",
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "In pressione, poi aggiusta alla fine"
+        },
+        {
+          "nome": "Pepe",
+          "quantita": null,
+          "unita": "q.b.",
+          "prodotto": "402d208f-0d59-815b-8c33-f63352af7917",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Sul piatto"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 600,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "Per bollire i medaglioni, poi scolata"
+        },
+        {
+          "nome": "Acqua",
+          "quantita": 150,
+          "unita": "ml",
+          "prodotto": null,
+          "tipo": "Non si compra",
+          "facoltativo": false,
+          "nota": "In pressione"
+        },
+        {
+          "nome": "Mix quesadilla",
+          "quantita": 1,
+          "unita": "cucchiaino",
+          "prodotto": null,
+          "tipo": "Dispensa",
+          "facoltativo": false,
+          "nota": "Nel soffritto. Se finito: paprika"
+        },
+        {
+          "nome": "Lievito alimentare",
+          "quantita": 8,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-81a5-9653-e3ee64396098",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Nel piatto, al posto del parmigiano"
+        }
+      ],
+      "passi": [
+        {
+          "testo": "Medaglioni. Bollili nella pentola a pressione aperta, in acqua leggermente salata, per 15 minuti. Scolali, lasciali intiepidire e strizzali bene con le mani: più acqua togli, più rosolano."
+        },
+        {
+          "testo": "Rosolatura. Asciuga la pentola, scalda metà dell'olio e rosola i medaglioni a fuoco vivace finché sono dorati su entrambi i lati. Sfuma con la salsa di soia e lasciala evaporare."
+        },
+        {
+          "testo": "Soffritto. Abbassa il fuoco, aggiungi il resto dell'olio, la cipolla, la carota e l'aglio, e cuoci qualche minuto finché la cipolla è morbida. Aggiungi il mix quesadilla e tostalo 30 secondi mescolando."
+        },
+        {
+          "testo": "Pressione. Aggiungi le patate, la polpa di pomodoro, il rosmarino, un pizzico di sale e l'acqua della pressione. Chiudi e dal fischio cuoci 8 minuti a fiamma bassa, poi sfiata."
+        },
+        {
+          "testo": "Piselli. Riapri, aggiungi i piselli ancora surgelati e cuoci 5 minuti a pentola aperta, finché il sugo si stringe. Aggiusta di sale e servi col pepe e, se ti va, una spolverata di lievito alimentare."
+        }
+      ],
+      "note": [
+        {
+          "testo": "Valori per porzione: circa 1015 kcal e 50 g di proteine."
+        },
+        {
+          "testo": "Medaglioni: con 50 g a porzione, un pacco da 200 g basta per due giri da due porzioni. Se li vuoi più morbidi e meno \"carnosi\", salta la strizzatura e la rosolatura e mettili direttamente in pressione già bolliti."
+        },
+        {
+          "testo": "Spezie: il mix quesadilla dà un'aria da gulasch. Se finisce, paprika."
+        },
+        {
+          "testo": "Conservazione: in frigo 3 giorni, si scalda bene con un goccio d'acqua."
+        }
+      ]
+    },
+    {
       "id": "402d208f-0d59-816a-8dd7-c361e40d2068",
       "nome": "Stufato di ceci e zucca con cous cous",
       "icona": "🎃",
@@ -5629,11 +6906,20 @@
           "tipo": "Dispensa",
           "facoltativo": true,
           "nota": "Sul piatto"
+        },
+        {
+          "nome": "Harissa",
+          "quantita": 10,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-818b-9bfc-c24fb69de78b",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Nel soffritto con il concentrato; se la usi, dimezza il peperoncino"
         }
       ],
       "passi": [
         {
-          "testo": "Soffritto. Nella pentola a pressione aperta scalda l'olio e tosta il cumino in semi 30 secondi. Aggiungi cipolla tritata e carota a dadini e cuoci 5 minuti a fuoco medio, poi aglio e concentrato per un minuto."
+          "testo": "Soffritto. Nella pentola a pressione aperta scalda l'olio e tosta il cumino in semi 30 secondi. Aggiungi cipolla tritata e carota a dadini e cuoci 5 minuti a fuoco medio, poi aglio, concentrato e, se la usi, la harissa per un minuto."
         },
         {
           "testo": "Carica la pentola. Unisci i ceci scolati, i datteri tritati, la cannella, il peperoncino, il sale e l'acqua. Gratta bene il fondo."
@@ -5741,6 +7027,15 @@
           "tipo": "Dispensa",
           "facoltativo": false,
           "nota": ""
+        },
+        {
+          "nome": "Lievito alimentare",
+          "quantita": 10,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-81a5-9653-e3ee64396098",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "In teglia, mescolato con olio e sale prima del forno"
         }
       ],
       "passi": [
@@ -5748,7 +7043,7 @@
           "testo": "Taglio. Accendi il forno a 200°C. Tampona il tofu con carta da cucina e taglialo a cubetti. Taglia a cubetti anche le patate."
         },
         {
-          "testo": "Teglia. Metti tofu, patate e broccoli ancora surgelati in teglia. Versa l'olio, aggiungi sale e rosmarino e mescola bene finché tutto è unto."
+          "testo": "Teglia. Metti tofu, patate e broccoli ancora surgelati in teglia. Versa l'olio, aggiungi sale, rosmarino e, se lo usi, il lievito alimentare e mescola bene finché tutto è unto."
         },
         {
           "testo": "Forno. Cuoci 40 minuti, senza toccare niente."
@@ -5905,6 +7200,15 @@
           "tipo": "Da comprare",
           "facoltativo": true,
           "nota": "Succo, sul piatto"
+        },
+        {
+          "nome": "Harissa",
+          "quantita": 10,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-818b-9bfc-c24fb69de78b",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Nel sugo con aglio e cumino; se la usi, togli il peperoncino"
         }
       ],
       "passi": [
@@ -5912,7 +7216,7 @@
           "testo": "Tofu nella carbon steel. Strizza il tofu e taglialo a cubetti. Scalda la padella vuota 2-3 minuti a fuoco medio-alto, aggiungi l'olio per il tofu e aspetta che diventi luccicante. Versa il tofu e non toccarlo finché si stacca da solo, poi giralo: 8-10 minuti in tutto, finché è dorato. Intanto vai avanti col passaggio 2."
         },
         {
-          "testo": "Sugo nell'inox (padella larga e alta o pentola bassa). Scalda il resto dell'olio e cuoci la cipolla tritata 4 minuti a fuoco medio. Aggiungi aglio, cumino e peperoncino e cuoci un minuto."
+          "testo": "Sugo nell'inox (padella larga e alta o pentola bassa). Scalda il resto dell'olio e cuoci la cipolla tritata 4 minuti a fuoco medio. Aggiungi aglio, cumino e peperoncino e cuoci un minuto. Se usi la harissa, mettila qui al posto del peperoncino."
         },
         {
           "testo": "Pomodoro e spinaci. Unisci polpa di pomodoro, spinaci ancora surgelati, origano e sale. Fai sobbollire 15 minuti mescolando ogni tanto."
@@ -6189,6 +7493,15 @@
           "tipo": "Da comprare",
           "facoltativo": false,
           "nota": "Succo, a fuoco spento"
+        },
+        {
+          "nome": "Harissa",
+          "quantita": 8,
+          "unita": "g",
+          "prodotto": "40ad208f-0d59-818b-9bfc-c24fb69de78b",
+          "tipo": "Dispensa",
+          "facoltativo": true,
+          "nota": "Nel piatto, sciolta nell'olio a crudo"
         }
       ],
       "passi": [
@@ -6205,7 +7518,7 @@
           "testo": "Frulla. Frulla metà zuppa col minipimer direttamente nella pentola, oppure schiacciala con il cucchiaio. Deve restare densa con pezzi interi."
         },
         {
-          "testo": "Finale. A fuoco spento aggiungi latte di soia e succo di limone. Aggiusta di sale e servi con il resto dell'olio a crudo."
+          "testo": "Finale. A fuoco spento aggiungi latte di soia e succo di limone. Aggiusta di sale e servi con il resto dell'olio a crudo. Se ti va, sciogli nell'olio un po' di harissa e versala sopra la zuppa nel piatto."
         }
       ],
       "note": [
