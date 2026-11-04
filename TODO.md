@@ -4,6 +4,11 @@ Solo azioni aperte. Quando una è fatta si cancella: l'esito va nel README
 dell'unità o in una decisione, e la cronaca resta nel commit. Regole in
 CONVENZIONI.md, idee non urgenti in BACKLOG.md.
 
+## Allenamenti
+
+- [S] Far stare il ✓ delle serie dentro la card a 390 px (esce di ~15 px):
+  input un po' più stretti o etichette "reps"/"kg" più piccole.
+
 ## Notion
 
 - [S] Quando i valori calcolati ti convincono (decisione 0007): in "Ricette"

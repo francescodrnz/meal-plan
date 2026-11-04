@@ -55,6 +55,36 @@
     border-bottom: 1px solid var(--border);
     background: var(--pill-bg);
   }
+  .exercise-target {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .scheda-switch {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .scheda-btn {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1.5px solid var(--border);
+    background: var(--pill-bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+  }
+  .scheda-btn.active {
+    background: var(--accent2);
+    border-color: var(--accent2);
+    color: white;
+  }
   .set-row {
     display: flex;
     align-items: center;
@@ -283,6 +313,10 @@
 
 <!-- TAB ALLENAMENTO -->
 <div id="tab-allenamento" class="section active">
+  <div class="scheda-switch">
+    <button class="scheda-btn" id="scheda-btn-A" onclick="scegliScheda('A')">Sessione A</button>
+    <button class="scheda-btn" id="scheda-btn-B" onclick="scegliScheda('B')">Sessione B</button>
+  </div>
   <div class="chrono-display" id="chrono" onclick="toggleChrono()">00:00</div>
   
   <div id="exercises-container"></div>
@@ -370,55 +404,109 @@ function showTab(evt, tabId) {
 }
 
 // Data structures & Constants
-const EXERCISES = [
-  "Goblet Squat",
-  "Rematore",
-  "Hip Thrust",
-  "Push Up",
-  "Overhead Press"
-];
-const SETS_PER_EX = 2;
-const TOTAL_SETS = EXERCISES.length * SETS_PER_EX;
+// Scheda a rotazione A/B. Il nome è l'identità dell'esercizio nello storico:
+// non cambiarlo, altrimenti si perde il collegamento con le sessioni passate.
+// partenza = kg suggeriti quando non c'è ancora storia (null: dipende dalla macchina).
+const SCHEDE = {
+  A: [
+    { nome: 'Squat al rack',     serie: 3, reps: '6–8',   recupero: '2:30', partenza: 30 },
+    { nome: 'Panca piana',       serie: 3, reps: '8–10',  recupero: '2:00', partenza: 30 },
+    { nome: 'Lat machine',       serie: 3, reps: '8–12',  recupero: '2:00', partenza: 35 },
+    { nome: 'Leg curl seduto',   serie: 3, reps: '10–12', recupero: '1:30', partenza: 25 },
+    { nome: 'Reverse fly',       serie: 2, reps: '12–15', recupero: '1:00', partenza: 15 }
+  ],
+  B: [
+    { nome: 'Leg press',             serie: 3, reps: '8–10',          recupero: '2:30', partenza: null },
+    { nome: 'Shoulder press',        serie: 3, reps: '8–10',          recupero: '2:00', partenza: 15 },
+    { nome: 'Rematore seduto',       serie: 3, reps: '8–12',          recupero: '2:00', partenza: 30 },
+    { nome: 'Leg press a una gamba', serie: 2, reps: '10 per gamba',  recupero: '1:30', partenza: null },
+    { nome: 'Hyperextension 45°',    serie: 2, reps: '10–12',         recupero: '1:30', partenza: 0 }
+  ]
+};
 
-let workoutActive = JSON.parse(localStorage.getItem('workout_active'));
-let chronoInterval = null;
-
-function createEmptyState() {
-  return Array(TOTAL_SETS).fill(null).map(() => ({ reps: '', kg: '', done: false, reps_prov: false, kg_prov: false }));
+// Elenco piatto delle serie della scheda, nello stesso ordine di sets_state
+function serieDellaScheda(scheda) {
+  const out = [];
+  SCHEDE[scheda].forEach(ex => {
+    for (let i = 1; i <= ex.serie; i++) out.push({ ex, set: i });
+  });
+  return out;
 }
 
-function prepopulateState(stateArr) {
-  const sessions = JSON.parse(localStorage.getItem('workout_sessions') || '[]');
-  if (sessions.length > 0) {
-    const lastSessionSets = sessions[0].sets;
-    let setIdx = 0;
-    EXERCISES.forEach((ex) => {
-      for (let i = 1; i <= SETS_PER_EX; i++) {
-        const lastSet = lastSessionSets.find(s => s.exercise === ex && s.set === i);
-        if (lastSet) {
-          stateArr[setIdx].reps = lastSet.reps;
-          stateArr[setIdx].reps_prov = true;
-          if (ex !== 'Push Up') {
-            stateArr[setIdx].kg = lastSet.kg;
-            stateArr[setIdx].kg_prov = true;
-          }
-        }
-        setIdx++;
-      }
-    });
-  }
+let chronoInterval = null;
+
+function getSessions() {
+  return JSON.parse(localStorage.getItem('workout_sessions') || '[]');
+}
+
+// La sessione dopo l'ultima salvata con la scheda A/B (nessuna: A)
+function schedaSuggerita() {
+  const ultima = getSessions().find(s => s.scheda === 'A' || s.scheda === 'B');
+  if (!ultima) return 'A';
+  return ultima.scheda === 'A' ? 'B' : 'A';
+}
+
+function createEmptyState(scheda) {
+  return serieDellaScheda(scheda).map(() => ({ reps: '', kg: '', done: false, reps_prov: false, kg_prov: false }));
+}
+
+// Valori in grigio presi dall'ultima sessione che contiene quell'esercizio
+// (con l'alternanza A/B la sessione più recente è quasi sempre l'altra scheda)
+function prepopulateState(scheda, stateArr) {
+  const sessions = getSessions();
+  serieDellaScheda(scheda).forEach(({ ex, set }, idx) => {
+    const sess = sessions.find(s => s.sets.some(x => x.exercise === ex.nome));
+    if (sess) {
+      const sets = sess.sets.filter(x => x.exercise === ex.nome);
+      const last = sets.find(x => x.set === set) || sets[sets.length - 1];
+      stateArr[idx].reps = last.reps;
+      stateArr[idx].reps_prov = true;
+      stateArr[idx].kg = last.kg;
+      stateArr[idx].kg_prov = true;
+    } else if (ex.partenza !== null) {
+      stateArr[idx].kg = ex.partenza;
+      stateArr[idx].kg_prov = true;
+    }
+  });
   return stateArr;
 }
 
-// Initialize workout state if null
-if (!workoutActive) {
-  workoutActive = {
-    started_at: null,
-    offset: 0,
-    is_running: false,
-    notes: '',
-    sets_state: prepopulateState(createEmptyState())
-  };
+function nuoveSerie(scheda) {
+  return prepopulateState(scheda, createEmptyState(scheda));
+}
+
+// Carica la sessione in corso. Il formato vecchio (senza "scheda", esercizi
+// della scheda precedente) tiene cronometro e note e rifà le serie.
+function caricaActive() {
+  let a = null;
+  try { a = JSON.parse(localStorage.getItem('workout_active')); } catch (e) { a = null; }
+  if (!a) {
+    const scheda = schedaSuggerita();
+    return { scheda, started_at: null, offset: 0, is_running: false, notes: '', sets_state: nuoveSerie(scheda) };
+  }
+  const valida = (a.scheda === 'A' || a.scheda === 'B') &&
+    Array.isArray(a.sets_state) && a.sets_state.length === serieDellaScheda(a.scheda).length;
+  if (!valida) {
+    a.scheda = schedaSuggerita();
+    a.sets_state = nuoveSerie(a.scheda);
+  }
+  return a;
+}
+
+let workoutActive = caricaActive();
+
+function haSerieSegnate() {
+  return workoutActive.sets_state.some(s =>
+    s.done || (s.reps !== '' && !s.reps_prov) || (s.kg !== '' && !s.kg_prov));
+}
+
+function scegliScheda(scheda) {
+  if (scheda === workoutActive.scheda) return;
+  if (haSerieSegnate() && !confirm(`Passare alla sessione ${scheda}? Le serie segnate finora si perdono.`)) return;
+  workoutActive.scheda = scheda;
+  workoutActive.sets_state = nuoveSerie(scheda);
+  saveActive();
+  renderAllenamento();
 }
 
 function updateNotes(val) {
@@ -470,7 +558,8 @@ function getUltimaSessione(exerciseName) {
   for (let sess of sessions) {
     const exSets = sess.sets.filter(s => s.exercise === exerciseName);
     if (exSets.length > 0) {
-      return exSets.map(s => exerciseName === 'Push Up' ? `${s.reps} rep` : `${s.reps}x${s.kg}kg`).join(' | ');
+      // 'Push Up' era della scheda vecchia (senza kg): resta per le sessioni nello storico
+      return exSets.map(s => (exerciseName === 'Push Up' || s.kg === '') ? `${s.reps} rep` : `${s.reps}x${s.kg}kg`).join(' | ');
     }
   }
   return null;
@@ -480,20 +569,24 @@ function getUltimaSessione(exerciseName) {
 function renderAllenamento() {
   const container = document.getElementById('exercises-container');
   container.innerHTML = '';
-  
+  ['A', 'B'].forEach(k => {
+    document.getElementById('scheda-btn-' + k).classList.toggle('active', workoutActive.scheda === k);
+  });
+
   let setIdx = 0;
-  EXERCISES.forEach((ex) => {
+  SCHEDE[workoutActive.scheda].forEach((esercizio) => {
+    const ex = esercizio.nome;
     const card = document.createElement('div');
     card.className = 'exercise-card';
-    card.innerHTML = `<div class="exercise-title">${ex}</div>`;
-    
-    for (let i = 1; i <= SETS_PER_EX; i++) {
+    card.innerHTML = `<div class="exercise-title">${ex}<span class="exercise-target">${esercizio.serie} × ${esercizio.reps} · recupero ${esercizio.recupero}</span></div>`;
+
+    for (let i = 1; i <= esercizio.serie; i++) {
       const s = workoutActive.sets_state[setIdx];
       const row = document.createElement('div');
       row.className = `set-row ${s.done ? 'done' : ''}`;
       row.id = `set-row-${setIdx}`;
-      
-      const kgHtml = ex === 'Push Up' ? '<div class="input-group" style="visibility:hidden"></div>' : `
+
+      const kgHtml = `
         <div class="input-group">
           <span class="input-label">kg</span>
           <div class="input-wrapper">
@@ -612,33 +705,31 @@ function concludiAllenamento() {
     workoutActive.offset = Date.now() - workoutActive.started_at;
   }
   
-  const sessions = JSON.parse(localStorage.getItem('workout_sessions') || '[]');
-  
-  const setsData = [];
-  let idx = 0;
-  EXERCISES.forEach(ex => {
-    for (let i = 1; i <= SETS_PER_EX; i++) {
-      const s = workoutActive.sets_state[idx];
-      setsData.push({ exercise: ex, set: i, reps: s.reps, kg: ex === 'Push Up' ? '' : s.kg });
-      idx++;
-    }
+  const sessions = getSessions();
+
+  const setsData = serieDellaScheda(workoutActive.scheda).map(({ ex, set }, idx) => {
+    const s = workoutActive.sets_state[idx];
+    return { exercise: ex.nome, set, reps: s.reps, kg: s.kg };
   });
-  
+
   sessions.unshift({
     date: new Date().toISOString(),
+    scheda: workoutActive.scheda,
     duration_seconds: Math.floor((workoutActive.offset || 0) / 1000),
     notes: workoutActive.notes || '',
     sets: setsData
   });
   localStorage.setItem('workout_sessions', JSON.stringify(sessions));
-  
-  // Reset with prepopulated values for next time
+
+  // Si riparte con l'altra sessione, precompilata coi valori dell'ultima volta
+  const prossima = schedaSuggerita();
   workoutActive = {
+    scheda: prossima,
     started_at: null,
     offset: 0,
     is_running: false,
     notes: '',
-    sets_state: prepopulateState(createEmptyState())
+    sets_state: nuoveSerie(prossima)
   };
   saveActive();
   const notesEl = document.getElementById('workout-notes');
@@ -890,7 +981,7 @@ function renderStorico() {
           <td class="history-ex">${s.exercise}</td>
           <td>Set ${s.set}</td>
           <td>${s.reps} rep</td>
-          <td>${s.exercise === 'Push Up' ? '-' : s.kg + ' kg'}</td>
+          <td>${(s.exercise === 'Push Up' || s.kg === '') ? '-' : s.kg + ' kg'}</td>
         </tr>
       `;
     });
@@ -898,7 +989,7 @@ function renderStorico() {
     card.innerHTML = `
       <div class="history-header">
         <div>
-          <div class="history-date">${d}</div>
+          <div class="history-date">${d}${sess.scheda ? ` · Sessione ${sess.scheda}` : ''}</div>
           <div class="history-dur">⏳ ${dur}</div>
         </div>
         <button class="history-del" onclick="deleteSession(${i})">🗑</button>

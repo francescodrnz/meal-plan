@@ -82,6 +82,14 @@ Grafica e flussi sono quelli del mockup `decisioni/0001-mockup.html`.
 **Allenamenti** (`workout.html`, script nella pagina). Schede Allenamento,
 Peso, Storico, Info. Registra le sessioni, il peso corporeo e i grafici con
 Chart.js.
+- La scheda è la costante `SCHEDE` (sessioni A e B, decisione 0009): per ogni
+  esercizio nome, serie, ripetizioni, recupero e kg di partenza. Il nome è la
+  chiave dello storico: rinominarlo stacca le sessioni passate.
+- In alto "Sessione A" / "Sessione B": si propone quella dopo l'ultima
+  salvata; cambiarla con serie già segnate chiede conferma. "Concludi" si
+  attiva con tutte le serie spuntate.
+- Reps e kg in grigio vengono dall'ultima sessione che contiene
+  quell'esercizio; senza storia, i kg di partenza della scheda.
 
 **Service worker** (`sw.js`):
 - Le pagine (ogni navigazione: `/meal-plan/`, `index.html`, `workout.html`)
@@ -140,8 +148,8 @@ all'avvio.
 | `mealplan_altro_v1` | piano pasti | cose scritte a mano nella lista `[{chiave, nome}]`, fino a "Spesa fatta"; non vanno nel backup |
 | `mealplan_shop_v1` | piano pasti | dispensa vecchia: si legge solo per migrare, mai scritta |
 | `mealplan_bulk_v1` | piano pasti | vecchia modalità Bulk: non più usata, non cancellata |
-| `workout_sessions` | allenamenti | storico delle sessioni |
-| `workout_active` | allenamenti | sessione in corso |
+| `workout_sessions` | allenamenti | storico delle sessioni `[{date, scheda?, duration_seconds, notes, sets: [{exercise, set, reps, kg}]}]`; `scheda` solo dalla 0009 |
+| `workout_active` | allenamenti | sessione in corso, con `scheda`; senza (formato vecchio) si rifanno le serie e restano cronometro e note |
 | `body_weight_log` | allenamenti | pesate |
 
 **Codici di import/export** (piano pasti: menu › Backup; allenamenti:
@@ -189,6 +197,8 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
 
 ## Limiti e comportamenti noti
 
+- **Allenamenti, ✓ tagliato a 390 px**: il pulsante ✓ della serie esce di
+  circa 15 px dal bordo destro della card (c'era già prima della scheda A/B).
 - **Un piatto tolto a mano resta tolto**: le sue porzioni a 0 restano anche
   se su Notion lo togli e lo rimetti in rotazione. Si rimette da "Aggiungi
   piatto".
@@ -240,7 +250,7 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
 ## Comandi utili
 
 Prove senza Chrome collegato: Playwright con `uv run --with playwright
-python …` (o in un venv), con il browser scaricato in una cartella temporanea:
+python …` (o in un venv, se c'è: `/tmp/pw-venv/bin/python`), con il browser scaricato in una cartella temporanea:
 `PLAYWRIGHT_BROWSERS_PATH=<cartella> python -m playwright install chromium`
 (circa 120 MB; per `launch()` senza finestra serve anche
 `chromium-headless-shell`, che si installa allo stesso modo). Le schede si
@@ -294,3 +304,5 @@ verso la rete hanno l'icona ⚙.
   ripiego.
 - [0008](decisioni/0008-contorno-rosso-dispensa.md) — contorno rosso:
   ogni ricetta da sola contro la dispensa, alle porzioni del piano.
+- [0009](decisioni/0009-scheda-palestra-a-b.md) — scheda palestra A/B
+  scritta in `workout.html`, serie sempre quelle della scheda.
