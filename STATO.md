@@ -1,6 +1,6 @@
 # Stato del progetto
 
-Aggiornato il 2026-11-04.
+Aggiornato il 2026-11-06.
 
 App pubblicata su GitHub Pages da `main`
 (https://francescodrnz.github.io/meal-plan/). Cache del service worker:
@@ -28,17 +28,17 @@ contorno rosso solo in locale con Playwright.
 - **Service worker:** pagine e `ricette.json` network-first (decisione
   0002), il resto cache-first; all'installazione scarica con
   `cache: 'reload'`.
-- **Notion** (decisione 0001): 33 ricette, 10 in rotazione, tutte con
-  l'icona emoji, e 62 prodotti; 44 con kcal e macro per 100 g/ml (le spezie
+- **Notion** (decisione 0001): 40 ricette, 10 in rotazione, tutte con
+  l'icona emoji, e 74 prodotti; 53 con kcal per 100 g/ml (le spezie
   no), valori tipici da tabelle. Le quantità nelle pagine sono per le
   porzioni base: "Porzioni da fare" non è più usata, restano da cancellare a
   mano la proprietà, le due colonne che ne dipendono e la vista "Lista
   spesa". In "Standard ricette" curcuma, paprika dolce e alloro sono segnate
   come da comprare.
-- **`ricette.json`:** lo genera ogni notte la GitHub Action "ricette da
-  notion" (con `icona` e i valori nutrizionali dei prodotti); il bot committa su `main` solo se il file
-  cambia.
+- **`ricette.json`:** lo genera ogni ora la GitHub Action "ricette da
+  notion" (decisione 0010, con `icona` e i valori nutrizionali dei prodotti); il bot committa su `main` solo se il file
+  cambia. Il giro orario non è ancora stato osservato; il lancio a mano funziona.
 
-Prossimo passo: provare la scheda A/B in palestra; guardare sul telefono i
-valori calcolati e il contorno rosso e, se convincono,
-la pulizia a mano su Notion (le due voci di `TODO.md`).
+Prossimo passo: controllare che i giri orari partano; provare la scheda A/B in
+palestra; guardare sul telefono i valori calcolati e il contorno rosso e, se
+convincono, la pulizia a mano su Notion (le voci di `TODO.md`).

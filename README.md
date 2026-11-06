@@ -104,7 +104,7 @@ Chart.js.
 - All'attivazione cancella le cache con nome diverso da `CACHE_NAME`.
 
 **Ricette da Notion** (`.github/scripts/ricette.py` +
-`.github/workflows/ricette.yml`). Ogni notte alle 3:17 UTC, o a mano da
+`.github/workflows/ricette.yml`). Ogni ora, al minuto 17, o a mano da
 Actions › "ricette da notion" › Run workflow, lo script legge i database
 Notion Ricette, Ingredienti e Prodotti e scrive `ricette.json` nella radice.
 Il bot committa su `main` solo se il file è cambiato. L'app lo legge
@@ -112,7 +112,7 @@ all'avvio.
 - Accesso: connessione Notion interna `meal-plan`, in sola lettura, collegata
   ai tre database. Il suo token sta nel secret `NOTION_TOKEN` del repo e, in
   locale, in `.env` nella radice (ignorato da git).
-- `ricette.json` non è in `ASSETS` (lo cambia il bot ogni notte): in `sw.js`
+- `ricette.json` non è in `ASSETS` (lo cambia il bot): in `sw.js`
   è network-first come le pagine, e si mette in cache anche
   all'installazione. Con un errore del server si usa la copia in cache.
 - Se una richiesta fallisce, o Notion non restituisce ricette o prodotti, lo
@@ -194,9 +194,16 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
   33 ricette su 33 calcolate per intero, 958–1206 kcal a porzione, da −8% a
   +11% rispetto ai valori a mano. Cache `mealplan-v17`; lo script ci mette
   circa 33 s.
+- 2026-11-06: il cron notturno delle 3:17 UTC è partito fra le 9:36 e le 11:00
+  UTC negli 8 giorni prima (29 ottobre – 5 novembre). Lancio a mano: circa 40 s
+  di Action, deploy su Pages in circa 40 s. `ricette.json`: 40 ricette (10 in
+  rotazione), 74 prodotti.
 
 ## Limiti e comportamenti noti
 
+- **I giri programmati dell'Action non sono puntuali**: GitHub può avviarli
+  in ritardo o saltarne qualcuno. Quando una modifica su Notion serve subito,
+  si lancia a mano da Actions › "ricette da notion" › Run workflow.
 - **Allenamenti, ✓ tagliato a 390 px**: il pulsante ✓ della serie esce di
   circa 15 px dal bordo destro della card (c'era già prima della scheda A/B).
 - **Un piatto tolto a mano resta tolto**: le sue porzioni a 0 restano anche
@@ -306,3 +313,5 @@ verso la rete hanno l'icona ⚙.
   ogni ricetta da sola contro la dispensa, alle porzioni del piano.
 - [0009](decisioni/0009-scheda-palestra-a-b.md) — scheda palestra A/B
   scritta in `workout.html`, serie sempre quelle della scheda.
+- [0010](decisioni/0010-ricette-ogni-ora.md) — `ricette.json` rigenerato ogni
+  ora; il lancio a mano resta per quando serve subito.

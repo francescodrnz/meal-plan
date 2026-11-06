@@ -1,10 +1,10 @@
-# Rigenera ricette.json da Notion (decisione 0001): ogni notte e a mano.
+# Rigenera ricette.json da Notion (decisioni 0001 e 0010): ogni ora e a mano.
 # Committa solo se il file è cambiato.
 name: ricette da notion
 
 on:
   schedule:
-    - cron: '17 3 * * *'
+    - cron: '17 * * * *'
   workflow_dispatch:
 
 permissions:

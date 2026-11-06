@@ -7,7 +7,7 @@ Modello in `0000-modello.md`. Le regole stanno in `../CONVENZIONI.md`.
 
 | N | Titolo | Stato | Unità |
 |---|---|---|---|
-| 0001 | Ricette su Notion, l'app come tasca | decisa (il piano: superata da 0005) | trasversale |
+| 0001 | Ricette su Notion, l'app come tasca | decisa (il piano: superata da 0005; la frequenza: da 0010) | trasversale |
 | 0002 | Tutte le pagine network-first nel service worker | decisa | app |
 | 0003 | Accesso a Notion: token in sola lettura e connettore MCP | decisa | trasversale |
 | 0004 | Ricette: si vedono tutte, il piano resta la rotazione | decisa (il piano: superata da 0005; i gruppi: da 0006) | app |
@@ -16,3 +16,4 @@ Modello in `0000-modello.md`. Le regole stanno in `../CONVENZIONI.md`.
 | 0007 | Kcal e macro calcolati dai prodotti | decisa | trasversale |
 | 0008 | Contorno rosso: quando la dispensa non basta per una ricetta | decisa | app |
 | 0009 | Scheda palestra A/B scritta nella pagina | decisa | app |
+| 0010 | Ricette da Notion ogni ora | decisa | trasversale |

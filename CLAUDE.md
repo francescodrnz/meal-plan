@@ -25,7 +25,7 @@ manca in `TODO.md`.
   non si cancellano. Per spostare i dati da un dispositivo all'altro si usano
   i codici di import/export.
 - **Ricette su Notion** (decisione 0001): una GitHub Action le copia ogni
-  notte in `ricette.json`, che l'app legge all'avvio. Per scrivere su Notion
+  ora in `ricette.json`, che l'app legge all'avvio. Per scrivere su Notion
   si usa il connettore MCP; per leggere, e per lanciare lo script in locale,
   il token in sola lettura in `.env` nella radice (ignorato da git; su GitHub
   è il secret `NOTION_TOKEN`). Il valore del token non va mai in un file
@@ -35,7 +35,7 @@ manca in `TODO.md`.
 
 - **Cache del service worker:** `sw.js` serve tutto con la strategia
   cache-first tranne le pagine HTML e `ricette.json` (network-first, fuori da
-  `ASSETS` perché lo cambia il bot ogni notte). Quindi **ogni modifica** a un file in
+  `ASSETS` perché lo cambia il bot). Quindi **ogni modifica** a un file in
   `ASSETS` richiede di aumentare `CACHE_NAME` (`mealplan-vN` → `vN+1`),
   altrimenti i telefoni continuano a usare la versione vecchia. Anche un
   file nuovo da servire va aggiunto ad `ASSETS`.
@@ -46,7 +46,7 @@ manca in `TODO.md`.
 - **Mobile prima di tutto:** ogni modifica all'interfaccia si prova alla
   larghezza di un telefono.
 - Si committa e si fa push solo quando lo chiede l'utente. Unica eccezione:
-  il bot dell'Action committa `ricette.json` su `main` da solo, quindi
+  il bot dell'Action committa `ricette.json` su `main` da solo, a qualunque ora, quindi
   **`git pull` prima di lavorare e prima di pushare**.
 
 ## Verifica

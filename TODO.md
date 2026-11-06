@@ -11,6 +11,10 @@ CONVENZIONI.md, idee non urgenti in BACKLOG.md.
 
 ## Notion
 
+- [S] Controllare con `gh run list --workflow "ricette da notion"` che i giri
+  orari partano davvero e con quanto ritardo (decisione 0010). Se restano
+  buchi di ore, riaprire la scelta con le alternative lì elencate.
+
 - [S] Quando i valori calcolati ti convincono (decisione 0007): in "Ricette"
   cancellare a mano "Kcal/porzione" e "Proteine/porzione (g)". Lo script
   regge la mancanza; da lì una ricetta con un prodotto senza valori mostra
