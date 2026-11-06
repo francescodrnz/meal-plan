@@ -1,6 +1,6 @@
 # 0005 — Piano modificabile: la rotazione più le modifiche
 
-Stato: decisa il 2026-10-24
+Stato: decisa il 2026-10-24 (togliere un piatto col −/+: superata da 0012)
 Unità: app (piano pasti)
 Supera: la parte di 0001 e 0004 che dice "il piano è la rotazione"
 

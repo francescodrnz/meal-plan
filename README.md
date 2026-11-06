@@ -22,21 +22,30 @@ Grafica e flussi sono quelli del mockup `decisioni/0001-mockup.html`.
   `location.hash`. Il badge su Spesa conta le righe ancora da prendere.
   Ricette: "Nel piano" (gli stessi piatti della scheda Piano, decisione
   0006), poi le altre, con l'emoji dell'icona della pagina Notion (🍽️ se
-  manca).
+  manca) e le etichette della base e, in verde, della base proteica. In "Aggiungi
+  piatto" al posto delle etichette c'è il numero di porzioni.
+- **Base proteica** (decisione 0011): quelle dei prodotti della ricetta, senza i
+  facoltativi (`basiProteiche`, in `ricetta.baseProteica`). In cima a Ricette il
+  filtro a selezione multipla, coi valori presi dai dati: con più scelte basta
+  averne una, vale per i due gruppi, sta solo in memoria (si azzera riaprendo
+  l'app).
 - **Contorno rosso** (decisione 0008) sulle righe di Ricette, Piano e
-  "Aggiungi piatto" se la dispensa non basta (`bastaLaDispensa`): ogni
-  ricetta da sola, alle porzioni del piano o, fuori piano, a quelle base;
-  conta i prodotti di `ingredientiContati` (come il fabbisogno, senza "Ogni
-  giorno") e le cose di casa non facoltative segnate "manca".
+  "Aggiungi piatto" se la dispensa non basta (`bastaLaDispensa`), e dentro la
+  ricetta sulle righe che mancano (`ingredientiMancanti`, da cui viene anche
+  l'altro, alle porzioni mostrate): ogni ricetta da sola, alle porzioni del piano
+  o, fuori piano, a quelle base; conta i prodotti di `ingredientiContati` (come il
+  fabbisogno, senza "Ogni giorno") e le cose di casa non facoltative segnate
+  "manca".
 - In `script.js` la logica (piano, fabbisogno, dispensa, lista, migrazione,
   import/export) sta sopra; l'interfaccia sotto, con i pulsanti che dicono
   cosa fanno in `data-azione` e un solo gestore di click (`AZIONI`). Pagine a
   tutto schermo (scheda ricetta, Backup, Prodotti extra) e fogli dal basso
   passano dalla cronologia: il tasto indietro li chiude.
-- **Piano** = la rotazione di Notion più le modifiche (decisione 0005): ogni
-  piatto con le sue porzioni (passi di 0,1); a 0 esce dal piano e torna in
-  "+ Aggiungi piatto", che offre anche le ricette fuori rotazione
-  (`aggiunte`). Kcal a pasto = `kcal a porzione × porzioni / ricetta.porzioni`. Giorni =
+- **Piano** = la rotazione di Notion più le modifiche (decisione 0005): la ✕
+  toglie un piatto con un tocco (decisione 0012) e lo fa tornare in "+ Aggiungi
+  piatto", che offre anche le ricette fuori rotazione (`aggiunte`). Le porzioni
+  di un piatto del piano sono quelle della ricetta, o quelle già salvate da
+  versioni precedenti. Kcal a pasto = `kcal a porzione × porzioni / ricetta.porzioni`. Giorni =
   somma di `ricetta.porzioni / 2` sui piatti del piano. "Ogni giorno" (di
   partenza latte di soia 250 ml e frutta 2 pz) si moltiplica per i giorni;
   ammette solo prodotti con `siConta`, e a 0 la riga si toglie.
@@ -65,14 +74,15 @@ Grafica e flussi sono quelli del mockup `decisioni/0001-mockup.html`.
     le righe spuntate e toglie le cose a mano spuntate.
   - Il −/+ della dispensa va al multiplo successivo del passo (`aPasso`): a
     quarti per pacco, bottiglia e vasetto, interi per panetto, lattina e pz.
-- **Scheda ricetta**: per un piatto del piano le porzioni sono quelle del
-  piano (cambiarle qui le cambia lì); fuori piano valgono solo nella scheda.
+- **Scheda ricetta**: parte dalle porzioni del piano o, fuori piano, da quelle
+  base. Il −/+ vale solo nella scheda (decisione 0012): cambia le quantità e
+  quello che toglie "Cucinata", non piano e spesa; riaprendola si riparte da capo.
   Quantità scalate, spunte di ingredienti e passi (il primo non fatto è
   evidenziato; il pezzo prima del primo punto è il titolo del passo),
   schermo acceso (Wake Lock). Nel piano: "Cucinata" e "Togli dal piano";
   fuori: "Aggiungi al piano" e "Cucinata fuori piano". "Cucinata" toglie gli
   ingredienti e `ricetta.porzioni / 2` giorni di "Ogni giorno", e il piatto
-  resta nel piano.
+  resta nel piano. "Aggiungi al piano" lo mette alle porzioni base.
 - **Migrazione** dalla dispensa vecchia (`mealplan_shop_v1`, grammi per id):
   `migraInventarioV1` la traduce per nome di prodotto Notion (`MAPPA_V1`,
   olio e latte da g a ml 1:1). Tutte le scritture passano da
@@ -123,13 +133,14 @@ all'avvio.
   di generazione, così un giro senza modifiche dà un file identico.
   - prodotto: `id`, `nome`, `reparto`, `unita`, `confezione`,
     `tipoConfezione`, `siConta`, `kcal`, `proteine`, `carboidrati`,
-    `grassi` (per 100 g, o 100 ml se il prodotto è in ml), `pesoPezzo` (g).
-    Unità e confezione sono `null` per i prodotti che si segnano solo come
+    `grassi` (per 100 g, o 100 ml se il prodotto è in ml), `pesoPezzo` (g),
+    `baseProteica` (`null` per quasi tutti). Unità e confezione sono `null` per i prodotti che si segnano solo come
     presenti (spezie, aglio, limone…); i valori nutrizionali sono `null`
     dove su Notion sono vuoti (le spezie).
   - ricetta: `id`, `nome`, `icona` (emoji della pagina, o `null`),
-    `rotazione`, `provata`, `porzioni`, `kcal` e `proteine` (scritti a mano,
-    solo ripiego; `null` se su Notion non ci sono più), `base`, `descrizione`, `ingredienti`, `passi`, `note`.
+    `rotazione`, `provata` (l'app non la usa più), `porzioni`, `kcal` e
+    `proteine` (scritti a mano, solo ripiego; `null` se su Notion non ci sono più),
+    `base`, `descrizione`, `ingredienti`, `passi`, `note`.
   - ingrediente: `nome`, `quantita` **per porzione** (`null` se `q.b.`),
     `unita`, `prodotto` (id, `null` per l'acqua), `tipo`, `facoltativo`,
     `nota`.
@@ -198,6 +209,9 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
   UTC negli 8 giorni prima (29 ottobre – 5 novembre). Lancio a mano: circa 40 s
   di Action, deploy su Pages in circa 40 s. `ricette.json`: 40 ricette (10 in
   rotazione), 74 prodotti.
+- 2026-11-06: 6 prodotti con la base proteica; 34 ricette con una base proteica,
+  5 con due, 1 senza. Base: Riso 10, Pasta 10, Couscous 5, Altro 4, Polenta 3,
+  Farro 3, Quinoa 3, Miglio 2. Cache `mealplan-v20`.
 
 ## Limiti e comportamenti noti
 
@@ -209,14 +223,15 @@ codice pronto da inviare, con il comando `/backup_mealplan` o
 - **Un piatto tolto a mano resta tolto**: le sue porzioni a 0 restano anche
   se su Notion lo togli e lo rimetti in rotazione. Si rimette da "Aggiungi
   piatto".
-- **Le porzioni della scheda ricetta, per un piatto del piano, sono quelle
-  del piano**: cucinarne di più una volta cambia il piano, finché non le
-  rimetti.
-
+- **Porzioni diverse già salvate nel piano**: restano valide ma non si cambiano
+  più; si azzerano solo togliendo e rimettendo il piatto.
+- **La base proteica non ammette eccezioni per ricetta**: viene dai prodotti,
+  quindi conta anche una piccola quantità (curry di ceci e stufato sono anche
+  "Lenticchie" per 40 g). Una ricetta senza base proteica (la lasagna) sparisce
+  con qualunque filtro.
 - **Il contorno rosso guarda una ricetta alla volta**: due piatti che
   insieme finiscono un prodotto restano senza contorno; quanto manca per
-  tutto il piano lo dice la Spesa. Con la dispensa vuota è quasi tutto
-  rosso, e il contorno non dice cosa manca.
+  tutto il piano lo dice la Spesa. Con la dispensa vuota è quasi tutto rosso.
 - **Un aggiornamento non arriva se non aumenti `CACHE_NAME`**: tutto tranne
   le pagine HTML e `ricette.json` è cache-first, e una pagina nuova con JS o
   CSS vecchi può rompersi. Per un attimo, all'aggiornamento, l'HTML nuovo
@@ -315,3 +330,7 @@ verso la rete hanno l'icona ⚙.
   scritta in `workout.html`, serie sempre quelle della scheda.
 - [0010](decisioni/0010-ricette-ogni-ora.md) — `ricette.json` rigenerato ogni
   ora; il lancio a mano resta per quando serve subito.
+- [0011](decisioni/0011-base-proteica-dai-prodotti.md) — base proteica ricavata
+  dai prodotti, non scritta sulle ricette.
+- [0012](decisioni/0012-piano-senza-porzioni.md) — nel Piano si toglie il piatto
+  e basta; il −/+ della ricetta serve solo per vedere le quantità.

@@ -189,6 +189,7 @@ def main():
             "carboidrati": numero(p, "Carboidrati/100 (g)"),
             "grassi": numero(p, "Grassi/100 (g)"),
             "pesoPezzo": numero(p, "Peso pezzo (g)"),
+            "baseProteica": campo(p, "Base proteica"),
         }
         for p in tutte_le_righe(DS_PRODOTTI)
     ]

@@ -47,6 +47,7 @@ function preparaCatalogo(dati) {
   dati.ricette.forEach(r => {
     ricettePerId[r.id] = r;
     r.nutrizione = calcolaNutrizione(r, prodottiPerId);
+    r.baseProteica = basiProteiche(r, prodottiPerId);
   });
   return { prodotti: dati.prodotti, ricette: dati.ricette, prodottiPerId, ricettePerId };
 }
@@ -89,16 +90,6 @@ function scriviPiano(piano) {
 function porzioniNelPiano(piano, ricetta) {
   const v = piano.porzioni[ricetta.id];
   return typeof v === 'number' ? v : ricetta.porzioni;
-}
-
-// A 0 porzioni la ricetta esce dal piano.
-function impostaPorzioni(ricetta, valore) {
-  const v = Math.max(0, arrotonda1(valore));
-  if (v === 0) { togliDalPiano(ricetta); return; }
-  const piano = leggiPiano();
-  if (v === ricetta.porzioni) delete piano.porzioni[ricetta.id];
-  else piano.porzioni[ricetta.id] = v;
-  scriviPiano(piano);
 }
 
 function aggiungiAlPiano(ricetta) {
@@ -160,6 +151,15 @@ function calcolaNutrizione(ricetta, prodottiPerId) {
   });
   if (!mancanti.length) return Object.assign(tot, { calcolata: true, mancanti });
   return { kcal: ricetta.kcal, proteine: ricetta.proteine, carboidrati: null, grassi: null, calcolata: false, mancanti };
+}
+
+// Le basi proteiche di una ricetta: quelle dei suoi prodotti, senza i facoltativi.
+function basiProteiche(ricetta, prodottiPerId) {
+  const basi = ricetta.ingredienti
+    .filter(ing => !ing.facoltativo && ing.prodotto && prodottiPerId[ing.prodotto])
+    .map(ing => prodottiPerId[ing.prodotto].baseProteica)
+    .filter(Boolean);
+  return [...new Set(basi)].sort();
 }
 
 // ==================== INGREDIENTI ====================
@@ -232,15 +232,26 @@ function consumoCucinata(piano, ricetta, porzioni) {
   return consumo;
 }
 
-// Se con la dispensa di adesso la ricetta si cucina a quelle porzioni: ogni ricetta da sola,
-// senza "Ogni giorno"; le cose di casa contano solo se segnate "manca".
-function bastaLaDispensa(ricetta, porzioni, dispensa) {
+// Gli indici degli ingredienti che mancano con la dispensa di adesso, a quelle porzioni: ogni ricetta
+// da sola, senza "Ogni giorno"; le cose di casa contano solo se segnate "manca". Se un prodotto
+// compare in più righe e non basta, mancano tutte.
+function ingredientiMancanti(ricetta, porzioni, dispensa) {
   const serve = ingredientiContati(ricetta, porzioni);
-  if (Object.keys(serve).some(id => arrotonda6(serve[id]) > arrotonda6(quantitaIn(dispensa, id)))) return false;
-  return !ricetta.ingredienti.some(ing => {
+  const mancanti = new Set();
+  ricetta.ingredienti.forEach((ing, i) => {
+    const contato = prodottoContato(ing);
+    if (contato) {
+      if (arrotonda6(serve[contato.id]) > arrotonda6(quantitaIn(dispensa, contato.id))) mancanti.add(i);
+      return;
+    }
     const p = ing.prodotto && catalogo.prodottiPerId[ing.prodotto];
-    return p && !p.siConta && !ing.facoltativo && manca(dispensa, p.id);
+    if (p && !p.siConta && !ing.facoltativo && manca(dispensa, p.id)) mancanti.add(i);
   });
+  return mancanti;
+}
+
+function bastaLaDispensa(ricetta, porzioni, dispensa) {
+  return ingredientiMancanti(ricetta, porzioni, dispensa).size === 0;
 }
 
 // ==================== DISPENSA ====================
@@ -667,17 +678,18 @@ function menu() {
 // ==================== SCHEDA RICETTE ====================
 function rigaRicetta(r, nelPiano, azione, dispensa) {
   const porzioni = nelPiano.get(r.id);
-  const etichetta = porzioni !== undefined
-    ? '<span class="pill in num">nel piano · ' + fmtNumero(porzioni) + '</span>'
-    : (azione === 'scegli-piatto' ? '<span class="pill num">' + fmtNumero(r.porzioni) + '</span>'
-      : (r.base && r.base.length ? '<span class="pill">' + esc(r.base.join(', ')) + '</span>' : '<span></span>'));
   const basta = bastaLaDispensa(r, porzioni !== undefined ? porzioni : r.porzioni, dispensa);
-  return '<button class="rec' + (basta ? '' : ' non-basta') + '" data-azione="' + azione + '" ' + attr('id', r.id) + '>' +
+  // Nel foglio "Aggiungi piatto" a destra c'è il numero di porzioni; nella scheda Ricette le etichette.
+  const nelFoglio = azione === 'scegli-piatto';
+  const etichette = nelFoglio ? '' : '<div class="tags">' +
+    (r.base || []).map(b => '<span class="pill">' + esc(b) + '</span>').join('') +
+    r.baseProteica.map(b => '<span class="pill in">' + esc(b) + '</span>').join('') + '</div>';
+  return '<button class="rec' + (nelFoglio ? ' con-numero' : '') + (basta ? '' : ' non-basta') + '" data-azione="' + azione + '" ' + attr('id', r.id) + '>' +
     '<span class="emo">' + esc(icona(r)) + '</span>' +
     '<span><div class="name">' + esc(r.nome) + '</div>' +
-      '<div class="meta num">' + kcalTesto(r.nutrizione.kcal) + ' kcal · ' + grammiTesto(r.nutrizione.proteine) + ' g proteine' +
-      (r.provata ? '' : ' · <span class="da-provare">da provare</span>') + '</div></span>' +
-    etichetta + '</button>';
+      '<div class="meta num">' + kcalTesto(r.nutrizione.kcal) + ' kcal · ' + grammiTesto(r.nutrizione.proteine) + ' g proteine</div>' +
+      etichette + '</span>' +
+    (nelFoglio ? '<span class="pill num">' + fmtNumero(r.porzioni) + '</span>' : '') + '</button>';
 }
 
 function gruppoRicette(titolo, ricette, nelPiano, azione, dispensa) {
@@ -686,14 +698,35 @@ function gruppoRicette(titolo, ricette, nelPiano, azione, dispensa) {
     '<div class="rec-list">' + ricette.map(r => rigaRicetta(r, nelPiano, azione, dispensa)).join('') + '</div></div>';
 }
 
+// Le basi proteiche scelte nel filtro: solo in memoria, riaprendo l'app si riparte da tutte.
+const filtroProteica = new Set();
+
+function cambiaFiltroProteica(base) {
+  if (!filtroProteica.delete(base)) filtroProteica.add(base);
+  disegnaRicette();
+}
+
+function chipFiltroProteica() {
+  const basi = [...new Set(catalogo.ricette.flatMap(r => r.baseProteica))].sort();
+  if (!basi.length) return '';
+  return '<div class="filtro" role="group" aria-label="Filtra per base proteica">' + basi.map(b => {
+    const scelta = filtroProteica.has(b);
+    return '<button class="chip' + (scelta ? ' on' : '') + '" data-azione="filtro-proteica" ' + attr('base', b) +
+      ' aria-pressed="' + scelta + '">' + esc(b) + '</button>';
+  }).join('') + '</div>';
+}
+
 // Gruppi come la scheda Piano (decisione 0006): la casella di Notion conta solo come partenza del piano.
+// Con più basi scelte basta averne una.
 function disegnaRicette() {
   const piatti = piattiDelPiano(leggiPiano());
   const nelPiano = new Map(piatti.map(x => [x.ricetta.id, x.porzioni]));
   const dispensa = leggiDispensa();
-  $('v-ricette').innerHTML =
-    gruppoRicette('Nel piano', piatti.map(x => x.ricetta), nelPiano, 'apri', dispensa) +
-    gruppoRicette('Altre ricette', catalogo.ricette.filter(r => !nelPiano.has(r.id)), nelPiano, 'apri', dispensa);
+  const passa = r => !filtroProteica.size || r.baseProteica.some(b => filtroProteica.has(b));
+  const gruppi =
+    gruppoRicette('Nel piano', piatti.map(x => x.ricetta).filter(passa), nelPiano, 'apri', dispensa) +
+    gruppoRicette('Altre ricette', catalogo.ricette.filter(r => !nelPiano.has(r.id) && passa(r)), nelPiano, 'apri', dispensa);
+  $('v-ricette').innerHTML = chipFiltroProteica() + (gruppi || '<div class="empty">Nessuna ricetta con questa base.</div>');
 }
 
 // ==================== SCHEDA PIANO ====================
@@ -711,7 +744,7 @@ function disegnaPiano() {
       '<button class="info" data-azione="apri" ' + attr('id', ricetta.id) + '>' +
         '<div class="name">' + esc(ricetta.nome) + '</div>' +
         '<div class="sub num">≈ ' + kcalTonde(ricetta, porzioni) + ' kcal a pasto</div></button>' +
-      stepper('porzioni', attr('id', ricetta.id), fmtNumero(porzioni)) +
+      '<button class="icon-btn togli-piatto" data-azione="togli-piatto" ' + attr('id', ricetta.id) + ' aria-label="Togli dal piano">✕</button>' +
     '</div>').join('');
 
   const ogniGiorno = piano.ogniGiorno.map((x, i) => {
@@ -733,13 +766,12 @@ function disegnaPiano() {
       '<button class="daily-add" data-azione="aggiungi-ogni-giorno">+ Aggiungi</button></div></div>';
 }
 
-function cambiaPorzioniPiano(id, verso) {
+function togliPiatto(id) {
   const ricetta = catalogo.ricettePerId[id];
   if (!ricetta) return;
-  const v = arrotonda1(porzioniNelPiano(leggiPiano(), ricetta) + 0.1 * verso);
-  impostaPorzioni(ricetta, v);
+  togliDalPiano(ricetta);
   disegna();
-  if (v <= 0) toast(ricetta.nome + ': tolta dal piano');
+  toast(ricetta.nome + ': tolta dal piano');
 }
 
 function foglioAggiungiPiatto() {
@@ -1163,22 +1195,17 @@ function eliminaExtra() {
 }
 
 // ==================== SCHEDA RICETTA ====================
-let ricettaAperta = null; // {ricetta, porzioni}; porzioni vale solo finché la ricetta è fuori dal piano
+let ricettaAperta = null; // {ricetta, porzioni}; porzioni vale solo nella scheda: piano e spesa non cambiano
 
 function inPiano(ricetta) {
   return mappaPiano(leggiPiano()).has(ricetta.id);
 }
 
-// Nel piano le porzioni sono quelle del piano: cambiarle qui le cambia anche lì.
-function porzioniScheda() {
-  const p = mappaPiano(leggiPiano()).get(ricettaAperta.ricetta.id);
-  return p !== undefined ? p : ricettaAperta.porzioni;
-}
-
 function apriRicetta(id) {
   const ricetta = catalogo.ricettePerId[id];
   if (!ricetta) return;
-  ricettaAperta = { ricetta, porzioni: ricetta.porzioni };
+  const nelPiano = mappaPiano(leggiPiano()).get(id);
+  ricettaAperta = { ricetta, porzioni: nelPiano !== undefined ? nelPiano : ricetta.porzioni };
   disegnaRicetta();
   apriPagina('scheda');
   tieniSchermoAcceso();
@@ -1209,9 +1236,7 @@ function azzeraSpunte(id) {
 }
 
 function cambiaPorzioniScheda(verso) {
-  const v = Math.max(0.1, arrotonda1(porzioniScheda() + 0.1 * verso));
-  if (inPiano(ricettaAperta.ricetta)) impostaPorzioni(ricettaAperta.ricetta, v);
-  else ricettaAperta.porzioni = v;
+  ricettaAperta.porzioni = Math.max(0.1, arrotonda1(ricettaAperta.porzioni + 0.1 * verso));
   disegnaRicetta();
 }
 
@@ -1235,16 +1260,16 @@ const sottoPunti = x => Array.isArray(x.sotto) && x.sotto.length
   ? '<ul class="sotto">' + x.sotto.map(t => '<li>' + esc(t) + '</li>').join('') + '</ul>' : '';
 
 function disegnaRicetta() {
-  const { ricetta } = ricettaAperta;
-  const porzioni = porzioniScheda();
+  const { ricetta, porzioni } = ricettaAperta;
   const nelPiano = inPiano(ricetta);
+  const mancanti = ingredientiMancanti(ricetta, porzioni, leggiDispensa());
   const s = leggiSpunte(ricetta.id);
   const corrente = ricetta.passi.findIndex((_, i) => !s.passi.includes(i));
   const scroll = $('scheda').scrollTop;
   $('scheda-titolo').textContent = ricetta.nome;
 
   const ingredienti = ricetta.ingredienti.map((ing, i) =>
-    '<button class="ing' + (s.ing.includes(i) ? ' done' : '') + '" data-azione="spunta" data-tipo="ing" data-i="' + i + '">' +
+    '<button class="ing' + (s.ing.includes(i) ? ' done' : '') + (mancanti.has(i) ? ' manca' : '') + '" data-azione="spunta" data-tipo="ing" data-i="' + i + '">' +
       '<span class="dot"></span>' +
       '<span><span class="nm">' + esc(ing.nome) + '</span>' +
         (ing.facoltativo ? '<span class="opt">facoltativo</span>' : '') +
@@ -1265,7 +1290,6 @@ function disegnaRicetta() {
 
   $('scheda-corpo').innerHTML =
     '<div class="rhero"><span class="emo">' + esc(icona(ricetta)) + '</span><h2>' + esc(ricetta.nome) + '</h2>' +
-      (ricetta.provata ? '' : '<div class="meta"><span class="da-provare">da provare</span></div>') +
       '<div class="meta">A porzione</div>' + riquadroNutrizione(ricetta.nutrizione) +
       (ricetta.descrizione ? '<p class="desc">' + esc(ricetta.descrizione) + '</p>' : '') + '</div>' +
     '<div class="porz-bar"><span class="lbl"><b class="num">' + fmtNumero(porzioni) + ' porzioni</b>' +
@@ -1283,23 +1307,21 @@ function disegnaRicetta() {
 }
 
 function aggiungiDallaScheda() {
-  const { ricetta, porzioni } = ricettaAperta;
+  const { ricetta } = ricettaAperta;
   aggiungiAlPiano(ricetta);
-  impostaPorzioni(ricetta, porzioni);
+  ricettaAperta.porzioni = ricetta.porzioni;
   disegnaRicetta();
   toast(ricetta.nome + ': nel piano');
 }
 
 function togliDallaScheda() {
-  ricettaAperta.porzioni = porzioniScheda();
   togliDalPiano(ricettaAperta.ricetta);
   disegnaRicetta();
   toast(ricettaAperta.ricetta.nome + ': tolta dal piano');
 }
 
 function cucinata() {
-  const { ricetta } = ricettaAperta;
-  const porzioni = porzioniScheda();
+  const { ricetta, porzioni } = ricettaAperta;
   if (!confirm('Togliere dalla dispensa ' + ricetta.nome + ' per ' + fmtNumero(porzioni) + ' porzioni?')) return;
   const consumo = consumoCucinata(leggiPiano(), ricetta, porzioni);
   if (!scriviDispensa(d => applicaConsumo(d, consumo))) return;
@@ -1339,7 +1361,8 @@ const AZIONI = {
   'menu': menu,
   'chiudi': chiudiOverlay,
   'apri': d => apriRicetta(d.id),
-  'porzioni': d => cambiaPorzioniPiano(d.id, +d.verso),
+  'filtro-proteica': d => cambiaFiltroProteica(d.base),
+  'togli-piatto': d => togliPiatto(d.id),
   'aggiungi-piatto': foglioAggiungiPiatto,
   'scegli-piatto': d => scegliPiatto(d.id),
   'ogni-giorno': d => cambiaOgniGiorno(+d.i, +d.verso),

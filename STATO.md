@@ -4,22 +4,25 @@ Aggiornato il 2026-11-06.
 
 App pubblicata su GitHub Pages da `main`
 (https://francescodrnz.github.io/meal-plan/). Cache del service worker:
-`mealplan-v19`. L'interfaccia nuova del piano pasti e il backup `MP2D_` col
-bot Telegram sono stati provati sul telefono; i valori nutrizionali e il
-contorno rosso solo in locale con Playwright.
+`mealplan-v20`. L'interfaccia nuova del piano pasti e il backup `MP2D_` col
+bot Telegram sono stati provati sul telefono; i valori nutrizionali, il
+contorno rosso e i ritocchi della v20 solo in locale con Playwright.
 
 - **Piano pasti** (`index.html`, `script.js`, `piano.css`): grafica e flussi
   del mockup della decisione 0001 (`decisioni/0001-mockup.html`). Schede
-  Ricette (raggruppata "Nel piano" / altre, decisione 0006), Piano, Spesa
-  in basso, emoji delle ricette da Notion. Piano = rotazione più le
-  modifiche dal telefono (decisione 0005): "Aggiungi piatto", porzioni a 0
-  per togliere. Spesa "A casa" (da comprare e ce l'hai già divise per
+  Ricette (raggruppata "Nel piano" / altre, decisione 0006; con le etichette
+  della base e della base proteica e il filtro multiplo per base proteica,
+  decisione 0011), Piano, Spesa in basso, emoji delle ricette da Notion. Piano =
+  rotazione più le modifiche dal telefono (decisione 0005): "Aggiungi piatto", ✕
+  per togliere; il −/+ della scheda ricetta serve solo per vedere le quantità
+  (decisione 0012). Spesa "A casa" (da comprare e ce l'hai già divise per
   reparto) / "Al super" con "Aggiungi altro". Dispensa stimata, migrazione
   e codici `MP2_` / `MP2D_` invariati. Kcal, proteine, carboidrati e grassi
   a porzione calcolati dai valori dei prodotti (decisione 0007), con i
   numeri scritti a mano solo come ripiego. Contorno rosso sulle ricette
-  per cui la dispensa non basta (decisione 0008). Provato in locale con Playwright a 390 px, chiaro e scuro,
-  compreso l'aggiornamento dalla v12 con dati e codici vecchi.
+  per cui la dispensa non basta (decisione 0008), e nella scheda ricetta sui
+  singoli ingredienti che mancano. Provato in locale con Playwright a 390 px,
+  chiaro e scuro, compreso l'aggiornamento dalla v19 con dati e codici vecchi.
 - **Allenamenti** (`workout.html`): scheda palestra a rotazione A/B
   (decisione 0009), con la sessione da scegliere in alto; sessioni, peso
   corporeo e grafici con Chart.js; `style.css` contiene solo le sue classi.
@@ -30,15 +33,18 @@ contorno rosso solo in locale con Playwright.
   `cache: 'reload'`.
 - **Notion** (decisione 0001): 40 ricette, 10 in rotazione, tutte con
   l'icona emoji, e 74 prodotti; 53 con kcal per 100 g/ml (le spezie
-  no), valori tipici da tabelle. Le quantità nelle pagine sono per le
+  no), valori tipici da tabelle; 6 con la base proteica. Base delle ricette: Riso,
+  Pasta, Couscous, Polenta, Farro, Quinoa, Miglio, e Altro dove non c'è un
+  cereale. Le quantità nelle pagine sono per le
   porzioni base: "Porzioni da fare" non è più usata, restano da cancellare a
   mano la proprietà, le due colonne che ne dipendono e la vista "Lista
   spesa". In "Standard ricette" curcuma, paprika dolce e alloro sono segnate
   come da comprare.
 - **`ricette.json`:** lo genera ogni ora la GitHub Action "ricette da
-  notion" (decisione 0010, con `icona` e i valori nutrizionali dei prodotti); il bot committa su `main` solo se il file
+  notion" (decisione 0010, con `icona`, i valori nutrizionali e la base proteica
+  dei prodotti); il bot committa su `main` solo se il file
   cambia. Il giro orario non è ancora stato osservato; il lancio a mano funziona.
 
-Prossimo passo: controllare che i giri orari partano; provare la scheda A/B in
-palestra; guardare sul telefono i valori calcolati e il contorno rosso e, se
-convincono, la pulizia a mano su Notion (le voci di `TODO.md`).
+Prossimo passo: provare la v20 sul telefono; controllare che i giri orari
+partano; provare la scheda A/B in palestra; guardare sul telefono i valori
+calcolati e, se convincono, la pulizia a mano su Notion (le voci di `TODO.md`).
