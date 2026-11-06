@@ -821,10 +821,10 @@
       "confezione": 1000,
       "tipoConfezione": "pacco",
       "siConta": true,
-      "kcal": 355,
-      "proteine": 7,
-      "carboidrati": 79,
-      "grassi": 0.6,
+      "kcal": 351,
+      "proteine": 7.9,
+      "carboidrati": 71.7,
+      "grassi": 2.8,
       "pesoPezzo": null
     },
     {
@@ -944,13 +944,13 @@
       "nome": "Tofu",
       "reparto": "Frigo",
       "unita": "g",
-      "confezione": 180,
+      "confezione": 350,
       "tipoConfezione": "panetto",
       "siConta": true,
-      "kcal": 140,
-      "proteine": 14,
-      "carboidrati": 1.5,
-      "grassi": 8,
+      "kcal": 126,
+      "proteine": 13,
+      "carboidrati": 0.25,
+      "grassi": 7.9,
       "pesoPezzo": null
     },
     {
@@ -1046,12 +1046,12 @@
       "rotazione": false,
       "provata": true,
       "porzioni": 3,
-      "kcal": 1030,
-      "proteine": 55,
+      "kcal": 930,
+      "proteine": 52,
       "base": [
         "Altro"
       ],
-      "descrizione": "Pranzo da portare in treno, si mangia freddo. A porzione un panetto di tofu e una scatola di fagioli; 3 porzioni finiscono la confezione da 6 tortillas.",
+      "descrizione": "Pranzo da portare in treno, si mangia freddo. A porzione mezzo panetto di tofu (175 g) e una scatola di fagioli; 3 porzioni finiscono la confezione da 6 tortillas.",
       "ingredienti": [
         {
           "nome": "Tortillas grandi",
@@ -1064,7 +1064,7 @@
         },
         {
           "nome": "Tofu",
-          "quantita": 180,
+          "quantita": 175,
           "unita": "g",
           "prodotto": "402d208f-0d59-81bc-8c8c-f0ee0ae6a8d6",
           "tipo": "Da comprare",
@@ -1081,17 +1081,8 @@
           "nota": ""
         },
         {
-          "nome": "Riso",
-          "quantita": 35,
-          "unita": "g",
-          "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
-          "tipo": "Da comprare",
-          "facoltativo": false,
-          "nota": ""
-        },
-        {
           "nome": "Olio",
-          "quantita": 15,
+          "quantita": 7.5,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -1164,10 +1155,7 @@
       ],
       "passi": [
         {
-          "testo": "Riso. Cuoci il riso in abbondante acqua salata, come la pasta, per circa 15 minuti. Scolalo e lascialo intiepidire."
-        },
-        {
-          "testo": "Tofu. Mentre il riso cuoce, tampona il tofu con carta da cucina, schiaccialo per far uscire l'acqua e sbriciolalo a pezzi irregolari."
+          "testo": "Tofu. Tampona il tofu con carta da cucina, schiaccialo per far uscire l'acqua e sbriciolalo a pezzi irregolari."
         },
         {
           "testo": "Carbon steel. Scalda la padella vuota a fuoco medio-alto per 2-3 minuti, poi aggiungi l'olio e aspetta che diventi luccicante. Versa il tofu e non toccarlo per 3-4 minuti, finché si stacca da solo. Poi giralo e cuoci finché è dorato e asciutto, circa 8 minuti in tutto."
@@ -1179,24 +1167,24 @@
           "testo": "Spezie. Abbassa la fiamma, aggiungi tutte le spezie e mescola per 30 secondi."
         },
         {
-          "testo": "Riso. Spegni il fuoco e mescola il riso nel ripieno. Assaggia: di solito il sale del miso basta."
-        },
-        {
           "testo": "Arrotolare. Scalda le tortillas pochi secondi in padella, così si piegano senza spaccarsi. Dividi il ripieno tra le tortillas, mettendolo nella parte bassa di ciascuna, ripiega i lati verso il centro e arrotola stretto. Avvolgi nella stagnola e lascia raffreddare prima di metterli nella borsa."
         }
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1030 kcal e 55 g di proteine. Le tortillas cambiano molto da marca a marca, quindi controlla l'etichetta."
+          "testo": "Valori per porzione: circa 930 kcal e 52 g di proteine. Le tortillas cambiano molto da marca a marca, quindi controlla l'etichetta."
         },
         {
-          "testo": "Con le piadine: prendile all'olio, perché molte contengono strutto. Sono più caloriche, quindi togli il riso. Si arrotolano peggio: scaldale bene e chiudile a mezzaluna."
+          "testo": "Con le piadine: prendile all'olio, perché molte contengono strutto. Sono più caloriche, controlla l'etichetta. Si arrotolano peggio: scaldale bene e chiudile a mezzaluna."
         },
         {
           "testo": "Fagioli rossi: sono più duri dei neri, quindi schiacciane una parte in più."
         },
         {
           "testo": "Sale: il miso sala già, assaggia prima di aggiungerne."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 15 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "In frigo si conservano 2-3 giorni."
@@ -1210,8 +1198,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1020,
-      "proteine": 43,
+      "kcal": 914,
+      "proteine": 48,
       "base": [
         "Altro"
       ],
@@ -1219,7 +1207,7 @@
       "ingredienti": [
         {
           "nome": "Fagioli secchi",
-          "quantita": 120,
+          "quantita": 175,
           "unita": "g",
           "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
           "tipo": "Da comprare",
@@ -1228,7 +1216,7 @@
         },
         {
           "nome": "Quinoa",
-          "quantita": 80,
+          "quantita": 35,
           "unita": "g",
           "prodotto": "402d208f-0d59-816f-9140-d92336127e88",
           "tipo": "Da comprare",
@@ -1300,7 +1288,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 25,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -1363,7 +1351,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1020 kcal e 43 g di proteine."
+          "testo": "Valori per porzione: circa 914 kcal e 48 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
@@ -1383,8 +1374,8 @@
       "rotazione": true,
       "provata": true,
       "porzioni": 2,
-      "kcal": 1123,
-      "proteine": 55,
+      "kcal": 912,
+      "proteine": 49,
       "base": [
         "Couscous"
       ],
@@ -1392,7 +1383,7 @@
       "ingredienti": [
         {
           "nome": "Ceci secchi",
-          "quantita": 205,
+          "quantita": 185,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
           "tipo": "Da comprare",
@@ -1401,7 +1392,7 @@
         },
         {
           "nome": "Cous cous",
-          "quantita": 75,
+          "quantita": 35,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e0-942d-eb2ed78c30e4",
           "tipo": "Da comprare",
@@ -1410,7 +1401,7 @@
         },
         {
           "nome": "Broccoli surgelati",
-          "quantita": 200,
+          "quantita": 250,
           "unita": "g",
           "prodotto": "402d208f-0d59-8109-b504-ff18310acf08",
           "tipo": "Da comprare",
@@ -1419,7 +1410,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 8,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -1479,7 +1470,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1123 kcal e 55 g di proteine."
+          "testo": "Valori per porzione: circa 912 kcal e 49 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
@@ -1499,12 +1493,12 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1100,
-      "proteine": 40,
+      "kcal": 920,
+      "proteine": 47,
       "base": [
         "Riso"
       ],
-      "descrizione": "Ceci al curry in pressione, poi riso e cavolfiore cotti nella stessa pentola.",
+      "descrizione": "Ceci al curry in pressione, poi riso, lenticchie rosse e cavolfiore cotti nella stessa pentola.",
       "ingredienti": [
         {
           "nome": "Ceci secchi",
@@ -1517,7 +1511,7 @@
         },
         {
           "nome": "Riso",
-          "quantita": 75,
+          "quantita": 30,
           "unita": "g",
           "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
           "tipo": "Da comprare",
@@ -1571,7 +1565,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 25,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -1640,6 +1634,15 @@
           "tipo": "Da comprare",
           "facoltativo": false,
           "nota": "Succo, a fuoco spento"
+        },
+        {
+          "nome": "Lenticchie secche",
+          "quantita": 40,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "rosse decorticate, insieme al riso"
         }
       ],
       "passi": [
@@ -1653,7 +1656,7 @@
           "testo": "Ceci. Unisci ceci scolati, polpa di pomodoro, sale e l'acqua per i ceci. Gratta bene il fondo. Chiudi e porta a pressione: dal fischio 20 minuti a fiamma bassa, poi sfiata."
         },
         {
-          "testo": "Riso e cavolfiore. Controlla i ceci: se non sono morbidi, altri 5 minuti in pressione. Aggiungi il riso sciacquato, il cavolfiore a cimette piccole e l'acqua per il riso. Mescola e gratta bene il fondo."
+          "testo": "Riso e cavolfiore. Controlla i ceci: se non sono morbidi, altri 5 minuti in pressione. Aggiungi il riso e le lenticchie rosse sciacquati, il cavolfiore a cimette piccole e l'acqua per il riso. Mescola e gratta bene il fondo."
         },
         {
           "testo": "Seconda pressione. Dal fischio cuoci 5 minuti a fiamma bassa, poi spegni e lascia scendere la pressione da sola (circa 10 minuti)."
@@ -1664,7 +1667,13 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1100 kcal e 40 g di proteine."
+          "testo": "Valori per porzione: circa 920 kcal e 47 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+        },
+        {
+          "testo": "Lenticchie rosse: sostituiscono parte del riso. In pressione si sfaldano e addensano il curry, va bene così."
         },
         {
           "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
@@ -1693,8 +1702,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1015,
-      "proteine": 50,
+      "kcal": 903,
+      "proteine": 72,
       "base": [
         "Riso"
       ],
@@ -1702,7 +1711,7 @@
       "ingredienti": [
         {
           "nome": "Medaglioni di soia",
-          "quantita": 50,
+          "quantita": 100,
           "unita": "g",
           "prodotto": "40ad208f-0d59-81af-a345-deda5ab77c4c",
           "tipo": "Da comprare",
@@ -1711,7 +1720,7 @@
         },
         {
           "nome": "Riso",
-          "quantita": 120,
+          "quantita": 75,
           "unita": "g",
           "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
           "tipo": "Da comprare",
@@ -1765,7 +1774,7 @@
         },
         {
           "nome": "Olio di semi",
-          "quantita": 25,
+          "quantita": 12,
           "unita": "ml",
           "prodotto": "402d208f-0d59-8172-80f1-c191f25b4593",
           "tipo": "Dispensa",
@@ -1882,7 +1891,13 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1015 kcal e 50 g di proteine."
+          "testo": "Valori per porzione: circa 903 kcal e 72 g di proteine."
+        },
+        {
+          "testo": "Shake: non serve, il piatto supera già 63 g."
+        },
+        {
+          "testo": "Medaglioni: 100 g a porzione, quindi un pacco da 200 g per due porzioni."
         },
         {
           "testo": "Fondo: dopo il soffritto con le spezie, gratta bene il fondo prima di chiudere. Se resta attaccato qualcosa, la pentola a pressione rischia di bruciare."
@@ -1902,8 +1917,8 @@
       "rotazione": true,
       "provata": true,
       "porzioni": 2,
-      "kcal": 1085,
-      "proteine": 60,
+      "kcal": 913,
+      "proteine": 55,
       "base": [
         "Couscous"
       ],
@@ -1911,7 +1926,7 @@
       "ingredienti": [
         {
           "nome": "Lenticchie secche",
-          "quantita": 160,
+          "quantita": 170,
           "unita": "g",
           "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
           "tipo": "Da comprare",
@@ -1920,7 +1935,7 @@
         },
         {
           "nome": "Cous cous",
-          "quantita": 92.5,
+          "quantita": 50,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e0-942d-eb2ed78c30e4",
           "tipo": "Da comprare",
@@ -1947,7 +1962,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 14,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -2019,7 +2034,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1085 kcal e 60 g di proteine."
+          "testo": "Valori per porzione: circa 913 kcal e 55 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 10 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
@@ -2039,8 +2057,8 @@
       "rotazione": true,
       "provata": true,
       "porzioni": 2,
-      "kcal": 1052,
-      "proteine": 58,
+      "kcal": 909,
+      "proteine": 52,
       "base": [
         "Altro"
       ],
@@ -2048,7 +2066,7 @@
       "ingredienti": [
         {
           "nome": "Fagioli secchi",
-          "quantita": 230,
+          "quantita": 200,
           "unita": "g",
           "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
           "tipo": "Da comprare",
@@ -2057,7 +2075,7 @@
         },
         {
           "nome": "Polenta istantanea",
-          "quantita": 70,
+          "quantita": 30,
           "unita": "g",
           "prodotto": "402d208f-0d59-810e-aba7-d88eb8df00cb",
           "tipo": "Da comprare",
@@ -2075,7 +2093,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 11,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -2126,7 +2144,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1052 kcal e 58 g di proteine."
+          "testo": "Valori per porzione: circa 909 kcal e 52 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 15 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
@@ -2149,8 +2170,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 980,
-      "proteine": 42,
+      "kcal": 910,
+      "proteine": 52,
       "base": [
         "Riso"
       ],
@@ -2158,7 +2179,7 @@
       "ingredienti": [
         {
           "nome": "Lenticchie secche",
-          "quantita": 130,
+          "quantita": 175,
           "unita": "g",
           "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
           "tipo": "Da comprare",
@@ -2167,7 +2188,7 @@
         },
         {
           "nome": "Riso",
-          "quantita": 70,
+          "quantita": 50,
           "unita": "g",
           "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
           "tipo": "Da comprare",
@@ -2212,7 +2233,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 25,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -2305,7 +2326,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 980 kcal e 42 g di proteine."
+          "testo": "Valori per porzione: circa 910 kcal e 52 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 15 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
@@ -2519,8 +2543,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1050,
-      "proteine": 58,
+      "kcal": 910,
+      "proteine": 45,
       "base": [
         "Altro"
       ],
@@ -2645,7 +2669,7 @@
         },
         {
           "nome": "Burro d'arachidi",
-          "quantita": 25,
+          "quantita": 20,
           "unita": "g",
           "prodotto": "402d208f-0d59-818f-a183-dcce8bb62267",
           "tipo": "Da comprare",
@@ -2708,7 +2732,7 @@
         },
         {
           "nome": "Ceci secchi",
-          "quantita": 200,
+          "quantita": 150,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
           "tipo": "Da comprare",
@@ -2717,7 +2741,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 7.5,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -2747,10 +2771,13 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1050 kcal e 58 g di proteine (carboidrati ~120 g, grassi ~34 g, fibre ~40 g)."
+          "testo": "Valori per porzione: circa 910 kcal e 45 g di proteine."
         },
         {
-          "testo": "Cereale: non serve. Se lo vuoi, usa 125 g di ceci secchi a porzione e aggiungi 65 g di miglio o quinoa crudi a porzione, cotti a parte: le calorie restano più o meno le stesse."
+          "testo": "Shake: nella giornata servono circa 25 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+        },
+        {
+          "testo": "Cereale: non serve."
         },
         {
           "testo": "Burro d'arachidi dopo la pressione: è denso e sul fondo si attacca, sotto pressione rischia di bruciare."
@@ -2782,8 +2809,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1008,
-      "proteine": 51,
+      "kcal": 900,
+      "proteine": 72,
       "base": [
         "Couscous"
       ],
@@ -2791,7 +2818,7 @@
       "ingredienti": [
         {
           "nome": "Medaglioni di soia",
-          "quantita": 50,
+          "quantita": 100,
           "unita": "g",
           "prodotto": "40ad208f-0d59-81af-a345-deda5ab77c4c",
           "tipo": "Da comprare",
@@ -2800,7 +2827,7 @@
         },
         {
           "nome": "Cous cous",
-          "quantita": 130,
+          "quantita": 90,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e0-942d-eb2ed78c30e4",
           "tipo": "Da comprare",
@@ -2836,7 +2863,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 30,
+          "quantita": 15,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -2874,7 +2901,7 @@
           "nome": "Harissa",
           "quantita": 10,
           "unita": "g",
-          "prodotto": "40ad208f-0d59-8104-947a-c314930fb691",
+          "prodotto": "40ad208f-0d59-818b-9bfc-c24fb69de78b",
           "tipo": "Dispensa",
           "facoltativo": false,
           "nota": "Sciolta nel sugo. Più o meno a seconda di quanto la vuoi piccante"
@@ -2923,7 +2950,13 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1008 kcal e 51 g di proteine."
+          "testo": "Valori per porzione: circa 900 kcal e 72 g di proteine."
+        },
+        {
+          "testo": "Shake: non serve, il piatto supera già 63 g."
+        },
+        {
+          "testo": "Medaglioni: 100 g a porzione, quindi un pacco da 200 g per due porzioni."
         },
         {
           "testo": "Sale: capperi, harissa e salsa di soia salano già, assaggia prima di aggiungerne."
@@ -2943,8 +2976,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1030,
-      "proteine": 41,
+      "kcal": 900,
+      "proteine": 47,
       "base": [
         "Altro"
       ],
@@ -2952,7 +2985,7 @@
       "ingredienti": [
         {
           "nome": "Fagioli secchi",
-          "quantita": 130,
+          "quantita": 180,
           "unita": "g",
           "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
           "tipo": "Da comprare",
@@ -2961,7 +2994,7 @@
         },
         {
           "nome": "Miglio",
-          "quantita": 70,
+          "quantita": 40,
           "unita": "g",
           "prodotto": "402d208f-0d59-810e-af65-de60a0d85352",
           "tipo": "Da comprare",
@@ -3006,7 +3039,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 25,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -3069,7 +3102,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1030 kcal e 41 g di proteine."
+          "testo": "Valori per porzione: circa 900 kcal e 47 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
@@ -3089,8 +3125,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1070,
-      "proteine": 42,
+      "kcal": 900,
+      "proteine": 48,
       "base": [
         "Riso"
       ],
@@ -3098,7 +3134,7 @@
       "ingredienti": [
         {
           "nome": "Fagioli secchi",
-          "quantita": 130,
+          "quantita": 175,
           "unita": "g",
           "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
           "tipo": "Da comprare",
@@ -3107,7 +3143,7 @@
         },
         {
           "nome": "Riso",
-          "quantita": 75,
+          "quantita": 35,
           "unita": "g",
           "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
           "tipo": "Da comprare",
@@ -3152,7 +3188,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 25,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -3206,7 +3242,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1070 kcal e 42 g di proteine."
+          "testo": "Valori per porzione: circa 900 kcal e 48 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
@@ -3226,8 +3265,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1090,
-      "proteine": 53,
+      "kcal": 924,
+      "proteine": 51,
       "base": [
         "Altro"
       ],
@@ -3235,7 +3274,7 @@
       "ingredienti": [
         {
           "nome": "Fagioli secchi",
-          "quantita": 150,
+          "quantita": 165,
           "unita": "g",
           "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
           "tipo": "Da comprare",
@@ -3244,7 +3283,7 @@
         },
         {
           "nome": "Miglio",
-          "quantita": 65,
+          "quantita": 25,
           "unita": "g",
           "prodotto": "402d208f-0d59-810e-af65-de60a0d85352",
           "tipo": "Da comprare",
@@ -3289,7 +3328,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 15,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -3349,7 +3388,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1090 kcal e 53 g di proteine."
+          "testo": "Valori per porzione: circa 924 kcal e 51 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 15 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
@@ -3369,8 +3411,8 @@
       "rotazione": true,
       "provata": true,
       "porzioni": 2,
-      "kcal": 1077,
-      "proteine": 58,
+      "kcal": 920,
+      "proteine": 52,
       "base": [
         "Altro"
       ],
@@ -3378,7 +3420,7 @@
       "ingredienti": [
         {
           "nome": "Fagioli secchi",
-          "quantita": 215,
+          "quantita": 195,
           "unita": "g",
           "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
           "tipo": "Da comprare",
@@ -3387,7 +3429,7 @@
         },
         {
           "nome": "Farro perlato",
-          "quantita": 80,
+          "quantita": 35,
           "unita": "g",
           "prodotto": "402d208f-0d59-8190-bc62-f0eced18deae",
           "tipo": "Da comprare",
@@ -3405,7 +3447,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 11,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -3447,7 +3489,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1077 kcal e 58 g di proteine."
+          "testo": "Valori per porzione: circa 920 kcal e 52 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 15 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
@@ -3467,8 +3512,8 @@
       "rotazione": true,
       "provata": true,
       "porzioni": 2,
-      "kcal": 1099,
-      "proteine": 58,
+      "kcal": 922,
+      "proteine": 54,
       "base": [
         "Pasta"
       ],
@@ -3476,7 +3521,7 @@
       "ingredienti": [
         {
           "nome": "Pasta corta",
-          "quantita": 80,
+          "quantita": 45,
           "unita": "g",
           "prodotto": "402d208f-0d59-81b4-ae78-c089b1b0a9a3",
           "tipo": "Da comprare",
@@ -3485,7 +3530,7 @@
         },
         {
           "nome": "Lenticchie secche",
-          "quantita": 142.5,
+          "quantita": 150,
           "unita": "g",
           "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
           "tipo": "Da comprare",
@@ -3521,7 +3566,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 16,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -3584,7 +3629,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1099 kcal e 58 g di proteine."
+          "testo": "Valori per porzione: circa 922 kcal e 54 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 15 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
@@ -3604,7 +3652,7 @@
       "rotazione": false,
       "provata": true,
       "porzioni": 2,
-      "kcal": 1110,
+      "kcal": 904,
       "proteine": 59,
       "base": [
         "Pasta"
@@ -3613,7 +3661,7 @@
       "ingredienti": [
         {
           "nome": "Fusilli",
-          "quantita": 100,
+          "quantita": 55,
           "unita": "g",
           "prodotto": "402d208f-0d59-81b4-ae78-c089b1b0a9a3",
           "tipo": "Da comprare",
@@ -3622,7 +3670,7 @@
         },
         {
           "nome": "Tofu",
-          "quantita": 180,
+          "quantita": 175,
           "unita": "g",
           "prodotto": "402d208f-0d59-81bc-8c8c-f0ee0ae6a8d6",
           "tipo": "Da comprare",
@@ -3666,15 +3714,6 @@
           "nota": ""
         },
         {
-          "nome": "Pomodorini",
-          "quantita": 2.5,
-          "unita": "pz",
-          "prodotto": "402d208f-0d59-81c4-a4d4-c1f7573de34b",
-          "tipo": "Da comprare",
-          "facoltativo": false,
-          "nota": ""
-        },
-        {
           "nome": "Limone",
           "quantita": 0.25,
           "unita": "pz",
@@ -3694,7 +3733,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 22.5,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -3785,7 +3824,7 @@
       ],
       "passi": [
         {
-          "testo": "Marinatura. Strizza bene il tofu in un canovaccio, sbriciolalo a pezzi irregolari e mescolalo con la marinatura. Lascia riposare 20-30 minuti. Il tofu assorbe quasi tutto il liquido, ed è normale. Intanto trita cipolla e aglio e taglia a metà i pomodorini."
+          "testo": "Marinatura. Strizza bene il tofu in un canovaccio, sbriciolalo a pezzi irregolari e mescolalo con la marinatura. Lascia riposare 20-30 minuti. Il tofu assorbe quasi tutto il liquido, ed è normale. Intanto trita cipolla e aglio."
         },
         {
           "testo": "Tofu nella carbon steel. Scalda la padella vuota a fuoco medio-alto per 2-3 minuti, poi aggiungi l'olio per il tofu e aspetta che diventi luccicante. Versa il tofu ben scolato e non toccarlo per 3-4 minuti, finché si stacca da solo. Giralo con una spatola di metallo e cuoci finché è dorato e asciutto, 8-10 minuti in tutto. Se la padella è piccola, fallo in due giri. Tienilo da parte."
@@ -3803,7 +3842,7 @@
           "testo": "Broccoli. Dopo 4-5 minuti di cottura della pasta, aggiungi i broccoli ancora surgelati."
         },
         {
-          "testo": "Finale. Negli ultimi 2-3 minuti unisci tofu e pomodorini. A fuoco spento sciogli il miso in un mestolino del liquido di cottura e mescolalo nella pentola."
+          "testo": "Finale. Negli ultimi 2-3 minuti unisci il tofu. A fuoco spento sciogli il miso in un mestolino del liquido di cottura e mescolalo nella pentola."
         },
         {
           "testo": "Impiattamento. Completa con tabasco a piacere e, se vuoi, un po' di limone a crudo."
@@ -3811,10 +3850,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1110 kcal e 59 g di proteine. Per stare sulle 1050 metti 15 ml d'olio a porzione."
+          "testo": "Valori per porzione: circa 904 kcal e 59 g di proteine."
         },
         {
-          "testo": "Con 120 g di legumi a porzione: circa 970 kcal e 50 g di proteine. Per compensare passa a 120 g di pasta a porzione e aggiungi un po' d'acqua in più in cottura."
+          "testo": "Shake: nella giornata servono circa 5 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Sale: soia e miso salano già. Assaggia sempre prima di aggiungerne."
@@ -3831,8 +3870,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1080,
-      "proteine": 41,
+      "kcal": 913,
+      "proteine": 43,
       "base": [
         "Pasta"
       ],
@@ -3840,7 +3879,7 @@
       "ingredienti": [
         {
           "nome": "Ceci secchi",
-          "quantita": 140,
+          "quantita": 170,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
           "tipo": "Da comprare",
@@ -3849,7 +3888,7 @@
         },
         {
           "nome": "Pasta corta",
-          "quantita": 80,
+          "quantita": 50,
           "unita": "g",
           "prodotto": "402d208f-0d59-81b4-ae78-c089b1b0a9a3",
           "tipo": "Da comprare",
@@ -3903,7 +3942,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 25,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -3978,7 +4017,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1080 kcal e 41 g di proteine."
+          "testo": "Valori per porzione: circa 913 kcal e 43 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 25 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
@@ -3993,10 +4035,10 @@
       "nome": "Pasta e fagioli con verza",
       "icona": "🫘",
       "rotazione": false,
-      "provata": false,
+      "provata": true,
       "porzioni": 2,
-      "kcal": 1060,
-      "proteine": 46,
+      "kcal": 919,
+      "proteine": 49,
       "base": [
         "Pasta"
       ],
@@ -4004,7 +4046,7 @@
       "ingredienti": [
         {
           "nome": "Fagioli secchi",
-          "quantita": 120,
+          "quantita": 165,
           "unita": "g",
           "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
           "tipo": "Da comprare",
@@ -4013,7 +4055,7 @@
         },
         {
           "nome": "Pasta corta",
-          "quantita": 90,
+          "quantita": 45,
           "unita": "g",
           "prodotto": "402d208f-0d59-81b4-ae78-c089b1b0a9a3",
           "tipo": "Da comprare",
@@ -4076,7 +4118,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 25,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -4151,7 +4193,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1060 kcal e 46 g di proteine."
+          "testo": "Valori per porzione: circa 919 kcal e 49 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
@@ -4168,8 +4213,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1040,
-      "proteine": 44,
+      "kcal": 914,
+      "proteine": 52,
       "base": [
         "Pasta"
       ],
@@ -4177,7 +4222,7 @@
       "ingredienti": [
         {
           "nome": "Lenticchie secche",
-          "quantita": 120,
+          "quantita": 160,
           "unita": "g",
           "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
           "tipo": "Da comprare",
@@ -4186,7 +4231,7 @@
         },
         {
           "nome": "Pasta corta",
-          "quantita": 90,
+          "quantita": 50,
           "unita": "g",
           "prodotto": "402d208f-0d59-81b4-ae78-c089b1b0a9a3",
           "tipo": "Da comprare",
@@ -4249,7 +4294,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 25,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -4316,7 +4361,7 @@
           "unita": "g",
           "prodotto": "40ad208f-0d59-81a5-9653-e3ee64396098",
           "tipo": "Dispensa",
-          "facoltativo": true,
+          "facoltativo": false,
           "nota": "Nel piatto, al posto del parmigiano"
         }
       ],
@@ -4334,12 +4379,15 @@
           "testo": "Pasta. Porta a bollore a pentola aperta, aggiungi la pasta e cuocila mescolando spesso. Se si asciuga, aggiungi acqua calda poca alla volta. Conta 2-3 minuti in più rispetto alla confezione."
         },
         {
-          "testo": "Impiattamento. Aggiusta di sale e completa con il resto dell'olio a crudo, scorza di limone grattugiata e pepe. Se ti va, una spolverata di lievito alimentare al posto del parmigiano."
+          "testo": "Impiattamento. Aggiusta di sale e completa con il resto dell'olio a crudo, scorza di limone grattugiata e pepe. Finisci con il lievito alimentare al posto del parmigiano."
         }
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1040 kcal e 44 g di proteine."
+          "testo": "Valori per porzione: circa 914 kcal e 52 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 15 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
@@ -4359,8 +4407,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1110,
-      "proteine": 42,
+      "kcal": 900,
+      "proteine": 43,
       "base": [
         "Pasta"
       ],
@@ -4368,7 +4416,7 @@
       "ingredienti": [
         {
           "nome": "Ceci secchi",
-          "quantita": 120,
+          "quantita": 150,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
           "tipo": "Da comprare",
@@ -4377,7 +4425,7 @@
         },
         {
           "nome": "Pasta corta",
-          "quantita": 90,
+          "quantita": 50,
           "unita": "g",
           "prodotto": "402d208f-0d59-81b4-ae78-c089b1b0a9a3",
           "tipo": "Da comprare",
@@ -4431,7 +4479,7 @@
         },
         {
           "nome": "Datteri",
-          "quantita": 2,
+          "quantita": 1,
           "unita": "pz",
           "prodotto": "402d208f-0d59-81b3-ac52-d96beeab1a3c",
           "tipo": "Da comprare",
@@ -4440,7 +4488,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 25,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -4515,7 +4563,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1110 kcal e 42 g di proteine."
+          "testo": "Valori per porzione: circa 900 kcal e 43 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 25 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
@@ -4538,8 +4589,8 @@
       "rotazione": true,
       "provata": true,
       "porzioni": 2,
-      "kcal": 1083,
-      "proteine": 61,
+      "kcal": 914,
+      "proteine": 56,
       "base": [
         "Pasta"
       ],
@@ -4547,7 +4598,7 @@
       "ingredienti": [
         {
           "nome": "Lenticchie secche",
-          "quantita": 175,
+          "quantita": 180,
           "unita": "g",
           "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
           "tipo": "Da comprare",
@@ -4556,7 +4607,7 @@
         },
         {
           "nome": "Pasta corta",
-          "quantita": 90,
+          "quantita": 50,
           "unita": "g",
           "prodotto": "402d208f-0d59-81b4-ae78-c089b1b0a9a3",
           "tipo": "Da comprare",
@@ -4574,7 +4625,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 14,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -4622,7 +4673,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1083 kcal e 61 g di proteine."
+          "testo": "Valori per porzione: circa 914 kcal e 56 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 10 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
@@ -4639,8 +4693,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1100,
-      "proteine": 44,
+      "kcal": 907,
+      "proteine": 50,
       "base": [
         "Altro"
       ],
@@ -4648,7 +4702,7 @@
       "ingredienti": [
         {
           "nome": "Fagioli secchi",
-          "quantita": 130,
+          "quantita": 160,
           "unita": "g",
           "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
           "tipo": "Da comprare",
@@ -4657,7 +4711,7 @@
         },
         {
           "nome": "Polenta istantanea",
-          "quantita": 90,
+          "quantita": 35,
           "unita": "g",
           "prodotto": "402d208f-0d59-810e-aba7-d88eb8df00cb",
           "tipo": "Da comprare",
@@ -4711,7 +4765,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 25,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -4769,7 +4823,7 @@
           "unita": "g",
           "prodotto": "40ad208f-0d59-81a5-9653-e3ee64396098",
           "tipo": "Dispensa",
-          "facoltativo": true,
+          "facoltativo": false,
           "nota": "Mantecato nella polenta a fuoco spento"
         }
       ],
@@ -4787,7 +4841,7 @@
           "testo": "Controlla il brodo. Assaggia i fagioli: se non sono morbidi, altri 5 minuti in pressione. Sala adesso, perché dopo la polenta è difficile. Il brodo deve essere abbondante: la polenta ne assorbe circa quattro volte il suo peso, quindi se ce n'è poco aggiungi acqua calda."
         },
         {
-          "testo": "Polenta. Porta a bollore a pentola aperta, versa la polenta a pioggia mescolando con la frusta, abbassa il fuoco e cuoci per il tempo della confezione mescolando spesso. A fuoco spento, se lo usi, manteca con il lievito alimentare."
+          "testo": "Polenta. Porta a bollore a pentola aperta, versa la polenta a pioggia mescolando con la frusta, abbassa il fuoco e cuoci per il tempo della confezione mescolando spesso. A fuoco spento manteca con il lievito alimentare."
         },
         {
           "testo": "Impiattamento. Servi subito con il resto dell'olio a crudo e pepe macinato."
@@ -4795,7 +4849,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1100 kcal e 44 g di proteine."
+          "testo": "Valori per porzione: circa 907 kcal e 50 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
@@ -4818,8 +4875,8 @@
       "rotazione": true,
       "provata": true,
       "porzioni": 2,
-      "kcal": 1100,
-      "proteine": 55,
+      "kcal": 916,
+      "proteine": 49,
       "base": [
         "Altro"
       ],
@@ -4827,7 +4884,7 @@
       "ingredienti": [
         {
           "nome": "Quinoa",
-          "quantita": 75,
+          "quantita": 35,
           "unita": "g",
           "prodotto": "402d208f-0d59-816f-9140-d92336127e88",
           "tipo": "Da comprare",
@@ -4836,7 +4893,7 @@
         },
         {
           "nome": "Ceci secchi",
-          "quantita": 200,
+          "quantita": 185,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
           "tipo": "Da comprare",
@@ -4845,7 +4902,7 @@
         },
         {
           "nome": "Broccoli surgelati",
-          "quantita": 200,
+          "quantita": 250,
           "unita": "g",
           "prodotto": "402d208f-0d59-8109-b504-ff18310acf08",
           "tipo": "Da comprare",
@@ -4854,7 +4911,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 8,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -4905,7 +4962,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1100 kcal e 55 g di proteine."
+          "testo": "Valori per porzione: circa 916 kcal e 49 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
@@ -4928,8 +4988,8 @@
       "rotazione": true,
       "provata": true,
       "porzioni": 2,
-      "kcal": 1135,
-      "proteine": 55,
+      "kcal": 912,
+      "proteine": 46,
       "base": [
         "Riso"
       ],
@@ -4937,7 +4997,7 @@
       "ingredienti": [
         {
           "nome": "Riso integrale",
-          "quantita": 40,
+          "quantita": 30,
           "unita": "g",
           "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
           "tipo": "Da comprare",
@@ -4946,7 +5006,7 @@
         },
         {
           "nome": "Ceci secchi",
-          "quantita": 215,
+          "quantita": 160,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
           "tipo": "Da comprare",
@@ -4955,7 +5015,7 @@
         },
         {
           "nome": "Broccoli surgelati",
-          "quantita": 200,
+          "quantita": 250,
           "unita": "g",
           "prodotto": "402d208f-0d59-8109-b504-ff18310acf08",
           "tipo": "Da comprare",
@@ -4973,7 +5033,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 8,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -5024,7 +5084,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1135 kcal e 55 g di proteine."
+          "testo": "Valori per porzione: circa 912 kcal e 46 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
@@ -5044,16 +5107,16 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1030,
-      "proteine": 43,
+      "kcal": 916,
+      "proteine": 48,
       "base": [
         "Riso"
       ],
-      "descrizione": "Tofu rosolato, riso, verza e piselli in pentola a pressione, miso a fuoco spento. Un panetto di tofu a porzione.",
+      "descrizione": "Tofu rosolato, riso, verza e piselli in pentola a pressione, miso a fuoco spento. Mezzo panetto di tofu (175 g) a porzione.",
       "ingredienti": [
         {
           "nome": "Tofu",
-          "quantita": 180,
+          "quantita": 175,
           "unita": "g",
           "prodotto": "402d208f-0d59-81bc-8c8c-f0ee0ae6a8d6",
           "tipo": "Da comprare",
@@ -5080,7 +5143,7 @@
         },
         {
           "nome": "Piselli surgelati",
-          "quantita": 80,
+          "quantita": 150,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e0-ae9d-cc3c5968a68a",
           "tipo": "Da comprare",
@@ -5134,7 +5197,7 @@
         },
         {
           "nome": "Olio di semi",
-          "quantita": 25,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-8172-80f1-c191f25b4593",
           "tipo": "Dispensa",
@@ -5182,7 +5245,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1030 kcal e 43 g di proteine."
+          "testo": "Valori per porzione: circa 916 kcal e 48 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Sale: non serve, soia e miso salano già."
@@ -5202,16 +5268,16 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1040,
-      "proteine": 42,
+      "kcal": 903,
+      "proteine": 44,
       "base": [
         "Riso"
       ],
-      "descrizione": "Tofu sbriciolato rosolato nella pentola a pressione, poi riso, pomodoro e piselli. Un panetto di tofu a porzione.",
+      "descrizione": "Tofu sbriciolato rosolato, poi riso, pomodoro e piselli in pentola a pressione. Mezzo panetto di tofu (175 g) a porzione.",
       "ingredienti": [
         {
           "nome": "Tofu",
-          "quantita": 180,
+          "quantita": 175,
           "unita": "g",
           "prodotto": "402d208f-0d59-81bc-8c8c-f0ee0ae6a8d6",
           "tipo": "Da comprare",
@@ -5220,7 +5286,7 @@
         },
         {
           "nome": "Riso",
-          "quantita": 110,
+          "quantita": 120,
           "unita": "g",
           "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
           "tipo": "Da comprare",
@@ -5265,7 +5331,7 @@
         },
         {
           "nome": "Olio di semi",
-          "quantita": 25,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-8172-80f1-c191f25b4593",
           "tipo": "Dispensa",
@@ -5346,7 +5412,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1040 kcal e 42 g di proteine."
+          "testo": "Valori per porzione: circa 903 kcal e 44 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 25 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Sale: la soia sala già, assaggia alla fine."
@@ -5366,16 +5435,16 @@
       "rotazione": false,
       "provata": true,
       "porzioni": 2,
-      "kcal": 1040,
-      "proteine": 40,
+      "kcal": 910,
+      "proteine": 47,
       "base": [
         "Riso"
       ],
-      "descrizione": "Piatto unico in padella, un panetto di tofu a porzione. Meglio con riso freddo o avanzato.",
+      "descrizione": "Piatto unico in padella, mezzo panetto di tofu (175 g) a porzione. Meglio con riso freddo o avanzato.",
       "ingredienti": [
         {
           "nome": "Riso",
-          "quantita": 110,
+          "quantita": 120,
           "unita": "g",
           "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
           "tipo": "Da comprare",
@@ -5384,7 +5453,7 @@
         },
         {
           "nome": "Tofu",
-          "quantita": 180,
+          "quantita": 175,
           "unita": "g",
           "prodotto": "402d208f-0d59-81bc-8c8c-f0ee0ae6a8d6",
           "tipo": "Da comprare",
@@ -5393,7 +5462,7 @@
         },
         {
           "nome": "Piselli surgelati",
-          "quantita": 80,
+          "quantita": 150,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e0-ae9d-cc3c5968a68a",
           "tipo": "Da comprare",
@@ -5411,7 +5480,7 @@
         },
         {
           "nome": "Olio di semi",
-          "quantita": 30,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-8172-80f1-c191f25b4593",
           "tipo": "Dispensa",
@@ -5435,15 +5504,6 @@
           "tipo": "Dispensa",
           "facoltativo": false,
           "nota": ""
-        },
-        {
-          "nome": "Amido di mais",
-          "quantita": 8,
-          "unita": "g",
-          "prodotto": "402d208f-0d59-81a5-b4e9-fa6e0d8b834c",
-          "tipo": "Dispensa",
-          "facoltativo": true,
-          "nota": "per il tofu più croccante"
         },
         {
           "nome": "Zenzero in polvere",
@@ -5478,7 +5538,7 @@
           "testo": "Riso. Cuoci il riso in acqua salata per circa 12 minuti, scolalo e allargalo su un piatto a raffreddare. Se hai del riso avanzato dal giorno prima è anche meglio: freddo si sgrana e non si attacca."
         },
         {
-          "testo": "Tofu. Tampona il tofu con carta da cucina e taglialo a cubetti. Se vuoi che venga più croccante, passali nell'amido di mais."
+          "testo": "Tofu. Tampona il tofu con carta da cucina e taglialo a cubetti."
         },
         {
           "testo": "Rosolare il tofu. Scalda la padella vuota a fuoco alto per 2-3 minuti, poi aggiungi metà dell'olio e aspetta che diventi luccicante. Versa il tofu e non toccarlo finché non si stacca da solo, poi giralo e cuoci finché è dorato su più lati, circa 8 minuti in tutto. Toglilo e tienilo da parte."
@@ -5495,7 +5555,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1040 kcal e 40 g di proteine."
+          "testo": "Valori per porzione: circa 910 kcal e 47 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Sale: la salsa di soia sala già, non serve aggiungerne alla fine."
@@ -5518,8 +5581,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1100,
-      "proteine": 39,
+      "kcal": 907,
+      "proteine": 44,
       "base": [
         "Riso"
       ],
@@ -5527,7 +5590,7 @@
       "ingredienti": [
         {
           "nome": "Ceci secchi",
-          "quantita": 140,
+          "quantita": 150,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
           "tipo": "Da comprare",
@@ -5536,7 +5599,7 @@
         },
         {
           "nome": "Riso",
-          "quantita": 75,
+          "quantita": 50,
           "unita": "g",
           "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
           "tipo": "Da comprare",
@@ -5572,7 +5635,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 20,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -5617,11 +5680,11 @@
         },
         {
           "nome": "Lievito alimentare",
-          "quantita": 8,
+          "quantita": 10,
           "unita": "g",
           "prodotto": "40ad208f-0d59-81a5-9653-e3ee64396098",
           "tipo": "Dispensa",
-          "facoltativo": true,
+          "facoltativo": false,
           "nota": "Mantecatura, a fuoco spento insieme al miso"
         }
       ],
@@ -5642,18 +5705,21 @@
           "testo": "Pressione. Chiudi e porta a pressione. Dal fischio cuoci 6 minuti a fiamma bassa, poi sfiata subito."
         },
         {
-          "testo": "Mantecatura. Sciogli il miso in un mestolino del liquido e rimettilo nella pentola con il resto dell'olio e, se lo usi, il lievito alimentare. Mescola con energia per un minuto: la zucca si sfalda e fa da crema. Pepe e, se serve, sale."
+          "testo": "Mantecatura. Sciogli il miso in un mestolino del liquido e rimettilo nella pentola con il resto dell'olio e il lievito alimentare. Mescola con energia per un minuto: la zucca si sfalda e fa da crema. Pepe e, se serve, sale."
         }
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1100 kcal e 39 g di proteine."
+          "testo": "Valori per porzione: circa 907 kcal e 44 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 25 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
         },
         {
-          "testo": "Con i ceci in scatola: salti il passaggio 1. Usa una scatola sgocciolata a porzione (240 g) al posto dei ceci secchi e acqua calda al posto del brodo."
+          "testo": "Con i ceci in scatola: salti il passaggio 1. Usa circa 350 g di ceci sgocciolati a porzione al posto dei ceci secchi e acqua calda al posto del brodo."
         },
         {
           "testo": "Miso: va aggiunto a fuoco spento, se bolle perde sapore."
@@ -5670,8 +5736,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 996,
-      "proteine": 45,
+      "kcal": 902,
+      "proteine": 69,
       "base": [
         "Riso"
       ],
@@ -5679,7 +5745,7 @@
       "ingredienti": [
         {
           "nome": "Medaglioni di soia",
-          "quantita": 50,
+          "quantita": 100,
           "unita": "g",
           "prodotto": "40ad208f-0d59-81af-a345-deda5ab77c4c",
           "tipo": "Da comprare",
@@ -5688,7 +5754,7 @@
         },
         {
           "nome": "Riso",
-          "quantita": 140,
+          "quantita": 100,
           "unita": "g",
           "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
           "tipo": "Da comprare",
@@ -5715,7 +5781,7 @@
         },
         {
           "nome": "Olio di semi",
-          "quantita": 25,
+          "quantita": 12,
           "unita": "ml",
           "prodotto": "402d208f-0d59-8172-80f1-c191f25b4593",
           "tipo": "Dispensa",
@@ -5796,7 +5862,13 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 996 kcal e 45 g di proteine."
+          "testo": "Valori per porzione: circa 902 kcal e 69 g di proteine."
+        },
+        {
+          "testo": "Shake: non serve, il piatto supera già 63 g."
+        },
+        {
+          "testo": "Medaglioni: 100 g a porzione, quindi un pacco da 200 g per due porzioni."
         },
         {
           "testo": "Padelle: pentola per bollire e carbon steel per rosolare e saltare. È l'unica delle ricette con i medaglioni che ne usa due."
@@ -5816,8 +5888,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1041,
-      "proteine": 51,
+      "kcal": 916,
+      "proteine": 73,
       "base": [
         "Altro"
       ],
@@ -5825,7 +5897,7 @@
       "ingredienti": [
         {
           "nome": "Medaglioni di soia",
-          "quantita": 50,
+          "quantita": 100,
           "unita": "g",
           "prodotto": "40ad208f-0d59-81af-a345-deda5ab77c4c",
           "tipo": "Da comprare",
@@ -5843,7 +5915,7 @@
         },
         {
           "nome": "Polenta istantanea",
-          "quantita": 140,
+          "quantita": 90,
           "unita": "g",
           "prodotto": "402d208f-0d59-810e-aba7-d88eb8df00cb",
           "tipo": "Da comprare",
@@ -5870,7 +5942,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 25,
+          "quantita": 12,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -6005,7 +6077,13 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1041 kcal e 51 g di proteine."
+          "testo": "Valori per porzione: circa 916 kcal e 73 g di proteine."
+        },
+        {
+          "testo": "Shake: non serve, il piatto supera già 63 g."
+        },
+        {
+          "testo": "Medaglioni: 100 g a porzione, quindi un pacco da 200 g per due porzioni."
         },
         {
           "testo": "Consistenza: se la vuoi più soda, usa un po' meno acqua per la polenta; se si rapprende troppo nel piatto, allungala con acqua calda."
@@ -6022,16 +6100,16 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1020,
-      "proteine": 52,
+      "kcal": 916,
+      "proteine": 55,
       "base": [
         "Pasta"
       ],
-      "descrizione": "Ragù in pentola a pressione, poi gli spaghetti cotti direttamente nel sugo. Un panetto di tofu a porzione.",
+      "descrizione": "Ragù in pentola a pressione, poi gli spaghetti cotti direttamente nel sugo. Mezzo panetto di tofu (175 g) a porzione.",
       "ingredienti": [
         {
           "nome": "Tofu",
-          "quantita": 180,
+          "quantita": 175,
           "unita": "g",
           "prodotto": "402d208f-0d59-81bc-8c8c-f0ee0ae6a8d6",
           "tipo": "Da comprare",
@@ -6040,7 +6118,7 @@
         },
         {
           "nome": "Lenticchie secche",
-          "quantita": 50,
+          "quantita": 75,
           "unita": "g",
           "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
           "tipo": "Da comprare",
@@ -6049,7 +6127,7 @@
         },
         {
           "nome": "Spaghetti",
-          "quantita": 90,
+          "quantita": 70,
           "unita": "g",
           "prodotto": "402d208f-0d59-8176-96cb-fd20d3e5366e",
           "tipo": "Da comprare",
@@ -6103,7 +6181,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 20,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -6184,7 +6262,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1020 kcal e 52 g di proteine."
+          "testo": "Valori per porzione: circa 916 kcal e 55 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 10 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
@@ -6204,16 +6285,16 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 980,
-      "proteine": 50,
+      "kcal": 902,
+      "proteine": 49,
       "base": [
         "Pasta"
       ],
-      "descrizione": "Spaghetti cotti in padella con poca acqua, salsa di burro d'arachidi e miso, tofu e verza. Un panetto di tofu a porzione.",
+      "descrizione": "Spaghetti cotti in padella con poca acqua, salsa di burro d'arachidi e miso, tofu e verza. Mezzo panetto di tofu (175 g) a porzione.",
       "ingredienti": [
         {
           "nome": "Tofu",
-          "quantita": 180,
+          "quantita": 175,
           "unita": "g",
           "prodotto": "402d208f-0d59-81bc-8c8c-f0ee0ae6a8d6",
           "tipo": "Da comprare",
@@ -6240,7 +6321,7 @@
         },
         {
           "nome": "Burro d'arachidi",
-          "quantita": 30,
+          "quantita": 25,
           "unita": "g",
           "prodotto": "402d208f-0d59-818f-a183-dcce8bb62267",
           "tipo": "Da comprare",
@@ -6294,7 +6375,7 @@
         },
         {
           "nome": "Olio di semi",
-          "quantita": 15,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-8172-80f1-c191f25b4593",
           "tipo": "Dispensa",
@@ -6342,7 +6423,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 980 kcal e 50 g di proteine."
+          "testo": "Valori per porzione: circa 902 kcal e 49 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Miso: va aggiunto a fuoco spento, se bolle perde sapore."
@@ -6365,8 +6449,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 993,
-      "proteine": 50,
+      "kcal": 902,
+      "proteine": 72,
       "base": [
         "Altro"
       ],
@@ -6374,7 +6458,7 @@
       "ingredienti": [
         {
           "nome": "Medaglioni di soia",
-          "quantita": 50,
+          "quantita": 100,
           "unita": "g",
           "prodotto": "40ad208f-0d59-81af-a345-deda5ab77c4c",
           "tipo": "Da comprare",
@@ -6383,7 +6467,7 @@
         },
         {
           "nome": "Farro perlato",
-          "quantita": 130,
+          "quantita": 100,
           "unita": "g",
           "prodotto": "402d208f-0d59-8190-bc62-f0eced18deae",
           "tipo": "Da comprare",
@@ -6410,7 +6494,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 30,
+          "quantita": 12,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -6511,7 +6595,7 @@
           "nome": "Harissa",
           "quantita": 8,
           "unita": "g",
-          "prodotto": "40ad208f-0d59-8104-947a-c314930fb691",
+          "prodotto": "40ad208f-0d59-818b-9bfc-c24fb69de78b",
           "tipo": "Dispensa",
           "facoltativo": true,
           "nota": "Nel soffritto, al posto di rosmarino e salvia: cambia il piatto in versione piccante"
@@ -6545,7 +6629,13 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 993 kcal e 50 g di proteine."
+          "testo": "Valori per porzione: circa 902 kcal e 72 g di proteine."
+        },
+        {
+          "testo": "Shake: non serve, il piatto supera già 63 g."
+        },
+        {
+          "testo": "Medaglioni: 100 g a porzione, quindi un pacco da 200 g per due porzioni."
         },
         {
           "testo": "Farro: quello perlato, senza ammollo. Se usi il farro decorticato, porta la pressione a 18 minuti."
@@ -6565,16 +6655,16 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1015,
-      "proteine": 50,
+      "kcal": 911,
+      "proteine": 72,
       "base": [
         "Altro"
       ],
-      "descrizione": "Medaglioni bolliti, strizzati e rosolati, poi in pressione con patate e pomodoro. Piselli a pentola aperta. Un pacco di medaglioni basta per due giri.",
+      "descrizione": "Medaglioni bolliti, strizzati e rosolati, poi in pressione con patate e pomodoro. Piselli a pentola aperta. Un pacco di medaglioni per ricetta.",
       "ingredienti": [
         {
           "nome": "Medaglioni di soia",
-          "quantita": 50,
+          "quantita": 100,
           "unita": "g",
           "prodotto": "40ad208f-0d59-81af-a345-deda5ab77c4c",
           "tipo": "Da comprare",
@@ -6583,7 +6673,7 @@
         },
         {
           "nome": "Patate",
-          "quantita": 500,
+          "quantita": 350,
           "unita": "g",
           "prodotto": "402d208f-0d59-81a4-ba09-e9acd7d7ab72",
           "tipo": "Da comprare",
@@ -6628,7 +6718,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 30,
+          "quantita": 12,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -6702,7 +6792,7 @@
           "nome": "Mix quesadilla",
           "quantita": 1,
           "unita": "cucchiaino",
-          "prodotto": null,
+          "prodotto": "402d208f-0d59-8120-ac30-ca36508e09b4",
           "tipo": "Dispensa",
           "facoltativo": false,
           "nota": "Nel soffritto. Se finito: paprika"
@@ -6736,7 +6826,13 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1015 kcal e 50 g di proteine."
+          "testo": "Valori per porzione: circa 911 kcal e 72 g di proteine."
+        },
+        {
+          "testo": "Shake: non serve, il piatto supera già 63 g."
+        },
+        {
+          "testo": "Medaglioni: 100 g a porzione, quindi un pacco da 200 g per due porzioni."
         },
         {
           "testo": "Medaglioni: con 50 g a porzione, un pacco da 200 g basta per due giri da due porzioni. Se li vuoi più morbidi e meno \"carnosi\", salta la strizzatura e la rosolatura e mettili direttamente in pressione già bolliti."
@@ -6756,16 +6852,16 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1110,
-      "proteine": 41,
+      "kcal": 903,
+      "proteine": 43,
       "base": [
         "Couscous"
       ],
-      "descrizione": "Ceci in pressione con spezie calde e datteri, zucca a pentola aperta, cous cous versato nel sugo a fuoco spento.",
+      "descrizione": "Ceci in pressione con spezie calde e datteri, zucca e lenticchie rosse a pentola aperta, cous cous versato nel sugo a fuoco spento.",
       "ingredienti": [
         {
           "nome": "Ceci secchi",
-          "quantita": 130,
+          "quantita": 120,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
           "tipo": "Da comprare",
@@ -6774,7 +6870,7 @@
         },
         {
           "nome": "Cous cous",
-          "quantita": 80,
+          "quantita": 40,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e0-942d-eb2ed78c30e4",
           "tipo": "Da comprare",
@@ -6828,7 +6924,7 @@
         },
         {
           "nome": "Datteri",
-          "quantita": 2,
+          "quantita": 1,
           "unita": "pz",
           "prodotto": "402d208f-0d59-81b3-ac52-d96beeab1a3c",
           "tipo": "Da comprare",
@@ -6837,7 +6933,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 20,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -6915,6 +7011,15 @@
           "tipo": "Dispensa",
           "facoltativo": true,
           "nota": "Nel soffritto con il concentrato; se la usi, dimezza il peperoncino"
+        },
+        {
+          "nome": "Lenticchie secche",
+          "quantita": 40,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "rosse decorticate, insieme alla zucca"
         }
       ],
       "passi": [
@@ -6928,7 +7033,7 @@
           "testo": "Pressione. Chiudi e porta a pressione. Dal fischio cuoci 20 minuti a fiamma bassa, poi sfiata."
         },
         {
-          "testo": "Zucca. Togli la cannella e controlla i ceci: se non sono morbidi, altri 5 minuti in pressione. Aggiungi la zucca a cubetti di 2 cm e fai sobbollire senza coperchio 10-12 minuti, finché è morbida."
+          "testo": "Zucca. Togli la cannella e controlla i ceci: se non sono morbidi, altri 5 minuti in pressione. Aggiungi la zucca a cubetti di 2 cm, le lenticchie rosse sciacquate e un mestolo d'acqua calda, e fai sobbollire senza coperchio 12-15 minuti, finché la zucca è morbida e le lenticchie sono sfatte."
         },
         {
           "testo": "Cous cous. Il sugo deve essere abbondante: se è poco aggiungi acqua calda. Spegni il fuoco, versa il cous cous, mescola, metti il coperchio e lascia riposare 5 minuti. Sgrana con la forchetta."
@@ -6939,7 +7044,13 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1110 kcal e 41 g di proteine."
+          "testo": "Valori per porzione: circa 903 kcal e 43 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 25 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+        },
+        {
+          "testo": "Lenticchie rosse: sostituiscono parte del cous cous e addensano il sugo."
         },
         {
           "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
@@ -6967,8 +7078,8 @@
       "rotazione": true,
       "provata": true,
       "porzioni": 2,
-      "kcal": 1098,
-      "proteine": 54,
+      "kcal": 902,
+      "proteine": 43,
       "base": [
         "Altro"
       ],
@@ -6976,7 +7087,7 @@
       "ingredienti": [
         {
           "nome": "Tofu",
-          "quantita": 270,
+          "quantita": 175,
           "unita": "g",
           "prodotto": "402d208f-0d59-81bc-8c8c-f0ee0ae6a8d6",
           "tipo": "Da comprare",
@@ -6985,7 +7096,7 @@
         },
         {
           "nome": "Patate",
-          "quantita": 650,
+          "quantita": 700,
           "unita": "g",
           "prodotto": "402d208f-0d59-81a4-ba09-e9acd7d7ab72",
           "tipo": "Da comprare",
@@ -7003,7 +7114,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 22,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -7051,10 +7162,13 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1098 kcal e 54 g di proteine."
+          "testo": "Valori per porzione: circa 902 kcal e 43 g di proteine."
         },
         {
-          "testo": "Tofu: un panetto e mezzo a porzione, quindi tre panetti per due porzioni."
+          "testo": "Shake: nella giornata servono circa 25 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+        },
+        {
+          "testo": "Tofu: mezzo panetto (175 g) a porzione, quindi un panetto da 350 g per due porzioni."
         },
         {
           "testo": "Conservazione: in frigo 3 giorni."
@@ -7068,16 +7182,16 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 990,
-      "proteine": 44,
+      "kcal": 906,
+      "proteine": 47,
       "base": [
         "Couscous"
       ],
-      "descrizione": "Tofu a cubi nel pomodoro piccante con spinaci, cous cous versato nella padella alla fine. Un panetto di tofu a porzione.",
+      "descrizione": "Tofu a cubi nel pomodoro piccante con spinaci, cous cous versato nella padella alla fine. Mezzo panetto di tofu (175 g) a porzione.",
       "ingredienti": [
         {
           "nome": "Tofu",
-          "quantita": 180,
+          "quantita": 175,
           "unita": "g",
           "prodotto": "402d208f-0d59-81bc-8c8c-f0ee0ae6a8d6",
           "tipo": "Da comprare",
@@ -7086,7 +7200,7 @@
         },
         {
           "nome": "Cous cous",
-          "quantita": 100,
+          "quantita": 135,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e0-942d-eb2ed78c30e4",
           "tipo": "Da comprare",
@@ -7131,7 +7245,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 30,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -7233,7 +7347,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 990 kcal e 44 g di proteine."
+          "testo": "Valori per porzione: circa 906 kcal e 47 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Piccante: regola con il peperoncino nel sugo e il tabasco sul piatto."
@@ -7257,8 +7374,8 @@
       "rotazione": true,
       "provata": true,
       "porzioni": 2,
-      "kcal": 1120,
-      "proteine": 55,
+      "kcal": 906,
+      "proteine": 49,
       "base": [
         "Altro"
       ],
@@ -7266,7 +7383,7 @@
       "ingredienti": [
         {
           "nome": "Ceci secchi",
-          "quantita": 215,
+          "quantita": 190,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
           "tipo": "Da comprare",
@@ -7274,17 +7391,8 @@
           "nota": "Peso da secchi, ammollati 12 ore e scolati"
         },
         {
-          "nome": "Farro perlato",
-          "quantita": 65,
-          "unita": "g",
-          "prodotto": "402d208f-0d59-8190-bc62-f0eced18deae",
-          "tipo": "Da comprare",
-          "facoltativo": false,
-          "nota": "Sciacquato, seconda pressione"
-        },
-        {
           "nome": "Broccoli surgelati",
-          "quantita": 200,
+          "quantita": 250,
           "unita": "g",
           "prodotto": "402d208f-0d59-8109-b504-ff18310acf08",
           "tipo": "Da comprare",
@@ -7293,7 +7401,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 11,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -7317,6 +7425,15 @@
           "tipo": "Dispensa",
           "facoltativo": false,
           "nota": "1-2 foglie, da togliere alla fine"
+        },
+        {
+          "nome": "Farro perlato",
+          "quantita": 30,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8190-bc62-f0eced18deae",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sciacquato, seconda pressione"
         },
         {
           "nome": "Sale",
@@ -7353,7 +7470,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1120 kcal e 55 g di proteine."
+          "testo": "Valori per porzione: circa 906 kcal e 49 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
@@ -7370,8 +7490,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 990,
-      "proteine": 45,
+      "kcal": 913,
+      "proteine": 52,
       "base": [
         "Altro"
       ],
@@ -7379,7 +7499,7 @@
       "ingredienti": [
         {
           "nome": "Lenticchie secche",
-          "quantita": 120,
+          "quantita": 165,
           "unita": "g",
           "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
           "tipo": "Da comprare",
@@ -7388,7 +7508,7 @@
         },
         {
           "nome": "Quinoa",
-          "quantita": 60,
+          "quantita": 40,
           "unita": "g",
           "prodotto": "402d208f-0d59-816f-9140-d92336127e88",
           "tipo": "Da comprare",
@@ -7460,7 +7580,7 @@
         },
         {
           "nome": "Olio",
-          "quantita": 25,
+          "quantita": 10,
           "unita": "ml",
           "prodotto": "402d208f-0d59-81dd-a7db-e985866a49f9",
           "tipo": "Dispensa",
@@ -7523,7 +7643,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 990 kcal e 45 g di proteine."
+          "testo": "Valori per porzione: circa 913 kcal e 52 g di proteine."
+        },
+        {
+          "testo": "Shake: nella giornata servono circa 15 g di proteine in polvere per questo piatto (lo porta a 63 g)."
         },
         {
           "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
