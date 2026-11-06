@@ -324,7 +324,7 @@
       "confezione": 500,
       "tipoConfezione": "pacco",
       "siConta": true,
-      "kcal": 330,
+      "kcal": 312,
       "proteine": 22,
       "carboidrati": 48,
       "grassi": 1.5,
@@ -4111,8 +4111,8 @@
       "rotazione": false,
       "provata": true,
       "porzioni": 2,
-      "kcal": 919,
-      "proteine": 49,
+      "kcal": 998,
+      "proteine": 57,
       "base": [
         "Pasta"
       ],
@@ -4120,7 +4120,7 @@
       "ingredienti": [
         {
           "nome": "Fagioli secchi",
-          "quantita": 165,
+          "quantita": 200,
           "unita": "g",
           "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
           "tipo": "Da comprare",
@@ -4267,10 +4267,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 919 kcal e 49 g di proteine."
+          "testo": "Valori per porzione: circa 1000 kcal e 57 g di proteine (su MyFitnessPal, con i prodotti reali e senza lievito alimentare, circa 940)."
         },
         {
-          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve. I fagioli sono passati da 165 a 200 g al posto dello shake (6/11/2026)."
         },
         {
           "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
