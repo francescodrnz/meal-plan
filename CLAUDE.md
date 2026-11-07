@@ -45,9 +45,12 @@ manca in `TODO.md`.
   precedente deve restare importabile.
 - **Mobile prima di tutto:** ogni modifica all'interfaccia si prova alla
   larghezza di un telefono.
-- Si committa e si fa push solo quando lo chiede l'utente. Unica eccezione:
-  il bot dell'Action committa `ricette.json` su `main` da solo, a qualunque ora, quindi
-  **`git pull` prima di lavorare e prima di pushare**.
+- **Commit e push li fa Claude da solo** appena un lavoro è finito e
+  verificato in locale, senza aspettare che l'utente lo chieda: l'utente può
+  provare le modifiche sul telefono solo dopo il push. Dopo la prova, e con
+  l'ok dell'utente, si chiude con `/fine`, che committa e pusha anche la
+  documentazione. Il bot dell'Action committa `ricette.json` su `main` da solo,
+  a qualunque ora, quindi **`git pull` prima di lavorare e prima di pushare**.
 
 ## Verifica
 

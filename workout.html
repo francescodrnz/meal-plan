@@ -407,6 +407,7 @@ function showTab(evt, tabId) {
 // Scheda a rotazione A/B. Il nome è l'identità dell'esercizio nello storico:
 // non cambiarlo, altrimenti si perde il collegamento con le sessioni passate.
 // partenza = kg suggeriti quando non c'è ancora storia (null: dipende dalla macchina).
+// nota = testo al posto di "recupero …" (serve per le superserie).
 const SCHEDE = {
   A: [
     { nome: 'Squat al rack',     serie: 3, reps: '6–8',   recupero: '2:30', partenza: 30 },
@@ -416,11 +417,12 @@ const SCHEDE = {
     { nome: 'Reverse fly',       serie: 2, reps: '12–15', recupero: '1:00', partenza: 15 }
   ],
   B: [
-    { nome: 'Leg press',             serie: 3, reps: '8–10',          recupero: '2:30', partenza: null },
-    { nome: 'Shoulder press',        serie: 3, reps: '8–10',          recupero: '2:00', partenza: 15 },
-    { nome: 'Rematore seduto',       serie: 3, reps: '8–12',          recupero: '2:00', partenza: 30 },
-    { nome: 'Leg press a una gamba', serie: 2, reps: '10 per gamba',  recupero: '1:30', partenza: null },
-    { nome: 'Hyperextension 45°',    serie: 2, reps: '10–12',         recupero: '1:30', partenza: 0 }
+    { nome: 'Leg press a una gamba', serie: 3, reps: '8–10 per gamba', recupero: '2:00 dopo le due gambe', partenza: null },
+    { nome: 'Shoulder press',        serie: 3, reps: '8–10',           recupero: '2:00', partenza: 15 },
+    { nome: 'Rematore seduto',       serie: 3, reps: '8–12',           recupero: '2:00', partenza: 30 },
+    { nome: 'Hyperextension 45°',    serie: 2, reps: '10–12',          recupero: '1:30', partenza: 0 },
+    { nome: 'Curl al cavo',          serie: 2, reps: '10–15',          nota: 'in superserie: subito dopo il pushdown', partenza: 10 },
+    { nome: 'Pushdown al cavo',      serie: 2, reps: '10–15',          nota: 'recupero 1:00 dopo la coppia', partenza: 15 }
   ]
 };
 
@@ -578,7 +580,7 @@ function renderAllenamento() {
     const ex = esercizio.nome;
     const card = document.createElement('div');
     card.className = 'exercise-card';
-    card.innerHTML = `<div class="exercise-title">${ex}<span class="exercise-target">${esercizio.serie} × ${esercizio.reps} · recupero ${esercizio.recupero}</span></div>`;
+    card.innerHTML = `<div class="exercise-title">${ex}<span class="exercise-target">${esercizio.serie} × ${esercizio.reps} · ${esercizio.nota || 'recupero ' + esercizio.recupero}</span></div>`;
 
     for (let i = 1; i <= esercizio.serie; i++) {
       const s = workoutActive.sets_state[setIdx];
