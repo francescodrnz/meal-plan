@@ -167,6 +167,21 @@
       "baseProteica": null
     },
     {
+      "id": "411d208f-0d59-81dd-b1c2-f257b68b872a",
+      "nome": "Ceci in scatola",
+      "reparto": "Legumi",
+      "unita": "g",
+      "confezione": 240,
+      "tipoConfezione": "lattina",
+      "siConta": true,
+      "kcal": 120,
+      "proteine": 7,
+      "carboidrati": 15,
+      "grassi": 2.5,
+      "pesoPezzo": null,
+      "baseProteica": "Ceci"
+    },
+    {
       "id": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
       "nome": "Ceci secchi",
       "reparto": "Legumi",
@@ -1272,8 +1287,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 914,
-      "proteine": 48,
+      "kcal": 1094,
+      "proteine": 61,
       "base": [
         "Quinoa"
       ],
@@ -1281,7 +1296,7 @@
       "ingredienti": [
         {
           "nome": "Fagioli secchi",
-          "quantita": 175,
+          "quantita": 225,
           "unita": "g",
           "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
           "tipo": "Da comprare",
@@ -1290,7 +1305,7 @@
         },
         {
           "nome": "Quinoa",
-          "quantita": 35,
+          "quantita": 50,
           "unita": "g",
           "prodotto": "402d208f-0d59-816f-9140-d92336127e88",
           "tipo": "Da comprare",
@@ -1371,7 +1386,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 600,
+          "quantita": 705,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -1425,10 +1440,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 914 kcal e 48 g di proteine."
+          "testo": "Valori per porzione: circa 1094 kcal e 61 g di proteine."
         },
         {
-          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve."
         },
         {
           "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
@@ -1448,8 +1463,8 @@
       "rotazione": true,
       "provata": true,
       "porzioni": 2,
-      "kcal": 912,
-      "proteine": 49,
+      "kcal": 1100,
+      "proteine": 60,
       "base": [
         "Couscous"
       ],
@@ -1457,7 +1472,7 @@
       "ingredienti": [
         {
           "nome": "Ceci secchi",
-          "quantita": 185,
+          "quantita": 240,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
           "tipo": "Da comprare",
@@ -1511,7 +1526,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 475,
+          "quantita": 560,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -1544,10 +1559,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 912 kcal e 49 g di proteine."
+          "testo": "Valori per porzione: circa 1100 kcal e 60 g di proteine."
         },
         {
-          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve."
         },
         {
           "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
@@ -1567,8 +1582,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 920,
-      "proteine": 47,
+      "kcal": 1102,
+      "proteine": 60,
       "base": [
         "Riso"
       ],
@@ -1684,7 +1699,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 650,
+          "quantita": 760,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -1711,7 +1726,7 @@
         },
         {
           "nome": "Lenticchie secche",
-          "quantita": 40,
+          "quantita": 95,
           "unita": "g",
           "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
           "tipo": "Da comprare",
@@ -1741,10 +1756,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 920 kcal e 47 g di proteine."
+          "testo": "Valori per porzione: circa 1102 kcal e 60 g di proteine."
         },
         {
-          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve."
         },
         {
           "testo": "Lenticchie rosse: sostituiscono parte del riso. In pressione si sfaldano e addensano il curry, va bene così."
@@ -1776,8 +1791,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 903,
-      "proteine": 72,
+      "kcal": 1096,
+      "proteine": 77,
       "base": [
         "Riso"
       ],
@@ -1794,7 +1809,7 @@
         },
         {
           "nome": "Riso",
-          "quantita": 75,
+          "quantita": 130,
           "unita": "g",
           "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
           "tipo": "Da comprare",
@@ -1938,7 +1953,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 280,
+          "quantita": 380,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -1965,7 +1980,7 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 903 kcal e 72 g di proteine."
+          "testo": "Valori per porzione: circa 1096 kcal e 77 g di proteine."
         },
         {
           "testo": "Shake: non serve, il piatto supera già 63 g."
@@ -1991,8 +2006,8 @@
       "rotazione": true,
       "provata": true,
       "porzioni": 2,
-      "kcal": 913,
-      "proteine": 55,
+      "kcal": 1094,
+      "proteine": 68,
       "base": [
         "Couscous"
       ],
@@ -2000,7 +2015,7 @@
       "ingredienti": [
         {
           "nome": "Lenticchie secche",
-          "quantita": 170,
+          "quantita": 225,
           "unita": "g",
           "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
           "tipo": "Da comprare",
@@ -2081,7 +2096,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 540,
+          "quantita": 650,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -2108,10 +2123,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 913 kcal e 55 g di proteine."
+          "testo": "Valori per porzione: circa 1094 kcal e 68 g di proteine."
         },
         {
-          "testo": "Shake: nella giornata servono circa 10 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve."
         },
         {
           "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
@@ -2131,8 +2146,8 @@
       "rotazione": true,
       "provata": true,
       "porzioni": 2,
-      "kcal": 909,
-      "proteine": 52,
+      "kcal": 1100,
+      "proteine": 65,
       "base": [
         "Polenta"
       ],
@@ -2140,7 +2155,7 @@
       "ingredienti": [
         {
           "nome": "Fagioli secchi",
-          "quantita": 200,
+          "quantita": 250,
           "unita": "g",
           "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
           "tipo": "Da comprare",
@@ -2149,7 +2164,7 @@
         },
         {
           "nome": "Polenta istantanea",
-          "quantita": 30,
+          "quantita": 50,
           "unita": "g",
           "prodotto": "402d208f-0d59-810e-aba7-d88eb8df00cb",
           "tipo": "Da comprare",
@@ -2185,7 +2200,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 700,
+          "quantita": 855,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -2218,10 +2233,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 909 kcal e 52 g di proteine."
+          "testo": "Valori per porzione: circa 1100 kcal e 65 g di proteine."
         },
         {
-          "testo": "Shake: nella giornata servono circa 15 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve."
         },
         {
           "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
@@ -2244,8 +2259,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 910,
-      "proteine": 52,
+      "kcal": 1108,
+      "proteine": 66,
       "base": [
         "Riso"
       ],
@@ -2253,7 +2268,7 @@
       "ingredienti": [
         {
           "nome": "Lenticchie secche",
-          "quantita": 175,
+          "quantita": 235,
           "unita": "g",
           "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
           "tipo": "Da comprare",
@@ -2343,7 +2358,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 550,
+          "quantita": 670,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -2400,10 +2415,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 910 kcal e 52 g di proteine."
+          "testo": "Valori per porzione: circa 1108 kcal e 66 g di proteine."
         },
         {
-          "testo": "Shake: nella giornata servono circa 15 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve."
         },
         {
           "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
@@ -2617,8 +2632,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 910,
-      "proteine": 45,
+      "kcal": 1063,
+      "proteine": 54,
       "base": [
         "Altro"
       ],
@@ -2734,7 +2749,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 350,
+          "quantita": 420,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -2806,7 +2821,7 @@
         },
         {
           "nome": "Ceci secchi",
-          "quantita": 150,
+          "quantita": 195,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
           "tipo": "Da comprare",
@@ -2845,10 +2860,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 910 kcal e 45 g di proteine."
+          "testo": "Valori per porzione: circa 1063 kcal e 54 g di proteine (senza shake)."
         },
         {
-          "testo": "Shake: nella giornata servono circa 25 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: nella giornata servono circa 10 g di proteine in polvere per questo piatto (con lo shake il pasto arriva a circa 1104 kcal e 63 g di proteine)."
         },
         {
           "testo": "Cereale: non serve."
@@ -2883,8 +2898,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 900,
-      "proteine": 72,
+      "kcal": 1098,
+      "proteine": 79,
       "base": [
         "Couscous"
       ],
@@ -2901,7 +2916,7 @@
         },
         {
           "nome": "Cous cous",
-          "quantita": 90,
+          "quantita": 145,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e0-942d-eb2ed78c30e4",
           "tipo": "Da comprare",
@@ -3000,7 +3015,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 160,
+          "quantita": 220,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -3024,7 +3039,7 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 900 kcal e 72 g di proteine."
+          "testo": "Valori per porzione: circa 1098 kcal e 79 g di proteine."
         },
         {
           "testo": "Shake: non serve, il piatto supera già 63 g."
@@ -3050,8 +3065,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 900,
-      "proteine": 47,
+      "kcal": 1095,
+      "proteine": 60,
       "base": [
         "Miglio"
       ],
@@ -3059,7 +3074,7 @@
       "ingredienti": [
         {
           "nome": "Fagioli secchi",
-          "quantita": 180,
+          "quantita": 230,
           "unita": "g",
           "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
           "tipo": "Da comprare",
@@ -3068,7 +3083,7 @@
         },
         {
           "nome": "Miglio",
-          "quantita": 40,
+          "quantita": 60,
           "unita": "g",
           "prodotto": "402d208f-0d59-810e-af65-de60a0d85352",
           "tipo": "Da comprare",
@@ -3122,7 +3137,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 800,
+          "quantita": 925,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -3176,10 +3191,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 900 kcal e 47 g di proteine."
+          "testo": "Valori per porzione: circa 1095 kcal e 60 g di proteine."
         },
         {
-          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve."
         },
         {
           "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
@@ -3199,8 +3214,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 900,
-      "proteine": 48,
+      "kcal": 1095,
+      "proteine": 61,
       "base": [
         "Riso"
       ],
@@ -3208,7 +3223,7 @@
       "ingredienti": [
         {
           "nome": "Fagioli secchi",
-          "quantita": 175,
+          "quantita": 225,
           "unita": "g",
           "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
           "tipo": "Da comprare",
@@ -3217,7 +3232,7 @@
         },
         {
           "nome": "Riso",
-          "quantita": 35,
+          "quantita": 55,
           "unita": "g",
           "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
           "tipo": "Da comprare",
@@ -3271,7 +3286,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 750,
+          "quantita": 865,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -3316,10 +3331,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 900 kcal e 48 g di proteine."
+          "testo": "Valori per porzione: circa 1095 kcal e 61 g di proteine."
         },
         {
-          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve."
         },
         {
           "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
@@ -3339,8 +3354,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 924,
-      "proteine": 51,
+      "kcal": 1104,
+      "proteine": 64,
       "base": [
         "Miglio"
       ],
@@ -3348,7 +3363,7 @@
       "ingredienti": [
         {
           "nome": "Fagioli secchi",
-          "quantita": 165,
+          "quantita": 215,
           "unita": "g",
           "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
           "tipo": "Da comprare",
@@ -3357,7 +3372,7 @@
         },
         {
           "nome": "Miglio",
-          "quantita": 25,
+          "quantita": 40,
           "unita": "g",
           "prodotto": "402d208f-0d59-810e-af65-de60a0d85352",
           "tipo": "Da comprare",
@@ -3411,7 +3426,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 875,
+          "quantita": 990,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -3462,10 +3477,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 924 kcal e 51 g di proteine."
+          "testo": "Valori per porzione: circa 1104 kcal e 64 g di proteine."
         },
         {
-          "testo": "Shake: nella giornata servono circa 15 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve."
         },
         {
           "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
@@ -3485,8 +3500,8 @@
       "rotazione": true,
       "provata": true,
       "porzioni": 2,
-      "kcal": 920,
-      "proteine": 52,
+      "kcal": 1092,
+      "proteine": 65,
       "base": [
         "Farro"
       ],
@@ -3494,7 +3509,7 @@
       "ingredienti": [
         {
           "nome": "Fagioli secchi",
-          "quantita": 195,
+          "quantita": 245,
           "unita": "g",
           "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
           "tipo": "Da comprare",
@@ -3503,7 +3518,7 @@
         },
         {
           "nome": "Farro perlato",
-          "quantita": 35,
+          "quantita": 50,
           "unita": "g",
           "prodotto": "402d208f-0d59-8190-bc62-f0eced18deae",
           "tipo": "Da comprare",
@@ -3539,7 +3554,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 800,
+          "quantita": 915,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -3563,10 +3578,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 920 kcal e 52 g di proteine."
+          "testo": "Valori per porzione: circa 1092 kcal e 65 g di proteine."
         },
         {
-          "testo": "Shake: nella giornata servono circa 15 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve."
         },
         {
           "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
@@ -3586,8 +3601,8 @@
       "rotazione": true,
       "provata": true,
       "porzioni": 2,
-      "kcal": 922,
-      "proteine": 54,
+      "kcal": 1103,
+      "proteine": 67,
       "base": [
         "Pasta"
       ],
@@ -3604,7 +3619,7 @@
         },
         {
           "nome": "Lenticchie secche",
-          "quantita": 150,
+          "quantita": 205,
           "unita": "g",
           "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
           "tipo": "Da comprare",
@@ -3703,10 +3718,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 922 kcal e 54 g di proteine."
+          "testo": "Valori per porzione: circa 1103 kcal e 67 g di proteine."
         },
         {
-          "testo": "Shake: nella giornata servono circa 15 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve."
         },
         {
           "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
@@ -3726,8 +3741,8 @@
       "rotazione": false,
       "provata": true,
       "porzioni": 2,
-      "kcal": 904,
-      "proteine": 59,
+      "kcal": 1099,
+      "proteine": 66,
       "base": [
         "Pasta"
       ],
@@ -3735,7 +3750,7 @@
       "ingredienti": [
         {
           "nome": "Fusilli",
-          "quantita": 55,
+          "quantita": 110,
           "unita": "g",
           "prodotto": "402d208f-0d59-81b4-ae78-c089b1b0a9a3",
           "tipo": "Da comprare",
@@ -3888,7 +3903,7 @@
         },
         {
           "nome": "Acqua calda",
-          "quantita": 275,
+          "quantita": 385,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -3924,10 +3939,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 904 kcal e 59 g di proteine."
+          "testo": "Valori per porzione: circa 1099 kcal e 66 g di proteine."
         },
         {
-          "testo": "Shake: nella giornata servono circa 5 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve."
         },
         {
           "testo": "Sale: soia e miso salano già. Assaggia sempre prima di aggiungerne."
@@ -3944,8 +3959,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 913,
-      "proteine": 43,
+      "kcal": 1066,
+      "proteine": 52,
       "base": [
         "Pasta"
       ],
@@ -3953,7 +3968,7 @@
       "ingredienti": [
         {
           "nome": "Ceci secchi",
-          "quantita": 170,
+          "quantita": 215,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
           "tipo": "Da comprare",
@@ -4025,7 +4040,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 550,
+          "quantita": 620,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -4091,10 +4106,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 913 kcal e 43 g di proteine."
+          "testo": "Valori per porzione: circa 1066 kcal e 52 g di proteine (senza shake)."
         },
         {
-          "testo": "Shake: nella giornata servono circa 25 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: nella giornata servono circa 10 g di proteine in polvere per questo piatto (con lo shake il pasto arriva a circa 1108 kcal e 61 g di proteine)."
         },
         {
           "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
@@ -4111,8 +4126,8 @@
       "rotazione": false,
       "provata": true,
       "porzioni": 2,
-      "kcal": 998,
-      "proteine": 57,
+      "kcal": 1107,
+      "proteine": 64,
       "base": [
         "Pasta"
       ],
@@ -4120,7 +4135,7 @@
       "ingredienti": [
         {
           "nome": "Fagioli secchi",
-          "quantita": 200,
+          "quantita": 235,
           "unita": "g",
           "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
           "tipo": "Da comprare",
@@ -4201,7 +4216,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 600,
+          "quantita": 650,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -4267,10 +4282,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1000 kcal e 57 g di proteine (su MyFitnessPal, con i prodotti reali e senza lievito alimentare, circa 940)."
+          "testo": "Valori per porzione: circa 1107 kcal e 64 g di proteine. Con 200 g di fagioli su MyFitnessPal veniva circa 940: con 235 g dovrebbe stare intorno a 1050 reali."
         },
         {
-          "testo": "Shake: non serve. I fagioli sono passati da 165 a 200 g al posto dello shake (6/11/2026)."
+          "testo": "Shake: non serve. I fagioli sono passati da 165 a 200 g al posto dello shake (6/11/2026) e poi a 235 g per il nuovo target di circa 1050 kcal reali (7/11/2026)."
         },
         {
           "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
@@ -4287,8 +4302,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 914,
-      "proteine": 52,
+      "kcal": 1095,
+      "proteine": 66,
       "base": [
         "Pasta"
       ],
@@ -4296,7 +4311,7 @@
       "ingredienti": [
         {
           "nome": "Lenticchie secche",
-          "quantita": 160,
+          "quantita": 215,
           "unita": "g",
           "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
           "tipo": "Da comprare",
@@ -4377,7 +4392,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 600,
+          "quantita": 710,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -4458,10 +4473,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 914 kcal e 52 g di proteine."
+          "testo": "Valori per porzione: circa 1095 kcal e 66 g di proteine."
         },
         {
-          "testo": "Shake: nella giornata servono circa 15 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve."
         },
         {
           "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
@@ -4481,8 +4496,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 900,
-      "proteine": 43,
+      "kcal": 1053,
+      "proteine": 52,
       "base": [
         "Pasta"
       ],
@@ -4490,7 +4505,7 @@
       "ingredienti": [
         {
           "nome": "Ceci secchi",
-          "quantita": 150,
+          "quantita": 195,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
           "tipo": "Da comprare",
@@ -4571,7 +4586,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 600,
+          "quantita": 670,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -4637,10 +4652,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 900 kcal e 43 g di proteine."
+          "testo": "Valori per porzione: circa 1053 kcal e 52 g di proteine (senza shake)."
         },
         {
-          "testo": "Shake: nella giornata servono circa 25 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: nella giornata servono circa 10 g di proteine in polvere per questo piatto (con lo shake il pasto arriva a circa 1094 kcal e 61 g di proteine)."
         },
         {
           "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
@@ -4663,8 +4678,8 @@
       "rotazione": true,
       "provata": true,
       "porzioni": 2,
-      "kcal": 914,
-      "proteine": 56,
+      "kcal": 1096,
+      "proteine": 69,
       "base": [
         "Pasta"
       ],
@@ -4672,7 +4687,7 @@
       "ingredienti": [
         {
           "nome": "Lenticchie secche",
-          "quantita": 180,
+          "quantita": 235,
           "unita": "g",
           "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
           "tipo": "Da comprare",
@@ -4717,7 +4732,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 700,
+          "quantita": 810,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -4747,10 +4762,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 914 kcal e 56 g di proteine."
+          "testo": "Valori per porzione: circa 1096 kcal e 69 g di proteine."
         },
         {
-          "testo": "Shake: nella giornata servono circa 10 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve."
         },
         {
           "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
@@ -4767,8 +4782,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 907,
-      "proteine": 50,
+      "kcal": 1105,
+      "proteine": 63,
       "base": [
         "Polenta"
       ],
@@ -4776,7 +4791,7 @@
       "ingredienti": [
         {
           "nome": "Fagioli secchi",
-          "quantita": 160,
+          "quantita": 210,
           "unita": "g",
           "prodotto": "402d208f-0d59-81d2-b0f1-f41b7b757748",
           "tipo": "Da comprare",
@@ -4785,7 +4800,7 @@
         },
         {
           "nome": "Polenta istantanea",
-          "quantita": 35,
+          "quantita": 55,
           "unita": "g",
           "prodotto": "402d208f-0d59-810e-aba7-d88eb8df00cb",
           "tipo": "Da comprare",
@@ -4857,7 +4872,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 700,
+          "quantita": 855,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -4923,10 +4938,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 907 kcal e 50 g di proteine."
+          "testo": "Valori per porzione: circa 1105 kcal e 63 g di proteine."
         },
         {
-          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve."
         },
         {
           "testo": "Ammollo: fagioli in acqua fredda 8-12 ore, poi scolati."
@@ -4949,8 +4964,8 @@
       "rotazione": true,
       "provata": true,
       "porzioni": 2,
-      "kcal": 916,
-      "proteine": 49,
+      "kcal": 1103,
+      "proteine": 60,
       "base": [
         "Quinoa"
       ],
@@ -4967,7 +4982,7 @@
         },
         {
           "nome": "Ceci secchi",
-          "quantita": 185,
+          "quantita": 240,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
           "tipo": "Da comprare",
@@ -5003,7 +5018,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 550,
+          "quantita": 635,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -5036,10 +5051,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 916 kcal e 49 g di proteine."
+          "testo": "Valori per porzione: circa 1103 kcal e 60 g di proteine."
         },
         {
-          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve."
         },
         {
           "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
@@ -5062,8 +5077,8 @@
       "rotazione": true,
       "provata": true,
       "porzioni": 2,
-      "kcal": 912,
-      "proteine": 46,
+      "kcal": 1065,
+      "proteine": 55,
       "base": [
         "Riso"
       ],
@@ -5080,7 +5095,7 @@
         },
         {
           "nome": "Ceci secchi",
-          "quantita": 160,
+          "quantita": 205,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
           "tipo": "Da comprare",
@@ -5158,10 +5173,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 912 kcal e 46 g di proteine."
+          "testo": "Valori per porzione: circa 1065 kcal e 55 g di proteine (senza shake)."
         },
         {
-          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: nella giornata servono circa 10 g di proteine in polvere per questo piatto (con lo shake il pasto arriva a circa 1106 kcal e 64 g di proteine)."
         },
         {
           "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
@@ -5181,8 +5196,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 916,
-      "proteine": 48,
+      "kcal": 1021,
+      "proteine": 50,
       "base": [
         "Riso"
       ],
@@ -5199,7 +5214,7 @@
         },
         {
           "nome": "Riso",
-          "quantita": 110,
+          "quantita": 140,
           "unita": "g",
           "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
           "tipo": "Da comprare",
@@ -5280,7 +5295,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 230,
+          "quantita": 290,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -5319,10 +5334,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 916 kcal e 48 g di proteine."
+          "testo": "Valori per porzione: circa 1021 kcal e 50 g di proteine (senza shake)."
         },
         {
-          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (con lo shake il pasto arriva a circa 1104 kcal e 67 g di proteine)."
         },
         {
           "testo": "Sale: non serve, soia e miso salano già."
@@ -5342,8 +5357,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 903,
-      "proteine": 44,
+      "kcal": 1008,
+      "proteine": 46,
       "base": [
         "Riso"
       ],
@@ -5360,7 +5375,7 @@
         },
         {
           "nome": "Riso",
-          "quantita": 120,
+          "quantita": 150,
           "unita": "g",
           "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
           "tipo": "Da comprare",
@@ -5432,7 +5447,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 200,
+          "quantita": 260,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -5486,10 +5501,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 903 kcal e 44 g di proteine."
+          "testo": "Valori per porzione: circa 1008 kcal e 46 g di proteine (senza shake)."
         },
         {
-          "testo": "Shake: nella giornata servono circa 25 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (con lo shake il pasto arriva a circa 1092 kcal e 63 g di proteine)."
         },
         {
           "testo": "Sale: la soia sala già, assaggia alla fine."
@@ -5509,8 +5524,8 @@
       "rotazione": false,
       "provata": true,
       "porzioni": 2,
-      "kcal": 910,
-      "proteine": 47,
+      "kcal": 1015,
+      "proteine": 52,
       "base": [
         "Riso"
       ],
@@ -5518,7 +5533,7 @@
       "ingredienti": [
         {
           "nome": "Riso",
-          "quantita": 120,
+          "quantita": 135,
           "unita": "g",
           "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
           "tipo": "Da comprare",
@@ -5536,7 +5551,7 @@
         },
         {
           "nome": "Piselli surgelati",
-          "quantita": 150,
+          "quantita": 225,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e0-ae9d-cc3c5968a68a",
           "tipo": "Da comprare",
@@ -5629,10 +5644,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 910 kcal e 47 g di proteine."
+          "testo": "Valori per porzione: circa 1015 kcal e 52 g di proteine (senza shake)."
         },
         {
-          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (con lo shake il pasto arriva a circa 1098 kcal e 69 g di proteine)."
         },
         {
           "testo": "Sale: la salsa di soia sala già, non serve aggiungerne alla fine."
@@ -5655,8 +5670,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 907,
-      "proteine": 44,
+      "kcal": 1060,
+      "proteine": 53,
       "base": [
         "Riso"
       ],
@@ -5664,7 +5679,7 @@
       "ingredienti": [
         {
           "nome": "Ceci secchi",
-          "quantita": 150,
+          "quantita": 195,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
           "tipo": "Da comprare",
@@ -5727,7 +5742,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 450,
+          "quantita": 520,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -5784,10 +5799,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 907 kcal e 44 g di proteine."
+          "testo": "Valori per porzione: circa 1060 kcal e 53 g di proteine (senza shake)."
         },
         {
-          "testo": "Shake: nella giornata servono circa 25 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: nella giornata servono circa 10 g di proteine in polvere per questo piatto (con lo shake il pasto arriva a circa 1102 kcal e 62 g di proteine)."
         },
         {
           "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
@@ -5810,8 +5825,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 902,
-      "proteine": 69,
+      "kcal": 1095,
+      "proteine": 73,
       "base": [
         "Riso"
       ],
@@ -5828,7 +5843,7 @@
         },
         {
           "nome": "Riso",
-          "quantita": 100,
+          "quantita": 155,
           "unita": "g",
           "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
           "tipo": "Da comprare",
@@ -5936,7 +5951,7 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 902 kcal e 69 g di proteine."
+          "testo": "Valori per porzione: circa 1095 kcal e 73 g di proteine."
         },
         {
           "testo": "Shake: non serve, il piatto supera già 63 g."
@@ -5962,8 +5977,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 916,
-      "proteine": 73,
+      "kcal": 1094,
+      "proteine": 77,
       "base": [
         "Polenta"
       ],
@@ -5989,7 +6004,7 @@
         },
         {
           "nome": "Polenta istantanea",
-          "quantita": 90,
+          "quantita": 140,
           "unita": "g",
           "prodotto": "402d208f-0d59-810e-aba7-d88eb8df00cb",
           "tipo": "Da comprare",
@@ -6088,7 +6103,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 560,
+          "quantita": 870,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -6151,7 +6166,7 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 916 kcal e 73 g di proteine."
+          "testo": "Valori per porzione: circa 1094 kcal e 77 g di proteine."
         },
         {
           "testo": "Shake: non serve, il piatto supera già 63 g."
@@ -6174,8 +6189,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 916,
-      "proteine": 55,
+      "kcal": 1098,
+      "proteine": 68,
       "base": [
         "Pasta"
       ],
@@ -6192,7 +6207,7 @@
         },
         {
           "nome": "Lenticchie secche",
-          "quantita": 75,
+          "quantita": 130,
           "unita": "g",
           "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
           "tipo": "Da comprare",
@@ -6273,7 +6288,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 500,
+          "quantita": 610,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -6336,10 +6351,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 916 kcal e 55 g di proteine."
+          "testo": "Valori per porzione: circa 1098 kcal e 68 g di proteine."
         },
         {
-          "testo": "Shake: nella giornata servono circa 10 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve."
         },
         {
           "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
@@ -6359,8 +6374,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 902,
-      "proteine": 49,
+      "kcal": 1009,
+      "proteine": 53,
       "base": [
         "Pasta"
       ],
@@ -6377,7 +6392,7 @@
         },
         {
           "nome": "Spaghetti",
-          "quantita": 100,
+          "quantita": 130,
           "unita": "g",
           "prodotto": "402d208f-0d59-8176-96cb-fd20d3e5366e",
           "tipo": "Da comprare",
@@ -6458,7 +6473,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 350,
+          "quantita": 395,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -6497,10 +6512,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 902 kcal e 49 g di proteine."
+          "testo": "Valori per porzione: circa 1009 kcal e 53 g di proteine (senza shake)."
         },
         {
-          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (con lo shake il pasto arriva a circa 1092 kcal e 70 g di proteine)."
         },
         {
           "testo": "Miso: va aggiunto a fuoco spento, se bolle perde sapore."
@@ -6523,8 +6538,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 902,
-      "proteine": 72,
+      "kcal": 1106,
+      "proteine": 80,
       "base": [
         "Farro"
       ],
@@ -6541,7 +6556,7 @@
         },
         {
           "nome": "Farro perlato",
-          "quantita": 100,
+          "quantita": 160,
           "unita": "g",
           "prodotto": "402d208f-0d59-8190-bc62-f0eced18deae",
           "tipo": "Da comprare",
@@ -6649,7 +6664,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 400,
+          "quantita": 520,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -6703,7 +6718,7 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 902 kcal e 72 g di proteine."
+          "testo": "Valori per porzione: circa 1106 kcal e 80 g di proteine."
         },
         {
           "testo": "Shake: non serve, il piatto supera già 63 g."
@@ -6729,8 +6744,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 911,
-      "proteine": 72,
+      "kcal": 1104,
+      "proteine": 77,
       "base": [
         "Altro"
       ],
@@ -6747,7 +6762,7 @@
         },
         {
           "nome": "Patate",
-          "quantita": 350,
+          "quantita": 600,
           "unita": "g",
           "prodotto": "402d208f-0d59-81a4-ba09-e9acd7d7ab72",
           "tipo": "Da comprare",
@@ -6855,7 +6870,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 150,
+          "quantita": 200,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -6900,7 +6915,7 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 911 kcal e 72 g di proteine."
+          "testo": "Valori per porzione: circa 1104 kcal e 77 g di proteine."
         },
         {
           "testo": "Shake: non serve, il piatto supera già 63 g."
@@ -6926,8 +6941,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 903,
-      "proteine": 43,
+      "kcal": 1056,
+      "proteine": 52,
       "base": [
         "Couscous"
       ],
@@ -6935,7 +6950,7 @@
       "ingredienti": [
         {
           "nome": "Ceci secchi",
-          "quantita": 120,
+          "quantita": 165,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
           "tipo": "Da comprare",
@@ -7043,7 +7058,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 450,
+          "quantita": 520,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -7118,10 +7133,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 903 kcal e 43 g di proteine."
+          "testo": "Valori per porzione: circa 1056 kcal e 52 g di proteine (senza shake)."
         },
         {
-          "testo": "Shake: nella giornata servono circa 25 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: nella giornata servono circa 10 g di proteine in polvere per questo piatto (con lo shake il pasto arriva a circa 1098 kcal e 61 g di proteine)."
         },
         {
           "testo": "Lenticchie rosse: sostituiscono parte del cous cous e addensano il sugo."
@@ -7152,8 +7167,8 @@
       "rotazione": true,
       "provata": true,
       "porzioni": 2,
-      "kcal": 902,
-      "proteine": 43,
+      "kcal": 1018,
+      "proteine": 46,
       "base": [
         "Altro"
       ],
@@ -7170,7 +7185,7 @@
         },
         {
           "nome": "Patate",
-          "quantita": 700,
+          "quantita": 850,
           "unita": "g",
           "prodotto": "402d208f-0d59-81a4-ba09-e9acd7d7ab72",
           "tipo": "Da comprare",
@@ -7236,10 +7251,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 902 kcal e 43 g di proteine."
+          "testo": "Valori per porzione: circa 1018 kcal e 46 g di proteine (senza shake)."
         },
         {
-          "testo": "Shake: nella giornata servono circa 25 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (con lo shake il pasto arriva a circa 1100 kcal e 63 g di proteine)."
         },
         {
           "testo": "Tofu: mezzo panetto (175 g) a porzione, quindi un panetto da 350 g per due porzioni."
@@ -7256,8 +7271,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 906,
-      "proteine": 47,
+      "kcal": 1104,
+      "proteine": 58,
       "base": [
         "Couscous"
       ],
@@ -7274,7 +7289,7 @@
         },
         {
           "nome": "Cous cous",
-          "quantita": 135,
+          "quantita": 150,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e0-942d-eb2ed78c30e4",
           "tipo": "Da comprare",
@@ -7355,7 +7370,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 120,
+          "quantita": 135,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -7397,6 +7412,15 @@
           "tipo": "Dispensa",
           "facoltativo": true,
           "nota": "Nel sugo con aglio e cumino; se la usi, togli il peperoncino"
+        },
+        {
+          "nome": "Ceci in scatola",
+          "quantita": 120,
+          "unita": "g",
+          "prodotto": "411d208f-0d59-81dd-b1c2-f257b68b872a",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sgocciolati e sciacquati, nel sugo insieme agli spinaci. Una lattina per due porzioni"
         }
       ],
       "passi": [
@@ -7407,7 +7431,7 @@
           "testo": "Sugo nell'inox (padella larga e alta o pentola bassa). Scalda il resto dell'olio e cuoci la cipolla tritata 4 minuti a fuoco medio. Aggiungi aglio, cumino e peperoncino e cuoci un minuto. Se usi la harissa, mettila qui al posto del peperoncino."
         },
         {
-          "testo": "Pomodoro e spinaci. Unisci polpa di pomodoro, spinaci ancora surgelati, origano e sale. Fai sobbollire 15 minuti mescolando ogni tanto."
+          "testo": "Pomodoro e spinaci. Unisci polpa di pomodoro, ceci sgocciolati e sciacquati, spinaci ancora surgelati, origano e sale. Fai sobbollire 15 minuti mescolando ogni tanto."
         },
         {
           "testo": "Tofu. Aggiungi il tofu e lascialo insaporire 2 minuti nel sugo."
@@ -7421,10 +7445,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 906 kcal e 47 g di proteine."
+          "testo": "Valori per porzione: circa 1104 kcal e 58 g di proteine."
         },
         {
-          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve. Al posto dello shake c'è una lattina di ceci per due porzioni: il piatto arriva a circa 58 g di proteine."
         },
         {
           "testo": "Piccante: regola con il peperoncino nel sugo e il tabasco sul piatto."
@@ -7448,8 +7472,8 @@
       "rotazione": true,
       "provata": true,
       "porzioni": 2,
-      "kcal": 906,
-      "proteine": 49,
+      "kcal": 1092,
+      "proteine": 60,
       "base": [
         "Farro"
       ],
@@ -7457,7 +7481,7 @@
       "ingredienti": [
         {
           "nome": "Ceci secchi",
-          "quantita": 190,
+          "quantita": 245,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e9-bcba-fe43cddf3a1b",
           "tipo": "Da comprare",
@@ -7520,7 +7544,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 800,
+          "quantita": 885,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -7544,10 +7568,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 906 kcal e 49 g di proteine."
+          "testo": "Valori per porzione: circa 1092 kcal e 60 g di proteine."
         },
         {
-          "testo": "Shake: nella giornata servono circa 20 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve."
         },
         {
           "testo": "Ammollo: ceci in acqua fredda 12 ore, poi scolati."
@@ -7564,8 +7588,8 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 913,
-      "proteine": 52,
+      "kcal": 1095,
+      "proteine": 66,
       "base": [
         "Quinoa"
       ],
@@ -7573,7 +7597,7 @@
       "ingredienti": [
         {
           "nome": "Lenticchie secche",
-          "quantita": 165,
+          "quantita": 220,
           "unita": "g",
           "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
           "tipo": "Da comprare",
@@ -7663,7 +7687,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 650,
+          "quantita": 760,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -7717,10 +7741,10 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 913 kcal e 52 g di proteine."
+          "testo": "Valori per porzione: circa 1095 kcal e 66 g di proteine."
         },
         {
-          "testo": "Shake: nella giornata servono circa 15 g di proteine in polvere per questo piatto (lo porta a 63 g)."
+          "testo": "Shake: non serve."
         },
         {
           "testo": "Lenticchie: quelle normali, marroni o verdi, senza ammollo."
