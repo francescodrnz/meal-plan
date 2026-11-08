@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mealplan-v21'; // Incrementato per forzare l'aggiornamento
+const CACHE_NAME = 'mealplan-v22'; // Incrementato per forzare l'aggiornamento
 const ASSETS = [
   'index.html',
   'manifest.json',

@@ -407,7 +407,7 @@ function showTab(evt, tabId) {
 // Scheda a rotazione A/B. Il nome è l'identità dell'esercizio nello storico:
 // non cambiarlo, altrimenti si perde il collegamento con le sessioni passate.
 // partenza = kg suggeriti quando non c'è ancora storia (null: dipende dalla macchina).
-// nota = testo al posto di "recupero …" (serve per le superserie).
+// nota = testo al posto di "recupero …" (serve per superserie e triserie).
 const SCHEDE = {
   A: [
     { nome: 'Squat al rack',     serie: 3, reps: '6–8',   recupero: '2:30', partenza: 30 },
@@ -421,8 +421,9 @@ const SCHEDE = {
     { nome: 'Shoulder press',        serie: 3, reps: '8–10',           recupero: '2:00', partenza: 15 },
     { nome: 'Rematore seduto',       serie: 3, reps: '8–12',           recupero: '2:00', partenza: 30 },
     { nome: 'Hyperextension 45°',    serie: 2, reps: '10–12',          recupero: '1:30', partenza: 0 },
-    { nome: 'Curl al cavo',          serie: 2, reps: '10–15',          nota: 'in superserie: subito dopo il pushdown', partenza: 10 },
-    { nome: 'Pushdown al cavo',      serie: 2, reps: '10–15',          nota: 'recupero 1:00 dopo la coppia', partenza: 15 }
+    { nome: 'Curl al cavo',          serie: 2, reps: '10–15',          nota: 'in triserie: subito dopo il pushdown', partenza: 10 },
+    { nome: 'Pushdown al cavo',      serie: 2, reps: '10–15',          nota: 'subito dopo le alzate laterali', partenza: 15 },
+    { nome: 'Alzate laterali al cavo', serie: 2, reps: '12–15',        nota: 'recupero 1:30 dopo il giro', partenza: 5 }
   ]
 };
 
@@ -486,8 +487,12 @@ function caricaActive() {
     const scheda = schedaSuggerita();
     return { scheda, started_at: null, offset: 0, is_running: false, notes: '', sets_state: nuoveSerie(scheda) };
   }
-  const valida = (a.scheda === 'A' || a.scheda === 'B') &&
-    Array.isArray(a.sets_state) && a.sets_state.length === serieDellaScheda(a.scheda).length;
+  const totale = (a.scheda === 'A' || a.scheda === 'B') ? serieDellaScheda(a.scheda).length : 0;
+  // Esercizi aggiunti in fondo alla scheda: tiene le serie già segnate e aggiunge le nuove
+  if (totale && Array.isArray(a.sets_state) && a.sets_state.length < totale) {
+    a.sets_state = a.sets_state.concat(nuoveSerie(a.scheda).slice(a.sets_state.length));
+  }
+  const valida = totale && Array.isArray(a.sets_state) && a.sets_state.length === totale;
   if (!valida) {
     a.scheda = schedaSuggerita();
     a.sets_state = nuoveSerie(a.scheda);
