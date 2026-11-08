@@ -4,7 +4,7 @@ Aggiornato il 2026-11-08.
 
 App pubblicata su GitHub Pages da `main`
 (https://francescodrnz.github.io/meal-plan/). Cache del service worker:
-`mealplan-v21`. L'interfaccia nuova del piano pasti e il backup `MP2D_` col
+`mealplan-v22`. L'interfaccia nuova del piano pasti e il backup `MP2D_` col
 bot Telegram sono stati provati sul telefono; i valori nutrizionali, il
 contorno rosso e i ritocchi della v20 solo in locale con Playwright.
 
@@ -27,7 +27,8 @@ contorno rosso e i ritocchi della v20 solo in locale con Playwright.
   (decisione 0009), con la sessione da scegliere in alto; sessioni, peso
   corporeo e grafici con Chart.js; `style.css` contiene solo le sue classi.
   Sessione B con la scheda nuova: leg press a una gamba per prima e, in
-  fondo, la superserie curl + pushdown al cavo come due card (campo `nota`).
+  fondo, la triserie al cavo curl + pushdown + alzate laterali (12–15,
+  partenza 5 kg), recupero 1:30 dopo il giro, come tre card (campo `nota`).
   Scheda A/B provata in locale con Playwright a 390 px, non ancora sul
   telefono.
 - **Service worker:** pagine e `ricette.json` network-first (decisione
@@ -47,6 +48,6 @@ contorno rosso e i ritocchi della v20 solo in locale con Playwright.
   dei prodotti); il bot committa su `main` solo se il file
   cambia. Il giro orario non è ancora stato osservato; il lancio a mano funziona.
 
-Prossimo passo: provare la v21 sul telefono (piano pasti e sessione B); controllare che i giri orari
+Prossimo passo: provare la v22 sul telefono (piano pasti e sessione B con la triserie); controllare che i giri orari
 partano; provare la scheda A/B in palestra; guardare sul telefono i valori
 calcolati e, se convincono, la pulizia a mano su Notion (le voci di `TODO.md`).

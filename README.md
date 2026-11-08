@@ -95,10 +95,12 @@ Chart.js.
 - La scheda è la costante `SCHEDE` (sessioni A e B, decisione 0009): per ogni
   esercizio nome, serie, ripetizioni, recupero e kg di partenza. Il nome è la
   chiave dello storico: rinominarlo stacca le sessioni passate. Una
-  superserie sono due esercizi di fila, ciascuno con la sua card e i suoi kg;
-  il campo `nota` prende il posto di "recupero …" sotto il titolo.
-- Cambiare il numero di serie di una sessione rifà le serie di una sessione
-  in corso con quella scheda (restano cronometro e note).
+  superserie o triserie sono esercizi di fila, ciascuno con la sua card e i
+  suoi kg; il campo `nota` prende il posto di "recupero …" sotto il titolo.
+- Un esercizio aggiunto in fondo a una sessione allunga le serie di una
+  sessione in corso con quella scheda, tenendo quelle già segnate; ogni altro
+  cambio nel numero di serie le rifà (restano cronometro e note). Quindi gli
+  esercizi nuovi si aggiungono in fondo.
 - In alto "Sessione A" / "Sessione B": si propone quella dopo l'ultima
   salvata; cambiarla con serie già segnate chiede conferma. "Concludi" si
   attiva con tutte le serie spuntate.
