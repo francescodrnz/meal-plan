@@ -317,8 +317,8 @@
       "baseProteica": null
     },
     {
-      "id": "402d208f-0d59-8100-81da-d2d890a6a21f",
-      "nome": "Fagioli rossi in scatola",
+      "id": "41cd208f-0d59-81ef-87a1-ebdc110b3527",
+      "nome": "Fagioli borlotti in scatola",
       "reparto": "Legumi",
       "unita": "g",
       "confezione": 240,
@@ -326,6 +326,21 @@
       "siConta": true,
       "kcal": 100,
       "proteine": 7,
+      "carboidrati": 13,
+      "grassi": 0.5,
+      "pesoPezzo": null,
+      "baseProteica": "Fagioli"
+    },
+    {
+      "id": "402d208f-0d59-8100-81da-d2d890a6a21f",
+      "nome": "Fagioli rossi in scatola",
+      "reparto": "Legumi",
+      "unita": "g",
+      "confezione": 240,
+      "tipoConfezione": "lattina",
+      "siConta": true,
+      "kcal": 98,
+      "proteine": 8,
       "carboidrati": 13,
       "grassi": 0.5,
       "pesoPezzo": null,
@@ -1791,16 +1806,16 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1096,
-      "proteine": 77,
+      "kcal": 1098,
+      "proteine": 60,
       "base": [
         "Riso"
       ],
-      "descrizione": "Medaglioni rosolati con le spezie di Zanzibar, poi riso, zucca e pomodoro in pressione. Spinaci e latte di soia alla fine.",
+      "descrizione": "Medaglioni rosolati con le spezie di Zanzibar, poi riso, zucca e pomodoro in pressione. Spinaci, ceci e latte di soia alla fine.",
       "ingredienti": [
         {
           "nome": "Medaglioni di soia",
-          "quantita": 100,
+          "quantita": 50,
           "unita": "g",
           "prodotto": "40ad208f-0d59-81af-a345-deda5ab77c4c",
           "tipo": "Da comprare",
@@ -1809,7 +1824,7 @@
         },
         {
           "nome": "Riso",
-          "quantita": 130,
+          "quantita": 135,
           "unita": "g",
           "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
           "tipo": "Da comprare",
@@ -1953,17 +1968,26 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 380,
+          "quantita": 390,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
           "facoltativo": false,
           "nota": "In pressione"
+        },
+        {
+          "nome": "Ceci in scatola",
+          "quantita": 120,
+          "unita": "g",
+          "prodotto": "411d208f-0d59-81dd-b1c2-f257b68b872a",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sgocciolati e sciacquati, dopo la pressione con gli spinaci. Una lattina per due porzioni"
         }
       ],
       "passi": [
         {
-          "testo": "Medaglioni. Bollili nella pentola a pressione aperta, in acqua leggermente salata, per 15 minuti. Scolali, lasciali intiepidire, strizzali bene e tagliali a pezzi."
+          "testo": "Medaglioni. Bollili nella pentola a pressione aperta, in acqua leggermente salata, per 15 minuti. Scolali, lasciali intiepidire, strizzali bene e tagliali col coltello sul tagliere a bocconcini di 2-3 cm."
         },
         {
           "testo": "Rosolatura. Asciuga la pentola, scalda metà dell'olio e rosola i medaglioni finché sono dorati. Sfuma con la salsa di soia."
@@ -1975,18 +1999,18 @@
           "testo": "Pressione. Aggiungi il riso sciacquato, la zucca a cubi, la polpa di pomodoro, un pizzico di sale e l'acqua della pressione. Mescola bene staccando il fondo. Chiudi e dal fischio cuoci 5 minuti a fiamma bassa, poi lascia scendere la pressione da sola."
         },
         {
-          "testo": "Finale. Riapri, aggiungi gli spinaci ancora surgelati e cuoci 3-4 minuti a pentola aperta. Spegni, versa il latte di soia e il garam masala e mescola. Aggiusta di sale e, se c'è, un po' di limone sul piatto."
+          "testo": "Finale. Riapri, aggiungi gli spinaci ancora surgelati e i ceci sgocciolati e sciacquati, e cuoci 3-4 minuti a pentola aperta. Spegni, versa il latte di soia e il garam masala e mescola. Aggiusta di sale e, se c'è, un po' di limone sul piatto."
         }
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1096 kcal e 77 g di proteine."
+          "testo": "Valori per porzione: circa 1098 kcal e 60 g di proteine."
         },
         {
-          "testo": "Shake: non serve, il piatto supera già 63 g."
+          "testo": "Shake: non serve, il piatto arriva già a 60 g."
         },
         {
-          "testo": "Medaglioni: 100 g a porzione, quindi un pacco da 200 g per due porzioni."
+          "testo": "Medaglioni: 50 g a porzione, quindi mezzo pacco per due porzioni: con un pacco da 200 g fai due ricette. Le proteine in meno rispetto ai 100 g le danno i ceci (una lattina per tutta la ricetta)."
         },
         {
           "testo": "Fondo: dopo il soffritto con le spezie, gratta bene il fondo prima di chiudere. Se resta attaccato qualcosa, la pentola a pressione rischia di bruciare."
@@ -2898,16 +2922,16 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1098,
-      "proteine": 79,
+      "kcal": 1100,
+      "proteine": 62,
       "base": [
         "Couscous"
       ],
-      "descrizione": "Medaglioni rosolati nel pomodoro con harissa, capperi, origano e spinaci, cous cous versato nella padella a fuoco spento. La più veloce.",
+      "descrizione": "Medaglioni rosolati nel pomodoro con ceci, harissa, capperi, origano e spinaci, cous cous versato nella padella a fuoco spento. La più veloce.",
       "ingredienti": [
         {
           "nome": "Medaglioni di soia",
-          "quantita": 100,
+          "quantita": 50,
           "unita": "g",
           "prodotto": "40ad208f-0d59-81af-a345-deda5ab77c4c",
           "tipo": "Da comprare",
@@ -2916,7 +2940,7 @@
         },
         {
           "nome": "Cous cous",
-          "quantita": 145,
+          "quantita": 150,
           "unita": "g",
           "prodotto": "402d208f-0d59-81e0-942d-eb2ed78c30e4",
           "tipo": "Da comprare",
@@ -3015,23 +3039,32 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 220,
+          "quantita": 230,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
           "facoltativo": false,
           "nota": "Bollente, per il cous cous"
+        },
+        {
+          "nome": "Ceci in scatola",
+          "quantita": 120,
+          "unita": "g",
+          "prodotto": "411d208f-0d59-81dd-b1c2-f257b68b872a",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sgocciolati e sciacquati, nel sugo con gli spinaci. Una lattina per due porzioni"
         }
       ],
       "passi": [
         {
-          "testo": "Medaglioni. Bollili in una padella inox alta o in pentola, in acqua leggermente salata, per 15 minuti. Scolali, lasciali intiepidire e strizzali bene."
+          "testo": "Medaglioni. Bollili in una padella inox alta o in pentola, in acqua leggermente salata, per 15 minuti. Scolali, lasciali intiepidire, strizzali bene e tagliali col coltello sul tagliere a bocconcini o straccetti di 2-3 cm."
         },
         {
           "testo": "Rosolatura. Nella stessa padella asciugata scalda quasi tutto l'olio e rosola i medaglioni finché sono dorati, con l'aglio. Sfuma con la salsa di soia."
         },
         {
-          "testo": "Sugo. Aggiungi la polpa di pomodoro, i capperi sciacquati, l'harissa, l'origano e gli spinaci ancora surgelati. Copri e cuoci 10 minuti a fuoco medio, mescolando ogni tanto, finché gli spinaci sono sciolti e il sugo è denso."
+          "testo": "Sugo. Aggiungi la polpa di pomodoro, i ceci sgocciolati e sciacquati, i capperi sciacquati, l'harissa, l'origano e gli spinaci ancora surgelati. Copri e cuoci 10 minuti a fuoco medio, mescolando ogni tanto, finché gli spinaci sono sciolti e il sugo è denso."
         },
         {
           "testo": "Cous cous. Aggiungi l'acqua bollente, porta a bollore e spegni. Versa il cous cous, mescola, copri e lascia riposare 5 minuti. Sgrana con la forchetta e chiudi con il filo d'olio rimasto a crudo."
@@ -3039,13 +3072,13 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1098 kcal e 79 g di proteine."
+          "testo": "Valori per porzione: circa 1100 kcal e 62 g di proteine."
         },
         {
-          "testo": "Shake: non serve, il piatto supera già 63 g."
+          "testo": "Shake: non serve, il piatto arriva già a 60 g."
         },
         {
-          "testo": "Medaglioni: 100 g a porzione, quindi un pacco da 200 g per due porzioni."
+          "testo": "Medaglioni: 50 g a porzione, quindi mezzo pacco per due porzioni: con un pacco da 200 g fai due ricette. Le proteine in meno rispetto ai 100 g le danno i ceci (una lattina per tutta la ricetta)."
         },
         {
           "testo": "Sale: capperi, harissa e salsa di soia salano già, assaggia prima di aggiungerne."
@@ -5825,16 +5858,16 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1095,
-      "proteine": 73,
+      "kcal": 1099,
+      "proteine": 60,
       "base": [
         "Riso"
       ],
-      "descrizione": "Medaglioni bolliti e poi rosolati nella carbon steel come fettine, riso cotto nella loro acqua, tutto saltato con verza e salsa di soia.",
+      "descrizione": "Medaglioni bolliti e poi rosolati nella carbon steel come fettine, riso e lenticchie cotti nella loro acqua, tutto saltato con verza e salsa di soia.",
       "ingredienti": [
         {
           "nome": "Medaglioni di soia",
-          "quantita": 100,
+          "quantita": 50,
           "unita": "g",
           "prodotto": "40ad208f-0d59-81af-a345-deda5ab77c4c",
           "tipo": "Da comprare",
@@ -5843,7 +5876,7 @@
         },
         {
           "nome": "Riso",
-          "quantita": 155,
+          "quantita": 150,
           "unita": "g",
           "prodotto": "402d208f-0d59-81af-8be6-ed073849172d",
           "tipo": "Da comprare",
@@ -5924,46 +5957,58 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 800,
+          "quantita": 900,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
           "facoltativo": false,
-          "nota": "Prima per i medaglioni, poi per il riso"
+          "nota": "Prima per medaglioni e lenticchie, poi per il riso"
+        },
+        {
+          "nome": "Lenticchie secche",
+          "quantita": 55,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Marroni o verdi, sciacquate. Cotte nell'acqua dei medaglioni fin dall'inizio, poi scolate col riso"
         }
       ],
       "passi": [
         {
-          "testo": "Medaglioni. Porta a bollore l'acqua salata in una pentola e cuoci i medaglioni 15 minuti. Tirali su con la schiumarola e lascia l'acqua sul fuoco."
+          "testo": "Medaglioni e lenticchie. Porta a bollore l'acqua salata in una pentola e cuoci i medaglioni insieme alle lenticchie sciacquate per 15 minuti. Tira su i medaglioni con la schiumarola e lascia le lenticchie nell'acqua sul fuoco."
         },
         {
-          "testo": "Riso. Nella stessa acqua cuoci il riso come una pasta, per i minuti indicati sulla confezione, poi scolalo. Intanto strizza bene i medaglioni."
+          "testo": "Riso. Nella stessa acqua, con le lenticchie, cuoci il riso come una pasta, per i minuti indicati sulla confezione, poi scola riso e lenticchie insieme. Intanto strizza bene i medaglioni."
         },
         {
-          "testo": "Rosolatura. Scalda la carbon steel vuota 2-3 minuti, metti metà dell'olio e quando luccica adagia i medaglioni interi. Lasciali fermi finché si staccano da soli, girali e dora l'altro lato. Sfuma con metà della salsa di soia e tienili da parte su un piatto."
+          "testo": "Rosolatura. Scalda la carbon steel vuota 2-3 minuti, metti metà dell'olio e quando luccica adagia i medaglioni interi. Lasciali fermi finché si staccano da soli, girali e dora l'altro lato. Sfuma con metà della salsa di soia e tienili da parte sul tagliere: tagliali a strisce di un dito, così nel piatto si mangiano con la forchetta."
         },
         {
           "testo": "Verza. Nella stessa padella, col resto dell'olio, salta verza, carota, aglio e zenzero a fuoco vivace per 5-6 minuti: la verza deve restare un po' croccante."
         },
         {
-          "testo": "Insieme. Aggiungi il riso scolato e il resto della salsa di soia e salta un paio di minuti. Rimetti i medaglioni sopra a scaldarsi e chiudi col peperoncino se lo usi."
+          "testo": "Insieme. Aggiungi riso e lenticchie scolati e il resto della salsa di soia e salta un paio di minuti. Rimetti i medaglioni sopra a scaldarsi e chiudi col peperoncino se lo usi."
         }
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1095 kcal e 73 g di proteine."
+          "testo": "Valori per porzione: circa 1099 kcal e 60 g di proteine."
         },
         {
-          "testo": "Shake: non serve, il piatto supera già 63 g."
+          "testo": "Shake: non serve, il piatto arriva già a 60 g."
         },
         {
-          "testo": "Medaglioni: 100 g a porzione, quindi un pacco da 200 g per due porzioni."
+          "testo": "Medaglioni: 50 g a porzione, quindi mezzo pacco per due porzioni: con un pacco da 200 g fai due ricette. Le proteine in meno rispetto ai 100 g le danno le lenticchie, che cuociono nella stessa acqua."
+        },
+        {
+          "testo": "Lenticchie: marroni o verdi, senza ammollo, che in 25-30 minuti di bollitura restano intere. Le rosse no: si sfaldano."
         },
         {
           "testo": "Padelle: pentola per bollire e carbon steel per rosolare e saltare. È l'unica delle ricette con i medaglioni che ne usa due."
         },
         {
-          "testo": "Riso: viene ancora meglio col riso freddo del giorno prima. In quel caso cuoci i medaglioni da soli e usa il riso avanzato."
+          "testo": "Riso: viene ancora meglio col riso freddo del giorno prima. In quel caso cuoci medaglioni e lenticchie (le lenticchie per circa 25 minuti in tutto) e usa il riso avanzato."
         },
         {
           "testo": "Conservazione: in frigo 2-3 giorni. Si scalda bene in padella."
@@ -5977,16 +6022,16 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1094,
-      "proteine": 77,
+      "kcal": 1090,
+      "proteine": 61,
       "base": [
         "Polenta"
       ],
-      "descrizione": "Medaglioni rosolati e verza stufati col pomodoro a pentola coperta, poi la polenta istantanea cotta nel loro sugo. Una pentola, niente pressione.",
+      "descrizione": "Medaglioni rosolati, verza e fagioli borlotti stufati col pomodoro a pentola coperta, poi la polenta istantanea cotta nel loro sugo. Una pentola, niente pressione.",
       "ingredienti": [
         {
           "nome": "Medaglioni di soia",
-          "quantita": 100,
+          "quantita": 50,
           "unita": "g",
           "prodotto": "40ad208f-0d59-81af-a345-deda5ab77c4c",
           "tipo": "Da comprare",
@@ -6004,7 +6049,7 @@
         },
         {
           "nome": "Polenta istantanea",
-          "quantita": 140,
+          "quantita": 150,
           "unita": "g",
           "prodotto": "402d208f-0d59-810e-aba7-d88eb8df00cb",
           "tipo": "Da comprare",
@@ -6103,7 +6148,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 870,
+          "quantita": 930,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -6145,11 +6190,20 @@
           "tipo": "Dispensa",
           "facoltativo": false,
           "nota": "Mantecato nella polenta a fine cottura"
+        },
+        {
+          "nome": "Fagioli borlotti in scatola",
+          "quantita": 120,
+          "unita": "g",
+          "prodotto": "41cd208f-0d59-81ef-87a1-ebdc110b3527",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sgocciolati e sciacquati, nella stufatura con la verza. Vanno bene anche i cannellini. Una lattina per due porzioni"
         }
       ],
       "passi": [
         {
-          "testo": "Medaglioni. Bollili in una pentola capiente, in acqua leggermente salata, per 15 minuti. Scolali, lasciali intiepidire e strizzali bene."
+          "testo": "Medaglioni. Bollili in una pentola capiente, in acqua leggermente salata, per 15 minuti. Scolali, lasciali intiepidire, strizzali bene e tagliali col coltello sul tagliere a bocconcini di 2-3 cm."
         },
         {
           "testo": "Rosolatura. Asciuga la pentola, scalda metà dell'olio e rosola i medaglioni finché sono dorati. Sfuma con la salsa di soia, o col vino bianco se lo usi."
@@ -6158,21 +6212,21 @@
           "testo": "Soffritto e verza. Aggiungi il resto dell'olio, la cipolla e l'aglio. Quando la cipolla è morbida, aggiungi la verza a strisce e girala un paio di minuti finché cala."
         },
         {
-          "testo": "Stufatura. Aggiungi la polpa di pomodoro, il rosmarino, una grattata di noce moscata, il peperoncino intero se lo usi, un pizzico di sale e l'acqua per stufare. Copri col coperchio e cuoci circa 15 minuti a fuoco medio-basso, mescolando ogni tanto, finché la verza è morbida. Se si asciuga troppo, un goccio d'acqua."
+          "testo": "Stufatura. Aggiungi la polpa di pomodoro, i fagioli sgocciolati e sciacquati, il rosmarino, una grattata di noce moscata, il peperoncino intero se lo usi, un pizzico di sale e l'acqua per stufare. Copri col coperchio e cuoci circa 15 minuti a fuoco medio-basso, mescolando ogni tanto, finché la verza è morbida. Se si asciuga troppo, un goccio d'acqua."
         },
         {
-          "testo": "Polenta. Togli il coperchio, aggiungi l'acqua calda della polenta e un pizzico di sale e porta a bollore. Versa la polenta a pioggia mescolando con la frusta o il cucchiaio di legno, e cuoci i minuti indicati sulla confezione girando spesso. Viene una polenta morbida con dentro verza e medaglioni. Fuori dal fuoco manteca col lievito alimentare, togli il peperoncino e servi col pepe."
+          "testo": "Polenta. Togli il coperchio, aggiungi l'acqua calda della polenta e un pizzico di sale e porta a bollore. Versa la polenta a pioggia mescolando con la frusta o il cucchiaio di legno, e cuoci i minuti indicati sulla confezione girando spesso. Viene una polenta morbida con dentro verza, fagioli e medaglioni. Fuori dal fuoco manteca col lievito alimentare, togli il peperoncino e servi col pepe."
         }
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1094 kcal e 77 g di proteine."
+          "testo": "Valori per porzione: circa 1090 kcal e 61 g di proteine."
         },
         {
-          "testo": "Shake: non serve, il piatto supera già 63 g."
+          "testo": "Shake: non serve, il piatto arriva già a 60 g."
         },
         {
-          "testo": "Medaglioni: 100 g a porzione, quindi un pacco da 200 g per due porzioni."
+          "testo": "Medaglioni: 50 g a porzione, quindi mezzo pacco per due porzioni: con un pacco da 200 g fai due ricette. Le proteine in meno rispetto ai 100 g le danno i fagioli (una lattina di borlotti o cannellini per tutta la ricetta)."
         },
         {
           "testo": "Consistenza: se la vuoi più soda, usa un po' meno acqua per la polenta; se si rapprende troppo nel piatto, allungala con acqua calda."
@@ -6538,16 +6592,16 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1106,
-      "proteine": 80,
+      "kcal": 1095,
+      "proteine": 65,
       "base": [
         "Farro"
       ],
-      "descrizione": "In bianco con rosmarino e salvia: medaglioni rosolati, farro e zucca in pressione, la zucca si sfalda e fa da crema. Miso a fuoco spento.",
+      "descrizione": "In bianco con rosmarino e salvia: medaglioni rosolati, farro, lenticchie e zucca in pressione, la zucca si sfalda e fa da crema. Miso a fuoco spento.",
       "ingredienti": [
         {
           "nome": "Medaglioni di soia",
-          "quantita": 100,
+          "quantita": 50,
           "unita": "g",
           "prodotto": "40ad208f-0d59-81af-a345-deda5ab77c4c",
           "tipo": "Da comprare",
@@ -6664,7 +6718,7 @@
         },
         {
           "nome": "Acqua",
-          "quantita": 520,
+          "quantita": 620,
           "unita": "ml",
           "prodotto": null,
           "tipo": "Non si compra",
@@ -6697,11 +6751,20 @@
           "tipo": "Dispensa",
           "facoltativo": true,
           "nota": "A fuoco spento col miso, per mantecare"
+        },
+        {
+          "nome": "Lenticchie secche",
+          "quantita": 45,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8105-a243-d0332e52caf5",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Marroni o verdi, sciacquate, in pressione col farro"
         }
       ],
       "passi": [
         {
-          "testo": "Medaglioni. Bollili nella pentola a pressione aperta, in acqua leggermente salata, per 15 minuti. Scolali, lasciali intiepidire e strizzali bene."
+          "testo": "Medaglioni. Bollili nella pentola a pressione aperta, in acqua leggermente salata, per 15 minuti. Scolali, lasciali intiepidire, strizzali bene e tagliali col coltello sul tagliere a bocconcini di 2-3 cm."
         },
         {
           "testo": "Rosolatura. Asciuga la pentola, scalda metà dell'olio e rosola i medaglioni finché sono dorati. Sfuma con la salsa di soia."
@@ -6710,7 +6773,7 @@
           "testo": "Soffritto e farro. Aggiungi il resto dell'olio, la cipolla, l'aglio, il rosmarino e la salvia se c'è (oppure, per la versione piccante, l'harissa al posto delle erbe). Dopo un paio di minuti versa il farro sciacquato e tostalo un minuto mescolando."
         },
         {
-          "testo": "Pressione. Aggiungi la zucca a cubi, un pizzico di sale e l'acqua della pressione. Chiudi e dal fischio cuoci 12 minuti a fiamma bassa, poi sfiata."
+          "testo": "Pressione. Aggiungi la zucca a cubi, le lenticchie sciacquate, un pizzico di sale e l'acqua della pressione. Chiudi e dal fischio cuoci 12 minuti a fiamma bassa, poi sfiata."
         },
         {
           "testo": "Miso. Riapri e mescola energicamente: la zucca si sfalda e lega tutto. Spegni, sciogli il miso (e il lievito alimentare, se lo usi) in un mestolo di sugo e rimettilo in pentola con una grattata di noce moscata. Aggiusta di sale e servi col pepe."
@@ -6718,13 +6781,16 @@
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1106 kcal e 80 g di proteine."
+          "testo": "Valori per porzione: circa 1095 kcal e 65 g di proteine."
         },
         {
-          "testo": "Shake: non serve, il piatto supera già 63 g."
+          "testo": "Shake: non serve, il piatto arriva già a 60 g."
         },
         {
-          "testo": "Medaglioni: 100 g a porzione, quindi un pacco da 200 g per due porzioni."
+          "testo": "Medaglioni: 50 g a porzione, quindi mezzo pacco per due porzioni: con un pacco da 200 g fai due ricette. Le proteine in meno rispetto ai 100 g le danno le lenticchie, che cuociono in pressione col farro."
+        },
+        {
+          "testo": "Lenticchie: marroni o verdi, senza ammollo. Le rosse in 12 minuti si sciolgono del tutto: vanno bene lo stesso, ma il piatto diventa una crema."
         },
         {
           "testo": "Farro: quello perlato, senza ammollo. Se usi il farro decorticato, porta la pressione a 18 minuti."
@@ -6744,16 +6810,16 @@
       "rotazione": false,
       "provata": false,
       "porzioni": 2,
-      "kcal": 1104,
-      "proteine": 77,
+      "kcal": 1103,
+      "proteine": 61,
       "base": [
         "Altro"
       ],
-      "descrizione": "Medaglioni bolliti, strizzati e rosolati, poi in pressione con patate e pomodoro. Piselli a pentola aperta. Un pacco di medaglioni per ricetta.",
+      "descrizione": "Medaglioni bolliti, strizzati e rosolati, poi in pressione con patate e pomodoro. Piselli e fagioli rossi a pentola aperta. Mezzo pacco di medaglioni per ricetta.",
       "ingredienti": [
         {
           "nome": "Medaglioni di soia",
-          "quantita": 100,
+          "quantita": 50,
           "unita": "g",
           "prodotto": "40ad208f-0d59-81af-a345-deda5ab77c4c",
           "tipo": "Da comprare",
@@ -6762,7 +6828,7 @@
         },
         {
           "nome": "Patate",
-          "quantita": 600,
+          "quantita": 650,
           "unita": "g",
           "prodotto": "402d208f-0d59-81a4-ba09-e9acd7d7ab72",
           "tipo": "Da comprare",
@@ -6894,11 +6960,20 @@
           "tipo": "Dispensa",
           "facoltativo": true,
           "nota": "Nel piatto, al posto del parmigiano"
+        },
+        {
+          "nome": "Fagioli rossi in scatola",
+          "quantita": 120,
+          "unita": "g",
+          "prodotto": "402d208f-0d59-8100-81da-d2d890a6a21f",
+          "tipo": "Da comprare",
+          "facoltativo": false,
+          "nota": "Sgocciolati e sciacquati, dopo la pressione coi piselli. Una lattina per due porzioni"
         }
       ],
       "passi": [
         {
-          "testo": "Medaglioni. Bollili nella pentola a pressione aperta, in acqua leggermente salata, per 15 minuti. Scolali, lasciali intiepidire e strizzali bene con le mani: più acqua togli, più rosolano."
+          "testo": "Medaglioni. Bollili nella pentola a pressione aperta, in acqua leggermente salata, per 15 minuti. Scolali, lasciali intiepidire e strizzali bene con le mani (più acqua togli, più rosolano) e tagliali col coltello sul tagliere a bocconcini di 2-3 cm."
         },
         {
           "testo": "Rosolatura. Asciuga la pentola, scalda metà dell'olio e rosola i medaglioni a fuoco vivace finché sono dorati su entrambi i lati. Sfuma con la salsa di soia e lasciala evaporare."
@@ -6910,21 +6985,18 @@
           "testo": "Pressione. Aggiungi le patate, la polpa di pomodoro, il rosmarino, un pizzico di sale e l'acqua della pressione. Chiudi e dal fischio cuoci 8 minuti a fiamma bassa, poi sfiata."
         },
         {
-          "testo": "Piselli. Riapri, aggiungi i piselli ancora surgelati e cuoci 5 minuti a pentola aperta, finché il sugo si stringe. Aggiusta di sale e servi col pepe e, se ti va, una spolverata di lievito alimentare."
+          "testo": "Piselli. Riapri, aggiungi i piselli ancora surgelati e i fagioli sgocciolati e sciacquati, e cuoci 5 minuti a pentola aperta, finché il sugo si stringe. Aggiusta di sale e servi col pepe e, se ti va, una spolverata di lievito alimentare."
         }
       ],
       "note": [
         {
-          "testo": "Valori per porzione: circa 1104 kcal e 77 g di proteine."
+          "testo": "Valori per porzione: circa 1103 kcal e 61 g di proteine."
         },
         {
-          "testo": "Shake: non serve, il piatto supera già 63 g."
+          "testo": "Shake: non serve, il piatto arriva già a 60 g."
         },
         {
-          "testo": "Medaglioni: 100 g a porzione, quindi un pacco da 200 g per due porzioni."
-        },
-        {
-          "testo": "Medaglioni: con 50 g a porzione, un pacco da 200 g basta per due giri da due porzioni. Se li vuoi più morbidi e meno \"carnosi\", salta la strizzatura e la rosolatura e mettili direttamente in pressione già bolliti."
+          "testo": "Medaglioni: 50 g a porzione, quindi mezzo pacco per due porzioni: con un pacco da 200 g fai due ricette. Le proteine in meno rispetto ai 100 g le danno i fagioli rossi (una lattina per tutta la ricetta). Se li vuoi più morbidi e meno \"carnosi\", salta la strizzatura e la rosolatura e mettili direttamente in pressione già bolliti."
         },
         {
           "testo": "Spezie: il mix quesadilla dà un'aria da gulasch. Se finisce, paprika."
